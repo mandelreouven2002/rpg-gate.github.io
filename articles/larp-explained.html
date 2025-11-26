@@ -1,1 +1,118 @@
 
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק תפקידים חי – מה זה? - שער להרפתקה</title>
+    <link rel="icon" type="image/x-icon" href="/rpg-game.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Assistant', sans-serif; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; color: #1c1917; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose h3 { font-size: 1.25rem; font-weight: 700; color: #4338ca; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose p { margin-bottom: 1.25rem; line-height: 1.7; font-size: 1.125rem; color: #44403c; }
+        .prose ul { list-style-type: disc; padding-right: 1.5rem; margin-bottom: 1.25rem; color: #44403c; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #1c1917; font-weight: 700; }
+        #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
+    <div id="background-overlay"></div>
+
+    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-white"><a href="/index.html" class="flex items-center gap-2"><span>⚔️</span> שער להרפתקה</a></h1>
+            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
+                <a href="/index.html" class="hover:text-indigo-300">בית</a>
+                <a href="/search.html" class="hover:text-indigo-300">פורטל חיפוש</a>
+                <a href="/articles/index.html" class="text-yellow-400 font-bold">פורטל מאמרים</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 flex-grow">
+        <nav class="text-sm mb-6 text-stone-500">
+            <a href="/index.html" class="hover:underline">בית</a> / <a href="/articles/index.html" class="hover:underline">מאמרים</a> / <span class="text-stone-800 font-semibold">משחק תפקידים חי</span>
+        </nav>
+
+        <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border border-stone-200">
+            <header class="mb-8 border-b border-stone-100 pb-8">
+                <div class="flex items-center gap-3 mb-4"><span class="bg-teal-100 text-teal-800 text-sm font-semibold px-3 py-1 rounded-full">משחק חי (LARP)</span></div>
+                <h1 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">משחק תפקידים חי – מה זה?</h1>
+                <div class="text-sm text-stone-500 bg-stone-50 p-4 rounded-lg border border-stone-100">
+                    <p>הערה: כל המאמרים באתר מתבססים על מאגר המאמרים בקישור <a href="https://gate.rrpg.top/bibliography" target="_blank" class="text-indigo-600 hover:underline">gate.rrpg.top/bibliography</a>.</p>
+                </div>
+            </header>
+            <div class="prose">
+                <p>משחק תפקידים חי או 'לַארְפּ' (LARP – Live Action Role Playing) הוא הצורה הישירה והפיזית ביותר של <a href="what-is-rpg.html" class="text-indigo-600 hover:underline">משחקי תפקידים</a>: במקום לשבת סביב שולחן ולתאר פעולות בדיבור, השחקנים מגלמים את הדמויות שלהם בעולם האמיתי. הם זזים במרחב, מדברים בגוף ראשון, לובשים תלבושות כשהן נדרשות, ומבצעים פעולות בצורה פיזית (כל עוד הן כמובן בטוחות ומוסכמות מראש). במילים פשוטות: אם <a href="tabletop-rpg.html" class="text-indigo-600 hover:underline">משחק תפקידים שולחני</a> מתקיים בדמיון המשותף, משחק תפקידים חי לוקח את אותו דמיון ומלביש עליו מציאות.</p>
+                
+                <p>ההבדל המהותי הוא לא רק בצורת ההצגה, אלא בתחושת החוויה. שחקן בלארפ לא “אומר” שהדמות שלו כועסת, אלא הוא מתנהג כך. אין את המחיצה הזו שבין המילים לבין הסיטואציה כמו במשחק שולחני: המרחב הפיזי הוא חלק מהמשחק, והאינטראקציה האנושית היא הכלי המרכזי. יש לארפים קלים ורכים, שעוסקים בדרמה חברתית או דילמות מוסריות, ויש לארפים שכוללים קרבות מבוימים עם כלי נשק מדומים, חוקים טקטיים ומערכות פגיעה.</p>
+                
+                <p>חלק מהמשחקים החיים משתמשים בחוקים שמזכירים משחקי לוח: נקודות פגיעה, יכולות מיוחדות, מגבלות ברורות. ומשחקים אחרים כמעט ולא כוללים שום חוק, ומתבססים על הסכמה חברתית ועל עיצוב החוויה. אין מודל “נכון” אחד: כל קהילה, ארגון או "מנחה" בונה את השיטה שמתאימה למטרת המשחק.</p>
+
+                <h2>מקורות וזרמים</h2>
+                <p>קשה להצמיד ללארפ נקודת התחלה אחת. אפשר לראות ניצנים כבר במשחקי רובין הוד מהמאות ה־15–16, שבהם דמויות הומצאו והוצגו מול קהל. בשנות ה־70, אחרי פריצת משחק התפקידים השולחני "מבוכים ודרקונים", התחילו להתפתח לארפים פנטזיים בהשראתו בארצות הברית, אירופה וגם בישראל. חלקם נקראו RD&D – גרסה חיה ונגישה של "מבוכים ודרקונים" עם מקצועות מוכרים, קסמים מאולתרים וכלי נשק מספוג עטוף כדי למנוע פציעות. עם השנים, התחום התרחב הרבה מעבר לפנטזיה: ערפדים, מאפיה, דרמות פוליטיות, אימה פסיכולוגית ועוד. היום, RD&D הוא רק תת־סוג בתוך עולם רחב בהרבה.</p>
+
+                <h2>סגנונות מרכזיים</h2>
+                <ul class="list-none space-y-4 pr-0">
+                    <li class="bg-stone-50 p-4 rounded-lg border border-stone-100">
+                        <strong>הסגנון התיאטרלי:</strong> מינימום חוקים, מקסימום משחק דמות ואינטראקציה. זה מרגיש כמו הצגת תיאטרון מאולתרת בלי קהל. הדגש הוא על דמויות, סודות, יחסים וקונפליקטים. נפוץ באירועים קצרים של כמה שעות (לעומת השאר שיכולות להארך כמה ימים), לרוב בחללים סגורים, ומצריך מעט מאוד הכנה. ז’אנר "חקירת רצח מסתורי" הוא הדוגמה הקלאסית.
+                    </li>
+                    <li class="bg-stone-50 p-4 rounded-lg border border-stone-100">
+                        <strong>הסגנון המיליטנטי:</strong> קרבות בין "צבאות", מטרה ברורה (לדוגמה: לכבוש דגל או להפיל מנהיג), וחוקים טקטיים עם כלי נשק רכים. לרוב נערך בשטח פתוח, ביערות או בפרדסים, ומייצר חווית אדרנלין כבדה.
+                    </li>
+                    <li class="bg-stone-50 p-4 rounded-lg border border-stone-100">
+                        <strong>משחק סגור:</strong> בסגנון הסגור ישנן מספר דמויות המוגדרות כשחקנים, ושאר הדמויות הן ניצבים המשחקים תפקיד מוגדר שנכתב עבורן. עלילת המשחק היא עלילה ליניארית, או "סגורה", ואין לשחקנים יכולת אמיתית להשפיע על סדר אירועי המשחק.
+                    </li>
+                    <li class="bg-stone-50 p-4 rounded-lg border border-stone-100">
+                        <strong>RD&D:</strong> שיטה המושפעת ממבוכים ודרקונים, עם מקצועות, ציוד, קסמים וחוקים ברורים. זהו שער הכניסה הקלאסי עבור שחקנים צעירים או קבוצות שרוצות אקשן ברור ומובנה.
+                    </li>
+                </ul>
+
+                <h2>מהו לארפ חדר?</h2>
+                <p>לארפ חדר (לעיתים נקרא גם “חדר סגור” או Chamber LARP) הוא פורמט מצומצם ואינטנסיבי של הסגנון התיאטרלי שמתקיים בחלל קטן "בגודל של חדר". המאפיינים העיקריים שלו:</p>
+                <ul class="list-disc pr-6">
+                    <li>מספר שחקנים קטן, לרוב 4–12 משתתפים.</li>
+                    <li>משך משחק קצר יחסית – בין שעה לכמה שעות.</li>
+                    <li>דגש על דרמה, רגשות, יחסים וסודות.</li>
+                    <li>מעט תפאורה ואביזרים – או בכלל לא.</li>
+                    <li>לרוב בלי קרבות פיזיים.</li>
+                    <li>העלילה מתמקדת בקונפליקט אנושי, פסיכולוגי או פילוסופי, ולא ב"הרפתקה" חיצונית.</li>
+                </ul>
+                <p>לארפי חדר פופולריים בכנסים ובמפגשים קהילתיים כי הם נגישים, לא דורשים ציוד, ומתאימים לשחקנים שמעדיפים עומק על פני פעולה. בעולם, זהו תחום שהתפתח במיוחד בסקנדינביה במסגרת "לארפ נורדי", ששם דגש על חקר רגשות, זהות וחוויה אנושית.</p>
+
+                <h2>בשורה התחתונה</h2>
+                <p>משחק תפקידים חי הוא שילוב בין משחק, תיאטרון, פסיכולוגיה קבוצתית וחוויה חברתית. הוא יכול להיות גדול ורועש או קטן ושקט, מבוים או חופשי, פנטזי או ריאליסטי לגמרי. המשותף לכולם הוא העיקרון הפשוט: במקום לדבר על דמות, אני נהיה הדמות. המשחק לא בודק מי חזק יותר או מי צודק יותר; הוא בודק מה קורה כשנותנים לאנשים סיפור חי לנשום בתוכו במעין תיאטרון חי או "פלייבק".</p>
+            </div>
+
+            <!-- About Site Section -->
+            <div class="mt-12 pt-8 border-t-2 border-indigo-100 bg-indigo-50 p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-indigo-900 mb-4">על פרויקט "שער להרפתקה"</h3>
+                <p class="text-stone-700 mb-4">
+                    ״שער להרפתקה״ הוא פרויקט שנועד לעשות סוף לבלגן של מתחילים: במקום לחפש בפייסבוק, בגוגל ובשמועות – כל המידע מרוכז במקום אחד.
+                    האתר כולל מדריך מלא למי שנכנס לתחום בפעם הראשונה: מה זה משחקי תפקידים, איך מתחילים, אילו שיטות מומלצות, איך מוצאים קבוצה, ואיפה יש חוגים וחנויות בכל הארץ.
+                </p>
+                <div class="mb-6">
+                    <strong class="block text-lg text-indigo-800 mb-2">באתר תמצאו:</strong>
+                    <ul class="list-disc list-inside text-stone-700 space-y-1">
+                        <li>מדריך למתחילים בעברית.</li>
+                        <li>רשימת חוגים לילדים ונוער.</li>
+                        <li>קישורים לקהילות, כנסים ואירועים.</li>
+                        <li>עסקים, חנויות ומקומות לשחק בהם.</li>
+                        <li>עדכונים שוטפים דרך ערוץ הוואטסאפ ״דואר עוף-חול״.</li>
+                        <li>מאגר מאמרים לחדשים בתחביב.</li>
+                    </ul>
+                </div>
+                <p class="text-lg font-semibold text-indigo-900 mb-4">אם אתם רוצים להתחיל לשחק בלי ללכת לאיבוד – זה המקום להתחיל ממנו.</p>
+                <a href="/index.html" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    היכנסו לשער להרפתקה
+                </a>
+            </div>
+        </article>
+    </main>
+    <footer class="text-center py-6 mt-auto bg-stone-200 border-t border-stone-300"><p class="text-base text-stone-600">נוצר באהבה ע"י <a href="https://rrpg.top" class="text-indigo-600 hover:underline">ראובן צירל-מנדלוביץ'</a>.</p></footer>
+</body>
+</html>
