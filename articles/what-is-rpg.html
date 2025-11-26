@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מה זה משחקי תפקידים? - שער להרפתקה</title>
+    <link rel="icon" type="image/x-icon" href="/rpg-game.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Assistant', sans-serif; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; color: #1c1917; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.25rem; line-height: 1.7; font-size: 1.125rem; color: #44403c; }
+        #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
+    <div id="background-overlay"></div>
+
+    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-white"><a href="/index.html" class="flex items-center gap-2"><span>⚔️</span> שער להרפתקה</a></h1>
+            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
+                <a href="/index.html" class="hover:text-indigo-300">בית</a>
+                <a href="/search.html" class="hover:text-indigo-300">פורטל חיפוש</a>
+                <a href="/articles/index.html" class="text-yellow-400 font-bold">פורטל מאמרים</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 flex-grow">
+        <nav class="text-sm mb-6 text-stone-500">
+            <a href="/index.html" class="hover:underline">בית</a> / <a href="/articles/index.html" class="hover:underline">מאמרים</a> / <span class="text-stone-800 font-semibold">מה זה משחקי תפקידים?</span>
+        </nav>
+
+        <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border border-stone-200">
+            <header class="mb-8 border-b border-stone-100 pb-8">
+                <div class="flex items-center gap-3 mb-4"><span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full">מבוא</span></div>
+                <h1 class="text-4xl font-bold text-stone-900 mb-4">מה זה משחקי תפקידים?</h1>
+                <p class="text-xl text-stone-600">המדריך הבסיסי לעולם שבו הדמיון קובע את החוקים.</p>
+            </header>
+            <div class="prose">
+                <p>משחקי תפקידים (Role-Playing Games או RPG) הם צורת משחק שבה המשתתפים מגלמים דמויות בתוך עולם בדיוני. בניגוד למשחקי לוח רגילים או משחקי מחשב, כאן אין תמיד "מנצח" או "מפסיד" – המטרה היא ליצור סיפור משותף.</p>
+                <h2>איך זה עובד?</h2>
+                <p>ברוב המשחקים יש "מנחה" (שנקרא לעיתים שליט המבוך, מספר הסיפור וכדומה) ושחקנים. המנחה מתאר את העולם, את הדמויות האחרות ואת האתגרים. השחקנים מתארים מה הדמויות שלהם עושות בתגובה. לפעמים, כדי לקבוע אם פעולה הצליחה או נכשלה (למשל, האם האביר הצליח לקפוץ מעל התהום), משתמשים בקוביות ובחוקי המשחק.</p>
+                <h2>סוגים שונים של משחקים</h2>
+                <p>התחביב מתחלק בגדול לשני סוגים עיקריים: משחקים שולחניים (שמשחקים בישיבה סביב שולחן עם דפים וקוביות) ומשחקים חיים (שבהם השחקנים מתחפשים ומשחקים פיזית במרחב).</p>
+            </div>
+        </article>
+    </main>
+    <footer class="text-center py-6 mt-auto bg-stone-200 border-t border-stone-300"><p class="text-base text-stone-600">נוצר באהבה ע"י <a href="https://rrpg.top" class="text-indigo-600 hover:underline">ראובן צירל-מנדלוביץ'</a>.</p></footer>
+</body>
+</html>
