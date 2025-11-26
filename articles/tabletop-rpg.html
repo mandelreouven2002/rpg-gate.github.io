@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק תפקידים שולחני – מה זה? - שער להרפתקה</title>
+    <link rel="icon" type="image/x-icon" href="/rpg-game.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Assistant', sans-serif; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; color: #1c1917; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.25rem; line-height: 1.7; font-size: 1.125rem; color: #44403c; }
+        .prose ul { list-style-type: disc; padding-right: 1.5rem; margin-bottom: 1.25rem; color: #44403c; }
+        .prose li { margin-bottom: 0.5rem; }
+        #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
+    <div id="background-overlay"></div>
+
+    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-white"><a href="/index.html" class="flex items-center gap-2"><span>⚔️</span> שער להרפתקה</a></h1>
+            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
+                <a href="/index.html" class="hover:text-indigo-300">בית</a>
+                <a href="/search.html" class="hover:text-indigo-300">פורטל חיפוש</a>
+                <a href="/articles/index.html" class="text-yellow-400 font-bold">פורטל מאמרים</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 flex-grow">
+        <nav class="text-sm mb-6 text-stone-500">
+            <a href="/index.html" class="hover:underline">בית</a> / <a href="/articles/index.html" class="hover:underline">מאמרים</a> / <span class="text-stone-800 font-semibold">משחק תפקידים שולחני</span>
+        </nav>
+
+        <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border border-stone-200">
+            <header class="mb-8 border-b border-stone-100 pb-8">
+                <div class="flex items-center gap-3 mb-4"><span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">שולחני (TTRPG)</span></div>
+                <h1 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">משחק תפקידים שולחני – מה זה?</h1>
+                <div class="text-sm text-stone-500 bg-stone-50 p-4 rounded-lg border border-stone-100">
+                    <p>הערה: כל המאמרים באתר מתבססים על מאגר המאמרים בקישור <a href="https://gate.rrpg.top/bibliography" target="_blank" class="text-indigo-600 hover:underline">gate.rrpg.top/bibliography</a>.</p>
+                </div>
+            </header>
+            <div class="prose">
+                <p>משחק תפקידים שולחני הוא אחת הצורות המרתקות ביותר של משחק חברתי – שילוב חד-פעמי של דמיון, חוקים וגמישות אנושית. משחק תפקידים שולחני הוא <a href="what-is-rpg.html" class="text-indigo-600 hover:underline">משחק תפקידים</a> שבניגוד למשחקי מחשב או לוח, שבהם ההתקדמות מוגדרת מראש, כאן העולם נבנה בזמן אמת מתוך שיחה בין המשתתפים. השחקנים מגלמים דמויות בדיוניות, מקבלים החלטות בשם אותן דמויות, ומתארים בקול את פעולותיהן. התוצאה היא לא סיפור שנכתב מראש, אלא עלילה חיה שמתעצבת מתוך בחירות, טעויות, הברקות ואינטראקציה אנושית.</p>
+                
+                <p>ברוב המשחקים יש דמות מרכזית אחת שאינה שחקן הקרויה "המנחה" או "שליט המבוך". תפקידו איננו לנצח את השחקנים או להתחרות בהם, אלא לנהל את העולם: לתאר מקומות, לגלם דמויות ללא שחקן, להציג אתגרים, ולהגיב להחלטות שהשחקנים מקבלים. אפשר לחשוב עליו כמספר סיפורים אינטראקטיבי וכבורר שמוודא שהמשחק זורם בצורה הוגנת. השחקנים מתארים מה הדמויות מנסות לעשות, והמנחה מתאר את התוצאות. חלק מהתוצאות נשענות על חוקים ברורים – למשל גלגול קובייה והשוואה ליכולת הדמות. וחלקן נקבעות על פי היגיון, טון המשחק או החלטה יצירתית של המנחה.</p>
+
+                <h2>מהלך המשחק</h2>
+                <p>לפני שמתחילים, כל שחקן בונה דמות. תהליך זה משלב רעיון נרטיבי ושאילת שאלות כגון: מי הדמות? מה ההיסטוריה שלה? מה מניע אותה? לצד מאפיינים מספריים המשפיעים על תוצאות המשחק. התכונות (כוח, זריזות, חוכמה ועוד) מייצגות יכולות בסיסיות, ואילו מיומנויות משקפות תחומי מומחיות כמו חקירה, טיפוס, דיפלומטיה או קסם. החוקים אינם שם כדי להכביד, אלא כדי לתת משמעות להצלחות וכישלונות: דמות חזקה תצליח לשבור דלת, דמות חכמה תפתור חידה, ודמות חסרת ניסיון עלולה להסתבך דווקא בפרטים הפשוטים ביותר. בחלק מהשיטות הדמויות מתפתחות לאורך זמן, צוברות ניסיון ומשפרות יכולות, מה שמחזק את תחושת ההתקדמות והמעורבות. עם זאת, יש גם משחקים שהתכונות והמיומנויות אינן חשובות, והמשחק שם דגש בסיפור ובחוויה הכוללת ופחות בחוקים נוקשים.</p>
+                
+                <p>מהלך המשחק מתרחש בדרך כלל במפגש חברתי מצומצם. אפשר לשחק הרפתקה חד-פעמית של כמה שעות או לבנות קמפיין מתמשך שנמשך חודשים ואף שנים! רבים מהמשחקים מתנהלים בצורה כזו שכל מפגש מציג אתגרים חדשים, אך הדמויות והעולם ממשיכים מאותו המקום. אין יעד סופי מוגדר, אין "ניצחון" במובן המסורתי והמטרה היא החוויה עצמה: שיתוף פעולה, בחירות מעניינות, פתרון בעיות, והדרך שבה הקבוצה יוצרת סיפור שלא היה קיים קודם.</p>
+                
+                <p>בפן המכני, משחקי תפקידים שולחניים מגוונים מאוד. חלקם מבוססי קוביות (כאשר קוביית 20 הדפנות של "מבוכים ודרקונים" הוא הדוגמה הקלאסית) וחלקם בכלל מוותרים על אקראיות ומשתמשים בהחלטה דרמטית או בהסכמה קבוצתית. יש שיטות סגורות המתמקדות בז'אנר מסוים, ויש שיטות אוניברסליות המאפשרות לשחק בכל עולם כמעט: פנטזיה, מדע בדיוני, היסטוריה חלופית, אימה פסיכולוגית או אפילו דרמה יומיומית בלי על-טבעי בכלל. במקביל, התפתחו גם שיטות ששוברות את המסגרת המסורתית ומחלקות את סמכויות ההנחיה בין השחקנים, מתוך רצון לייצר סיפור שוויוני יותר ולמנוע תלות בדמות מרכזית אחת.</p>
+
+                <h2>תרבות והיסטוריה בקצרה</h2>
+                <p>מבחינה תרבותית והיסטורית, המשחקים האלה התחילו כרעיון קטן בשנות ה-70, בהשראת משחקי מלחמה כמו Chainmail. משם הם צמחו מהתחביב הזניח של חנויות בוטיק לתעשייה שלמה. "מבוכים ודרקונים" הפך לשם נרדף לתחום. עם הזמן צצו ז'אנרים חדשים, קהילות עצמאיות, הוצאות קטנות, וגל של משחקים חדשניים ששמו דגש על סיפור, זהות ודילמות מוסריות במקום על טקטיקה וקרבות.</p>
+                <p>למרות התחרות ממשחקי מחשב ומסחר דיגיטלי, משחק התפקידים השולחני לא נעלם – להפך. הוא הפך לנגיש יותר, מגוון יותר, ופופולרי יותר בזכות הרשת. אבל מהות המשחק לא השתנתה: חבורה של אנשים, דף דמות, כמה קוביות והרבה דמיון.</p>
+
+                <h2>סיכום</h2>
+                <p>משחק תפקידים שולחני הוא לא משחק על מפלצות או על חוקים. הוא משחק על אנשים שמנסים ביחד ליצור משהו גדול יותר ממה שכל אחד מהם היה ממציא לבד. אין נוסחה אחת נכונה, רק הסכמה אחת פשוטה: אנחנו כאן כדי לספר סיפור, ולראות לאן הוא ייקח אותנו.</p>
+
+                <h2>משחקי תפקידים בישראל</h2>
+                <p>בישראל יש מעל ל-10,000 שחקנים פעילים, וכנראה שמספר גדול בהרבה של אנשים ששיחקו בעבר. למרות שנדמה שהצורה הנפוצה ביותר לשחק היום בארץ היא של ילדים ונערים בחוגים, רובם של האנשים משחקים בקבוצות ביתיות.</p>
+                <p>יש מספר קהילות גדולות של שחקני משחקי תפקידים: כאן בפונדק יש קהילה גדולה של שחקנים; העמותה למשחקי תפקידים מארגנת אירועים במהלך השנה; בפייסבוק יש את הקבוצה Israeli Roleplayers ויש עוד מספר קהילות מקומיות, כמו הקהילה החופשית בכפר-סבא.</p>
+                <p>יש מספר חנויות שעוסקות בתחום, הוותיקה היא פריק בתל-אביב, הממלכה בהוד השרון, מועדון המשחקים דריקס בחיפה ועוד. ניתן למצוא ספרים של משחקי תפקידים בחנויות צומת ספרים, סטימצקי ועוד.</p>
+                <p>כנס משחקי התפקידים הגדול בישראל הוא דרקוניקון בקיץ, כשגם יש מגוון של כנסים קטנים יותר וארועים בכנסי מד"ב כגון אייקון.</p>
+            </div>
+
+            <!-- About Site Section -->
+            <div class="mt-12 pt-8 border-t-2 border-indigo-100 bg-indigo-50 p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-indigo-900 mb-4">על פרויקט "שער להרפתקה"</h3>
+                <p class="text-stone-700 mb-4">
+                    ״שער להרפתקה״ הוא פרויקט שנועד לעשות סוף לבלגן של מתחילים: במקום לחפש בפייסבוק, בגוגל ובשמועות – כל המידע מרוכז במקום אחד.
+                    האתר כולל מדריך מלא למי שנכנס לתחום בפעם הראשונה: מה זה משחקי תפקידים, איך מתחילים, אילו שיטות מומלצות, איך מוצאים קבוצה, ואיפה יש חוגים וחנויות בכל הארץ.
+                </p>
+                <div class="mb-6">
+                    <strong class="block text-lg text-indigo-800 mb-2">באתר תמצאו:</strong>
+                    <ul class="list-disc list-inside text-stone-700 space-y-1">
+                        <li>מדריך למתחילים בעברית.</li>
+                        <li>רשימת חוגים לילדים ונוער.</li>
+                        <li>קישורים לקהילות, כנסים ואירועים.</li>
+                        <li>עסקים, חנויות ומקומות לשחק בהם.</li>
+                        <li>עדכונים שוטפים דרך ערוץ הוואטסאפ ״דואר עוף-חול״.</li>
+                        <li>מאגר מאמרים לחדשים בתחביב.</li>
+                    </ul>
+                </div>
+                <p class="text-lg font-semibold text-indigo-900 mb-4">אם אתם רוצים להתחיל לשחק בלי ללכת לאיבוד – זה המקום להתחיל ממנו.</p>
+                <a href="/index.html" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    היכנסו לשער להרפתקה
+                </a>
+            </div>
+        </article>
+    </main>
+    <footer class="text-center py-6 mt-auto bg-stone-200 border-t border-stone-300"><p class="text-base text-stone-600">נוצר באהבה ע"י <a href="https://rrpg.top" class="text-indigo-600 hover:underline">ראובן צירל-מנדלוביץ'</a>.</p></footer>
+</body>
+</html>
