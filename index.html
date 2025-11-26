@@ -271,22 +271,11 @@
             <p class="text-xl text-center text-stone-600 max-w-2xl mx-auto mb-8">
                 מצאתם טעות? רוצים להוסיף את העסק או הקהילה שלכם? יש לכם הצעה לשיפור? נשמח לשמוע!
             </p>
-            <div class="flex justify-center space-x-4 space-x-reverse mb-8 flex-wrap">
-                <button class="contact-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-purple-100 mb-2 text-base" data-platform="gmail">שלחו מייל דרך Gmail</button>
-                <button class="contact-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-purple-100 mb-2 text-base" data-platform="outlook">שלחו מייל דרך Outlook</button>
-                <button class="contact-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-purple-100 mb-2 text-base" data-platform="other">פלטפורמה אחרת</button>
-            </div>
-            <div id="contact-content" class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg border border-stone-200 text-right">
-                <div id="gmail-outlook-form">
-                    <textarea id="email-body-textarea" class="w-full p-3 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4 h-32 text-base" placeholder="כתבו כאן את תוכן המייל..."></textarea>
-                    <button id="send-email-btn" class="bg-purple-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-purple-700 transition-colors duration-200 text-base">שלח מייל</button>
-                </div>
-                <div id="other-email-info" class="hidden text-center">
-                    <p class="text-xl text-stone-700">
+            <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg border border-stone-200 text-right">
+                    <p class="text-center text-xl text-stone-700">
                         ניתן לשלוח מייל ישירות לכתובת:
                         <a href="mailto:gate@rrpg.top?subject=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%91%D7%A0%D7%95%D7%A9%D7%90%20%D7%9C%D7%90%D7%AA%D7%A8%20%D7%A9%D7%A2%D7%A8%20%D7%94%D7%A8%D7%A4%D7%AA%D7%A7%D7%94" class="text-purple-600 hover:underline font-bold">gate@rrpg.top</a>
                     </p>
-                </div>
             </div>
         </section>
     </main>
@@ -608,39 +597,6 @@
             }
         });
 
-        // --- Contact Section Logic ---
-        const contactButtons = document.querySelectorAll('.contact-btn');
-        const gmailOutlookForm = document.getElementById('gmail-outlook-form');
-        const otherEmailInfo = document.getElementById('other-email-info');
-        const emailBodyTextarea = document.getElementById('email-body-textarea');
-        const sendEmailBtn = document.getElementById('send-email-btn');
-        let currentContactPlatform = 'gmail';
-
-        function updateContactForm() {
-            contactButtons.forEach(btn => btn.classList.remove('active', 'bg-purple-600', 'text-white'));
-            document.querySelector(`.contact-btn[data-platform="${currentContactPlatform}"]`).classList.add('active', 'bg-purple-600', 'text-white');
-            gmailOutlookForm.classList.toggle('hidden', currentContactPlatform === 'other');
-            otherEmailInfo.classList.toggle('hidden', currentContactPlatform !== 'other');
-        }
-        contactButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                currentContactPlatform = button.dataset.platform;
-                updateContactForm();
-            });
-        });
-        sendEmailBtn.addEventListener('click', () => {
-            const subject = "פנייה בנושא לאתר שער הרפתקה";
-            const recipient = "gate@rrpg.top";
-            const body = emailBodyTextarea.value;
-            let emailLink = '';
-            if (currentContactPlatform === 'gmail') {
-                emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            } else if (currentContactPlatform === 'outlook') {
-                emailLink = `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(recipient)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            }
-            window.open(emailLink, '_blank');
-        });
-        updateContactForm();
     });
     </script>
 </body>
