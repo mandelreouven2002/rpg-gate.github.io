@@ -3,21 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>פורטל מאמרים - שער להרפתקה</title>
+    
+    <!-- SEO: Optimized Title & Description -->
+    <title>מדריכים ומאמרים למשחקי תפקידים | שער להרפתקה</title>
+    <meta name="description" content="מאגר ידע מקיף לשחקני תפקידים: מדריכים למתחילים, הסברים על מבוכים ודרקונים (D&D), לארפ (LARP), משחקי תפקידים לילדים וטיפים למנחים. כל המידע במקום אחד.">
+    <meta name="keywords" content="מאמרים משחקי תפקידים, מדריך מבוכים ודרקונים, איך מתחילים לשחק D&D, לארפ, משחקי תפקידים לילדים, קהילת משחקי תפקידים, מדריכים למנחים, משחקי שולחן">
+    <meta name="author" content="ראובן צירל-מנדלוביץ'">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#312e81">
+
+    <!-- SEO: Canonical -->
+    <link rel="canonical" href="https://gate.rrpg.top/articles/index.html">
+
+    <!-- Social Media Tags (Open Graph) -->
+    <meta property="og:site_name" content="שער להרפתקה">
+    <meta property="og:title" content="פורטל מאמרים ומדריכים - שער להרפתקה">
+    <meta property="og:description" content="העמיקו את הידע שלכם: מדריכים למתחילים, סקירות על הקהילה, וטיפים לשחקנים ומנחים.">
+    <meta property="og:url" content="https://gate.rrpg.top/articles/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:image" content="https://gate.rrpg.top/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="פורטל מאמרים - שער להרפתקה">
+    <meta name="twitter:description" content="מאגר ידע מקיף לשחקני תפקידים בישראל.">
+    <meta name="twitter:image" content="https://gate.rrpg.top/og-image.jpg">
+
     <link rel="icon" type="image/x-icon" href="/rpg-game.png">
 
-    <!-- Meta Tags -->
-    <meta name="description" content="מאמרים, מדריכים וכתבות תוכן על עולם משחקי התפקידים, מבוכים ודרקונים ועוד.">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "בית",
+          "item": "https://gate.rrpg.top/"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "מאמרים",
+          "item": "https://gate.rrpg.top/articles/index.html"
+        }]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "מאמרים ומדריכים למשחקי תפקידים",
+        "description": "אוסף מאמרים בנושאי משחקי תפקידים שולחניים, לארפ, קהילה וחינוך.",
+        "url": "https://gate.rrpg.top/articles/index.html",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://gate.rrpg.top/articles/what-is-rpg.html",
+              "name": "מה זה משחקי תפקידים?"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://gate.rrpg.top/articles/my-first-game.html",
+              "name": "המשחק הראשון שלי"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://gate.rrpg.top/articles/tabletop-rpg.html",
+              "name": "משחק תפקידים שולחני"
+            }
+          ]
+        }
+      }
+    ]
+    </script>
     
     <style>
         body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
-        .article-card { transition: all 0.3s ease; border-top: 4px solid transparent; }
-        .article-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); border-top-color: #4f46e5; }
+        
+        /* Card Styles - Matching Main Site */
+        .card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        
         #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
     </style>
 </head>
@@ -38,46 +118,44 @@
                 </h1>
             </div>
             
-            <!-- Navigation (Unified for Desktop & Mobile) -->
+            <!-- Navigation -->
             <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-3 md:border-0 md:pt-0">
                 <div class="flex items-center gap-4 md:gap-6">
                     <a href="/index.html" class="hover:text-indigo-300 transition-colors">בית</a>
                     <a href="/search.html" class="hover:text-indigo-300 transition-colors">פורטל חיפוש</a>
-                    <a href="/articles/index.html" class="text-yellow-400 font-bold hover:text-indigo-300 transition-colors">פורטל מאמרים</a>
+                    <a href="/articles/index.html" class="text-yellow-400 font-bold transition-colors">פורטל מאמרים</a>
                 </div>
                 
-                <!-- Separator (Visible on desktop) -->
                 <span class="hidden md:block w-px h-5 bg-indigo-500/50 mx-1"></span>
                 
-                <!-- External Link -->
-                <a href="https://roleplay.top" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
+                <a href="https://roleplay.org.il" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
                     <span>אית״ם</span>
                     <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </nav>
         </div>
     </header>
-    
+
     <main class="container mx-auto p-4 md:p-8 flex-grow">
         
         <!-- HEADER -->
         <section class="text-center mb-12 pt-6">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">מאמרים ומדריכים</h2>
-            <p class="max-w-2xl mx-auto text-xl text-stone-600">
-                העמיקו את הידע שלכם, למדו שיטות חדשות וקבלו השראה להרפתקה הבאה.
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">מאמרים ומדריכים</h1>
+            <p class="max-w-2xl mx-auto text-xl text-stone-600 mb-6">
+                העמיקו את הידע שלכם, למדו על משחקי תפקידים וקבלו השראה להרפתקה הבאה.
             </p>
 
-                <div class="text-sm text-stone-500 bg-stone-50 p-4 rounded-lg border border-stone-100">
-                    <p>הערה: כל המאמרים באתר מתבססים על מאגר המאמרים  <a href="https://gate.roleplay.top/articles/bibliography" target="_blank" class="text-indigo-600 hover:underline">בדף הבא.</a></p>
-                </div>
+            <div class="text-sm text-stone-500 bg-stone-50 p-3 rounded-lg border border-stone-100 inline-block shadow-sm">
+                <p>הערה: כל המאמרים באתר מתבססים על מאגר המאמרים <a href="bibliography.html" class="text-indigo-600 hover:underline font-semibold">בדף הבא.</a></p>
+            </div>
         </section>
 
         <!-- ARTICLES GRID -->
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <!-- Article 1 -->
-            <article class="article-card bg-white rounded-xl overflow-hidden shadow-sm border border-stone-200 flex flex-col h-full">
-                <div class="p-6 flex flex-col flex-grow">
+            <article class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-indigo-400 h-full flex flex-col">
+                <div class="flex flex-col flex-grow">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">מבוא</span>
                     </div>
@@ -85,15 +163,15 @@
                     <p class="text-stone-600 mb-6 flex-grow">
                         המדריך הבסיסי שמסביר את הקונספט של כניסה לנעלי דמות אחרת, יצירת סיפור משותף וההבדל בין משחק תפקידים למשחקים אחרים.
                     </p>
-                    <a href="what-is-rpg.html" class="text-indigo-600 font-bold hover:underline flex items-center">
-                        קראו עוד <span class="mr-2">&larr;</span>
+                    <a href="what-is-rpg.html" class="text-indigo-600 font-bold hover:underline flex items-center mt-auto">
+                        קראו עוד
                     </a>
                 </div>
             </article>
 
             <!-- Article 2 -->
-            <article class="article-card bg-white rounded-xl overflow-hidden shadow-sm border border-stone-200 flex flex-col h-full">
-                <div class="p-6 flex flex-col flex-grow">
+            <article class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-blue-400 h-full flex flex-col">
+                <div class="flex flex-col flex-grow">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">שולחני (TTRPG)</span>
                     </div>
@@ -101,15 +179,15 @@
                     <p class="text-stone-600 mb-6 flex-grow">
                         איך משחקים עם דף, עפרון וקוביות? צלילה לעולם של מבוכים ודרקונים ושיטות דומות, ואיך הדמיון הופך למציאות סביב השולחן.
                     </p>
-                    <a href="tabletop-rpg.html" class="text-indigo-600 font-bold hover:underline flex items-center">
-                        קראו עוד <span class="mr-2">&larr;</span>
+                    <a href="tabletop-rpg.html" class="text-indigo-600 font-bold hover:underline flex items-center mt-auto">
+                        קראו עוד
                     </a>
                 </div>
             </article>
 
             <!-- Article 3 -->
-            <article class="article-card bg-white rounded-xl overflow-hidden shadow-sm border border-stone-200 flex flex-col h-full">
-                <div class="p-6 flex flex-col flex-grow">
+            <article class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-teal-400 h-full flex flex-col">
+                <div class="flex flex-col flex-grow">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded">משחק חי (LARP)</span>
                     </div>
@@ -117,15 +195,15 @@
                     <p class="text-stone-600 mb-6 flex-grow">
                         כשיוצאים מהשולחן ולובשים את התחפושת: מה זה לארפ (LARP), איך זה עובד, ולמה אנשים רצים ביער עם חרבות ספוג?
                     </p>
-                    <a href="larp-explained.html" class="text-indigo-600 font-bold hover:underline flex items-center">
-                        קראו עוד <span class="mr-2">&larr;</span>
+                    <a href="larp-explained.html" class="text-indigo-600 font-bold hover:underline flex items-center mt-auto">
+                        קראו עוד
                     </a>
                 </div>
             </article>
 
             <!-- Article 4 -->
-            <article class="article-card bg-white rounded-xl overflow-hidden shadow-sm border border-stone-200 flex flex-col h-full">
-                <div class="p-6 flex flex-col flex-grow">
+            <article class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-amber-400 h-full flex flex-col">
+                <div class="flex flex-col flex-grow">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded">הקהילה</span>
                     </div>
@@ -133,15 +211,15 @@
                     <p class="text-stone-600 mb-6 flex-grow">
                         על הקהילה הישראלית למשחקי תפקידים: ההיסטוריה, הכנסים הגדולים (אייקון, דרקוניקון), ואיך הסצנה התפתחה בישראל לאורך השנים.
                     </p>
-                    <a href="rpg-in-israel.html" class="text-indigo-600 font-bold hover:underline flex items-center">
-                        קראו עוד <span class="mr-2">&larr;</span>
+                    <a href="rpg-in-israel.html" class="text-indigo-600 font-bold hover:underline flex items-center mt-auto">
+                        קראו עוד
                     </a>
                 </div>
             </article>
 
             <!-- Article 5 -->
-            <article class="article-card bg-white rounded-xl overflow-hidden shadow-sm border border-stone-200 flex flex-col h-full">
-                <div class="p-6 flex flex-col flex-grow">
+            <article class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-pink-400 h-full flex flex-col">
+                <div class="flex flex-col flex-grow">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded">חינוך וילדים</span>
                     </div>
@@ -149,8 +227,8 @@
                     <p class="text-stone-600 mb-6 flex-grow">
                         היתרונות שמאחורי הדרקונים: איך משחקי תפקידים מפתחים כישורים חברתיים, יצירתיות ופתרון בעיות אצל ילדים ונוער.
                     </p>
-                    <a href="rpg-for-kids.html" class="text-indigo-600 font-bold hover:underline flex items-center">
-                        קראו עוד <span class="mr-2">&larr;</span>
+                    <a href="rpg-for-kids.html" class="text-indigo-600 font-bold hover:underline flex items-center mt-auto">
+                        קראו עוד
                     </a>
                 </div>
             </article>
