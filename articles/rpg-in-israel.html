@@ -20,13 +20,21 @@
 <body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
     <div id="background-overlay"></div>
 
+    <!-- GLOBAL SITE NAVIGATION -->
     <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold text-white"><a href="/index.html" class="flex items-center gap-2"><span>⚔️</span> שער להרפתקה</a></h1>
-            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
-                <a href="/index.html" class="hover:text-indigo-300">בית</a>
-                <a href="/search.html" class="hover:text-indigo-300">פורטל חיפוש</a>
-                <a href="/articles/index.html" class="text-yellow-400 font-bold">פורטל מאמרים</a>
+        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <!-- Logo area -->
+            <div class="w-full md:w-auto flex justify-center md:justify-start">
+                <h1 class="text-xl md:text-2xl font-bold text-white">
+                    <a href="/index.html" class="flex items-center gap-2"><span>⚔️</span> שער להרפתקה</a>
+                </h1>
+            </div>
+            
+            <!-- Navigation (Unified for Desktop & Mobile) -->
+            <nav class="flex w-full md:w-auto justify-center md:justify-end space-x-reverse space-x-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-2 md:border-0 md:pt-0">
+                <a href="/index.html" class="hover:text-indigo-300 transition-colors">בית</a>
+                <a href="/search.html" class="hover:text-indigo-300 transition-colors">פורטל חיפוש</a>
+                <a href="/articles/index.html" class="text-yellow-400 font-bold transition-colors">פורטל מאמרים</a>
             </nav>
         </div>
     </header>
