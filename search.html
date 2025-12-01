@@ -3,18 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>פורטל חיפוש - שער להרפתקה</title>
+    
+    <!-- SEO: Optimized Title & Description -->
+    <title>פורטל חיפוש משחקי תפקידים | שער להרפתקה - קבוצות, חוגים וחנויות</title>
+    <meta name="description" content="מחפשים קבוצת מבוכים ודרקונים? חוג לילדים? או חנות קוביות קרובה? פורטל החיפוש של שער להרפתקה מרכז את כל המידע על קהילת משחקי התפקידים בישראל במקום אחד.">
+    <meta name="keywords" content="חיפוש קבוצה מבוכים ודרקונים, חוגי מבוכים ודרקונים, חנויות משחקים, כנסים, קהילות משחקי תפקידים, D&D ישראל, פאת'פיינדר, לארפ, חיפוש שחקנים">
+    <meta name="author" content="ראובן צירל-מנדלוביץ'">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#312e81">
+
+    <!-- SEO: Canonical -->
+    <link rel="canonical" href="https://gate.rrpg.top/search.html">
+
+    <!-- Social Media Tags (Open Graph) -->
+    <meta property="og:site_name" content="שער להרפתקה">
+    <meta property="og:title" content="פורטל החיפוש - שער להרפתקה">
+    <meta property="og:description" content="המקום למצוא את ההרפתקה הבאה שלכם: קבוצות, חוגים, כנסים וחנויות בכל הארץ.">
+    <meta property="og:url" content="https://gate.rrpg.top/search.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:image" content="https://gate.rrpg.top/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="פורטל החיפוש למשחקי תפקידים בישראל">
+    <meta name="twitter:description" content="מצאו קבוצות, חוגים ואירועים בקלות.">
+    <meta name="twitter:image" content="https://gate.rrpg.top/og-image.jpg">
+
     <link rel="icon" type="image/x-icon" href="/rpg-game.png">
 
-    <!-- Meta Tags -->
-    <meta name="description" content="מנוע החיפוש של קהילת משחקי התפקידים: מצאו קבוצות, חנויות, כנסים, חוגים וארגונים בכל רחבי הארץ.">
-    <meta name="robots" content="index, follow">
-
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "פורטל חיפוש - שער להרפתקה",
+      "description": "מנוע חיפוש ייעודי לקהילת משחקי התפקידים בישראל",
+      "url": "https://gate.rrpg.top/search.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "בית",
+          "item": "https://gate.rrpg.top/"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "פורטל חיפוש",
+          "item": "https://gate.rrpg.top/search.html"
+        }]
+      }
+    }
+    </script>
+
     <style>
         body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
         
@@ -65,13 +115,14 @@
         
         <!-- SEARCH HEADER SECTION -->
         <section class="text-center mb-10 pt-6">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">פורטל החיפוש</h2>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">פורטל החיפוש</h1>
             <p class="max-w-2xl mx-auto text-xl text-stone-600 mb-8">
                 חפשו קבוצות, חנויות, כנסים ופעילויות בכל הארץ במקום אחד מרוכז.
             </p>
 
             <!-- Search Input -->
             <div class="max-w-2xl mx-auto mb-8 relative">
+                <label for="main-search-input" class="sr-only">חיפוש חופשי</label>
                 <input type="text" id="main-search-input" 
                        placeholder="מה אתם מחפשים? (שם, עיר, סוג משחק...)" 
                        class="w-full p-4 pr-12 text-lg border-2 border-indigo-200 rounded-full shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all">
