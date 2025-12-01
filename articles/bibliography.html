@@ -1,19 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מקורות וביבליוגרפיה - שער להרפתקה</title>
+    
+    <!-- SEO: Title & Description -->
+    <title>מקורות וביבליוגרפיה למשחקי תפקידים | שער להרפתקה</title>
+    <meta name="description" content="רשימת המקורות, המחקרים והמאמרים עליהם מתבסס המידע באתר שער להרפתקה. מצאו מקורות מידע אמינים בנושא מבוכים ודרקונים, לארפ, טיפול במשחק והקהילה הישראלית.">
+    <meta name="keywords" content="ביבליוגרפיה משחקי תפקידים, מקורות מידע D&D, מחקר משחקי תפקידים, קישורים מומלצים, קהילת משחקי תפקידים, ויקיפדיה משחקי תפקידים">
+    <meta name="author" content="ראובן צירל-מנדלוביץ'">
+    
+    <!-- SEO: Canonical & Robots -->
+    <link rel="canonical" href="https://gate.rrpg.top/articles/bibliography.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Social Media Tags (Open Graph) -->
+    <meta property="og:site_name" content="שער להרפתקה">
+    <meta property="og:title" content="מקורות וביבליוגרפיה - שער להרפתקה">
+    <meta property="og:description" content="הבסיס המקצועי שלנו: רשימת המקורות והמאמרים עליהם מתבסס התוכן באתר.">
+    <meta property="og:url" content="https://gate.rrpg.top/articles/bibliography.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:image" content="https://gate.rrpg.top/og-image.jpg">
+
     <link rel="icon" type="image/x-icon" href="/rpg-game.png">
     
+    <!-- Scripts & Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- JSON-LD Schema: Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "בית",
+        "item": "https://gate.rrpg.top/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "מאמרים",
+        "item": "https://gate.rrpg.top/articles/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "מקורות וביבליוגרפיה"
+      }]
+    }
+    </script>
+    
     <style>
         body { font-family: 'Assistant', sans-serif; }
-        .link-card { transition: all 0.2s ease-in-out; }
-        .link-card:hover { transform: translateX(-5px); border-right-color: #4f46e5; background-color: #f8fafc; }
         #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
     </style>
 </head>
@@ -22,19 +62,33 @@
 
     <!-- GLOBAL SITE NAVIGATION -->
     <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
-        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
             <!-- Logo area -->
             <div class="w-full md:w-auto flex justify-center md:justify-start">
                 <h1 class="text-xl md:text-2xl font-bold text-white">
-                    <a href="/index.html" class="flex items-center gap-2"><span>⚔️</span> שער להרפתקה</a>
+                    <a href="/index.html" class="flex items-center gap-2">
+                        <img src="/rpg-game.png" alt="לוגו" class="w-8 h-8">
+                        שער להרפתקה
+                    </a>
                 </h1>
             </div>
             
             <!-- Navigation (Unified for Desktop & Mobile) -->
-            <nav class="flex w-full md:w-auto justify-center md:justify-end space-x-reverse space-x-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-2 md:border-0 md:pt-0">
-                <a href="/index.html" class="hover:text-indigo-300 transition-colors">בית</a>
-                <a href="/search.html" class="hover:text-indigo-300 transition-colors">פורטל חיפוש</a>
-                <a href="/articles/index.html" class="text-yellow-400 font-bold transition-colors">פורטל מאמרים</a>
+            <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-3 md:border-0 md:pt-0">
+                <div class="flex items-center gap-4 md:gap-6">
+                    <a href="/index.html" class="hover:text-indigo-300 transition-colors">בית</a>
+                    <a href="/search.html" class="hover:text-indigo-300 transition-colors">פורטל חיפוש</a>
+                    <a href="/articles/index.html" class="text-yellow-400 font-bold hover:text-indigo-300 transition-colors">פורטל מאמרים</a>
+                </div>
+                
+                <!-- Separator (Visible on desktop) -->
+                <span class="hidden md:block w-px h-5 bg-indigo-500/50 mx-1"></span>
+                
+                <!-- External Link -->
+                <a href="https://roleplay.org.il" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
+                    <span>אית״ם</span>
+                    <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
             </nav>
         </div>
     </header>
@@ -46,72 +100,38 @@
             <span class="text-stone-800 font-semibold">מקורות וביבליוגרפיה</span>
         </nav>
 
-        <section class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-stone-200">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">מקורות וביבליוגרפיה</h2>
-                <p class="text-xl text-stone-600">
-                    התוכן באתר "שער להרפתקה" נאסף ונערך בקפידה בהתבסס על ידע קהילתי ומקורות מידע מובילים בתחום.
-                    לפניכם רשימת המקורות ששימשו לכתיבת המאמרים והמדריכים באתר.
-                </p>
+        <section class="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg border border-stone-200">
+            <div class="mb-6">
+                <h1 class="text-2xl md:text-3xl font-bold text-stone-900 mb-2">מקורות וביבליוגרפיה</h1>
+                <p class="text-stone-600">רשימת המקורות ששימשו לכתיבת תוכן המאמרים באתר:</p>
             </div>
 
-            <div class="space-y-4">
-                <!-- Link 1 -->
-                <a href="https://2025.iconfestival.org.il/about/roleplaying-games/" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">פסטיבל אייקון 2025 - אודות משחקי תפקידים</h3>
-                    <p class="text-stone-600 text-sm">מקור מרכזי להגדרות ומידע על משחקי תפקידים בישראל.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">https://2025.iconfestival.org.il/about/roleplaying-games/</div>
-                </a>
-
-                <!-- Link 2 -->
-                <a href="https://www.pundak.co.il/threads/%D7%9E%D7%A9%D7%97%D7%A7%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93%D7%99%D7%9D-%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%9C%D7%90.60581/" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">הפונדק - משחקי תפקידים: המדריך המלא</h3>
-                    <p class="text-stone-600 text-sm">מדריך מקיף מתוך קהילת הפונדק הוותיקה.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">pundak.co.il/threads/...</div>
-                </a>
-
-                <!-- Link 3 -->
-                <a href="https://wisegoblin.com/%d7%97%d7%95%d7%92%d7%99-%d7%9e%d7%91%d7%95%d7%9b%d7%99%d7%9d-%d7%95%d7%93%d7%a8%d7%a7%d7%95%d7%a0%d7%99%d7%9d/" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">הגובלין החכם - חוגי מבוכים ודרקונים</h3>
-                    <p class="text-stone-600 text-sm">מידע על חוגים, הפעלות וערך חינוכי.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">wisegoblin.com/...</div>
-                </a>
-
-                <!-- Link 4 -->
-                <a href="https://www.tipulpsychology.co.il/therapy/therapeutic-role-playing.html" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">טיפול פסיכולוגי - משחקי תפקידים טיפוליים</h3>
-                    <p class="text-stone-600 text-sm">מאמר מקצועי על ההיבטים הטיפוליים והפסיכולוגיים של משחקי תפקידים.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">tipulpsychology.co.il/...</div>
-                </a>
-
-                <!-- Link 5 -->
-                <a href="https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%97%D7%A7_%D7%AA%D7%A4%D7%A7%D7%99%D7%93%D7%99%D7%9D_%D7%A9%D7%95%D7%9C%D7%97%D7%A0%D7%99" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">ויקיפדיה - משחק תפקידים שולחני</h3>
-                    <p class="text-stone-600 text-sm">ערך אנציקלופדי על ההיסטוריה והמהות של משחקים שולחניים.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">he.wikipedia.org/...</div>
-                </a>
-
-                <!-- Link 6 -->
-                <a href="https://he.wikipedia.org/wiki/%D7%9C%D7%90%D7%A8%D7%A4" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">ויקיפדיה - לארפ (LARP)</h3>
-                    <p class="text-stone-600 text-sm">ערך אנציקלופדי על משחקי תפקידים חיים.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">he.wikipedia.org/wiki/לארפ</div>
-                </a>
-
-                <!-- Link 7 -->
-                <a href="https://he.wikipedia.org/wiki/%D7%98%D7%99%D7%A4%D7%95%D7%9C_%D7%91%D7%9E%D7%A9%D7%97%D7%A7" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">ויקיפדיה - טיפול במשחק</h3>
-                    <p class="text-stone-600 text-sm">מידע על השימוש במשחק ככלי טיפולי.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">he.wikipedia.org/wiki/טיפול_במשחק</div>
-                </a>
-
-                <!-- Link 8 -->
-                <a href="https://gate.rrpg.top/" target="_blank" class="link-card block p-4 border-r-4 border-indigo-200 bg-white rounded shadow-sm">
-                    <h3 class="text-lg font-bold text-indigo-700">שער להרפתקה - דף הבית</h3>
-                    <p class="text-stone-600 text-sm">הפורטל המרכזי המאגד את המידע.</p>
-                    <div class="text-xs text-stone-400 mt-1 ltr font-mono">gate.rrpg.top</div>
-                </a>
-            </div>
+            <ul class="list-disc list-inside space-y-3 text-lg">
+                <li>
+                    <a href="https://2025.iconfestival.org.il/about/roleplaying-games/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:text-indigo-900 hover:underline">פסטיבל אייקון 2025 - אודות משחקי תפקידים</a>
+                </li>
+                <li>
+                    <a href="https://www.pundak.co.il/threads/%D7%9E%D7%A9%D7%97%D7%A7%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93%D7%99%D7%9D-%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%9C%D7%90.60581/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:text-indigo-900 hover:underline">הפונדק - משחקי תפקידים: המדריך המלא</a>
+                </li>
+                <li>
+                    <a href="https://wisegoblin.com/%d7%97%d7%95%d7%92%d7%99-%d7%9e%d7%91%d7%95%d7%9b%d7%99%d7%9d-%d7%95%d7%93%d7%a8%d7%a7%d7%95%d7%a0%d7%99%d7%9d/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:text-indigo-900 hover:underline">הגובלין החכם - חוגי מבוכים ודרקונים</a>
+                </li>
+                <li>
+                    <a href="https://www.tipulpsychology.co.il/therapy/therapeutic-role-playing.html" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:text-indigo-900 hover:underline">טיפול פסיכולוגי - משחקי תפקידים טיפוליים</a>
+                </li>
+                <li>
+                    <a href="https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%97%D7%A7_%D7%AA%D7%A4%D7%A7%D7%99%D7%93%D7%99%D7%9D_%D7%A9%D7%95%D7%9C%D7%97%D7%A0%D7%99" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:text-indigo-900 hover:underline">ויקיפדיה - משחק תפקידים שולחני</a>
+                </li>
+                <li>
+                    <a href="https://he.wikipedia.org/wiki/%D7%9C%D7%90%D7%A8%D7%A4" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:text-indigo-900 hover:underline">ויקיפדיה - לארפ (LARP)</a>
+                </li>
+                <li>
+                    <a href="https://he.wikipedia.org/wiki/%D7%98%D7%99%D7%A4%D7%95%D7%9C_%D7%91%D7%9E%D7%A9%D7%97%D7%A7" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:text-indigo-900 hover:underline">ויקיפדיה - טיפול במשחק</a>
+                </li>
+                <li>
+                    <a href="https://gate.rrpg.top/" target="_blank" class="text-indigo-700 hover:text-indigo-900 hover:underline">שער להרפתקה - דף הבית</a>
+                </li>
+            </ul>
         </section>
     </main>
 
