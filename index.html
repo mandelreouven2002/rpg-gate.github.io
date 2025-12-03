@@ -207,30 +207,47 @@
     <main class="container mx-auto p-4 md:p-8">
 
         <!-- HERO SECTION -->
-        <section id="intro" class="text-center mb-16 pt-10">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 text-stone-900">יוצאים להרפתקה הראשונה שלכם</h1>
-            <p class="max-w-3xl mx-auto text-xl text-stone-600 mb-12">
-                עולם משחקי התפקידים מחכה לכם. הנה הדרך הפשוטה והמודרכת להתחיל:
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <a href="#intro-what-is" class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 text-center hover:border-indigo-400">
-                    <div class="text-6xl mb-3">🤔</div>
-                    <h3 class="text-2xl font-bold mb-2 text-indigo-700">צעד 1: מה זה בכלל?</h3>
-                    <p class="text-lg text-stone-600">גלו מהם משחקי תפקידים, איך הם עובדים, ולמה זה התחביב הטוב בעולם.</p>
+        <section id="intro" class="relative mb-14 pt-10">
+            <div class="absolute inset-0 -z-10 from-indigo-50 via-slate-50 to-transparent opacity-90"></div>
+            
+            <div class="grid md:grid-cols-[3fr,2fr] gap-10 items-center">
+                <div class="text-center md:text-right">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-slate-900 tracking-tight">
+                        יוצאים להרפתקה הראשונה שלכם
+                    </h1>
+                    <p class="max-w-2xl mx-auto md:mx-0 text-lg md:text-xl text-slate-600 mb-3">
+                        עולם משחקי התפקידים מחכה לכם. כאן תמצאו את הדרך הפשוטה, המסודרת והבטוחה להתחיל – צעד-אחר-צעד: להבין מה זה, לבחור משחק, ולמצוא איפה משחקים.
+                    </p>
+                    <p class="text-slate-500">
+                        האתר מיועד לשחקנים חדשים, להורים מבולבלים, ולמי ששמע על "משחקי תפקידים" או "מבוכים ודרקונים" ורוצה להבין סוף סוף להכנס גם לתחביב.
+                    </p>
+                </div>
+
+                <!-- Graphic/Image Side -->
+                <div class="hidden md:flex justify-center items-center">
+                    <img src="/full-logo.png" alt="לוגו מלא - שער להרפתקה" class="w-full max-w-sm h-auto drop-shadow-xl hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+
+            <!-- Three step cards (Navigation) -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-16">
+                <a href="#intro-what-is" class="card card-hover bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-4xl mb-3">🤔</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2 text-indigo-700">צעד 1: מה זה בכלל?</h3>
+                    <p class="text-base md:text-lg text-slate-600">גלו מהם משחקי תפקידים, איך הם עובדים, ולמה זה התחביב החברתי הכי טוב בעולם.</p>
                 </a>
-                <a href="#systems" class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 text-center hover:border-indigo-400">
-                    <div class="text-6xl mb-3">🎲</div>
-                    <h3 class="text-2xl font-bold mb-2 text-indigo-700">צעד 2: בוחרים משחק</h3>
-                    <p class="text-lg text-stone-600">לכל הרפתקה יש חוקים. מצאו את שיטת המשחק שמתאימה בדיוק לכם.</p>
+                <a href="#systems" class="card card-hover bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-4xl mb-3">🎲</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2 text-indigo-700">צעד 2: בוחרים משחק</h3>
+                    <p class="text-base md:text-lg text-slate-600">מבוכים ודרקונים, חרבות וכשפים או אולי משהו אחר? נעשה לכם סדר.</p>
                 </a>
-                <a href="#community" class="card bg-white p-6 rounded-lg shadow-lg border border-stone-200 text-center hover:border-indigo-400">
-                    <div class="text-6xl mb-3">🤝</div>
-                    <h3 class="text-2xl font-bold mb-2 text-indigo-700">צעד 3: מצטרפים לקהילה</h3>
-                    <p class="text-lg text-stone-600">מצאו קבוצה לשחק בה, חנויות, חוגים, כנסים ומקומות שיעזרו לכם להתחיל.</p>
+                <a href="#community" class="card card-hover bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-4xl mb-3">🤝</div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-2 text-indigo-700">צעד 3: מצטרפים לקהילה</h3>
+                    <p class="text-base md:text-lg text-slate-600">חנויות, כנסים, קהילות אונליין וחוגים לילדים – הכל במקום אחד.</p>
                 </a>
             </div>
         </section>
-
         <!-- WHAT IS RPG? SECTION -->
         <section id="intro-what-is" class="mb-16 pt-10 scroll-mt-32">
             <div class="max-w-4xl mx-auto text-center"> 
