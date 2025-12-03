@@ -515,11 +515,9 @@
             return `
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-indigo-400 h-full flex flex-col">
                     <div class="flex flex-col items-start mb-2">
-                         <div class="flex flex-wrap w-full justify-between items-start">
-                             <h3 class="text-xl font-bold text-stone-800 mb-2">${item.name}</h3>
-                         </div>
-                         <div class="flex flex-wrap gap-2 mb-2">
-                             ${badgesHtml}
+                         <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-stone-800 mb-2">${item.name}</h3>
+                            ${badgesHtml}
                          </div>
                     </div>
                     ${item.location ? `<p class="text-base text-stone-500 mb-3 font-semibold">📍 ${item.location}</p>` : ''}
