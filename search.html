@@ -6,7 +6,7 @@
     
     <!-- SEO: Optimized Title & Description -->
     <title>פורטל חיפוש משחקי תפקידים | שער להרפתקה - קבוצות, חוגים וחנויות</title>
-    <meta name="description" content="מחפשים קבוצת מבוכים ודרקונים? חוג לילדים? או חנות קוביות קרובה? פורטל החיפוש של שער להרפתקה מרכז את כל המידע על קהילת משחקי התפקידים בישראל במקום אחד.">
+    <meta name="description" content="מחפשים קבוצת מבוכים ודרקונים? חוג לילדים? או חנות קוביות קרובה? פורטל החיפוש של שער להרפתקה מרכז את כל המידע על קהילת משחקי תפקידים בישראל במקום אחד.">
     <meta name="keywords" content="חיפוש קבוצה מבוכים ודרקונים, חוגי מבוכים ודרקונים, חנויות משחקים, כנסים, קהילות משחקי תפקידים, D&D ישראל, פאת'פיינדר, לארפ, חיפוש שחקנים">
     <meta name="author" content="ראובן צירל-מנדלוביץ'">
     <meta name="robots" content="index, follow">
@@ -68,7 +68,7 @@
     <style>
         body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
         
-        /* Card Styles - Matching Index Page */
+        /* Card Styles - Matching Main Site */
         .card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
         .card:hover { transform: translateY(-3px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
         
@@ -247,7 +247,7 @@
             `;
         }
 
-        // 3. Search & Filter Logic
+        // 3. Search & Filter Logic (Smart Region Search)
         function performSearchAndFilter() {
             const query = searchInput.value.trim().toLowerCase();
             
@@ -259,15 +259,17 @@
 
             // --- Step B: Text & Regional Search ---
             if (query) {
-                // 1. Identify relevant regions
-                const relevantRegions = regionsData ? regionsData.filter(region => {
-                    if (region.name.includes(query)) return true;
-                    return region.settlements.some(settlement => settlement.includes(query));
+                // 1. Find regions relevant to the query (either in name or settlements)
+                // Example: Query "Tel Aviv" -> Matches Region "Gush Dan"
+                const regionsMatchingQuery = regionsData ? regionsData.filter(region => {
+                    const regionNameMatch = region.name.toLowerCase().includes(query);
+                    const settlementMatch = region.settlements.some(s => s.toLowerCase().includes(query));
+                    return regionNameMatch || settlementMatch;
                 }) : [];
 
-                // 2. Expand Keywords
-                const expandedKeywords = [query]; // Add original query
-                relevantRegions.forEach(region => {
+                // 2. Collect all synonyms (the region name + all its settlements) to catch siblings
+                const expandedKeywords = [];
+                regionsMatchingQuery.forEach(region => {
                     expandedKeywords.push(region.name);
                     region.settlements.forEach(s => {
                          expandedKeywords.push(s);
@@ -280,23 +282,29 @@
                 });
                 const uniqueKeywords = [...new Set(expandedKeywords)]; // Dedupe
 
-                // 3. Score & Filter
+                // 3. Filter and Score
                 tempResults = tempResults.map(item => {
                     let score = 0;
                     
-                    // Exact Name Match
+                    // Basic Checks
                     if (item.name.toLowerCase().includes(query)) score += 50;
-                    // Description Match
                     if (item.description.toLowerCase().includes(query)) score += 20;
                     
-                    // Location Match (Smart)
+                    // Location Checks
                     if (item.location) {
                         const loc = item.location.toLowerCase();
-                        if (loc.includes(query)) score += 30; // Direct
                         
-                        // Regional Context
-                        if (uniqueKeywords.some(k => loc.includes(k))) {
-                            score += 15; 
+                        // A. Direct match
+                        if (loc.includes(query)) score += 30;
+                        
+                        // B. Region Match (Fix: Item Location matches the NAME of a region found by query)
+                        // e.g. Query="Tel Aviv" -> Region="Gush Dan" -> Item Loc="Gush Dan" -> Match!
+                        const isRegionMatch = regionsMatchingQuery.some(r => loc.includes(r.name.toLowerCase()));
+                        if (isRegionMatch) score += 40;
+
+                        // C. Sibling Match (Item is in "Ramat Gan", Query is "Tel Aviv")
+                        if (uniqueKeywords.some(k => loc.includes(k.toLowerCase()))) {
+                            score += 10; 
                         }
                     }
                     return { item, score };
