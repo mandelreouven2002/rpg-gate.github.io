@@ -221,25 +221,38 @@
                 container.innerHTML = '<div class="col-span-full text-center text-red-600">שגיאה בטעינת הנתונים. נא לנסות שוב.</div>';
             });
 
-        // 2. Card Creation Function (Matching Index Page)
-        function createCard(item) {
-            let typeLabel = '';
-            let typeColor = '';
-            
-            switch (item.type) {
-                case 'organization': typeLabel = '🏢 ארגון/עמותה'; typeColor = 'bg-blue-100 text-blue-800'; break;
-                case 'event': typeLabel = '📅 אירוע/כנס'; typeColor = 'bg-purple-100 text-purple-800'; break;
-                case 'group': typeLabel = '💬 קהילה/קבוצה'; typeColor = 'bg-green-100 text-green-800'; break;
-                case 'business': typeLabel = '🏪 עסק/חנות'; typeColor = 'bg-yellow-100 text-yellow-800'; break;
-                case 'kids': typeLabel = '🧒 חוגי ילדים'; typeColor = 'bg-pink-100 text-pink-800'; break;
-                default: typeLabel = 'כללי'; typeColor = 'bg-gray-100 text-gray-800';
+        // 2. Helper to get badge info (NEW)
+        function getTypeInfo(typeStr) {
+            switch (typeStr) {
+                case 'organization': return { label: '🏢 ארגון/עמותה', color: 'bg-blue-100 text-blue-800' };
+                case 'event': return { label: '📅 אירוע/כנס', color: 'bg-purple-100 text-purple-800' };
+                case 'group': return { label: '💬 קהילה/קבוצה', color: 'bg-green-100 text-green-800' };
+                case 'business': return { label: '🏪 עסק/חנות', color: 'bg-yellow-100 text-yellow-800' };
+                case 'kids': return { label: '🧒 חוגי ילדים', color: 'bg-pink-100 text-pink-800' };
+                default: return { label: 'כללי', color: 'bg-gray-100 text-gray-800' };
             }
+        }
+
+        // 2.1 Card Creation Function (Updated for multiple types)
+        function createCard(item) {
+            // Normalize types to an array to support single string or array of strings
+            const types = Array.isArray(item.type) ? item.type : [item.type];
+
+            // Generate HTML for all badges
+            const badgesHtml = types.map(t => {
+                const info = getTypeInfo(t);
+                return `<span class="text-sm font-semibold px-2 py-1 rounded-full ${info.color} whitespace-nowrap mr-2 mb-1">${info.label}</span>`;
+            }).join('');
 
             return `
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-indigo-400 h-full flex flex-col">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-xl font-bold text-stone-800">${item.name}</h3>
-                        <span class="text-sm font-semibold px-2 py-1 rounded-full ${typeColor} whitespace-nowrap mr-2">${typeLabel}</span>
+                    <div class="flex flex-col items-start mb-2">
+                        <div class="flex flex-wrap w-full justify-between items-start">
+                            <h3 class="text-xl font-bold text-stone-800 mb-2">${item.name}</h3>
+                        </div>
+                        <div class="flex flex-wrap">
+                            ${badgesHtml}
+                        </div>
                     </div>
                     ${item.location ? `<p class="text-base text-stone-500 mb-3 font-semibold">📍 ${item.location}</p>` : ''}
                     <p class="text-base text-stone-600 flex-grow">${item.description}</p>
@@ -247,20 +260,25 @@
             `;
         }
 
-        // 3. Search & Filter Logic (Smart Region Search)
+        // 3. Search & Filter Logic (Smart Region Search & Multiple Types)
         function performSearchAndFilter() {
             const query = searchInput.value.trim().toLowerCase();
             
             // --- Step A: Filter by Type ---
             let tempResults = allData;
             if (currentFilter !== 'all') {
-                tempResults = tempResults.filter(item => item.type === currentFilter);
+                tempResults = tempResults.filter(item => {
+                    // Support checking if the filter is in the array of types
+                    if (Array.isArray(item.type)) {
+                        return item.type.includes(currentFilter);
+                    }
+                    return item.type === currentFilter;
+                });
             }
 
             // --- Step B: Text & Regional Search ---
             if (query) {
                 // 1. Find regions relevant to the query (either in name or settlements)
-                // Example: Query "Tel Aviv" -> Matches Region "Gush Dan"
                 const regionsMatchingQuery = regionsData ? regionsData.filter(region => {
                     const regionNameMatch = region.name.toLowerCase().includes(query);
                     const settlementMatch = region.settlements.some(s => s.toLowerCase().includes(query));
@@ -297,12 +315,11 @@
                         // A. Direct match
                         if (loc.includes(query)) score += 30;
                         
-                        // B. Region Match (Fix: Item Location matches the NAME of a region found by query)
-                        // e.g. Query="Tel Aviv" -> Region="Gush Dan" -> Item Loc="Gush Dan" -> Match!
+                        // B. Region Match
                         const isRegionMatch = regionsMatchingQuery.some(r => loc.includes(r.name.toLowerCase()));
                         if (isRegionMatch) score += 40;
 
-                        // C. Sibling Match (Item is in "Ramat Gan", Query is "Tel Aviv")
+                        // C. Sibling Match
                         if (uniqueKeywords.some(k => loc.includes(k.toLowerCase()))) {
                             score += 10; 
                         }
