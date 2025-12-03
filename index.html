@@ -51,7 +51,7 @@
           "@type": "WebSite",
           "name": "שער להרפתקה",
           "url": "https://gate.rrpg.top/",
-          "description": "המדריך המקיף למתחילים בעולם משחקי התפקידים בישראל",
+          "description": "המדריך המקיף למתחילים בעולם משחקי תפקידים בישראל",
           "potentialAction": {
             "@type": "SearchAction",
             "target": "https://gate.rrpg.top/search?q={search_term_string}",
@@ -489,7 +489,7 @@
             }
         }
         
-        // --- Card Creation and Filtering Logic ---
+        // --- Smart Card Creation & Helpers (Borrowed from Search Page) ---
         function getTypeInfo(typeStr) {
             switch (typeStr) {
                 case 'organization': return { label: '🏢 ארגון/עמותה', color: 'bg-blue-100 text-blue-800' };
@@ -502,10 +502,9 @@
         }
 
         function createCard(item) {
-            // Normalize types to an array to support single string or array of strings
+            // Normalize types to an array
             const types = Array.isArray(item.type) ? item.type : [item.type];
-
-            // Generate HTML for all badges (using gap in parent container instead of margins)
+            // Generate HTML for badges
             const badgesHtml = types.map(t => {
                 const info = getTypeInfo(t);
                 return `<span class="text-sm font-semibold px-2 py-0.5 rounded-full ${info.color} whitespace-nowrap">${info.label}</span>`;
@@ -514,12 +513,12 @@
             return `
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-indigo-400 h-full flex flex-col">
                     <div class="flex flex-col items-start mb-2">
-                        <div class="flex flex-wrap w-full justify-between items-start">
-                            <h3 class="text-xl font-bold text-stone-800 mb-2">${item.name}</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            ${badgesHtml}
-                        </div>
+                         <div class="flex flex-wrap w-full justify-between items-start">
+                             <h3 class="text-xl font-bold text-stone-800 mb-2">${item.name}</h3>
+                         </div>
+                         <div class="flex flex-wrap gap-2 mb-2">
+                             ${badgesHtml}
+                         </div>
                     </div>
                     ${item.location ? `<p class="text-base text-stone-500 mb-3 font-semibold">📍 ${item.location}</p>` : ''}
                     <p class="text-base text-stone-600 flex-grow">${item.description}</p>
@@ -527,81 +526,159 @@
             `;
         }
 
-        // --- UPDATED SEARCH LOGIC FOR REGIONS ---
-        function setupFilterAndLoadMore(containerId, data, buttonClass, searchInputId, loadMoreBtnId, collapseBtnId, noResultsId, regionsData) {
+        // --- Core Smart Filtering Logic (Extracted from Search Page) ---
+        function getFilteredAndScoredData(data, query, currentFilter, regionsData) {
+            let filtered = data;
+            const searchQuery = query.trim().toLowerCase();
+
+            // 1. Filter by Type
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(item => {
+                    if (Array.isArray(item.type)) {
+                        return item.type.includes(currentFilter);
+                    }
+                    return item.type === currentFilter;
+                });
+            }
+
+            // 2. Filter & Score by Text/Region
+            if (searchQuery) {
+                // Find matching regions
+                const regionsMatchingQuery = regionsData ? regionsData.filter(region => {
+                    const regionNameMatch = region.name.toLowerCase().includes(searchQuery);
+                    const settlementMatch = region.settlements.some(s => s.toLowerCase().includes(searchQuery));
+                    return regionNameMatch || settlementMatch;
+                }) : [];
+
+                // Collect expanded keywords (region + settlements)
+                const expandedKeywords = [];
+                regionsMatchingQuery.forEach(region => {
+                    expandedKeywords.push(region.name);
+                    region.settlements.forEach(s => {
+                        expandedKeywords.push(s);
+                        if (s.includes('-')) {
+                             s.split('-').forEach(part => {
+                                 if (part.trim().length > 2) expandedKeywords.push(part.trim());
+                             });
+                        }
+                    });
+                });
+                const uniqueKeywords = [...new Set(expandedKeywords)];
+
+                // Score items
+                filtered = filtered.map(item => {
+                    let score = 0;
+                    // Basic matches
+                    if (item.name.toLowerCase().includes(searchQuery)) score += 50;
+                    if (item.description.toLowerCase().includes(searchQuery)) score += 20;
+
+                    // Location logic
+                    if (item.location) {
+                        const loc = item.location.toLowerCase();
+                        if (loc.includes(searchQuery)) score += 30; // Direct match
+
+                        // Region match
+                        const isRegionMatch = regionsMatchingQuery.some(r => {
+                            const rName = r.name.toLowerCase();
+                            return loc.includes(rName) || rName.includes(loc);
+                        });
+                        if (isRegionMatch) score += 40;
+
+                        // Sibling/Keyword match
+                        if (uniqueKeywords.some(k => loc.includes(k.toLowerCase()))) {
+                            score += 10; 
+                        }
+                    }
+                    return { item, score };
+                })
+                .filter(entry => entry.score > 0)
+                .sort((a, b) => b.score - a.score)
+                .map(entry => entry.item);
+            }
+
+            return filtered;
+        }
+
+        // --- SECTION SETUP FUNCTION (Replaces setupFilterAndLoadMore) ---
+        function setupSection(containerId, data, regionsData, filterBtnClass, searchInputId, loadMoreBtnId, collapseBtnId, noResultsId) {
             const container = document.getElementById(containerId);
-            const buttons = document.querySelectorAll(`.${buttonClass}`);
-            const searchInput = document.getElementById(searchInputId); // Not present in main page but kept for logic reuse
+            const filterButtons = document.querySelectorAll(`.${filterBtnClass}`);
+            const searchInput = document.getElementById(searchInputId);
             const loadMoreBtn = document.getElementById(loadMoreBtnId);
             const collapseBtn = document.getElementById(collapseBtnId);
             const noResultsEl = document.getElementById(noResultsId);
 
             let currentFilter = 'all';
             let currentLimit = 6;
+            let currentQuery = '';
 
-            function updateDisplay() {
-                let filteredData = data;
-
-                if (currentFilter !== 'all') {
-                    filteredData = data.filter(item => {
-                         if (Array.isArray(item.type)) {
-                            return item.type.includes(currentFilter);
-                        }
-                        return item.type === currentFilter;
-                    });
-                }
-
-                // Only filter by search if input exists and has value (main page usually doesn't search text in these sections)
-                if (searchInput && searchInput.value) {
-                    const query = searchInput.value.trim().toLowerCase();
-                    // ... (Search logic same as search page if needed) ...
-                }
-
-                if(noResultsEl) {
-                    if(filteredData.length === 0) {
+            function render() {
+                // Get filtered data
+                const processedData = getFilteredAndScoredData(data, currentQuery, currentFilter, regionsData);
+                
+                // Show/Hide No Results
+                if (noResultsEl) {
+                    if (processedData.length === 0) {
                         noResultsEl.classList.remove('hidden');
+                        container.innerHTML = '';
                     } else {
                         noResultsEl.classList.add('hidden');
+                        // Slice and render cards
+                        const visibleData = processedData.slice(0, currentLimit);
+                        container.innerHTML = visibleData.map(createCard).join('');
                     }
                 }
 
-                const dataToRender = filteredData.slice(0, currentLimit);
-                container.innerHTML = dataToRender.map(createCard).join('');
-
-                if(loadMoreBtn) loadMoreBtn.classList.toggle('hidden', filteredData.length <= currentLimit);
-                if(collapseBtn) collapseBtn.classList.toggle('hidden', !(filteredData.length > 6 && currentLimit >= filteredData.length));
+                // Handle Buttons Visibility
+                if (loadMoreBtn) loadMoreBtn.classList.toggle('hidden', processedData.length <= currentLimit);
+                if (collapseBtn) collapseBtn.classList.toggle('hidden', !(processedData.length > 6 && currentLimit >= processedData.length));
             }
 
-            buttons.forEach(button => {
+            // Event Listener: Filter Buttons
+            filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
+                    // Update Active State
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-indigo-600', 'text-white', 'bg-teal-600', 'bg-indigo-100', 'text-indigo-900', 'bg-teal-100', 'text-teal-900'));
+                    button.classList.add('active');
+                    
+                    // Apply styling based on section
+                    if (filterBtnClass.includes('community')) {
+                         button.classList.add('bg-indigo-100', 'text-indigo-900');
+                    } else {
+                         button.classList.add('bg-teal-100', 'text-teal-900');
+                    }
+
                     currentFilter = button.dataset.filter;
                     currentLimit = 6;
-                    buttons.forEach(btn => btn.classList.remove('active', 'bg-indigo-600', 'text-white', 'bg-teal-600', 'bg-indigo-100', 'text-indigo-900', 'bg-teal-100', 'text-teal-900'));
-                    button.classList.add('active');
-                    if (buttonClass.includes('community')) {
-                        button.classList.add('bg-indigo-100', 'text-indigo-900');
-                    } else {
-                        button.classList.add('bg-teal-100', 'text-teal-900');
-                    }
-                    updateDisplay();
+                    render();
                 });
             });
 
-            if(loadMoreBtn) {
-                loadMoreBtn.addEventListener('click', () => {
-                    currentLimit += 6;
-                    updateDisplay();
-                });   
-            }     
-            
-            if(collapseBtn) {
-                collapseBtn.addEventListener('click', () => {
+            // Event Listener: Search Input
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    currentQuery = e.target.value;
                     currentLimit = 6;
-                    updateDisplay();
+                    render();
                 });
             }
 
-            updateDisplay();
+            // Event Listener: Load More / Collapse
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', () => {
+                    currentLimit += 6;
+                    render();
+                });   
+            }      
+            if (collapseBtn) {
+                collapseBtn.addEventListener('click', () => {
+                    currentLimit = 6;
+                    render();
+                });
+            }
+
+            // Initial Render
+            render();
         }
 
         // --- Closest Event Logic ---
@@ -610,7 +687,6 @@
             const currentMonth = now.getMonth() + 1;
             const currentYear = now.getFullYear();
             const events = eventsData.filter(item => {
-                // Handle both single string type and array of types
                 if (Array.isArray(item.type)) return item.type.includes('event');
                 return item.type === 'event';
             });
@@ -626,9 +702,9 @@
 
             if (futureEvents.length > 0) {
                 futureEvents.sort((a, b) => { 
-                     let aYear = a.month >= currentMonth ? currentYear : currentYear + 1; 
-                     let bYear = b.month >= currentMonth ? currentYear : currentYear + 1; 
-                     return new Date(aYear, a.month - 1, 1) - new Date(bYear, b.month - 1, 1);
+                      let aYear = a.month >= currentMonth ? currentYear : currentYear + 1; 
+                      let bYear = b.month >= currentMonth ? currentYear : currentYear + 1; 
+                      return new Date(aYear, a.month - 1, 1) - new Date(bYear, b.month - 1, 1);
                 });
                 return futureEvents[0];
             }
@@ -675,9 +751,10 @@
                 const resourcesData = data.resourcesData;
                 const regionsData = data.regions; 
 
-                // Pass dummy IDs for search inputs since main page doesn't use text search in these sections
-                setupFilterAndLoadMore('community-container', communityData, 'community-filter-btn', 'dummy-community-search', 'community-load-more-btn', 'community-collapse-btn', 'community-no-results', regionsData);
-                setupFilterAndLoadMore('resources-container', resourcesData, 'resources-filter-btn', 'dummy-resources-search', 'resources-load-more-btn', 'resources-collapse-btn', 'resources-no-results', regionsData);
+                // Call setupSection (using the IDs that now match the HTML)
+                setupSection('community-container', communityData, regionsData, 'community-filter-btn', 'community-search', 'community-load-more-btn', 'community-collapse-btn', 'community-no-results');
+                setupSection('resources-container', resourcesData, regionsData, 'resources-filter-btn', 'resources-search', 'resources-load-more-btn', 'resources-collapse-btn', 'resources-no-results');
+                
                 renderClosestEvent(communityData);
             })
             .catch(error => {
