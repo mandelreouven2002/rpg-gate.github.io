@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO: Optimized Title & Description -->
-    <title>שער להרפתקה | פורטל חיפוש קהילתי למשחקי תפקידים</title>
+    <title>שער להרפתקה - פורטל חיפוש</title>
     <meta name="description" content="מחפשים קבוצת מבוכים ודרקונים? חוג לילדים? או חנות קוביות קרובה? פורטל החיפוש של שער להרפתקה מרכז את כל המידע על קהילת משחקי תפקידים בישראל במקום אחד.">
     <meta name="keywords" content="משחקי תפקידים, חוגי משחקי תפקידים, חוגים לילדים, חוגים, פנטסיה, פנטזיה, מדעי בדיוני, חיפוש קבוצה מבוכים ודרקונים, חוגי מבוכים ודרקונים, חנויות משחקים, כנסים, קהילות משחקי תפקידים, D&D ישראל, פאת'פיינדר, לארפ, חיפוש שחקנים">
     <meta name="author" content="ראובן צירל-מנדלוביץ'">
@@ -23,7 +23,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="he_IL">
     <meta property="og:image" content="https://gate.roleplay.top/og-image.jpg">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="פורטל החיפוש למשחקי תפקידים בישראל">
@@ -39,148 +39,155 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "פורטל חיפוש - שער להרפתקה",
-      "description": "מנוע חיפוש ייעודי לקהילת משחקי התפקידים בישראל",
-      "url": "https://gate.roleplay.top/search",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "בית",
-          "item": "https://gate.roleplay.top/"
-        },{
-          "@type": "ListItem",
-          "position": 2,
-          "name": "פורטל חיפוש",
-          "item": "https://gate.roleplay.top/search"
-        }]
-      }
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "פורטל חיפוש - שער להרפתקה",
+            "description": "מנוע חיפוש ייעודי לקהילת משחקי התפקידים בישראל",
+            "url": "https://gate.roleplay.top/search",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "בית",
+                    "item": "https://gate.roleplay.top/"
+                },{
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "פורטל חיפוש",
+                    "item": "https://gate.roleplay.top/search"
+                }]
+            }
+        }
     </script>
 
     <style>
         body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
-        
+
         /* Card Styles - Matching Main Site */
         .card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
         .card:hover { transform: translateY(-3px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-        
+
         .filter-btn.active { background-color: #4f46e5; color: white; }
         #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
     </style>
 </head>
 
 <body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
-    <div id="background-overlay"></div>
+<div id="background-overlay"></div>
 
-    <!-- GLOBAL SITE NAVIGATION -->
-    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
-        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
-            <!-- Logo area -->
-            <div class="w-full md:w-auto flex justify-center md:justify-start">
-                <h1 class="text-xl md:text-2xl font-bold text-white">
-                    <a href="/index" class="flex items-center gap-2">
-                        <img src="/rpg-game.png" alt="לוגו" class="w-8 h-8">
-                        שער להרפתקה
-                    </a>
-                </h1>
-            </div>
-            
-            <!-- Navigation -->
-            <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-3 md:border-0 md:pt-0">
-                <div class="flex items-center gap-4 md:gap-6">
-                    <a href="/index" class="hover:text-indigo-300 transition-colors">בית</a>
-                    <a href="/search" class="text-yellow-400 font-bold transition-colors">פורטל חיפוש</a>
-                    <a href="/articles" class="hover:text-indigo-300 transition-colors">פורטל מאמרים</a>
-                </div>
-                
-                <span class="hidden md:block w-px h-5 bg-indigo-500/50 mx-1"></span>
-                
-                <a href="https://roleplay.top" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
-                    <span>אית״ם</span>
-                    <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+<!-- GLOBAL SITE NAVIGATION -->
+<header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
+    <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+        <!-- Logo area -->
+        <div class="w-full md:w-auto flex justify-center md:justify-start">
+            <h1 class="text-xl md:text-2xl font-bold text-white">
+                <a href="/index" class="flex items-center gap-2">
+                    <img src="/rpg-game.png" alt="לוגו" class="w-8 h-8">
+                    שער להרפתקה
                 </a>
-            </nav>
+            </h1>
         </div>
-    </header>
 
-    <main class="container mx-auto p-4 md:p-8 flex-grow">
-        
-        <!-- SEARCH HEADER SECTION -->
-        <section class="text-center mb-10 pt-6">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">פורטל החיפוש</h1>
-            <p class="max-w-2xl mx-auto text-xl text-stone-600 mb-8">
-                חפשו קבוצות, חנויות, כנסים ופעילויות בכל הארץ במקום אחד מרוכז.
-            </p>
-
-            <!-- Search Input -->
-            <div class="max-w-2xl mx-auto mb-8 relative">
-                <label for="main-search-input" class="sr-only">חיפוש חופשי</label>
-                <input type="text" id="main-search-input" 
-                       placeholder="מה אתם מחפשים? (שם, עיר, סוג משחק...)" 
-                       class="w-full p-4 pr-12 text-lg border-2 border-indigo-200 rounded-full shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all">
-                <div class="absolute top-0 right-0 h-full flex items-center pr-4 text-stone-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </div>
+        <!-- Navigation -->
+        <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-3 md:border-0 md:pt-0">
+            <div class="flex items-center gap-4 md:gap-6">
+                <a href="/" class="hover:text-indigo-300 transition-colors">בית</a>
+                <a href="/search" class="text-yellow-400 font-bold transition-colors">חיפוש</a>
+                <a href="/articles" class="hover:text-indigo-300 transition-colors">מאמרים</a>
             </div>
 
-            <!-- Filters -->
-            <div class="flex justify-center items-center gap-3 flex-wrap" id="filters-container">
-                <button class="filter-btn active px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="all">הכל</button>
-                <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="organization">🏢 ארגון/עמותה</button>
-                <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="event">📅 אירוע/כנס</button>
-                <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="group">💬 קהילה/קבוצה</button>
-                <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="business">🏪 עסק/חנות</button>
-                <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="kids">🧒 חוגי ילדים</button>
+            <span class="hidden md:block w-px h-5 bg-indigo-500/50 mx-1"></span>
+
+            <a href="https://roleplay.top" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
+                <span>גמ"ה</span>
+                <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main class="container mx-auto p-4 md:p-8 flex-grow">
+
+    <!-- SEARCH HEADER SECTION -->
+    <section class="text-center mb-10 pt-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">פורטל החיפוש</h1>
+        <p class="max-w-2xl mx-auto text-xl text-stone-600 mb-8">
+            חפשו קבוצות, חנויות, כנסים ופעילויות בכל הארץ במקום אחד מרוכז.
+        </p>
+
+        <!-- Search Input -->
+        <div class="max-w-2xl mx-auto mb-8 relative">
+            <label for="main-search-input" class="sr-only">חיפוש חופשי</label>
+            <input type="text" id="main-search-input"
+                   placeholder="מה אתם מחפשים? (שם, עיר, סוג משחק...)"
+                   class="w-full p-4 pr-12 text-lg border-2 border-indigo-200 rounded-full shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all">
+            <div class="absolute top-0 right-0 h-full flex items-center pr-4 text-stone-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
             </div>
-        </section>
+        </div>
 
-        <!-- RESULTS GRID -->
-        <section id="results-section">
-            <div id="results-count" class="text-stone-500 text-center mb-4 hidden">נמצאו <span id="count-number" class="font-bold">0</span> תוצאות</div>
-            
-            <div id="results-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Cards will be injected here -->
-                <div class="col-span-full text-center py-10">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-900"></div>
-                    <p class="mt-2 text-stone-500">טוען נתונים...</p>
-                </div>
+        <!-- Filters -->
+        <div class="flex justify-center items-center gap-3 flex-wrap" id="filters-container">
+            <button class="filter-btn active px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="all">הכל</button>
+
+            <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="organization">🏢 ארגון/עמותה</button>
+            <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="event">📅 אירוע/כנס</button>
+            <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="group">💬 קהילה/קבוצה</button>
+
+            <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="store">🛍️ חנות/ציוד</button>
+            <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="venue">🏰 מתחם משחקים</button>
+            <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="activities">🎭 סדנאות והפעלות</button>
+            <button class="filter-btn px-4 py-2 rounded-full font-semibold bg-white shadow-sm hover:bg-indigo-50 border border-stone-200 transition-all text-base" data-filter="kids">🧒 חוגי ילדים</button>
+        </div>
+    </section>
+
+    <!-- RESULTS GRID -->
+    <section id="results-section">
+        <div id="results-count" class="text-stone-500 text-center mb-4 hidden">נמצאו <span id="count-number" class="font-bold">0</span> תוצאות</div>
+
+        <div id="results-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards will be injected here -->
+            <div class="col-span-full text-center py-10">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-900"></div>
+                <p class="mt-2 text-stone-500">טוען נתונים...</p>
             </div>
+        </div>
 
-            <!-- No Results State -->
-            <div id="no-results" class="hidden text-center py-12">
-                <div class="text-6xl mb-4">🔍</div>
-                <h3 class="text-2xl font-bold text-stone-700 mb-2">לא נמצאו תוצאות</h3>
-                <p class="text-stone-500">נסו לשנות את מילות החיפוש או לבחור קטגוריה אחרת.</p>
-                <button id="clear-search-btn" class="mt-4 text-indigo-600 font-semibold hover:underline">נקה חיפוש</button>
-            </div>
+        <!-- No Results State -->
+        <div id="no-results" class="hidden text-center py-12">
+            <div class="text-6xl mb-4">🔍</div>
+            <h3 class="text-2xl font-bold text-stone-700 mb-2">לא נמצאו תוצאות</h3>
+            <p class="text-stone-500">נסו לשנות את מילות החיפוש או לבחור קטגוריה אחרת.</p>
+            <button id="clear-search-btn" class="mt-4 text-indigo-600 font-semibold hover:underline">נקה חיפוש</button>
+        </div>
 
-            <!-- Load More Button -->
-            <div class="text-center mt-10 mb-6">
-                <button id="load-more-btn" class="hidden px-6 py-3 rounded-md font-semibold bg-white shadow-md border border-stone-200 hover:bg-stone-50 text-indigo-600 transition-colors duration-200 text-base">
-                    הצג תוצאות נוספות
-                </button>
-            </div>
-        </section>
+        <!-- Load More Button -->
+        <div class="text-center mt-10 mb-6">
+            <button id="load-more-btn" class="hidden px-6 py-3 rounded-md font-semibold bg-white shadow-md border border-stone-200 hover:bg-stone-50 text-indigo-600 transition-colors duration-200 text-base">
+                הצג תוצאות נוספות
+            </button>
+        </div>
+    </section>
 
-    </main>
+</main>
 
-    <footer class="text-center py-6 mt-12 bg-stone-200 border-t border-stone-300">
-        <p class="text-base text-stone-600">שער להרפתקה - שער הכניסה לתחום משחקי התפקידים</p>
-        <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top" class="text-indigo-600 hover:underline">אית"ם - ארגון ישראלי לתרבות ותקינה במשחקי תפקידים</a>.</p>
-    </footer>
+<footer class="text-center py-6 mt-12 bg-stone-200 border-t border-stone-300">
+    <p class="text-base text-stone-600">שער להרפתקה - שער הכניסה לתחום משחקי התפקידים</p>
+    <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top" class="text-indigo-600 hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a>.</p>
+</footer>
 
-    <script>
+<script src="search-engine.js"></script>
+
+<script>
     document.addEventListener('DOMContentLoaded', () => {
+        // --- DOM Elements ---
         const container = document.getElementById('results-container');
         const searchInput = document.getElementById('main-search-input');
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -190,56 +197,74 @@
         const countNumberEl = document.getElementById('count-number');
         const clearSearchBtn = document.getElementById('clear-search-btn');
 
-        let allData = []; // Combined array
-        let regionsData = []; // Regions mapping
-        let filteredResults = []; // Current filtered list
+        // --- State ---
+        let searchEngine = null; // Will hold the instance of the class
+        let filteredResults = [];
         let currentFilter = 'all';
-        let itemsToShow = 9; // Initial load count
-        
-        // 1. Fetch and Combine Data
+        let itemsToShow = 9;
+
+        // --- 1. Load Data & Initialize Engine ---
         fetch('data.json')
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load data');
-                return response.json();
+            .then(res => {
+                if (!res.ok) throw new Error('Failed to load data');
+                return res.json();
             })
             .then(data => {
-                // Merge arrays
-                allData = [...data.communityData, ...data.resourcesData];
-                
-                // Shuffle initially for variety
-                for (let i = allData.length - 1; i > 0; i--) {
+                const combinedData = [...(data.communityData || []), ...(data.resourcesData || [])];
+                const regions = data.regions || [];
+
+                // Shuffle for variety
+                for (let i = combinedData.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
-                    [allData[i], allData[j]] = [allData[j], allData[i]];
+                    [combinedData[i], combinedData[j]] = [combinedData[j], combinedData[i]];
                 }
 
-                regionsData = data.regions;
-                
-                // Initial Render
-                performSearchAndFilter();
+                // INITIALIZE THE SEPARATE ALGORITHM CLASS
+                searchEngine = new SearchEngine(combinedData, regions);
+
+                // First render
+                runSearch();
             })
-            .catch(error => {
-                console.error(error);
-                container.innerHTML = '<div class="col-span-full text-center text-red-600">שגיאה בטעינת הנתונים. נא לנסות שוב.</div>';
+            .catch(err => {
+                console.error(err);
+                container.innerHTML = '<div class="col-span-full text-center text-red-600">שגיאה בטעינת נתונים</div>';
             });
 
-        // 2. Helper to get badge info (NEW)
+        // --- 2. Controller Logic (Connects UI to Engine) ---
+
+        function runSearch() {
+            if (!searchEngine) return;
+
+            const query = searchInput.value;
+
+            // Ask the engine for results
+            filteredResults = searchEngine.search(query, currentFilter);
+
+            renderUI();
+        }
+
+        // --- 3. UI Helpers (Purely Visual) ---
+
         function getTypeInfo(typeStr) {
+            // Visual mapping only - Logic is in the engine
             switch (typeStr) {
                 case 'organization': return { label: '🏢 ארגון/עמותה', color: 'bg-blue-100 text-blue-800' };
                 case 'event': return { label: '📅 אירוע/כנס', color: 'bg-purple-100 text-purple-800' };
                 case 'group': return { label: '💬 קהילה/קבוצה', color: 'bg-green-100 text-green-800' };
-                case 'business': return { label: '🏪 עסק/חנות', color: 'bg-yellow-100 text-yellow-800' };
+                case 'store': return { label: '🛍️ חנות/ציוד', color: 'bg-yellow-100 text-yellow-800' };
+                case 'venue': return { label: '🏰 מתחם משחקים', color: 'bg-indigo-100 text-indigo-800' };
+                case 'activities': return { label: '🎭 סדנאות והפעלות', color: 'bg-orange-100 text-orange-800' };
                 case 'kids': return { label: '🧒 חוגי ילדים', color: 'bg-pink-100 text-pink-800' };
                 default: return { label: 'כללי', color: 'bg-gray-100 text-gray-800' };
             }
         }
 
-        // 2.1 Card Creation Function (Updated for inline badges)
         function createCard(item) {
-            // Normalize types to an array to support single string or array of strings
-            const types = Array.isArray(item.type) ? item.type : [item.type];
+            // Need to get types again for display badges
+            // We can use the engine instance helper or duplicate logic.
+            // Using engine helper is cleaner:
+            const types = searchEngine ? searchEngine.getItemTypes(item) : [];
 
-            // Generate HTML for all badges (using gap in parent container instead of margins)
             const badgesHtml = types.map(t => {
                 const info = getTypeInfo(t);
                 return `<span class="text-sm font-semibold px-2 py-0.5 rounded-full ${info.color} whitespace-nowrap">${info.label}</span>`;
@@ -247,98 +272,18 @@
 
             return `
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-indigo-400 h-full flex flex-col">
-                    <div class="flex flex-wrap items-baseline gap-2 mb-2">
-                        <h3 class="text-xl font-bold text-stone-800">${item.name}</h3>
-                        ${badgesHtml}
-                    </div>
-                    ${item.location ? `<p class="text-base text-stone-500 mb-3 font-semibold">📍 ${item.location}</p>` : ''}
-                    <p class="text-base text-stone-600 flex-grow">${item.description}</p>
+                  <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                    <h3 class="text-xl font-bold text-stone-800">${item.name ?? ''}</h3>
+                    ${badgesHtml}
+                  </div>
+                  ${item.location ? `<p class="text-base text-stone-500 mb-3 font-semibold">📍 ${item.location}</p>` : ''}
+                  <p class="text-base text-stone-600 flex-grow">${item.description ?? ''}</p>
                 </a>
             `;
         }
 
-        // 3. Search & Filter Logic (Smart Region Search & Multiple Types)
-        function performSearchAndFilter() {
-            const query = searchInput.value.trim().toLowerCase();
-            
-            // --- Step A: Filter by Type ---
-            let tempResults = allData;
-            if (currentFilter !== 'all') {
-                tempResults = tempResults.filter(item => {
-                    // Support checking if the filter is in the array of types
-                    if (Array.isArray(item.type)) {
-                        return item.type.includes(currentFilter);
-                    }
-                    return item.type === currentFilter;
-                });
-            }
-
-            // --- Step B: Text & Regional Search ---
-            if (query) {
-                // 1. Find regions relevant to the query (either in name or settlements)
-                const regionsMatchingQuery = regionsData ? regionsData.filter(region => {
-                    const regionNameMatch = region.name.toLowerCase().includes(query);
-                    const settlementMatch = region.settlements.some(s => s.toLowerCase().includes(query));
-                    return regionNameMatch || settlementMatch;
-                }) : [];
-
-                // 2. Collect all synonyms (the region name + all its settlements) to catch siblings
-                const expandedKeywords = [];
-                regionsMatchingQuery.forEach(region => {
-                    expandedKeywords.push(region.name);
-                    region.settlements.forEach(s => {
-                         expandedKeywords.push(s);
-                         if (s.includes('-')) {
-                             s.split('-').forEach(part => {
-                                 if (part.trim().length > 2) expandedKeywords.push(part.trim());
-                             });
-                         }
-                    });
-                });
-                const uniqueKeywords = [...new Set(expandedKeywords)]; // Dedupe
-
-                // 3. Filter and Score
-                tempResults = tempResults.map(item => {
-                    let score = 0;
-                    
-                    // Basic Checks
-                    if (item.name.toLowerCase().includes(query)) score += 50;
-                    if (item.description.toLowerCase().includes(query)) score += 20;
-                    
-                    // Location Checks
-                    if (item.location) {
-                        const loc = item.location.toLowerCase();
-                        
-                        // A. Direct match
-                        if (loc.includes(query)) score += 30;
-                        
-                        // B. Region Match (Bidirectional Check)
-                        const isRegionMatch = regionsMatchingQuery.some(r => {
-                            const rName = r.name.toLowerCase();
-                            return loc.includes(rName) || rName.includes(loc);
-                        });
-                        
-                        if (isRegionMatch) score += 40;
-
-                        // C. Sibling Match
-                        if (uniqueKeywords.some(k => loc.includes(k.toLowerCase()))) {
-                            score += 10; 
-                        }
-                    }
-                    return { item, score };
-                })
-                .filter(entry => entry.score > 0)
-                .sort((a, b) => b.score - a.score)
-                .map(entry => entry.item);
-            }
-
-            filteredResults = tempResults;
-            renderResults();
-        }
-
-        // 4. Rendering Logic
-        function renderResults() {
-            // Update Counts
+        function renderUI() {
+            // Update counts
             if (searchInput.value) {
                 resultsCountEl.classList.remove('hidden');
                 countNumberEl.textContent = filteredResults.length;
@@ -346,7 +291,7 @@
                 resultsCountEl.classList.add('hidden');
             }
 
-            // Handle Empty
+            // No results handling
             if (filteredResults.length === 0) {
                 container.innerHTML = '';
                 noResultsEl.classList.remove('hidden');
@@ -356,11 +301,10 @@
                 noResultsEl.classList.add('hidden');
             }
 
-            // Slice and Dice
+            // Pagination rendering
             const visibleItems = filteredResults.slice(0, itemsToShow);
             container.innerHTML = visibleItems.map(createCard).join('');
 
-            // Load More Button Visibility
             if (visibleItems.length < filteredResults.length) {
                 loadMoreBtn.classList.remove('hidden');
             } else {
@@ -368,41 +312,34 @@
             }
         }
 
-        // 5. Event Listeners
-        
-        // Filter Buttons
+        // --- 4. Event Listeners ---
+
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
-                // UI Toggle
                 filterButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
-                // Logic
                 currentFilter = btn.dataset.filter;
-                itemsToShow = 9; // Reset pagination
-                performSearchAndFilter();
+                itemsToShow = 9;
+                runSearch();
             });
         });
 
-        // Search Input
         searchInput.addEventListener('input', () => {
-            itemsToShow = 9; // Reset pagination
-            performSearchAndFilter();
+            itemsToShow = 9;
+            runSearch();
         });
 
-        // Load More
         loadMoreBtn.addEventListener('click', () => {
             itemsToShow += 9;
-            renderResults();
+            renderUI(); // No need to search again, just render more
         });
 
-        // Clear Search
         clearSearchBtn.addEventListener('click', () => {
             searchInput.value = '';
             itemsToShow = 9;
-            performSearchAndFilter();
+            runSearch();
         });
     });
-    </script>
+</script>
 </body>
 </html>
