@@ -3,105 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">טוען מאמר...</title>
 
-  <!-- SEO: Optimized Title & Description -->
-  <title>שער להרפתקה | מדריכים ומאמרים למשחקי תפקידים</title>
-  <meta name="description" content="מאגר ידע מקיף לשחקני תפקידים: מדריכים למתחילים, הסברים על מבוכים ודרקונים (D&D), לארפ (LARP), משחקי תפקידים לילדים וטיפים למנחים. כל המידע במקום אחד.">
-  <meta name="keywords" content="מאמרים משחקי תפקידים, מדריך מבוכים ודרקונים, איך מתחילים לשחק D&D, לארפ, משחקי תפקידים לילדים, קהילת משחקי תפקידים, מדריכים למנחים, משחקי שולחן">
-  <meta name="author" content="ראובן צירל-מנדלוביץ'">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#312e81">
-
-  <!-- SEO: Canonical -->
-  <link rel="canonical" href="https://gate.roleplay.top/articles">
-
-  <!-- Social Media Tags (Open Graph) -->
-  <meta property="og:site_name" content="שער להרפתקה">
-  <meta property="og:title" content="פורטל מאמרים ומדריכים - שער להרפתקה">
-  <meta property="og:description" content="העמיקו את הידע שלכם: מדריכים למתחילים, סקירות על הקהילה, וטיפים לשחקנים ומנחים.">
-  <meta property="og:url" content="https://gate.roleplay.top/articles">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="he_IL">
-  <meta property="og:image" content="https://gate.roleplay.top/og-image.jpg">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="פורטל מאמרים - שער להרפתקה">
-  <meta name="twitter:description" content="מאגר ידע מקיף לשחקני תפקידים בישראל.">
-  <meta name="twitter:image" content="https://gate.roleplay.top/og-image.jpg">
+  <!-- תגיות מטא דינמיות ל-SEO ולשיתוף ברשתות חברתיות -->
+  <meta name="description" id="meta-desc" content="מאגר מאמרים למשחקי תפקידים - שער להרפתקה">
+  <meta property="og:title" id="og-title" content="שער להרפתקה - מאמרים">
+  <meta property="og:description" id="og-desc" content="מאגר מאמרים למשחקי תפקידים, LARP ועוד.">
+  <meta property="og:url" id="og-url" content="">
+  <meta property="og:type" content="article">
 
   <link rel="icon" type="image/x-icon" href="/rpg-game.png">
 
-  <!-- Performance Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-
+  <!-- Tailwind & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "בית",
-          "item": "https://gate.roleplay.top/"
-        },{
-          "@type": "ListItem",
-          "position": 2,
-          "name": "מאמרים",
-          "item": "https://gate.roleplay.top/articles"
-        }]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "מאמרים ומדריכים למשחקי תפקידים",
-        "description": "אוסף מאמרים בנושאי משחקי תפקידים שולחניים, לארפ, קהילה וחינוך.",
-        "url": "https://gate.roleplay.top/articles",
-        "mainEntity": {
-          "@type": "ItemList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "url": "https://gate.roleplay.top/articles/what-is-rpg",
-              "name": "מה זה משחקי תפקידים?"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "url": "https://gate.roleplay.top/articles/my-first-game",
-              "name": "המשחק הראשון שלי"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "url": "https://gate.roleplay.top/articles/tabletop-rpg",
-              "name": "משחק תפקידים שולחני"
-            }
-          ]
-        }
-      }
-    ]
-  </script>
+  <!-- ייבוא ספרייה להמרת Markdown ל-HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <style>
-      body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
+      body { font-family: 'Assistant', sans-serif; }
 
-      /* Card Styles - Matching Main Site */
-      .card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
-      .card:hover { transform: translateY(-3px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+      /* עיצוב התוכן הדינמי - שילוב של העיצוב שלך עם תמיכה באלמנטים נוספים של Markdown */
+      .prose h1 { font-size: 2rem; font-weight: 700; color: #1c1917; margin-top: 2rem; margin-bottom: 1rem; }
+      .prose h2 { font-size: 1.5rem; font-weight: 700; color: #1c1917; margin-top: 2rem; margin-bottom: 1rem; }
+      .prose h3 { font-size: 1.25rem; font-weight: 700; color: #4338ca; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+      .prose p { margin-bottom: 1.25rem; line-height: 1.7; font-size: 1.125rem; color: #44403c; }
+      .prose ul { list-style-type: disc; padding-right: 1.5rem; margin-bottom: 1.25rem; color: #44403c; }
+      .prose ol { list-style-type: decimal; padding-right: 1.5rem; margin-bottom: 1.25rem; color: #44403c; }
+      .prose li { margin-bottom: 0.5rem; }
+      .prose strong { color: #1c1917; font-weight: 700; }
 
-      #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+      .prose a { color: #4f46e5; text-decoration: underline; }
+      .prose a:hover { color: #4338ca; }
+      .prose blockquote { border-right: 4px solid #4f46e5; margin: 0 0 1.25rem 0; padding: 10px 20px; background-color: #f8fafc; font-style: italic; color: #555; }
+      .prose code { background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; direction: ltr; display: inline-block; }
+      .prose pre { background-color: #1e293b; color: #cbd5e1; padding: 15px; border-radius: 8px; overflow-x: auto; direction: ltr; margin-bottom: 1.5rem; }
+      .prose pre code { background-color: transparent; padding: 0; color: inherit; }
+      .prose img { max-width: 100%; height: auto; border-radius: 8px; margin: 2rem 0; }
+
+      #background-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          background-image: url('/rpg-bg.png');
+          background-repeat: repeat;
+          opacity: 0.025;
+          pointer-events: none;
+      }
+
+      /* עיצוב שגיאה במידה והקובץ לא נטען */
+      .error-message {
+          color: #b91c1c;
+          background-color: #fef2f2;
+          padding: 20px;
+          border-radius: 8px;
+          border: 1px solid #fecaca;
+      }
   </style>
 </head>
-
 <body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
 <div id="background-overlay"></div>
 
@@ -137,119 +100,52 @@
 </header>
 
 <main class="container mx-auto p-4 md:p-8 flex-grow">
+  <!-- נתיב ניווט (Breadcrumbs) -->
+  <nav class="text-sm mb-6 text-stone-500">
+    <a href="/index" class="hover:underline">בית</a> /
+    <a href="/articles/system" class="hover:underline">מאמרים</a> /
+    <span id="breadcrumb-title" class="text-stone-800 font-semibold">טוען...</span>
+  </nav>
 
-  <!-- HEADER -->
-  <section class="text-center mb-12 pt-6">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">מאמרים ומדריכים</h1>
-    <p class="max-w-2xl mx-auto text-xl text-stone-600 mb-6">
-      העמיקו את הידע שלכם, למדו על משחקי תפקידים וקבלו השראה להרפתקה הבאה.
-    </p>
+  <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border border-stone-200">
 
-    <div class="text-sm text-stone-500 bg-stone-50 p-3 rounded-lg border border-stone-100 inline-block shadow-sm">
-      <p>הערה: כל המאמרים באתר מתבססים על מאגר המאמרים <a href="bibliography" class="text-indigo-600 hover:underline font-semibold">בדף הבא.</a></p>
+    <header class="mb-8 border-b border-stone-100 pb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="bg-teal-100 text-teal-800 text-sm font-semibold px-3 py-1 rounded-full">מאמר</span>
+      </div>
+      <!-- הכותרת הראשית תשתנה דינמית לפי שם הקובץ -->
+      <h1 id="article-title" class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">טוען נתונים...</h1>
+    </header>
+
+    <!-- לכאן יוזרק התוכן של קובץ ה-Markdown -->
+    <div id="content" class="prose">
+      <div class="text-center text-stone-500 py-10">מחפש ומעבד את המאמר...</div>
     </div>
-  </section>
 
-  <!-- ARTICLES GRID (מאמרים כלליים שכבר קיימים) -->
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    <!-- Article 1 -->
-    <a href="what-is-rpg" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-indigo-400 h-full flex flex-col group">
-      <div class="flex flex-col flex-grow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded">מבוא</span>
-        </div>
-        <h3 class="text-2xl font-bold text-stone-800 mb-3 leading-tight group-hover:text-indigo-700 transition-colors">מה זה משחקי תפקידים?</h3>
-        <p class="text-stone-600 mb-6 flex-grow">
-          המדריך הבסיסי שמסביר את הקונספט של כניסה לנעלי דמות אחרת, יצירת סיפור משותף וההבדל בין משחק תפקידים למשחקים אחרים.
-        </p>
-        <div class="text-indigo-600 font-bold group-hover:underline flex items-center mt-auto">
-          קראו עוד
-        </div>
+    <!-- About Site Section -->
+    <div class="mt-12 pt-8 border-t-2 border-indigo-100 bg-indigo-50 p-8 rounded-xl">
+      <h3 class="text-2xl font-bold text-indigo-900 mb-4">על פרויקט "שער להרפתקה"</h3>
+      <p class="text-stone-700 mb-4">
+        ״שער להרפתקה״ הוא פרויקט שנועד לעשות סוף לבלגן של מתחילים: במקום לחפש בפייסבוק, בגוגל ובשמועות – כל המידע מרוכז במקום אחד.
+        האתר כולל מדריך מלא למי שנכנס לתחום בפעם הראשונה: מה זה משחקי תפקידים, איך מתחילים, אילו שיטות מומלצות, איך מוצאים קבוצה, ואיפה יש חוגים וחנויות בכל הארץ.
+      </p>
+      <div class="mb-6">
+        <strong class="block text-lg text-indigo-800 mb-2">באתר תמצאו:</strong>
+        <ul class="list-disc list-inside text-stone-700 space-y-1">
+          <li>מדריך למתחילים בעברית.</li>
+          <li>רשימת חוגים לילדים ונוער.</li>
+          <li>קישורים לקהילות, כנסים ואירועים.</li>
+          <li>עסקים, חנויות ומקומות לשחק בהם.</li>
+          <li>עדכונים שוטפים דרך ערוץ הוואטסאפ ״דואר עוף-חול״.</li>
+          <li>מאגר מאמרים לחדשים בתחביב.</li>
+        </ul>
       </div>
-    </a>
-
-    <!-- Article 2 -->
-    <a href="tabletop-rpg" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-blue-400 h-full flex flex-col group">
-      <div class="flex flex-col flex-grow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">שולחני (TTRPG)</span>
-        </div>
-        <h3 class="text-2xl font-bold text-stone-800 mb-3 leading-tight group-hover:text-blue-700 transition-colors">משחק תפקידים שולחני – מה זה?</h3>
-        <p class="text-stone-600 mb-6 flex-grow">
-          איך משחקים עם דף, עפרון וקוביות? צלילה לעולם של מבוכים ודרקונים ושיטות דומות, ואיך הדמיון הופך למציאות סביב השולחן.
-        </p>
-        <div class="text-blue-600 font-bold group-hover:underline flex items-center mt-auto">
-          קראו עוד
-        </div>
-      </div>
-    </a>
-
-    <!-- Article 3 -->
-    <a href="larp-explained" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-teal-400 h-full flex flex-col group">
-      <div class="flex flex-col flex-grow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded">משחק חי (LARP)</span>
-        </div>
-        <h3 class="text-2xl font-bold text-stone-800 mb-3 leading-tight group-hover:text-teal-700 transition-colors">משחק תפקידים חי – מה זה?</h3>
-        <p class="text-stone-600 mb-6 flex-grow">
-          כשיוצאים מהשולחן ולובשים את התחפושת: מה זה לארפ (LARP), איך זה עובד, ולמה אנשים רצים ביער עם חרבות ספוג?
-        </p>
-        <div class="text-teal-600 font-bold group-hover:underline flex items-center mt-auto">
-          קראו עוד
-        </div>
-      </div>
-    </a>
-
-    <!-- Article 4 -->
-    <a href="rpg-in-israel" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-amber-400 h-full flex flex-col group">
-      <div class="flex flex-col flex-grow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded">הקהילה</span>
-        </div>
-        <h3 class="text-2xl font-bold text-stone-800 mb-3 leading-tight group-hover:text-amber-700 transition-colors">משחקי תפקידים בארץ</h3>
-        <p class="text-stone-600 mb-6 flex-grow">
-          על הקהילה הישראלית למשחקי תפקידים: ההיסטוריה, הכנסים הגדולים (אייקון, דרקוניקון), ואיך הסצנה התפתחה בישראל לאורך השנים.
-        </p>
-        <div class="text-amber-600 font-bold group-hover:underline flex items-center mt-auto">
-          קראו עוד
-        </div>
-      </div>
-    </a>
-
-    <!-- Article 5 -->
-    <a href="rpg-for-kids" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-pink-400 h-full flex flex-col group">
-      <div class="flex flex-col flex-grow">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded">חינוך וילדים</span>
-        </div>
-        <h3 class="text-2xl font-bold text-stone-800 mb-3 leading-tight group-hover:text-pink-700 transition-colors">משחקי תפקידים לילדים</h3>
-        <p class="text-stone-600 mb-6 flex-grow">
-          היתרונות שמאחורי הדרקונים: איך משחקי תפקידים מפתחים כישורים חברתיים, יצירתיות ופתרון בעיות אצל ילדים ונוער.
-        </p>
-        <div class="text-pink-600 font-bold group-hover:underline flex items-center mt-auto">
-          קראו עוד
-        </div>
-      </div>
-    </a>
-  </section>
-
-  <!-- קו מפריד -->
-  <hr class="my-16 border-t-2 border-stone-300 rounded">
-
-  <!-- אזור דינמי חדש: שיטות ומשחקים -->
-  <section>
-    <h2 class="text-3xl font-bold text-stone-900 mb-8 text-center md:text-right">שיטות ומשחקים</h2>
-
-    <!-- לכאן יוזרקו כרטיסיות המאמרים (משבצות) דינמית -->
-    <div id="dynamic-systems-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- הודעת טעינה שתוחלף על ידי הסקריפט -->
-      <div id="loading-systems" class="col-span-full text-center text-stone-500 py-8">
-        טוען שיטות משחק...
-      </div>
+      <p class="text-lg font-semibold text-indigo-900 mb-4">אם אתם רוצים להתחיל לשחק בלי ללכת לאיבוד – זה המקום להתחיל ממנו.</p>
+      <a href="/index" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+        היכנסו לשער להרפתקה
+      </a>
     </div>
-  </section>
-
+  </article>
 </main>
 
 <footer class="text-center py-6 mt-12 bg-stone-200 border-t border-stone-300">
@@ -257,89 +153,114 @@
   <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top" class="text-indigo-600 hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a>.</p>
 </footer>
 
-<!-- סקריפט לטעינה דינמית של משבצות שיטות המשחק -->
 <script>
-  // === כאן עליך להזין את שמות הקבצים הנמצאים בתיקיית articles/files ===
-  // דפדפנים לא יכולים "לקרוא תיקיות" מטעמי אבטחה, ולכן חובה לרשום את השמות כאן
-  const systemFiles = [
-    'ggg.md', // הקובץ ששינית את שמו
-    'dnd.md',
-    'pathfinder.md',
-    'call-of-cthulhu.md'
-  ];
+  async function loadArticle() {
+    const contentDiv = document.getElementById('content');
+    const pageTitle = document.getElementById('page-title');
+    const articleTitle = document.getElementById('article-title');
+    const breadcrumbTitle = document.getElementById('breadcrumb-title');
 
-  async function loadSystemsCards() {
-    const grid = document.getElementById('dynamic-systems-grid');
-    const loader = document.getElementById('loading-systems');
+    let fileName = '';
+    let filePath = '';
 
-    let cardsHTML = '';
+    // 1. קודם כל נבדוק אם יש שם קובץ אחרי הסולמית בכתובת (למשל: #ggg)
+    if (window.location.hash) {
+      // מסיר את הסימן '#' ולוקח את השם
+      fileName = window.location.hash.substring(1);
+      // מניח שהקובץ נמצא בתיקיית files עם סיומת md
+      filePath = `files/${fileName}.md`;
+    }
+    // 2. תמיכה לאחור בפרמטר ה-URL הקודם (למשל: ?file=files/ggg.md)
+    else {
+      const urlParams = new URLSearchParams(window.location.search);
+      const queryFile = urlParams.get('file');
 
-    for (const filename of systemFiles) {
-      try {
-        // נתיב הקובץ מתוך תיקיית files (נתיב יחסי מהקובץ הנוכחי)
-        const filePath = `files/${filename}`;
-        const response = await fetch(filePath);
-
-        if (!response.ok) {
-          console.warn(`הקובץ ${filename} לא נמצא בנתיב: ${filePath}`);
-          continue;
-        }
-
-        const text = await response.text();
-
-        // 1. חילוץ כותרת ראשית (תגית H1 או #)
-        let title = filename.replace('.md', '').replace(/-/g, ' ');
-        const titleMatch = text.match(/^(#{1})\s+(.+)$/m);
-        if (titleMatch) {
-          title = titleMatch[2].trim();
-        }
-
-        // 2. חילוץ הטקסט תחת "על השיטה בקצרה" (H2)
-        let excerpt = 'תיאור לא זמין.';
-        const excerptRegex = /##\s*על השיטה בקצרה\s*\n([\s\S]*?)(?=\n#|$)/;
-        const excerptMatch = text.match(excerptRegex);
-
-        if (excerptMatch) {
-          let cleanText = excerptMatch[1].replace(/[#*`_\[\]>]/g, '').trim();
-          excerpt = cleanText.substring(0, 250);
-          if (cleanText.length > 250) excerpt += '...';
-        }
-
-        const nameWithoutExt = filename.replace('.md', '');
-
-        // 3. בניית המשבצת - מקשר ל-system.html#name
-        cardsHTML += `
-                    <a href="/articles/system.html#${nameWithoutExt}" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-purple-400 h-full flex flex-col group">
-                        <div class="flex flex-col flex-grow">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">שיטת משחק</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-stone-800 mb-3 leading-tight group-hover:text-purple-700 transition-colors">${title}</h3>
-                            <p class="text-stone-600 mb-6 flex-grow text-sm leading-relaxed">
-                                ${excerpt}
-                            </p>
-                            <div class="text-purple-600 font-bold group-hover:underline flex items-center mt-auto text-sm">
-                                לעמוד השיטה
-                                <svg class="w-4 h-4 mr-1 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </div>
-                        </div>
-                    </a>
-                `;
-
-      } catch (error) {
-        console.error(`שגיאה בטעינת ${filename}:`, error);
+      if (queryFile) {
+        filePath = queryFile;
+        fileName = filePath.split('/').pop().replace(/\.[^/.]+$/, "");
+      } else {
+        // 3. ברירת מחדל אם לא סופק כלום
+        fileName = 'ggg';
+        filePath = `files/${fileName}.md`;
       }
     }
 
-    if (cardsHTML !== '') {
-      grid.innerHTML = cardsHTML;
-    } else {
-      grid.innerHTML = '<div class="col-span-full text-center text-stone-500 py-8">טרם נוספו שיטות משחק למאגר או שהקבצים לא נמצאו בתיקיית files.</div>';
+    // נגדיר כותרות זמניות עד שהקובץ ייטען
+    pageTitle.innerText = `טוען מאמר... - שער להרפתקה`;
+    articleTitle.innerText = "טוען נתונים...";
+    breadcrumbTitle.innerText = "טוען...";
+
+    try {
+      const response = await fetch(filePath);
+
+      if (!response.ok) {
+        throw new Error(`שגיאה בגישה לקובץ. קוד שגיאה: ${response.status}`);
+      }
+
+      let text = await response.text();
+
+      // כותרת ברירת מחדל במידה ולא מצאנו כותרת בקובץ (שם הקובץ ללא מקפים)
+      let extractedTitle = fileName.replace(/-/g, ' ');
+
+      // חילוץ הכותרת הראשונה מתוך קובץ ה-Markdown (למשל # כותרת)
+      if (filePath.toLowerCase().endsWith('.md')) {
+        const titleMatch = text.match(/^(#{1,6})\s+(.+)$/m);
+        if (titleMatch) {
+          extractedTitle = titleMatch[2].trim();
+          // נסיר את הכותרת מהטקסט כדי שלא תופיע פעמיים (גם למעלה וגם בתוכן)
+          text = text.replace(titleMatch[0], '').trim();
+        }
+      } else {
+        // ניסיון לחלץ תגית H1 מקובץ HTML
+        const h1Match = text.match(/<h1[^>]*>(.*?)<\/h1>/is);
+        if (h1Match) {
+          extractedTitle = h1Match[1].replace(/<[^>]+>/g, '').trim();
+          text = text.replace(h1Match[0], '').trim();
+        }
+      }
+
+      // --- יצירת תיאור דינמי (תקציר) ל-SEO ---
+      // ניקוי בסיסי של סימני Markdown והוצאת הפסקה הראשונה
+      let cleanText = text.replace(/[#*`_\[\]>]/g, '').trim();
+      let firstParagraph = cleanText.split('\n').find(line => line.trim().length > 15);
+      let excerpt = firstParagraph ? firstParagraph.substring(0, 150) + "..." : "קראו את המאמר המלא באתר שער להרפתקה.";
+
+      // עדכון תגיות המטא ל-SEO ולשיתוף
+      if (document.getElementById('meta-desc')) document.getElementById('meta-desc').content = excerpt;
+      if (document.getElementById('og-desc')) document.getElementById('og-desc').content = excerpt;
+      if (document.getElementById('og-title')) document.getElementById('og-title').content = `${extractedTitle} - שער להרפתקה`;
+      if (document.getElementById('og-url')) document.getElementById('og-url').content = window.location.href;
+
+      // עדכון הכותרות האמיתיות שנשלפו מהקובץ
+      pageTitle.innerText = `${extractedTitle} - שער להרפתקה`;
+      articleTitle.innerText = extractedTitle;
+      breadcrumbTitle.innerText = extractedTitle;
+
+      // המרה מ-Markdown ל-HTML או הכנסה ישירה
+      if (filePath.toLowerCase().endsWith('.md')) {
+        contentDiv.innerHTML = marked.parse(text);
+      } else {
+        contentDiv.innerHTML = text;
+      }
+
+    } catch (error) {
+      console.error('Error fetching file:', error);
+      contentDiv.innerHTML = `
+                    <div class="error-message">
+                        <h2 class="text-xl font-bold mb-2">אופס! לא הצלחנו לטעון את המאמר</h2>
+                        <p class="mb-2">ניסינו לטעון את המאמר תחת השם: <strong dir="ltr">${fileName}</strong></p>
+                        <p class="mb-2">הנתיב המדויק שחיפשנו: <strong dir="ltr">${filePath}</strong></p>
+                        <p class="text-sm">פירוט השגיאה: ${error.message}</p>
+                    </div>
+                `;
     }
   }
 
-  window.addEventListener('DOMContentLoaded', loadSystemsCards);
-</script>
+  // טעינה ראשונית
+  window.addEventListener('DOMContentLoaded', loadArticle);
 
+  // מאזין לשינויים בסולמית (Hash) כדי לרענן את התוכן בלי לטעון מחדש את הדף כולו!
+  window.addEventListener('hashchange', loadArticle);
+</script>
 </body>
 </html>
