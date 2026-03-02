@@ -277,7 +277,7 @@
     for (const filename of systemFiles) {
       try {
         // נתיב הקובץ מתוך תיקיית files (נתיב יחסי מהקובץ הנוכחי)
-        const filePath = `articles/files/${filename}`;
+        const filePath = `/articles/files/${filename}`;
         const response = await fetch(filePath);
 
         if (!response.ok) {
