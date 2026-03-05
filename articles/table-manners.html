@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>נימוסי שולחן ותרבות משחק - שער להרפתקה</title>
+    <link rel="icon" type="image/x-icon" href="/rpg-game.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Assistant', sans-serif; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; color: #1c1917; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.25rem; line-height: 1.7; font-size: 1.125rem; color: #44403c; }
+        .prose ul { list-style-type: disc; padding-right: 1.5rem; margin-bottom: 1.25rem; color: #44403c; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #1c1917; font-weight: 700; }
+        #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
+    <div id="background-overlay"></div>
+
+    <!-- GLOBAL SITE NAVIGATION -->
+    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+            <!-- Logo area -->
+            <div class="w-full md:w-auto flex justify-center md:justify-start">
+                <h1 class="text-xl md:text-2xl font-bold text-white">
+                    <a href="/" class="flex items-center gap-2">
+                        <img src="/rpg-game.png" alt="לוגו" class="w-8 h-8">
+                        שער להרפתקה
+                    </a>
+                </h1>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-3 md:border-0 md:pt-0">
+                <div class="flex items-center gap-4 md:gap-6">
+                    <a href="/" class="text-yellow-400 font-bold transition-colors">בית</a>
+                    <a href="/search" class="hover:text-indigo-300 transition-colors">חיפוש</a>
+                    <a href="/articles" class="hover:text-indigo-300 transition-colors">מאמרים</a>
+                </div>
+
+                <span class="hidden md:block w-px h-5 bg-indigo-500/50 mx-1"></span>
+
+                <a href="https://roleplay.top" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
+                    <span>גמ"ה</span>
+                    <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 flex-grow">
+        <nav class="text-sm mb-6 text-stone-500">
+            <a href="/index" class="hover:underline">בית</a> / <a href="/articles/index" class="hover:underline">מאמרים</a> / <span class="text-stone-800 font-semibold">נימוסי שולחן ותרבות משחק</span>
+        </nav>
+
+        <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border border-stone-200">
+            <header class="mb-8 border-b border-stone-100 pb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="bg-teal-100 text-teal-800 text-sm font-semibold px-3 py-1 rounded-full">לשחקן ולמנחה</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">נימוסי שולחן ותרבות משחק: המדריך הלא-כתוב לשחקן המוצלח</h1>
+            </header>
+            
+            <div class="prose">
+                <p>משחקי תפקידים הם קודם כל, ולפני הכל, תחביב חברתי. אתם יכולים לדעת את כל ספרי החוקים בעל פה, לבנות את הדמות הכי חזקה סטטיסטית, ולהחזיק בסט הקוביות הכי יקר בעולם – אבל אם לא נעים לשחק איתכם, הקמפיין פשוט לא יחזיק מעמד.</p>
+                
+                <p>בניגוד למשחקי מחשב, שבהם אתם מול המסך, כאן מדובר בקבוצה של אנשים (לרוב 4 עד 6) שיושבים יחד סביב שולחן (או בשיחת וידאו) למשך מספר שעות. כדי שהקסם הזה יעבוד, התפתחה לאורך השנים "תרבות משחק" – אוסף של נימוסי שולחן והסכמות חברתיות שמטרתם לוודא שכולם, ללא יוצא מן הכלל, נהנים.</p>
+
+                <h2>סשן אפס: תיאום הציפיות הקדוש</h2>
+                <p>המושג אולי החשוב ביותר בתרבות המשחק המודרנית הוא "סשן אפס" (Session Zero). זהו מפגש שמתקיים לפני שמתחילים לשחק בפועל. במפגש הזה לא מגלגלים קוביות ולא נלחמים באורקים, אלא יושבים לדבר: איזה סגנון משחק אנחנו רוצים? האם אנחנו מחפשים דרמה רצינית, חקירת תעלומות באפלה, או אולי הרפתקה קלילה ומלאת בדיחות קרש?</p>
+                <p>זה גם המקום לדבר על "קווים אדומים" (Triggers) – נושאים ששחקנים לא מעוניינים שיופיעו במשחק. תיאום ציפיות מוקדם מונע 90% מהחיכוכים בהמשך הדרך.</p>
+
+                <h2>חלוקת הזרקור (Spotlight)</h2>
+                <p>אחת הטעויות הנפוצות של שחקנים מתחילים היא לחשוב שהם הדמות הראשית בסיפור. האמת היא שמשחק תפקידים הוא אנסמבל. לכל דמות יש את רגעי השיא שלה, ואחד הכישורים החשובים ביותר של שחקן טוב הוא לדעת מתי לזוז אחורה ולתת לשחקן אחר את הבמה. כשדמות אחרת עושה משהו מגניב – עודדו אותה! אל תקטעו שחקנים אחרים כשהם מדברים, ואל תנסו לפתור כל בעיה בעצמכם רק כי הדמות שלכם "יכולה".</p>
+
+                <h2>כבוד למנחה ולזמן של כולם</h2>
+                <p>להיות מנחה (שה"ם / שליט מבוך) דורש השקעה. בזמן שאתם הגעתם לשחק, המנחה כנראה בילה שעות במהלך השבוע בהכנת מפות, בניית דמויות, כתיבת עלילה ולמידת חוקים. הדרך הבסיסית ביותר להראות הערכה היא לכבד את הזמן:</p>
+                <ul class="list-disc pr-6">
+                    <li><strong>הגיעו בזמן:</strong> משחק שנקבע ל-20:00 לא אמור להתחיל ב-21:00.</li>
+                    <li><strong>הודיעו מראש:</strong> לא יכולים להגיע? הודיעו ברגע שאתם יודעים, לא חצי שעה לפני שהמשחק מתחיל. קשה מאוד לקיים משחק כששחקנים חסרים במפתיע.</li>
+                    <li><strong>חוקים וגבולות הוויכוח:</strong> נתקלתם בחוק שלדעתכם המנחה פירש לא נכון? אפשר להעיר בנימוס, אבל אם המנחה קיבל החלטה – ממשיכים הלאה. אל תעצרו קרב מותח לעשרים דקות של נבירה בספרים. אפשר לדבר על הכלים והחוקים אחרי הסשן.</li>
+                </ul>
+
+                <h2>סמארטפונים, מסכים והסחות דעת</h2>
+                <p>המגפה של העידן המודרני לא פסחה על שולחן המשחק. אלא אם כן אתם משתמשים בטלפון או בטאבלט כדף דמות דיגיטלי או כדי לבדוק לחש ספציפי – שימו אותם בצד. כששחקן מנסה לנהל מונולוג דרמטי מול המלך, ולידו שחקנים אחרים גוללים באינסטגרם, זה שואב את כל האנרגיה מהחדר. תהיו נוכחים, תקשיבו גם כשהדמות שלכם לא בסצנה, ותראו שזה משפר את החוויה שלכם פלאים.</p>
+
+                <h2>כלים חברתיים ובטיחות בשולחן</h2>
+                <p>הקהילה שלנו בארץ הפכה למודעת מאוד למרחב אישי ולבטיחות רגשית (ולמי שעוקב אחרי הפעילויות שאנחנו מרכזים באתר "שער להרפתקה", קל לראות שזה ערך עליון בכנסים ובאירועים רשמיים). היום נהוג להשתמש בכלים כמו "כרטיס X" – כרטיס שמונח על השולחן (או סימן מוסכם באונליין) שכל שחקן יכול לגעת בו אם התוכן במשחק גורם לו לאי-נוחות קיצונית, ומיד עוברים הלאה בלי לשאול שאלות.</p>
+                <p>חשוב לזכור: הדמויות יכולות לריב, לבגוד זו בזו או לשנוא אחת את השנייה – אבל השחקנים לא. ברגע שסכסוך גולש מהמשחק אל העולם האמיתי (Bleed), חובה לעצור, לקחת נשימה, ולדבר על זה כאנשים בוגרים.</p>
+
+                <h2>סיכום</h2>
+                <p>החוקים בספר נועדו להגיד לנו כמה נזק עושה חרב, אבל "נימוסי השולחן" הם מה שקובע אם ניפגש שוב גם בשבוע הבא. קהילת שחקני התפקידים בישראל ידועה כקהילה חמה, מקבלת ומכילה. אם תגיעו לשולחן עם פתיחות, רצון לשתף פעולה וכבוד לשאר היושבים סביבו – תגלו מהר מאוד שהאנשים שחולקים איתכם את הדמיון, יהפכו גם לכמה מהחברים הכי טובים שלכם במציאות.</p>
+            </div>
+
+            <!-- About Site Section -->
+            <div class="mt-12 pt-8 border-t-2 border-indigo-100 bg-indigo-50 p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-indigo-900 mb-4">על פרויקט "שער להרפתקה"</h3>
+                <p class="text-stone-700 mb-4">
+                    ״שער להרפתקה״ הוא פרויקט שנועד לעשות סוף לבלגן של מתחילים: במקום לחפש בפייסבוק, בגוגל ובשמועות – כל המידע מרוכז במקום אחד. 
+                    האתר כולל מדריך מלא למי שנכנס לתחום בפעם הראשונה: מה זה משחקי תפקידים, איך מתחילים, אילו שיטות מומלצות, איך מוצאים קבוצה, ואיפה יש חוגים וחנויות בכל הארץ.
+                </p>
+                <div class="mb-6">
+                    <strong class="block text-lg text-indigo-800 mb-2">באתר תמצאו:</strong>
+                    <ul class="list-disc list-inside text-stone-700 space-y-1">
+                        <li>מדריך למתחילים בעברית.</li>
+                        <li>רשימת חוגים לילדים ונוער.</li>
+                        <li>קישורים לקהילות, כנסים ואירועים.</li>
+                        <li>עסקים, חנויות ומקומות לשחק בהם.</li>
+                        <li>עדכונים שוטפים דרך ערוץ הוואטסאפ ״דואר עוף-חול״.</li>
+                        <li>מאגר מאמרים לחדשים בתחביב.</li>
+                    </ul>
+                </div>
+                <p class="text-lg font-semibold text-indigo-900 mb-4">אם אתם רוצים להתחיל לשחק בלי ללכת לאיבוד – זה המקום להתחיל ממנו.</p>
+                <a href="/index" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    היכנסו לשער להרפתקה
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="text-center py-6 mt-12 bg-stone-200 border-t border-stone-300">
+        <p class="text-base text-stone-600">שער להרפתקה - שער הכניסה לתחום משחקי התפקידים</p>
+        <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top" class="text-indigo-600 hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a>.</p>
+    </footer>
+</body>
+</html>
