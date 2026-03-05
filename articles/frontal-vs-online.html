@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק אונליין מול פרונטלי - שער להרפתקה</title>
+    <link rel="icon" type="image/x-icon" href="/rpg-game.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Assistant', sans-serif; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; color: #1c1917; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.25rem; line-height: 1.7; font-size: 1.125rem; color: #44403c; }
+        .prose ul { list-style-type: disc; padding-right: 1.5rem; margin-bottom: 1.25rem; color: #44403c; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose strong { color: #1c1917; font-weight: 700; }
+        #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+    </style>
+</head>
+<body class="bg-amber-50 text-stone-800 flex flex-col min-h-screen">
+    <div id="background-overlay"></div>
+
+    <!-- GLOBAL SITE NAVIGATION -->
+    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+            <!-- Logo area -->
+            <div class="w-full md:w-auto flex justify-center md:justify-start">
+                <h1 class="text-xl md:text-2xl font-bold text-white">
+                    <a href="/" class="flex items-center gap-2">
+                        <img src="/rpg-game.png" alt="לוגו" class="w-8 h-8">
+                        שער להרפתקה
+                    </a>
+                </h1>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-3 md:border-0 md:pt-0">
+                <div class="flex items-center gap-4 md:gap-6">
+                    <a href="/" class="text-yellow-400 font-bold transition-colors">בית</a>
+                    <a href="/search" class="hover:text-indigo-300 transition-colors">חיפוש</a>
+                    <a href="/articles" class="hover:text-indigo-300 transition-colors">מאמרים</a>
+                </div>
+
+                <span class="hidden md:block w-px h-5 bg-indigo-500/50 mx-1"></span>
+
+                <a href="https://roleplay.top" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
+                    <span>גמ"ה</span>
+                    <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 flex-grow">
+        <nav class="text-sm mb-6 text-stone-500">
+            <a href="/index" class="hover:underline">בית</a> / <a href="/articles/index" class="hover:underline">מאמרים</a> / <span class="text-stone-800 font-semibold">משחק אונליין מול פרונטלי</span>
+        </nav>
+
+        <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border border-stone-200">
+            <header class="mb-8 border-b border-stone-100 pb-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">מדריך מעשי</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">משחק אונליין מול פרונטלי: איפה כדאי לגלגל קוביות?</h1>
+            </header>
+            
+            <div class="prose">
+                <p>עד לפני לא מעט שנים, התמונה של משחק תפקידים הייתה ברורה: חבורה של אנשים יושבים סביב שולחן אוכל גדול, מעבירים ביניהם קערת במבה, מזיזים מיניאטורות על מפת משבצות ומגלגלים קוביות מפלסטיק. היום, המציאות של התחביב שונה לגמרי. משחקי האונליין כבשו בסערה את הקהילה, והשאלה "האם הקבוצה נפגשת פנים אל פנים או בדיסקורד?" היא הראשונה שנשאלת כשמחפשים שחקנים.</p>
+                
+                <p>אם אתם עושים את הצעדים הראשונים שלכם בתחום, אולי אתם מתלבטים מאיפה להתחיל. בואו נעשה סדר ביתרונות ובחסרונות של כל שיטה, כדי לעזור לכם להבין מה מתאים לכם יותר.</p>
+
+                <h2>משחק פרונטלי (סביב השולחן)</h2>
+                <p>החוויה הקלאסית והשורשית של משחקי התפקידים. אתם יוצאים מהבית, נוסעים למנחה (או מארחים בעצמכם), ויושבים יחד באותו החדר.</p>
+                
+                <ul class="list-disc pr-6">
+                    <li><strong>היתרון החברתי:</strong> קשה לנצח את האנרגיה של קבוצת אנשים שיושבים באותו חדר. קל יותר לקרוא שפת גוף, הבדיחות זורמות בטבעיות, ואי אפשר להתעלם מתחושת הביחד כשכולם עוצרים את נשימתם בזמן שגלגול קובייה גורלי מסתובב על השולחן.</li>
+                    <li><strong>פחות הסחות דעת:</strong> כשאתם יושבים מול אנשים בשר ודם, הרבה יותר קשה "לברוח" לגלילה בטיקטוק או לענות למיילים תוך כדי משחק. המשחק הרבה יותר ממוקד.</li>
+                    <li><strong>החוויה הפיזית (Tactile):</strong> התחושה של להחזיק דף דמות מנייר, להזיז פסיקים בעיפרון ולזרוק חופן קוביות ממתכת היא חלק בלתי נפרד מהכיף עבור שחקנים רבים.</li>
+                    <li><strong>החסרונות - לוגיסטיקה:</strong> צריך למצוא ערב שכולם פנויים בו, להתמודד עם פקקים, למצוא חניה באזור המרכז, ולארגן כיבוד. בנוסף, אם אתם גרים בפריפריה, עלול להיות מאתגר למצוא קבוצה פיזית שקרובה אליכם מספיק.</li>
+                </ul>
+
+                <h2>משחק אונליין (ברשת)</h2>
+                <p>כאן המשחק מתנהל דרך תוכנות שיחה כמו Discord או Zoom, לרוב בשילוב "שולחן וירטואלי" (VTT) כמו Roll20, Foundry או Owlbear Rodeo, שמציגים מפות, דפי דמות ומגלגלים קוביות דיגיטליות.</p>
+
+                <ul class="list-disc pr-6">
+                    <li><strong>נוחות וגמישות מקסימלית:</strong> אפשר לשחק בפיג'מה מנוחות החדר שלכם. ברגע שהמשחק נגמר – אתם במיטה. בלי פקקים, בלי לסדר את הבית לפני שמגיעים אורחים.</li>
+                    <li><strong>שבירת מחסום הגיאוגרפיה:</strong> זהו היתרון הגדול ביותר עבור הקהילה הישראלית. שחקן מנהריה, מנחה מאילת ושחקנית מתל אביב יכולים לשחק באותה קבוצה. המאגר למציאת שחקנים הופך לארצי (ואפילו עולמי), מה שמקל מאוד על מציאת קבוצות ספציפיות.</li>
+                    <li><strong>כלים טכנולוגיים:</strong> השולחנות הוירטואליים מציעים פיצ'רים מטורפים – מתאורה דינמית שמשתנה לפי זווית הראייה של הדמות, דרך חישובים מתמטיים אוטומטיים שחוסכים כאב ראש, ועד פסקולים ואפקטים קוליים שנשלטים בלחיצת כפתור.</li>
+                    <li><strong>החסרונות - ניתוק וקשב:</strong> קל מאוד לאבד ריכוז כשפותחים "רק לרגע" טאב נוסף בדפדפן. בנוסף, לא כולם אוהבים לשבת עוד שעות מול המסך אחרי יום עבודה (תופעה שמוכרת כ-"עייפות זום"), ולעתים יש תקלות טכניות מתסכלות כמו ניתוקי אינטרנט או בעיות מיקרופון.</li>
+                </ul>
+
+                <h2>אז מאיפה כדאי להתחיל?</h2>
+                <p>אין כאן תשובה אחת נכונה. אם אתם חבר'ה צעירים או אנשים שמתגעגעים למפגש חברתי בלתי-אמצעי – חפשו קבוצה פרונטלית, אולי אפילו באחת מחנויות המשחקים או בבתי הקפה הייעודיים שמתפתחים בארץ.</p>
+                <p>לעומת זאת, אם לוח הזמנים שלכם צפוף, אתם הורים שאינם יכולים לצאת מהבית בערב, או שאתם גרים רחוק ממרכזי הקהילה הגדולים – משחק אונליין הוא שער הכניסה המושלם והנגיש ביותר לתחביב.</p>
+                
+                <p>ההמלצה שלנו? נסו את שניהם! ב<a href="/" class="text-indigo-600 hover:underline">שער להרפתקה</a> תמצאו קישורים לקהילות הדיסקורד והפייסבוק הגדולות בישראל, שם תוכלו לחפש קבוצות משני הסוגים, להצטרף למשחקי היכרות ולמצוא את המקום (הפיזי או הוירטואלי) שהכי מתאים לכם.</p>
+            </div>
+
+            <!-- About Site Section -->
+            <div class="mt-12 pt-8 border-t-2 border-indigo-100 bg-indigo-50 p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-indigo-900 mb-4">על פרויקט "שער להרפתקה"</h3>
+                <p class="text-stone-700 mb-4">
+                    ״שער להרפתקה״ הוא פרויקט שנועד לעשות סוף לבלגן של מתחילים: במקום לחפש בפייסבוק, בגוגל ובשמועות – כל המידע מרוכז במקום אחד. 
+                    האתר כולל מדריך מלא למי שנכנס לתחום בפעם הראשונה: מה זה משחקי תפקידים, איך מתחילים, אילו שיטות מומלצות, איך מוצאים קבוצה, ואיפה יש חוגים וחנויות בכל הארץ.
+                </p>
+                <div class="mb-6">
+                    <strong class="block text-lg text-indigo-800 mb-2">באתר תמצאו:</strong>
+                    <ul class="list-disc list-inside text-stone-700 space-y-1">
+                        <li>מדריך למתחילים בעברית.</li>
+                        <li>רשימת חוגים לילדים ונוער.</li>
+                        <li>קישורים לקהילות, כנסים ואירועים.</li>
+                        <li>עסקים, חנויות ומקומות לשחק בהם.</li>
+                        <li>עדכונים שוטפים דרך ערוץ הוואטסאפ ״דואר עוף-חול״.</li>
+                        <li>מאגר מאמרים לחדשים בתחביב.</li>
+                    </ul>
+                </div>
+                <p class="text-lg font-semibold text-indigo-900 mb-4">אם אתם רוצים להתחיל לשחק בלי ללכת לאיבוד – זה המקום להתחיל ממנו.</p>
+                <a href="/index" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    היכנסו לשער להרפתקה
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="text-center py-6 mt-12 bg-stone-200 border-t border-stone-300">
+        <p class="text-base text-stone-600">שער להרפתקה - שער הכניסה לתחום משחקי התפקידים</p>
+        <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top" class="text-indigo-600 hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a>.</p>
+    </footer>
+</body>
+</html>
