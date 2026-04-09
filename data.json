@@ -1,23 +1,131 @@
 {
   "communityData": [
-    { "name": "העמותה למשחקי תפקידים בישראל", "type": "organization", "description": "הגוף המרכזי המוכר לקידום התחביב. מארגנת כנסים (כרמיקון), תומכת בפרויקטים, אירועים ויוצרים, ומפעילה את הוצאת 'גיבורים'.", "link": "https://roleplay.org.il/", "month": 0 },
-    { "name": "האגודה למד\"ב ופנטסיה", "type": "organization", "description": "שותפה בארגון כנסים מרכזיים כמו פסטיבל אייקון, ומקדמת את תרבות הז'אנר בישראל.", "link": "https://www.sf-f.org.il/", "month": 0 },
-    { "name": "גלגול - משחקי תפקידים למען הקהילה", "type": "organization", "description": "מיזם של ראובן צירל-מנדלוביץ' המציע משחקים מקוריים, תרגומים נגישים ופעילויות קהילתיות.", "link": "https://rrpg.top/", "month": 0 },
-    { "name": "הפונדק (קהילה)", "type": "group", "description": "הקהילה המקוונת הוותיקה והמובילה של התחביב, עם פורומים פעילים ותכנים רבים.", "link": "https://www.pundak.co.il/", "month": 0 },
-    { "name": "הפונדק הוצאה לאור", "type": "organization", "description": "הוצאה לאור של משחקי תפקידים ותכנים רבים מאז 2003, כולל 'פאת'פיינדר בעולמות פראיים'.", "link": "https://pundak.games/", "month": 0 },
-    { "name": "חרבות וכשפים", "type": "organization", "description": "מיזם העוסק בתחום משחקי התפקידים בעברית. המיזם כולל: משחק התפקידים והערכה המומלצת ביותר כיום למתחילים ולצעירים, הוצאת ידיעונים, ארגון כנסי \"הרפתקון\", ועוד.", "link": "https://swordsandwizardry.co.il/", "month": 0 },
-    { "name": "לארפ גלדיאטור", "type": ["organization", "activities"], "description": "המרכז הישראלי למשחקי לארפ. מארגן אירועים בארץ ובחו\"ל ומהווה מוקד ידע וציוד.", "link": "https://www.larp-g.com/", "month": 0 },
-    { "name": "פסטיבל אייקון", "type": "event", "description": "אירוע הדגל השנתי של קהילת חובבי הז'אנר, עם מתחם ענק למשחקי תפקידים, דוכנים ועוד.", "link": "https://www.icon.org.il/", "month": 10, "location": "תל אביב" },
-    { "name": "כנס דרקוניקון", "type": "event", "description": "כנס משחקי השולחן המוביל בישראל, מתקיים באוגוסט ומציע מגוון עצום של משחקים למתחילים וותיקים.", "link": "https://dragoncon.co.il/", "month": 8, "location": "תל אביב" },
-    { "name": "לארפ ליברה", "type": "event", "description": "אירוע לארפ ותיק עם דגש על סיפור מתמשך ועולם עשיר בו השחקנים מעצבים את העלילה.", "link": "https://libra.co.il/", "month": 10, "location": "תל אביב" },
-    { "name": "כנס כרמיקון", "type": "event", "description": "כנס משחקי תפקידים ופנטזיה המתקיים בכרמיאל, עם דגש על קהילת הצפון.", "link": "https://karmicon.roleplay.org.il/index.html", "month": 12, "location": "כרמיאל" },
-    { "name": "כנס הרפתקון", "type": "event", "description": "כנס משחקי תפקידים של חרבות וכשפים בתל אביב. הכנס מתקיים מספר פעם בשנה (בדרך כלל בחנוכה, פורים, פסח ובקיץ).", "link": "https://swordsandwizardry.co.il/adventurecon/", "month": 12, "location": "תל אביב" },
-    { "name": "כנס דורות", "type": "event", "description": "כנס שנתי למדע בדיוני, פנטזיה ומשחקי תפקידים, המציע מגוון פעילויות והרצאות.", "link": "https://dorot-con.org.il/", "month": 3, "location": "חיפה" },
-    { "name": "שחקני תפקידים בישראל (פייסבוק)", "type": "group", "description": "הקבוצה הגדולה והפעילה ביותר לדיונים, שיתוף, ומציאת קבוצות משחק.", "link": "https://www.facebook.com/groups/israeliroleplayers/", "month": 0 },
-    { "name": "משחקי תפקידים בישראל (פייסבוק)", "type": "group", "description": "הקבוצה השנייה הגדולה והפעילה ביותר לדיונים, שיתוף, ומציאת קבוצות משחק.", "link": "https://www.facebook.com/groups/roleplayingisrael", "month": 0 },
-    { "name": "לארפ ישראל (פייסבוק)", "type": "group", "description": "הקבוצה המרכזית של קהילת הלארפ לדיונים, עדכונים על אירועים ותיאומים.", "link": "https://www.facebook.com/groups/israelilarp", "month": 0 },
-    { "name": "פורום חיפוש שחקנים בפונדק", "type": "group", "description": "לוח המודעות הוותיק והיעיל ביותר למציאת קבוצת משחק לפי אזור גיאוגרפי.", "link": "https://www.pundak.co.il/forums/%D7%97%D7%99%D7%A4%D7%95%D7%A9-%D7%A9%D7%97%D7%A7%D7%A0%D7%99%D7%9D-%D7%9E%D7%A0%D7%97%D7%99%D7%9D-%D7%95%D7%A7%D7%91%D7%95%D7%A6%D7%95%D7%AA-%D7%9E%D7%A9%D7%97%D7%A7%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93%D7%99%D7%9D.31/", "month": 0 }
+    { 
+      "name": "העמותה למשחקי תפקידים בישראל", 
+      "type": "organization", 
+      "description": "הגוף המרכזי המוכר לקידום התחביב. מארגנת כנסים (כרמיקון), תומכת בפרויקטים, אירועים ויוצרים, ומפעילה את הוצאת 'גיבורים'.", 
+      "link": "https://roleplay.org.il/", "month": 0
+    },
+    { 
+      "name": "האגודה למד\"ב ופנטסיה", 
+      "type": "organization", 
+      "description": "שותפה בארגון כנסים מרכזיים כמו פסטיבל אייקון, ומקדמת את תרבות הז'אנר בישראל.", 
+      "link": "https://www.sf-f.org.il/", 
+      "month": 0 
+    },
+    { 
+      "name": "גלגול - משחקי תפקידים למען הקהילה", 
+      "type": "organization", 
+      "description": "מיזם של ראובן צירל-מנדלוביץ' המציע משחקים מקוריים, תרגומים נגישים ופעילויות קהילתיות.", 
+      "link": "https://rrpg.top/", 
+      "month": 0 
+    },
+    { 
+      "name": "הפונדק (קהילה)", 
+      "type": "group", 
+      "description": "הקהילה המקוונת הוותיקה והמובילה של התחביב, עם פורומים פעילים ותכנים רבים.", 
+      "link": "https://www.pundak.co.il/", 
+      "month": 0 
+    },
+    { 
+      "name": "הפונדק הוצאה לאור", 
+      "type": "organization", 
+      "description": "הוצאה לאור של משחקי תפקידים ותכנים רבים מאז 2003, כולל 'פאת'פיינדר בעולמות פראיים'.", 
+      "link": "https://pundak.games/", 
+      "month": 0 
+    },
+    { 
+      "name": "חרבות וכשפים", 
+      "type": "organization", 
+      "description": "מיזם העוסק בתחום משחקי התפקידים בעברית. המיזם כולל: משחק התפקידים והערכה המומלצת ביותר כיום למתחילים ולצעירים, הוצאת ידיעונים, ארגון כנסי \"הרפתקון\", ועוד.", 
+      "link": "https://swordsandwizardry.co.il/", 
+      "month": 0 
+    },
+    { 
+      "name": "לארפ גלדיאטור", 
+      "type": ["organization", "activities"], 
+      "description": "המרכז הישראלי למשחקי לארפ. מארגן אירועים בארץ ובחו\"ל ומהווה מוקד ידע וציוד.", 
+      "link": "https://www.larp-g.com/", 
+      "month": 0 
+    },
+    { 
+      "name": "פסטיבל אייקון", 
+      "type": "event", 
+      "description": "אירוע הדגל השנתי של קהילת חובבי הז'אנר, עם מתחם ענק למשחקי תפקידים, דוכנים ועוד.", 
+      "link": "https://www.icon.org.il/", 
+      "month": 10, 
+      "location": "תל אביב" 
+    },
+    { 
+      "name": "כנס דרקוניקון", 
+      "type": "event", 
+      "description": "כנס משחקי השולחן המוביל בישראל, מתקיים באוגוסט ומציע מגוון עצום של משחקים למתחילים וותיקים.", 
+      "link": "https://dragoncon.co.il/", 
+      "month": 8, 
+      "location": "תל אביב" 
+    },
+    { 
+      "name": "לארפ ליברה", 
+      "type": "event", 
+      "description": "אירוע לארפ ותיק עם דגש על סיפור מתמשך ועולם עשיר בו השחקנים מעצבים את העלילה.", 
+      "link": "https://libra.co.il/", 
+      "month": 10, 
+      "location": "תל אביב" 
+    },
+    { 
+      "name": "כנס כרמיקון", 
+      "type": "event", 
+      "description": "כנס משחקי תפקידים ופנטזיה המתקיים בכרמיאל, עם דגש על קהילת הצפון.", 
+      "link": "https://karmicon.roleplay.org.il/index.html", 
+      "month": 12, 
+      "location": "כרמיאל" 
+    },
+    { 
+      "name": "כנס הרפתקון", 
+      "type": "event", 
+      "description": "כנס משחקי תפקידים של חרבות וכשפים בתל אביב. הכנס מתקיים מספר פעם בשנה (בדרך כלל בחנוכה, פורים, פסח ובקיץ).", 
+      "link": "https://swordsandwizardry.co.il/adventurecon/", 
+      "month": 12, 
+      "location": "תל אביב" 
+    },
+    { 
+      "name": "כנס דורות", 
+      "type": "event", 
+      "description": "כנס שנתי למדע בדיוני, פנטזיה ומשחקי תפקידים, המציע מגוון פעילויות והרצאות.", 
+      "link": "https://dorot-con.org.il/", 
+      "month": 3, 
+      "location": "חיפה" 
+    },
+    { 
+      "name": "שחקני תפקידים בישראל (פייסבוק)", 
+      "type": "group", 
+      "description": "הקבוצה הגדולה והפעילה ביותר לדיונים, שיתוף, ומציאת קבוצות משחק.", 
+      "link": "https://www.facebook.com/groups/israeliroleplayers/", 
+      "month": 0 
+    },
+    { 
+      "name": "משחקי תפקידים בישראל (פייסבוק)", 
+      "type": "group", 
+      "description": "הקבוצה השנייה הגדולה והפעילה ביותר לדיונים, שיתוף, ומציאת קבוצות משחק.", 
+      "link": "https://www.facebook.com/groups/roleplayingisrael", 
+      "month": 0 
+    },
+    { 
+      "name": "לארפ ישראל (פייסבוק)", 
+      "type": "group", 
+      "description": "הקבוצה המרכזית של קהילת הלארפ לדיונים, עדכונים על אירועים ותיאומים.", 
+      "link": "https://www.facebook.com/groups/israelilarp", 
+      "month": 0 
+    },
+    { 
+      "name": "פורום חיפוש שחקנים בפונדק", 
+      "type": "group", 
+      "description": "לוח המודעות הוותיק והיעיל ביותר למציאת קבוצת משחק לפי אזור גיאוגרפי.", 
+      "link": "https://www.pundak.co.il/forums/%D7%97%D7%99%D7%A4%D7%95%D7%A9-%D7%A9%D7%97%D7%A7%D7%A0%D7%99%D7%9D-%D7%9E%D7%A0%D7%97%D7%99%D7%9D-%D7%95%D7%A7%D7%91%D7%95%D7%A6%D7%95%D7%AA-%D7%9E%D7%A9%D7%97%D7%A7%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93%D7%99%D7%9D.31/", 
+      "month": 0 }
   ],
+
+  
   "resourcesData": [
     {
       "name": "פריק (FreakTLV)",
