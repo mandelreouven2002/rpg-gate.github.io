@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שאלון: מצאו את המשחק שלכם | שער להרפתקה</title>
+    <meta name="description" content="לא יודעים באיזו שיטת משחק תפקידים להתחיל? ענו על 4 שאלות קצרות וקבלו המלצה אישית — D&D, חרבות וכשפים, פאת'פיינדר בעולמות פראיים או מנוע האפוקליפסה.">
+    <meta name="theme-color" content="#312e81">
+    <link rel="canonical" href="https://gate.roleplay.top/quiz">
+    <meta property="og:title" content="שאלון: מצאו את משחק התפקידים שלכם - שער להרפתקה">
+    <meta property="og:description" content="4 שאלות קצרות → המלצה אישית על שיטת משחק למתחילים.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/rpg-game.png">
+    <meta name="geo.region" content="IL">
+    <meta name="geo.placename" content="Israel">
+    <style>
+        body { font-family: 'Assistant', sans-serif; }
+        #background-overlay { position: fixed; inset: 0; z-index: -1; background-image: url('/static/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+        .opt:focus-visible { outline: 3px solid #4f46e5; outline-offset: 2px; }
+        .fade { animation: fade .35s ease; }
+        @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        .bar-fill { transition: width .35s ease; }
+    </style>
+</head>
+<body class="bg-amber-50 text-stone-800 min-h-screen flex flex-col">
+<div id="background-overlay"></div>
+
+<header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-[60]">
+    <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+        <div class="w-full md:w-auto flex justify-center md:justify-start">
+            <h1 class="text-xl md:text-2xl font-bold text-white">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="/static/rpg-game.png" alt="לוגו" class="w-8 h-8">
+                    שער להרפתקה
+                </a>
+            </h1>
+        </div>
+        <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-4 md:gap-6 font-medium text-sm md:text-base border-t border-indigo-800 pt-3 md:border-0 md:pt-0">
+            <div class="flex items-center gap-4 md:gap-6">
+                <a href="/" class="hover:text-indigo-300 transition-colors">בית</a>
+                <a href="/search" class="hover:text-indigo-300 transition-colors">חיפוש</a>
+                <a href="/articles" class="hover:text-indigo-300 transition-colors">מאמרים</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container mx-auto p-4 md:p-8 flex-grow w-full max-w-2xl">
+    <div class="text-center mb-8">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-3">מצאו את המשחק שלכם 🎲</h1>
+        <p class="text-lg text-slate-600">4 שאלות קצרות, והמלצה אישית על שיטת משחק להתחיל איתה.</p>
+    </div>
+
+    <!-- progress -->
+    <div id="progress-wrap" class="max-w-xl mx-auto mb-6">
+        <div class="flex justify-between text-sm text-stone-500 mb-1">
+            <span id="progress-label">שאלה 1 מתוך 4</span>
+            <span id="progress-pct">25%</span>
+        </div>
+        <div class="w-full h-2 bg-stone-200 rounded-full overflow-hidden">
+            <div id="progress-bar" class="bar-fill h-full bg-indigo-600 rounded-full" style="width:25%"></div>
+        </div>
+    </div>
+
+    <!-- question card -->
+    <div id="quiz-card" class="bg-white rounded-2xl shadow-lg border border-stone-200 p-6 md:p-8"></div>
+
+    <!-- result card -->
+    <div id="result-card" class="hidden"></div>
+
+    <div class="text-center mt-6">
+        <button id="restart-btn" class="hidden text-indigo-600 hover:underline font-semibold">התחלה מחדש</button>
+    </div>
+</main>
+
+<footer class="text-center py-6 mt-12 bg-stone-200 border-t border-stone-300">
+    <p class="text-base text-stone-600">שער להרפתקה - שער הכניסה לתחום משחקי התפקידים</p>
+    <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top/" class="text-indigo-600 hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a>.</p>
+    <p class="text-base text-stone-600"><a href="https://lp.reuven.click" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">ראובן מנדלוביץ׳</a></p>
+</footer>
+
+<script>
+(function(){
+    const systems = {
+        dnd:   { name:"מבוכים ודרקונים (D&D 5e)", badge:"הנפוץ ביותר בעולם", color:"#dc2626",
+                 why:"נקודת הכניסה הסטנדרטית לתחביב — קל למצוא קבוצה, חומרים למתחילים וקהילה עצומה.",
+                 link:"https://www.dndbeyond.com/" },
+        sw:    { name:"חרבות וכשפים", badge:"מומלץ למתחילים ולצעירים", color:"#d97706",
+                 why:"שיטה קלת-חוקים בעברית, עם ערכת מתחיל שמלמדת צעד-אחר-צעד. מושלמת לילדים ולמתחילים.",
+                 link:"https://swordsandwizardry.co.il/" },
+        sp:    { name:"פאת'פיינדר בעולמות פראיים", badge:"לחובבי האקשן", color:"#16a34a",
+                 why:"עומק עלילתי עם חוקים מהירים וקולנועיים. ספר הבסיס בעברית כולל כל מה שצריך כדי להתחיל.",
+                 link:"https://pundak.games/savage-pathfinder/" },
+        apoc:  { name:"מנוע האפוקליפסה", badge:"לחובבי חופש ומקוריות", color:"#f59e0b",
+                 why:"מנוע פשוט שמתמקד בסיפור ובדמיון חופשי, מתאים למגוון ז'אנרים. בעברית: 'פלאים' ו'וואנור'.",
+                 link:"https://vanor.co.il/" }
+    };
+
+    const questions = [
+        { q:"מי הולך לשחק בעיקר?",
+          a:[ {t:"ילדים, נוער או משפחה", s:{sw:3, apoc:1}},
+              {t:"מבוגרים / קבוצת חברים", s:{dnd:2, sp:1, apoc:1}},
+              {t:"עוד לא בטוח/ה", s:{sw:1, dnd:1}} ] },
+        { q:"כמה מורכבות חוקים בא לכם?",
+          a:[ {t:"פשוט וקליל — בא לי לשחק מהר", s:{sw:3, apoc:1}},
+              {t:"משהו מאוזן באמצע", s:{apoc:2, sp:1}},
+              {t:"עשיר וטקטי — אני אוהב/ת עומק", s:{dnd:3, sp:2}} ] },
+        { q:"מה הכי חשוב לכם בחוויה?",
+          a:[ {t:"סיפור ודמיון חופשי", s:{apoc:3, sw:1}},
+              {t:"אקשן, קרבות והרפתקאות", s:{sp:3, dnd:1}},
+              {t:"קהילה גדולה וקל למצוא קבוצה", s:{dnd:3}} ] },
+        { q:"עד כמה חשוב שהחומר יהיה בעברית?",
+          a:[ {t:"חשוב מאוד", s:{sw:2, sp:2, apoc:1}},
+              {t:"נחמד אבל לא קריטי", s:{dnd:2}} ] }
+    ];
+
+    let step = 0;
+    const scores = { dnd:0, sw:0, sp:0, apoc:0 };
+    const card = document.getElementById('quiz-card');
+    const resultCard = document.getElementById('result-card');
+    const restart = document.getElementById('restart-btn');
+    const pLabel = document.getElementById('progress-label');
+    const pPct = document.getElementById('progress-pct');
+    const pBar = document.getElementById('progress-bar');
+    const pWrap = document.getElementById('progress-wrap');
+
+    function esc(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+    function renderQuestion(){
+        const item = questions[step];
+        const pct = Math.round((step/questions.length)*100);
+        pLabel.textContent = `שאלה ${step+1} מתוך ${questions.length}`;
+        pPct.textContent = pct + "%";
+        pBar.style.width = pct + "%";
+        card.className = "bg-white rounded-2xl shadow-lg border border-stone-200 p-6 md:p-8 fade";
+        card.innerHTML =
+            `<h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">${esc(item.q)}</h2>
+             <div class="flex flex-col gap-3">` +
+            item.a.map((opt,i)=>
+                `<button class="opt text-right bg-stone-50 hover:bg-indigo-50 border border-stone-200 hover:border-indigo-400 rounded-xl px-5 py-4 text-lg font-semibold text-stone-700 transition-all" data-i="${i}">${esc(opt.t)}</button>`
+            ).join('') + `</div>`;
+        card.querySelectorAll('.opt').forEach(b=>{
+            b.addEventListener('click', ()=>choose(parseInt(b.dataset.i,10)));
+        });
+    }
+
+    function choose(i){
+        const s = questions[step].a[i].s;
+        for(const k in s){ scores[k] += s[k]; }
+        step++;
+        if(step < questions.length){ renderQuestion(); }
+        else { showResult(); }
+    }
+
+    function showResult(){
+        const best = Object.keys(scores).reduce((a,b)=> scores[b]>scores[a] ? b : a);
+        const sys = systems[best];
+        pBar.style.width = "100%"; pPct.textContent = "100%"; pLabel.textContent = "סיימתם!";
+        card.classList.add('hidden');
+        pWrap.classList.add('hidden');
+        resultCard.className = "bg-white rounded-2xl shadow-lg border border-stone-200 p-6 md:p-8 fade text-center";
+        resultCard.innerHTML =
+            `<p class="text-lg text-stone-500 mb-2">המשחק שהכי מתאים לכם להתחיל איתו:</p>
+             <span class="inline-block text-white text-sm font-bold px-4 py-1 rounded-full mb-3" style="background-color:${sys.color}">${esc(sys.badge)}</span>
+             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">${esc(sys.name)}</h2>
+             <p class="text-lg text-stone-600 max-w-xl mx-auto mb-6">${esc(sys.why)}</p>
+             <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="${sys.link}" target="_blank" rel="noopener" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold px-6 py-3 rounded-lg transition-colors">למעבר לאתר המשחק ←</a>
+                <a href="/#find-group" class="bg-white border border-indigo-200 text-indigo-700 hover:bg-indigo-50 font-bold px-6 py-3 rounded-lg transition-colors">איך מוצאים קבוצה?</a>
+             </div>
+             <p class="text-base text-stone-500 mt-6">רוצים להשוות את כל השיטות? <a href="/#systems" class="text-indigo-600 hover:underline font-semibold">לטבלת ההשוואה</a></p>`;
+        resultCard.classList.remove('hidden');
+        restart.classList.remove('hidden');
+    }
+
+    restart.addEventListener('click', ()=>{
+        step = 0; for(const k in scores) scores[k]=0;
+        resultCard.classList.add('hidden'); restart.classList.add('hidden');
+        card.classList.remove('hidden'); pWrap.classList.remove('hidden');
+        renderQuestion();
+    });
+
+    renderQuestion();
+})();
+</script>
+</body>
+</html>

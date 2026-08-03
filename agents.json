@@ -4,6 +4,7 @@
   "description": "רוצים להתחיל לשחק מבוכים ודרקונים? אתר שער להרפתקה הוא המדריך המקיף למשחקי תפקידים בישראל. האתר מיועד לשחקנים חדשים, להורים מבולבלים, ולמי ששמע על \"משחקי תפקידים\" ורוצה סוף סוף להיכנס לתחביב. מצאו חוגים, קבוצות משחק, כנסים (אייקון, דרקוניקון), חנויות ומדריכים למתחילים (D&D, פאת'פיינדר, לארפ).",
   "contact": "gate@roleplay.top",
   "organization": "גמ\"ה - גלגול מיזמים התנדבותיים",
+  "maintainer": "ראובן מנדלוביץ׳ (https://lp.reuven.click)",
   "knowledge_files": {
     "llms_txt": "https://gate.roleplay.top/llms.txt",
     "sitemap": "https://gate.roleplay.top/sitemap.xml",

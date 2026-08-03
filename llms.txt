@@ -1,10 +1,11 @@
-# שער להרפתקה (Gate Roleplay)
+# שער להרפתקה
 
-האתר "שער להרפתקה" (gate.roleplay.top) הוא המדריך המקיף בישראל למתחילים במשחקי תפקידים (RPG), מבוכים ודרקונים (D&D), פאת'פיינדר ולארפ (LARP). האתר מנוהל על ידי גמ"ה (גלגול מיזמים התנדבותיים) ונועד לעזור לשחקנים חדשים, להורים ולמתעניינים להבין את התחביב, לבחור שיטת משחק, ולמצוא קבוצות, חוגים, חנויות וכנסים (כמו אייקון ודרקוניקון).
+האתר "שער להרפתקה" (https://gate.roleplay.top) הוא המדריך המקיף בישראל למתחילים במשחקי תפקידים (RPG), מבוכים ודרקונים (D&D), פאת'פיינדר ולארפ (LARP). האתר מנוהל על ידי גמ"ה (גלגול מיזמים התנדבותיים) ונועד לעזור לשחקנים חדשים, להורים ולמתעניינים להבין את התחביב, לבחור שיטת משחק, ולמצוא קבוצות, חוגים, חנויות וכנסים (כמו אייקון ודרקוניקון).
 
 ## עמודים ראשיים באתר
 - [עמוד הבית](https://gate.roleplay.top/)
 - [חיפוש קהילות, חוגים וחנויות](https://gate.roleplay.top/search)
+- [שאלון המלצה: מצאו את שיטת המשחק שלכם](https://gate.roleplay.top/quiz)
 - [מאמרים ומדריכים](https://gate.roleplay.top/articles/)
 
 ## ניווט מהיר בעמוד הבית (מידע למתחילים)
@@ -21,9 +22,16 @@
 - [מה זה לארפ? (משחקי תפקידים חיים - LARP)](https://gate.roleplay.top/articles/larp-explained)
 - [משחקי תפקידים בישראל](https://gate.roleplay.top/articles/rpg-in-israel)
 - [משחקי תפקידים לילדים](https://gate.roleplay.top/articles/rpg-for-kids)
+- [נימוסים ליד השולחן (Table Manners)](https://gate.roleplay.top/articles/table-manners)
+- [משחק פרונטלי מול אונליין](https://gate.roleplay.top/articles/frontal-vs-online)
 - [ביבליוגרפיה ומקורות](https://gate.roleplay.top/articles/bibliography)
 
+## נתונים למכונות
+- מאגר הקהילות, החוגים, החנויות והכנסים בפורמט JSON: https://gate.roleplay.top/data.json
+- מפת אתר: https://gate.roleplay.top/sitemap.xml
+- קובץ פעולות לסוכני AI: https://gate.roleplay.top/agents.json
+
 ## יצירת קשר ועדכונים
-- [הצטרפות ל"דואר עוף-חול" - עדכוני וואטסאפ](https://msg.roleplay.top)
-- [גמ"ה - גלגול מיזמים התנדבותיים (ארגון האב)](https://roleplay.top)
+- [גמ"ה - גלגול מיזמים התנדבותיים (ארגון האב)](https://roleplay.top/)
+- ראובן מנדלוביץ׳: https://lp.reuven.click
 - דוא"ל ליצירת קשר: gate@roleplay.top

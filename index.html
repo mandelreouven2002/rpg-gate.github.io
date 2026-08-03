@@ -39,7 +39,7 @@
       "url": "https://roleplay.top/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://gate.roleplay.top/full-logo.png"
+        "url": "https://gate.roleplay.top/static/full-logo.png"
       },
       "email": "gate@roleplay.top",
       "contactPoint": {
@@ -68,7 +68,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- ICON -->
-    <link rel="icon" type="image/x-icon" href="/rpg-game.png">
+    <link rel="icon" type="image/x-icon" href="/static/rpg-game.png">
 
     <style>
         body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
@@ -92,7 +92,7 @@
         .chart-container { position: relative; width: 100%; max-width: 700px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
         @media (min-width: 768px) { .chart-container { height: 400px; } }
 
-        #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
+        #background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('/static/rpg-bg.png'); background-repeat: repeat; opacity: 0.025; pointer-events: none; }
 
         /* Offset for sticky header when clicking anchors */
         html { scroll-padding-top: 160px; }
@@ -100,6 +100,12 @@
             html { scroll-padding-top: 120px; }
         }
     </style>
+    <!-- GEO / AI optimization -->
+    <meta name="geo.region" content="IL">
+    <meta name="geo.placename" content="Israel">
+    <meta name="language" content="Hebrew">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="alternate" type="application/json" title="agents.json" href="/agents.json">
 </head>
 
 <body class="bg-amber-50 text-stone-800">
@@ -112,7 +118,7 @@
         <div class="w-full md:w-auto flex justify-center md:justify-start">
             <h1 class="text-xl md:text-2xl font-bold text-white">
                 <a href="/" class="flex items-center gap-2">
-                    <img src="/rpg-game.png" alt="לוגו" class="w-8 h-8">
+                    <img src="/static/rpg-game.png" alt="לוגו" class="w-8 h-8">
                     שער להרפתקה
                 </a>
             </h1>
@@ -125,13 +131,6 @@
                 <a href="/search" class="hover:text-indigo-300 transition-colors">חיפוש</a>
                 <a href="/articles" class="hover:text-indigo-300 transition-colors">מאמרים</a>
             </div>
-
-            <span class="hidden md:block w-px h-5 bg-indigo-500/50 mx-1"></span>
-
-            <a href="https://roleplay.top" target="_blank" class="flex items-center gap-1 bg-indigo-800/50 hover:bg-indigo-700 text-indigo-200 hover:text-white px-3 py-1 rounded-full transition-all border border-indigo-700/50 text-xs md:text-sm">
-                <span>גמ"ה</span>
-                <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
         </nav>
     </div>
 </header>
@@ -191,7 +190,7 @@
 
             <!-- Graphic/Image Side -->
             <div class="hidden md:flex justify-center items-center">
-                <img src="/full-logo.png" alt="לוגו מלא - שער להרפתקה" class="w-full max-w-sm h-auto drop-shadow-xl hover:scale-105 transition-transform duration-300">
+                <img src="/static/full-logo.png" alt="לוגו מלא - שער להרפתקה" class="w-full max-w-sm h-auto drop-shadow-xl hover:scale-105 transition-transform duration-300">
             </div>
         </div>
 
@@ -286,7 +285,12 @@
     <!-- SYSTEMS SECTION -->
     <section id="systems" class="mb-16 pt-10 scroll-mt-32">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-2 text-stone-900">בחירת שיטת משחק</h2>
-        <p class="text-xl text-center text-stone-600 max-w-2xl mx-auto mb-8">כל הרפתקה צריכה חוקים. שיטת המשחק היא מערכת הכללים והעולם שבהם תפעלו. הנה ארבע מהשיטות הפופולריות ביותר בישראל, שמתאימות במיוחד למתחילים.</p>
+        <p class="text-xl text-center text-stone-600 max-w-2xl mx-auto mb-6">כל הרפתקה צריכה חוקים. שיטת המשחק היא מערכת הכללים והעולם שבהם תפעלו. הנה ארבע מהשיטות הפופולריות ביותר בישראל, שמתאימות במיוחד למתחילים.</p>
+        <div class="text-center mb-10">
+            <a href="/quiz" class="inline-flex items-center gap-2 bg-indigo-700 hover:bg-indigo-800 text-white font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all">
+                🎲 לא בטוחים? ענו על השאלון ומצאו את המשחק שלכם
+            </a>
+        </div>
         <div id="systems-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
         </div>
         <div class="mb-10">
@@ -331,14 +335,14 @@
                 <p>לפורטל החיפוש המלא <a href="/search" class="text-indigo-600 hover:underline font-semibold">לחצו כאן</a></p>
             </div>
         </div>
-        <div class="flex justify-center items-center space-x-4 space-x-reverse mb-8 flex-wrap">
-            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 mb-2 text-base" data-filter="all">הכל</button>
-            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 mb-2 text-base" data-filter="organization">🏢 ארגון/עמותה</button>
-            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 mb-2 text-base" data-filter="event">📅 אירוע/כנס</button>
-            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 mb-2 text-base" data-filter="group">💬 קהילה/קבוצה</button>
-            <div class="relative">
-                <input type="text" id="community-search" placeholder="חיפוש על פי שם או יישוב..." class="p-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-2 mr-2 text-base w-64">
-            </div>
+        <div class="max-w-md mx-auto mb-5">
+            <input type="text" id="community-search" placeholder="חיפוש על פי שם או יישוב..." class="w-full p-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-base">
+        </div>
+        <div class="flex justify-center flex-wrap gap-2 mb-8">
+            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 text-base" data-filter="all">הכל</button>
+            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 text-base" data-filter="organization">🏢 ארגון/עמותה</button>
+            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 text-base" data-filter="event">📅 אירוע/כנס</button>
+            <button class="filter-btn community-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-indigo-100 text-base" data-filter="group">💬 קהילה/קבוצה</button>
         </div>
         <div id="community-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         </div>
@@ -360,15 +364,15 @@
                 <p>לפורטל החיפוש המלא <a href="/search" class="text-indigo-600 hover:underline font-semibold">לחצו כאן</a></p>
             </div>
         </div>
-        <div class="flex justify-center items-center space-x-4 space-x-reverse mb-8 flex-wrap">
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 mb-2 text-base" data-filter="all">הכל</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 mb-2 text-base" data-filter="store">🛍️ חנות/ציוד</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 mb-2 text-base" data-filter="venue">🏰 מתחם משחקים</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 mb-2 text-base" data-filter="activities">🎭 סדנאות והפעלות</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 mb-2 text-base" data-filter="kids">🧒 חוגי ילדים</button>
-            <div class="relative">
-                <input type="text" id="resources-search" placeholder="חיפוש על פי שם או יישוב..." class="p-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 mb-2 mr-2 text-base w-64">
-            </div>
+        <div class="max-w-md mx-auto mb-5">
+            <input type="text" id="resources-search" placeholder="חיפוש על פי שם או יישוב..." class="w-full p-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-base">
+        </div>
+        <div class="flex justify-center flex-wrap gap-2 mb-8">
+            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 text-base" data-filter="all">הכל</button>
+            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 text-base" data-filter="store">🛍️ חנות/ציוד</button>
+            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 text-base" data-filter="venue">🏰 מתחם משחקים</button>
+            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 text-base" data-filter="activities">🎭 סדנאות והפעלות</button>
+            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-md font-semibold bg-white shadow-sm hover:bg-teal-100 text-base" data-filter="kids">🧒 חוגי ילדים</button>
         </div>
         <div id="resources-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         </div>
@@ -393,7 +397,7 @@
     <!-- WHATSAPP UPDATES SECTION -->
     <section id="whatsapp-updates" class="mb-16 pt-10 scroll-mt-32">
         <div class="bg-green-50 border border-green-200 rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-sm">
-            <img src="/msg-logo.png" alt="לוגו דואר עוף-חול" class="w-20 mx-auto mb-4">
+            <img src="/static/msg-logo.png" alt="לוגו דואר עוף-חול" class="w-20 mx-auto mb-4">
             <h2 class="text-3xl md:text-4xl font-bold text-green-900 mb-4">דואר עוף-חול: נשארים מעודכנים</h2>
             <p class="text-xl text-green-800 mb-8 max-w-2xl mx-auto">
                 רוצים לדעת ראשונים על כנסים, אירועים מיוחדים וחדשות חמות מהקהילה?
@@ -418,30 +422,21 @@
                 ניתן לפנות אלינו בכל נושא דרך כתובת המייל:
             </p>
 
-            <a href="mailto:gate@roleplay.top" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-bold text-xl hover:bg-purple-700 transition-colors shadow-md hover:shadow-lg mb-6">
+            <a href="mailto:gate@roleplay.top" class="inline-block bg-purple-600 text-white px-8 py-3 rounded-full font-bold text-xl hover:bg-purple-700 transition-colors shadow-md hover:shadow-lg">
                 gate@roleplay.top
             </a>
-
-            <div class="mt-4 pt-6 border-t border-stone-100">
-                <p class="text-stone-600 mb-4">או שלחו הודעה ישירה מכאן:</p>
-                <div id="simple-email-form" class="text-right">
-                    <textarea id="email-body-textarea" class="w-full p-4 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4 h-32 text-base" placeholder="כתבו כאן את תוכן המייל..."></textarea>
-                    <button id="send-email-btn" class="w-full bg-purple-100 text-purple-700 border border-purple-200 px-6 py-3 rounded-lg font-bold hover:bg-purple-200 transition-colors">
-                        פתיחת תוכנת המייל שלי לשליחה
-                    </button>
-                </div>
-            </div>
         </div>
     </section>
 </main>
 
 <footer class="text-center py-6 mt-12 bg-stone-200 border-t border-stone-300">
     <p class="text-base text-stone-600">שער להרפתקה - שער הכניסה לתחום משחקי התפקידים</p>
-    <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top" class="text-indigo-600 hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a>.</p>
+    <p class="text-base text-stone-600">מנוהל ע"י <a href="https://roleplay.top/" class="text-indigo-600 hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a>.</p>
+    <p class="text-base text-stone-600"><a href="https://lp.reuven.click" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">ראובן מנדלוביץ׳</a></p>
 </footer>
 
 <!-- External Search Engine logic -->
-<script src="search-engine.js"></script>
+<script src="/static/search-engine.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -509,12 +504,17 @@
             }
         }
 
+        const HEB_MONTHS = ['', 'ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+
         function createCard(item, searchEngineInstance) {
             const types = Array.isArray(item.type) ? item.type : [item.type];
             const badgesHtml = types.map(t => {
                 const info = getTypeInfo(t);
                 return `<span class="text-sm font-semibold px-2 py-0.5 rounded-full ${info.color} whitespace-nowrap">${info.label}</span>`;
             }).join('');
+
+            const monthHtml = (item.month >= 1 && item.month <= 12)
+                ? `<p class="text-base text-purple-600 mb-3 font-semibold">🗓️ מתקיים ב${HEB_MONTHS[item.month]}</p>` : '';
 
             return `
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card block bg-white p-6 rounded-lg shadow-lg border border-stone-200 hover:border-indigo-400 h-full flex flex-col">
@@ -523,6 +523,7 @@
                     ${badgesHtml}
                   </div>
                   ${item.location ? `<p class="text-base text-stone-500 mb-3 font-semibold">📍 ${item.location}</p>` : ''}
+                  ${monthHtml}
                   <p class="text-base text-stone-600 flex-grow">${item.description ?? ''}</p>
                 </a>
             `;
@@ -652,7 +653,7 @@
         }
 
         // --- FETCH DATA FROM JSON ---
-        fetch('data.json')
+        fetch('/data.json')
             .then(response => response.json())
             .then(data => {
                 const regionsData = data.regions;
@@ -704,13 +705,6 @@
         document.getElementById('mobile-nav').addEventListener('change', function() {
             const targetElement = document.querySelector(this.value);
             if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth' }); }
-        });
-
-        document.getElementById('send-email-btn').addEventListener('click', () => {
-            const subject = "פנייה בנושא לאתר שער הרפתקה";
-            const recipient = "gate@roleplay.top";
-            const body = document.getElementById('email-body-textarea').value;
-            window.open(`mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
         });
 
         // --- Scroll Spy Logic ---
