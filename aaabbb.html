@@ -478,7 +478,7 @@ const systemsContainer = document.getElementById('systems-container');
 systemsData.forEach(system => {
 const card = document.createElement('div');
 card.className = 'card flex flex-col overflow-hidden rounded-2xl';
-card.style.background = '#ffffff';
+card.style.background = system.tint;
 card.style.border = '1px solid rgba(0,48,73,0.10)';
 card.innerHTML = `
 <div class="p-6 cursor-pointer flex-grow" onclick="toggleDetails(this)">
