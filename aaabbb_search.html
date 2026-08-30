@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -39,7 +39,7 @@
                     cream:'#fdf0d5', rose:'#df817a', slate:'#7f908f',
                     blue:'#057ef0', periwinkle:'#857fff', amber:'#ffbb5c', coral:'#f26d40'
                 },
-                fontFamily: { display:['Rubik','sans-serif'], body:['Assistant','sans-serif'] }
+                fontFamily: { display:['Heebo','sans-serif'], body:['Heebo','sans-serif'] }
             } }
         };
     </script>
@@ -73,14 +73,49 @@
         }
 
         * { box-sizing: border-box; }
-        body { font-family: 'Assistant', sans-serif; background: var(--cream); color: var(--ink); }
-        h1, h2, h3, .font-display { font-family: 'Rubik', sans-serif; }
+        html { font-family: 'Heebo', sans-serif; }
+        body { font-family: inherit; background: var(--cream); color: var(--ink); }
+        button, input, select, textarea, option { font: inherit; }
+        h1, h2, h3, h4, h5, h6, p, a, span, div, li, label, button, input, select, textarea, option, .font-display { font-family: 'Heebo', sans-serif; }
         .card { transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
         a.card:hover { transform: translateY(-2px); }
 
         .search-hero { background: var(--cream); }
         .results-area { background: var(--paper); border-top: 1px solid var(--line); }
-        .page-title { font-size: clamp(2.45rem, 5vw, 3.45rem); line-height: 1.08; font-weight: 700; }
+        .page-title {
+            font-size: clamp(2.45rem, 5vw, 3.5rem);
+            line-height: 1.04;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            text-wrap: balance;
+        }
+        .search-title::after {
+            content: '';
+            display: block;
+            width: 3rem;
+            height: 4px;
+            margin: .8rem auto 0;
+            border-radius: 999px;
+            background: var(--red);
+        }
+        .results-title {
+            line-height: 1.12;
+            font-weight: 800;
+            letter-spacing: -0.018em;
+            text-wrap: balance;
+        }
+        .subsection-title {
+            line-height: 1.22;
+            font-weight: 700;
+            letter-spacing: -0.012em;
+            text-wrap: balance;
+        }
+        .eyebrow {
+            font-size: .8rem;
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
         .search-lead { max-width: 42rem; margin-inline: auto; color: var(--muted); }
 
         .search-shell {
@@ -166,8 +201,7 @@
     <main class="flex-grow">
         <section class="search-hero">
             <div class="container mx-auto px-4 md:px-8 pt-14 md:pt-20 pb-12 md:pb-16 text-center">
-                <p class="text-sm font-display font-bold tracking-widest text-red mb-3">שער להרפתקה</p>
-                <h1 class="font-display page-title text-navy mb-4">פורטל החיפוש</h1>
+                <h1 class="font-display page-title search-title text-navy mb-4">פורטל החיפוש</h1>
                 <p class="search-lead text-lg md:text-xl leading-relaxed mb-9">
                     חפשו קבוצות, חוגים, כנסים, חנויות ומקומות לשחק בכל הארץ.
                 </p>
@@ -199,8 +233,8 @@
             <div class="container mx-auto px-4 md:px-8 py-12 md:py-16">
                 <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-7">
                     <div>
-                        <p class="text-sm font-display font-bold tracking-widest text-red mb-1">תוצאות</p>
-                        <h2 class="font-display text-2xl md:text-3xl font-semibold text-navy">מקומות וקהילות שמצאנו</h2>
+                        <p class="font-display eyebrow text-red mb-1">תוצאות</p>
+                        <h2 class="font-display results-title text-2xl md:text-3xl text-navy">מקומות וקהילות שמצאנו</h2>
                     </div>
                     <div id="results-count" class="results-count hidden">נמצאו <span id="count-number" class="font-bold text-navy">0</span> תוצאות</div>
                 </div>
@@ -215,7 +249,7 @@
                 <div id="no-results" class="hidden text-center py-8">
                     <div class="empty-state">
                         <div class="text-5xl mb-4">🔍</div>
-                        <h3 class="font-display text-2xl font-semibold text-navy mb-2">לא נמצאו תוצאות</h3>
+                        <h3 class="font-display subsection-title text-2xl font-semibold text-navy mb-2">לא נמצאו תוצאות</h3>
                         <p class="text-stone-500">נסו לשנות את מילות החיפוש או לבחור קטגוריה אחרת.</p>
                         <button id="clear-search-btn" class="mt-5 text-red font-bold hover:underline">נקה חיפוש</button>
                     </div>
@@ -325,7 +359,7 @@ function createCard(item) {
     return `
         <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="result-card card group">
             <div class="flex flex-wrap items-center gap-1.5 mb-4">${badgesHtml}</div>
-            <h3 class="font-display text-xl md:text-2xl font-semibold text-navy mb-2 leading-tight group-hover:text-red transition-colors">${item.name ?? ''}</h3>
+            <h3 class="font-display subsection-title text-xl md:text-2xl font-semibold text-navy mb-2 leading-tight group-hover:text-red transition-colors">${item.name ?? ''}</h3>
             ${item.location ? `<p class="result-meta">📍 ${item.location}</p>` : ''}
             ${monthHtml}
             <p class="text-[15px] md:text-base text-stone-600 leading-relaxed flex-grow mt-2">${item.description ?? ''}</p>
