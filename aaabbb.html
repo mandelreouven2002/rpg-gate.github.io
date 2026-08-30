@@ -83,11 +83,24 @@ html { scroll-padding-top: 150px; }
 }
 
 html { scroll-padding-top: 118px; }
-body { background: var(--cream); color: var(--ink); }
+body {
+    background-color: var(--cream);
+    background-image: linear-gradient(rgba(251,247,238,.97), rgba(251,247,238,.97)), url('/static/rpg-bg.png');
+    background-repeat: repeat;
+    color: var(--ink);
+}
+/* Restore the original RPG texture as a very subtle background, not a dominant graphic. */
+.section-light {
+    background-image: linear-gradient(rgba(255,253,249,.97), rgba(255,253,249,.97)), url('/static/rpg-bg.png');
+    background-repeat: repeat;
+}
+.section-soft {
+    background-image: linear-gradient(rgba(251,247,238,.97), rgba(251,247,238,.97)), url('/static/rpg-bg.png');
+    background-repeat: repeat;
+}
 
 /* One continuous guide rather than a stack of visual posters */
-.section-light { background: var(--paper); }
-.section-soft { background: var(--cream); }
+
 .section-pad { padding-top: 4.75rem; padding-bottom: 4.75rem; }
 @media (min-width: 768px) {
     .section-pad { padding-top: 6rem; padding-bottom: 6rem; }
@@ -144,8 +157,7 @@ body { background: var(--cream); color: var(--ink); }
 .card { transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
 a.card:hover { transform: translateY(-2px); }
 .directory-card { border: 1px solid var(--line); box-shadow: none; }
-#community .directory-card { background: #fbf8f1; }
-#resources .directory-card { background: #ffffff; }
+.directory-card { background: #ffffff; }
 
 /* Simple informational columns */
 .feature-line { border-inline-start: 4px solid rgba(0,48,73,.16); padding-inline-start: 1.25rem; }
@@ -236,28 +248,28 @@ html { scroll-padding-top: calc(var(--global-nav-height, 56px) + var(--subnav-he
 </p>
 </div>
 <div class="hidden md:flex justify-center items-center">
-<img alt="לוגו מלא - שער להרפתקה" class="hero-logo w-full max-w-[280px] h-auto" src="/static/full-logo.png"/>
+<img alt="לוגו מלא - שער להרפתקה" class="hero-logo w-full max-w-[420px] h-auto" src="/static/full-logo.png"/>
 </div>
 </div>
 <!-- steps: plain columns, no boxes -->
-<div class="grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto mt-14 text-center">
+<div class="grid sm:grid-cols-3 gap-10 md:gap-14 max-w-6xl mx-auto mt-16 md:mt-20 text-center">
 <a class="group" href="#intro-what-is">
-<div class="text-4xl mb-3">🤔</div>
+<div class="text-5xl md:text-6xl mb-4">🤔</div>
 <div class="font-display eyebrow mb-1 text-red">צעד 01</div>
-<h3 class="font-display subsection-title text-xl font-semibold text-navy group-hover:text-red transition-colors">מה זה בכלל?</h3>
-<p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">גלו מהם משחקי תפקידים ולמה זה התחביב החברתי הכי טוב.</p>
+<h3 class="font-display subsection-title text-2xl font-bold text-navy group-hover:text-red transition-colors">מה זה בכלל?</h3>
+<p class="text-base md:text-lg text-stone-600 mt-2 max-w-sm mx-auto leading-relaxed">גלו מהם משחקי תפקידים ולמה זה התחביב החברתי הכי טוב.</p>
 </a>
 <a class="group" href="#systems">
-<div class="text-4xl mb-3">🎲</div>
+<div class="text-5xl md:text-6xl mb-4">🎲</div>
 <div class="font-display eyebrow mb-1 text-red">צעד 02</div>
-<h3 class="font-display subsection-title text-xl font-semibold text-navy group-hover:text-red transition-colors">בוחרים משחק</h3>
-<p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">מבוכים ודרקונים, חרבות וכשפים או משהו אחר? נעשה סדר.</p>
+<h3 class="font-display subsection-title text-2xl font-bold text-navy group-hover:text-red transition-colors">בוחרים משחק</h3>
+<p class="text-base md:text-lg text-stone-600 mt-2 max-w-sm mx-auto leading-relaxed">מבוכים ודרקונים, חרבות וכשפים או משהו אחר? נעשה סדר.</p>
 </a>
 <a class="group" href="#community">
-<div class="text-4xl mb-3">🤝</div>
+<div class="text-5xl md:text-6xl mb-4">🤝</div>
 <div class="font-display eyebrow mb-1 text-red">צעד 03</div>
-<h3 class="font-display subsection-title text-xl font-semibold text-navy group-hover:text-red transition-colors">מצטרפים לקהילה</h3>
-<p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">חנויות, כנסים, קהילות אונליין וחוגים – הכל במקום אחד.</p>
+<h3 class="font-display subsection-title text-2xl font-bold text-navy group-hover:text-red transition-colors">מצטרפים לקהילה</h3>
+<p class="text-base md:text-lg text-stone-600 mt-2 max-w-sm mx-auto leading-relaxed">חנויות, כנסים, קהילות אונליין וחוגים – הכל במקום אחד.</p>
 </a>
 </div>
 </div>
@@ -415,7 +427,7 @@ html { scroll-padding-top: calc(var(--global-nav-height, 56px) + var(--subnav-he
 <!-- ================= WHATSAPP (navy) ================= -->
 <section class="bg-navy" id="whatsapp-updates">
 <div class="container mx-auto px-4 md:px-8 section-pad text-center max-w-3xl">
-<img alt="לוגו דואר עוף-חול" class="w-20 mx-auto mb-4" src="/static/msg-logo.png"/>
+<img alt="לוגו דואר עוף-חול" class="w-40 mx-auto mb-6" src="/static/msg-logo.png"/>
 <h2 class="font-display cta-title text-3xl md:text-4xl text-cream mb-4">דואר עוף-חול: נשארים מעודכנים</h2>
 <p class="text-lg md:text-xl text-cream/80 mb-8 max-w-2xl mx-auto leading-relaxed">רוצים לדעת ראשונים על כנסים, אירועים מיוחדים וחדשות חמות מהקהילה? הצטרפו לערוץ העדכונים השקט שלנו בוואטסאפ. בלי חפירות, רק מה שחשוב.</p>
 <a class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-3 rounded-full font-bold text-lg hover:opacity-90 transition-opacity gap-2" href="https://msg.roleplay.top" target="_blank">
@@ -470,7 +482,8 @@ const systemsContainer = document.getElementById('systems-container');
 systemsData.forEach(system => {
 const card = document.createElement('div');
 card.className = 'card flex flex-col overflow-hidden rounded-2xl';
-card.style.background = system.tint;
+card.style.background = '#ffffff';
+card.style.border = '1px solid rgba(0,48,73,0.10)';
 card.innerHTML = `
 <div class="p-6 cursor-pointer flex-grow" onclick="toggleDetails(this)">
 ${system.badge ? `<div class="mb-3"><span class="text-sm font-bold px-3 py-1 rounded-full" style="background:${system.badgeBg};color:${system.badgeText}">${system.badge}</span></div>` : ''}
@@ -486,7 +499,7 @@ ${system.badge ? `<div class="mb-3"><span class="text-sm font-bold px-3 py-1 rou
 <svg class="w-4 h-4 mr-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
 </div>
 </div>
-<div class="details-content" style="background:rgba(255,255,255,0.55)">
+<div class="details-content" style="background:#f8fafb">
 <div class="p-6"><p class="text-base text-stone-700">${system.why}</p></div>
 </div>
 `;
@@ -600,7 +613,7 @@ const container = document.getElementById('closest-event-container');
 if (closest) {
 const monthNames = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"];
 container.innerHTML = `
-<a href="${closest.link}" target="_blank" rel="noopener noreferrer" class="card block p-6 rounded-xl text-center" style="background:#fde5db">
+<a href="${closest.link}" target="_blank" rel="noopener noreferrer" class="card block p-6 rounded-xl text-center bg-white border border-navy/10">
 <h3 class="font-display subsection-title text-xl font-bold text-navy mb-2">${closest.name}</h3>
 <p class="text-lg text-stone-700 mb-2">מתקיים בדרך כלל בחודש: <span class="font-semibold" style="color:#d1502a">${monthNames[closest.month - 1]}</span></p>
 ${closest.location ? `<p class="text-base text-stone-700 mb-2">מיקום: ${closest.location}</p>` : ''}
