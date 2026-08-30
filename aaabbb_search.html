@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שער להרפתקה - פורטל חיפוש</title>
+    <meta name="description" content="מחפשים קבוצת מבוכים ודרקונים? חוג לילדים? או חנות קוביות קרובה? פורטל החיפוש של שער להרפתקה מרכז את כל המידע על קהילת משחקי תפקידים בישראל במקום אחד.">
+    <meta name="keywords" content="משחקי תפקידים, חוגי משחקי תפקידים, חוגים לילדים, חוגים, פנטסיה, פנטזיה, מדעי בדיוני, חיפוש קבוצה מבוכים ודרקונים, חוגי מבוכים ודרקונים, חנויות משחקים, כנסים, קהילות משחקי תפקידים, D&D ישראל, פאת'פיינדר, לארפ, חיפוש שחקנים">
+    <meta name="author" content="ראובן צירל-מנדלוביץ'">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#003049">
+    <link rel="canonical" href="https://gate.roleplay.top/search">
+
+    <meta property="og:site_name" content="שער להרפתקה">
+    <meta property="og:title" content="פורטל החיפוש - שער להרפתקה">
+    <meta property="og:description" content="המקום למצוא את ההרפתקה הבאה שלכם: קבוצות, חוגים, כנסים וחנויות בכל הארץ.">
+    <meta property="og:url" content="https://gate.roleplay.top/search">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="he_IL">
+    <meta property="og:image" content="https://gate.roleplay.top/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="פורטל החיפוש למשחקי תפקידים בישראל">
+    <meta name="twitter:description" content="מצאו קבוצות, חוגים ואירועים בקלות.">
+    <meta name="twitter:image" content="https://gate.roleplay.top/og-image.jpg">
+
+    <link rel="icon" type="image/x-icon" href="/static/rpg-game.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: {
+                    red:'#ce050f', darkred:'#9d0910', maroon:'#780000',
+                    navy:'#003049', midblue:'#336683', sky:'#669bbc',
+                    cream:'#fdf0d5', rose:'#df817a', slate:'#7f908f',
+                    blue:'#057ef0', periwinkle:'#857fff', amber:'#ffbb5c', coral:'#f26d40'
+                },
+                fontFamily: { display:['Rubik','sans-serif'], body:['Assistant','sans-serif'] }
+            } }
+        };
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "פורטל חיפוש - שער להרפתקה",
+        "description": "מנוע חיפוש ייעודי לקהילת משחקי התפקידים בישראל",
+        "url": "https://gate.roleplay.top/search",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type":"ListItem","position":1,"name":"בית","item":"https://gate.roleplay.top/"},
+                {"@type":"ListItem","position":2,"name":"פורטל חיפוש","item":"https://gate.roleplay.top/search"}
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #003049;
+            --red: #ce050f;
+            --cream: #fbf7ee;
+            --paper: #fffdf9;
+            --ink: #292524;
+            --muted: #68625e;
+            --line: rgba(0,48,73,.10);
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: 'Assistant', sans-serif; background: var(--cream); color: var(--ink); }
+        h1, h2, h3, .font-display { font-family: 'Rubik', sans-serif; }
+        .card { transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
+        a.card:hover { transform: translateY(-2px); }
+
+        .search-hero { background: var(--cream); }
+        .results-area { background: var(--paper); border-top: 1px solid var(--line); }
+        .page-title { font-size: clamp(2.45rem, 5vw, 3.45rem); line-height: 1.08; font-weight: 700; }
+        .search-lead { max-width: 42rem; margin-inline: auto; color: var(--muted); }
+
+        .search-shell {
+            max-width: 48rem;
+            margin-inline: auto;
+            position: relative;
+        }
+        .main-search {
+            width: 100%;
+            background: #fff;
+            border: 1px solid rgba(0,48,73,.16);
+            border-radius: 1rem;
+            padding: 1rem 3.25rem 1rem 1.15rem;
+            font-size: 1.08rem;
+            box-shadow: 0 8px 28px rgba(0,48,73,.055);
+            transition: border-color .15s ease, box-shadow .15s ease;
+        }
+        .main-search:focus {
+            outline: none;
+            border-color: rgba(206,5,15,.58);
+            box-shadow: 0 0 0 4px rgba(206,5,15,.07), 0 8px 28px rgba(0,48,73,.05);
+        }
+        .search-icon { position:absolute; inset-inline-start:auto; inset-inline-end:1rem; top:50%; transform:translateY(-50%); color:#8b8681; pointer-events:none; }
+
+        .filter-btn {
+            background: rgba(255,255,255,.82);
+            color: var(--navy);
+            border: 1px solid var(--line);
+            border-radius: 9999px;
+            padding: .55rem .9rem;
+            font-weight: 600;
+            transition: background .15s ease, color .15s ease, border-color .15s ease;
+        }
+        .filter-btn:hover { background:#fff; border-color:rgba(0,48,73,.2); }
+        .filter-btn.active { background:var(--red); color:#fff; border-color:var(--red); }
+
+        .result-card {
+            display:flex;
+            flex-direction:column;
+            height:100%;
+            background:#fff;
+            padding:1.4rem;
+            border-radius:1rem;
+            border:1px solid var(--line);
+            box-shadow:none;
+        }
+        .result-card:hover { border-color:rgba(206,5,15,.24); background:#fffefa; }
+        .result-badge { display:inline-flex; align-items:center; white-space:nowrap; border-radius:9999px; padding:.22rem .58rem; font-size:.78rem; font-weight:700; }
+        .result-meta { color:#716b66; font-size:.92rem; font-weight:600; margin-bottom:.35rem; }
+        .month-meta { color:#8b621a; }
+        .result-link { color:var(--red); font-size:.92rem; font-weight:700; }
+
+        .results-count { color:#77716c; font-size:.95rem; }
+        .empty-state { max-width:34rem; margin-inline:auto; border:1px solid var(--line); background:var(--cream); border-radius:1.25rem; padding:3rem 1.5rem; }
+        .load-more { background:#fff; color:var(--navy); border:1px solid rgba(0,48,73,.16); border-radius:9999px; padding:.75rem 1.35rem; font-weight:700; transition:background .15s ease,border-color .15s ease,color .15s ease; }
+        .load-more:hover { background:var(--navy); color:#fff; border-color:var(--navy); }
+
+        @media (prefers-reduced-motion: reduce) { .card { transition:none; } a.card:hover { transform:none; } }
+    </style>
+
+    <meta name="geo.region" content="IL">
+    <meta name="geo.placename" content="Israel">
+    <meta name="language" content="Hebrew">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="alternate" type="application/json" title="agents.json" href="/agents.json">
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <header class="bg-navy text-white sticky top-0 z-[60]">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <a href="/" class="flex items-center gap-2 text-xl md:text-2xl font-display font-bold text-white">
+                <img src="/static/rpg-game.png" alt="לוגו שער להרפתקה" class="w-8 h-8">
+                שער להרפתקה
+            </a>
+            <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-5 md:gap-7 font-semibold text-sm md:text-base">
+                <a href="/" class="hover:text-rose transition-colors">בית</a>
+                <a href="/search" class="text-rose font-bold transition-colors">חיפוש</a>
+                <a href="/articles" class="hover:text-rose transition-colors">מאמרים</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="search-hero">
+            <div class="container mx-auto px-4 md:px-8 pt-14 md:pt-20 pb-12 md:pb-16 text-center">
+                <p class="text-sm font-display font-bold tracking-widest text-red mb-3">שער להרפתקה</p>
+                <h1 class="font-display page-title text-navy mb-4">פורטל החיפוש</h1>
+                <p class="search-lead text-lg md:text-xl leading-relaxed mb-9">
+                    חפשו קבוצות, חוגים, כנסים, חנויות ומקומות לשחק בכל הארץ.
+                </p>
+
+                <div class="search-shell mb-7">
+                    <label for="main-search-input" class="sr-only">חיפוש חופשי</label>
+                    <input type="search" id="main-search-input" class="main-search" autocomplete="off" placeholder="שם, עיר, קהילה, חוג או סוג פעילות...">
+                    <div class="search-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="filters-container" class="flex justify-center items-center gap-2.5 flex-wrap max-w-5xl mx-auto">
+                    <button class="filter-btn active" data-filter="all">הכל</button>
+                    <button class="filter-btn" data-filter="organization">🏢 ארגון/עמותה</button>
+                    <button class="filter-btn" data-filter="event">📅 אירוע/כנס</button>
+                    <button class="filter-btn" data-filter="group">💬 קהילה/קבוצה</button>
+                    <button class="filter-btn" data-filter="store">🛍️ חנות/ציוד</button>
+                    <button class="filter-btn" data-filter="venue">🏰 מתחם משחקים</button>
+                    <button class="filter-btn" data-filter="activities">🎭 סדנאות והפעלות</button>
+                    <button class="filter-btn" data-filter="kids">🧒 חוגי ילדים</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-area">
+            <div class="container mx-auto px-4 md:px-8 py-12 md:py-16">
+                <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-7">
+                    <div>
+                        <p class="text-sm font-display font-bold tracking-widest text-red mb-1">תוצאות</p>
+                        <h2 class="font-display text-2xl md:text-3xl font-semibold text-navy">מקומות וקהילות שמצאנו</h2>
+                    </div>
+                    <div id="results-count" class="results-count hidden">נמצאו <span id="count-number" class="font-bold text-navy">0</span> תוצאות</div>
+                </div>
+
+                <div id="results-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                    <div class="col-span-full text-center py-14">
+                        <div class="inline-block animate-spin rounded-full h-8 w-8 border-2 border-navy/15 border-b-red"></div>
+                        <p class="mt-3 text-stone-500">טוען נתונים...</p>
+                    </div>
+                </div>
+
+                <div id="no-results" class="hidden text-center py-8">
+                    <div class="empty-state">
+                        <div class="text-5xl mb-4">🔍</div>
+                        <h3 class="font-display text-2xl font-semibold text-navy mb-2">לא נמצאו תוצאות</h3>
+                        <p class="text-stone-500">נסו לשנות את מילות החיפוש או לבחור קטגוריה אחרת.</p>
+                        <button id="clear-search-btn" class="mt-5 text-red font-bold hover:underline">נקה חיפוש</button>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10">
+                    <button id="load-more-btn" class="load-more hidden">הצג תוצאות נוספות</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 bg-navy text-cream/75">
+        <p class="font-display font-semibold text-cream mb-1">שער להרפתקה — שער הכניסה לתחום משחקי התפקידים</p>
+        <p class="text-sm">מנוהל ע"י <a href="https://roleplay.top/" class="text-rose hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a></p>
+        <p class="text-sm"><a href="https://lp.reuven.click" target="_blank" rel="noopener" class="text-rose hover:underline">ראובן מנדלוביץ׳</a></p>
+    </footer>
+
+<script src="/static/search-engine.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+// --- DOM Elements ---
+const container = document.getElementById('results-container');
+const searchInput = document.getElementById('main-search-input');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const noResultsEl = document.getElementById('no-results');
+const loadMoreBtn = document.getElementById('load-more-btn');
+const resultsCountEl = document.getElementById('results-count');
+const countNumberEl = document.getElementById('count-number');
+const clearSearchBtn = document.getElementById('clear-search-btn');
+
+// --- State ---
+let searchEngine = null; // Will hold the instance of the class
+let filteredResults = [];
+let currentFilter = 'all';
+let itemsToShow = 9;
+
+// --- 1. Load Data & Initialize Engine ---
+fetch('/data.json')
+.then(res => {
+if (!res.ok) throw new Error('Failed to load data');
+return res.json();
+})
+.then(data => {
+const combinedData = [...(data.communityData || []), ...(data.resourcesData || [])];
+const regions = data.regions || [];
+
+// Shuffle for variety
+for (let i = combinedData.length - 1; i > 0; i--) {
+const j = Math.floor(Math.random() * (i + 1));
+[combinedData[i], combinedData[j]] = [combinedData[j], combinedData[i]];
+}
+
+// INITIALIZE THE SEPARATE ALGORITHM CLASS
+searchEngine = new SearchEngine(combinedData, regions);
+
+// First render
+runSearch();
+})
+.catch(err => {
+console.error(err);
+container.innerHTML = '<div class="col-span-full text-center text-red-600">שגיאה בטעינת נתונים</div>';
+});
+
+// --- 2. Controller Logic (Connects UI to Engine) ---
+
+function runSearch() {
+if (!searchEngine) return;
+
+const query = searchInput.value;
+
+// Ask the engine for results
+filteredResults = searchEngine.search(query, currentFilter);
+
+renderUI();
+}
+
+// --- 3. UI Helpers (Purely Visual) ---
+
+function getTypeInfo(typeStr) {
+    switch (typeStr) {
+        case 'organization': return { label: '🏢 ארגון/עמותה', bg: '#dbe3e9', text: '#003049' };
+        case 'event':        return { label: '📅 אירוע/כנס', bg: '#fddedf', text: '#ce050f' };
+        case 'group':        return { label: '💬 קהילה/קבוצה', bg: '#ecebff', text: '#5b52e0' };
+        case 'store':        return { label: '🛍️ חנות/ציוד', bg: '#fff2da', text: '#a86a10' };
+        case 'venue':        return { label: '🏰 מתחם משחקים', bg: '#fde3da', text: '#d1502a' };
+        case 'activities':   return { label: '🎭 סדנאות והפעלות', bg: '#e2effc', text: '#0a6fd0' };
+        case 'kids':         return { label: '🧒 חוגי ילדים', bg: '#fce4ea', text: '#c43d68' };
+        default:             return { label: 'כללי', bg: '#eef0f2', text: '#57534e' };
+    }
+}
+
+const HEB_MONTHS = ['', 'ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+
+function createCard(item) {
+    const types = searchEngine ? searchEngine.getItemTypes(item) : [];
+
+    const badgesHtml = types.map(t => {
+        const info = getTypeInfo(t);
+        return `<span class="result-badge" style="background:${info.bg};color:${info.text}">${info.label}</span>`;
+    }).join('');
+
+    const monthHtml = (item.month >= 1 && item.month <= 12)
+        ? `<p class="result-meta month-meta">🗓️ מתקיים ב${HEB_MONTHS[item.month]}</p>` : '';
+
+    return `
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="result-card card group">
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">${badgesHtml}</div>
+            <h3 class="font-display text-xl md:text-2xl font-semibold text-navy mb-2 leading-tight group-hover:text-red transition-colors">${item.name ?? ''}</h3>
+            ${item.location ? `<p class="result-meta">📍 ${item.location}</p>` : ''}
+            ${monthHtml}
+            <p class="text-[15px] md:text-base text-stone-600 leading-relaxed flex-grow mt-2">${item.description ?? ''}</p>
+            <div class="result-link mt-5">לפרטים נוספים <span aria-hidden="true">←</span></div>
+        </a>
+    `;
+}
+
+function renderUI() {
+// Update counts
+resultsCountEl.classList.remove('hidden');
+countNumberEl.textContent = filteredResults.length;
+
+// No results handling
+if (filteredResults.length === 0) {
+container.innerHTML = '';
+noResultsEl.classList.remove('hidden');
+loadMoreBtn.classList.add('hidden');
+return;
+} else {
+noResultsEl.classList.add('hidden');
+}
+
+// Pagination rendering
+const visibleItems = filteredResults.slice(0, itemsToShow);
+container.innerHTML = visibleItems.map(createCard).join('');
+
+if (visibleItems.length < filteredResults.length) {
+loadMoreBtn.classList.remove('hidden');
+} else {
+loadMoreBtn.classList.add('hidden');
+}
+}
+
+// --- 4. Event Listeners ---
+
+filterButtons.forEach(btn => {
+btn.addEventListener('click', () => {
+filterButtons.forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+currentFilter = btn.dataset.filter;
+itemsToShow = 9;
+runSearch();
+});
+});
+
+searchInput.addEventListener('input', () => {
+itemsToShow = 9;
+runSearch();
+});
+
+loadMoreBtn.addEventListener('click', () => {
+itemsToShow += 9;
+renderUI(); // No need to search again, just render more
+});
+
+clearSearchBtn.addEventListener('click', () => {
+searchInput.value = '';
+itemsToShow = 9;
+runSearch();
+});
+});
+</script>
+
+</body>
+</html>
