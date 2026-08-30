@@ -1,584 +1,590 @@
-
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+
+<html dir="rtl" lang="he">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>שער להרפתקה - המדריך למתחילים במשחקי תפקידים ומבוכים ודרקונים</title>
-    <meta name="description" content="רוצים להתחיל לשחק מבוכים ודרקונים? אתר שער להרפתקה הוא המדריך המקיף למשחקי תפקידים בישראל. מצאו חוגים, קבוצות משחק, כנסים (אייקון, דרקוניקון), חנויות ומדריכים למתחילים (D&D, פאת'פיינדר, לארפ).">
-    <meta name="keywords" content="משחקי תפקידים, מבוכים ודרקונים, D&D, פאת'פיינדר, חרבות וכשפים, חוגי מבוכים ודרקונים, לארפ, LARP, כנס אייקון, כנס דרקוניקון, קהילת משחקי תפקידים, איך מתחילים לשחק, קבוצת משחק, משחקי לוח">
-    <meta name="author" content="ראובן צירל-מנדלוביץ'">
-    <meta name="theme-color" content="#003049">
-
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>שער להרפתקה - המדריך למתחילים במשחקי תפקידים ומבוכים ודרקונים</title>
+<meta content="רוצים להתחיל לשחק מבוכים ודרקונים? אתר שער להרפתקה הוא המדריך המקיף למשחקי תפקידים בישראל. מצאו חוגים, קבוצות משחק, כנסים (אייקון, דרקוניקון), חנויות ומדריכים למתחילים (D&amp;D, פאת'פיינדר, לארפ)." name="description"/>
+<meta content="משחקי תפקידים, מבוכים ודרקונים, D&amp;D, פאת'פיינדר, חרבות וכשפים, חוגי מבוכים ודרקונים, לארפ, LARP, כנס אייקון, כנס דרקוניקון, קהילת משחקי תפקידים, איך מתחילים לשחק, קבוצת משחק, משחקי לוח" name="keywords"/>
+<meta content="ראובן צירל-מנדלוביץ'" name="author"/>
+<meta content="#003049" name="theme-color"/>
+<script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    { "@type": "WebSite", "@id": "https://gate.roleplay.top/#website", "url": "https://gate.roleplay.top/", "name": "שער להרפתקה", "alternateName": "Gate Roleplay", "description": "המדריך המקיף למשחקי תפקידים, מבוכים ודרקונים ולארפ בישראל. מצאו חוגים, קבוצות, כנסים, חנויות ומדריכים למתחילים.", "publisher": { "@id": "https://gate.roleplay.top/#organization" }, "author": { "@type": "Person", "name": "ראובן צירל-מנדלוביץ'" }, "inLanguage": "he-IL" },
-    { "@type": "Organization", "@id": "https://gate.roleplay.top/#organization", "name": "גמ\"ה - גלגול מיזמים התנדבותיים", "alternateName": "GAMA", "url": "https://roleplay.top/", "logo": { "@type": "ImageObject", "url": "https://gate.roleplay.top/static/full-logo.png" }, "email": "gate@roleplay.top", "contactPoint": { "@type": "ContactPoint", "email": "gate@roleplay.top", "contactType": "customer support", "availableLanguage": "Hebrew" } }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{ "@type": "WebSite", "@id": "https://gate.roleplay.top/#website", "url": "https://gate.roleplay.top/", "name": "שער להרפתקה", "alternateName": "Gate Roleplay", "description": "המדריך המקיף למשחקי תפקידים, מבוכים ודרקונים ולארפ בישראל. מצאו חוגים, קבוצות, כנסים, חנויות ומדריכים למתחילים.", "publisher": { "@id": "https://gate.roleplay.top/#organization" }, "author": { "@type": "Person", "name": "ראובן צירל-מנדלוביץ'" }, "inLanguage": "he-IL" },
+{ "@type": "Organization", "@id": "https://gate.roleplay.top/#organization", "name": "גמ\"ה - גלגול מיזמים התנדבותיים", "alternateName": "GAMA", "url": "https://roleplay.top/", "logo": { "@type": "ImageObject", "url": "https://gate.roleplay.top/static/full-logo.png" }, "email": "gate@roleplay.top", "contactPoint": { "@type": "ContactPoint", "email": "gate@roleplay.top", "contactType": "customer support", "availableLanguage": "Hebrew" } }
+]
 }
 </script>
+<link href="https://gate.roleplay.top/" rel="canonical"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdn.tailwindcss.com" rel="dns-prefetch"/>
+<link href="https://cdn.jsdelivr.net" rel="dns-prefetch"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&amp;family=Assistant:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/static/rpg-game.png" rel="icon" type="image/x-icon"/>
+<script>
+tailwind.config = {
+theme: { extend: {
+colors: {
+red:'#ce050f', darkred:'#9d0910', maroon:'#780000',
+navy:'#003049', midblue:'#336683', sky:'#669bbc',
+cream:'#fdf0d5', rose:'#df817a', slate:'#7f908f',
+blue:'#057ef0', periwinkle:'#857fff', amber:'#ffbb5c', coral:'#f26d40'
+},
+fontFamily: { display:['Rubik','sans-serif'], body:['Assistant','sans-serif'] }
+}}
+};
+</script>
+<style>
+body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
+h1, h2, h3, .font-display { font-family: 'Rubik', sans-serif; }
+.card { transition: transform 0.18s ease; }
+a.card:hover { transform: translateY(-3px); }
+/* Filter chips — translucent white so they sit on any coloured band */
+.filter-btn { background: rgba(255,255,255,0.78); color:#003049; transition: background 0.15s ease; }
+.filter-btn:hover { background:#ffffff; }
+.filter-btn.active { background:#ce050f; color:#ffffff; }
+/* Sub-nav — colour change, no underline */
+.nav-link { transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color:#ce050f; }
+.nav-link.active { font-weight:700; }
+.details-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+.chart-container { position: relative; width: 100%; max-width: 720px; margin: 0 auto; height: 350px; max-height: 420px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.divider { line-height: 0; }
+.divider svg { display: block; width: 100%; height: 44px; }
+@media (min-width: 768px) { .divider svg { height: 68px; } }
+html { scroll-padding-top: 150px; }
+@media (min-width: 768px) { html { scroll-padding-top: 110px; } }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } a.card:hover { transform: none; } }
+</style>
+<meta content="IL" name="geo.region"/>
+<meta content="Israel" name="geo.placename"/>
+<meta content="Hebrew" name="language"/>
+<link href="/sitemap.xml" rel="sitemap" title="Sitemap" type="application/xml"/>
+<link href="/agents.json" rel="alternate" title="agents.json" type="application/json"/>
+<style>
+:root {
+    --navy: #003049;
+    --red: #ce050f;
+    --cream: #fbf7ee;
+    --paper: #fffdf9;
+    --ink: #292524;
+    --muted: #68625e;
+    --line: rgba(0, 48, 73, 0.10);
+}
 
-    <link rel="canonical" href="https://gate.roleplay.top/">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+html { scroll-padding-top: 118px; }
+body { background: var(--cream); color: var(--ink); }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+/* One continuous guide rather than a stack of visual posters */
+.section-light { background: var(--paper); }
+.section-soft { background: var(--cream); }
+.section-pad { padding-top: 4.75rem; padding-bottom: 4.75rem; }
+@media (min-width: 768px) {
+    .section-pad { padding-top: 6rem; padding-bottom: 6rem; }
+}
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+/* Calmer type hierarchy */
+.page-title { font-size: clamp(2.55rem, 5vw, 3.55rem); line-height: 1.08; font-weight: 700; }
+.section-title { font-size: clamp(2rem, 3.6vw, 2.65rem); line-height: 1.15; font-weight: 700; }
+.section-lead { max-width: 44rem; margin-inline: auto; color: var(--muted); }
 
-    <link rel="icon" type="image/x-icon" href="/static/rpg-game.png">
+/* Cards should support content, not frame every paragraph */
+.card { transition: transform .18s ease, border-color .18s ease, background-color .18s ease; }
+a.card:hover { transform: translateY(-2px); }
+.directory-card { border: 1px solid var(--line); box-shadow: none; }
+#community .directory-card { background: #fbf8f1; }
+#resources .directory-card { background: #ffffff; }
 
-    <script>
-        tailwind.config = {
-            theme: { extend: {
-                colors: {
-                    red:'#ce050f', darkred:'#9d0910', maroon:'#780000',
-                    navy:'#003049', midblue:'#336683', sky:'#669bbc',
-                    cream:'#fdf0d5', rose:'#df817a', slate:'#7f908f',
-                    blue:'#057ef0', periwinkle:'#857fff', amber:'#ffbb5c', coral:'#f26d40'
-                },
-                fontFamily: { display:['Rubik','sans-serif'], body:['Assistant','sans-serif'] }
-            }}
-        };
-    </script>
+/* Simple informational columns */
+.feature-line { border-inline-start: 4px solid rgba(0,48,73,.16); padding-inline-start: 1.25rem; }
+.feature-line.red-accent { border-inline-start-color: rgba(206,5,15,.48); }
+.feature-line.blue-accent { border-inline-start-color: rgba(5,126,240,.38); }
+.feature-line.amber-accent { border-inline-start-color: rgba(229,148,0,.42); }
 
-    <style>
-        body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3, .font-display { font-family: 'Rubik', sans-serif; }
+/* Quiet filters on both light backgrounds */
+.filter-btn {
+    background: #fff;
+    color: var(--navy);
+    border: 1px solid var(--line);
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+    box-shadow: none;
+}
+.filter-btn:hover { background: #f8f3e8; border-color: rgba(0,48,73,.18); }
+.filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
 
-        .card { transition: transform 0.18s ease; }
-        a.card:hover { transform: translateY(-3px); }
+/* Search fields */
+.directory-search {
+    background: #fff;
+    border: 1px solid rgba(0,48,73,.16);
+    box-shadow: none;
+}
+.directory-search:focus { outline: none; border-color: rgba(206,5,15,.55); box-shadow: 0 0 0 3px rgba(206,5,15,.08); }
 
-        /* Filter chips — translucent white so they sit on any coloured band */
-        .filter-btn { background: rgba(255,255,255,0.78); color:#003049; transition: background 0.15s ease; }
-        .filter-btn:hover { background:#ffffff; }
-        .filter-btn.active { background:#ce050f; color:#ffffff; }
+/* Navigation */
+.subnav { border-bottom: 1px solid rgba(0,48,73,.08); }
+.nav-link { transition: color .18s ease; }
+.nav-link:hover, .nav-link.active { color: var(--red); }
+.nav-link.active { font-weight: 700; }
 
-        /* Sub-nav — colour change, no underline */
-        .nav-link { transition: color 0.2s; }
-        .nav-link:hover, .nav-link.active { color:#ce050f; }
-        .nav-link.active { font-weight:700; }
+/* Video remains a visual moment, but without heavy shadow */
+.video-card { border: 1px solid var(--line); box-shadow: none; }
 
-        .details-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-        .chart-container { position: relative; width: 100%; max-width: 720px; margin: 0 auto; height: 350px; max-height: 420px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
+/* Subtle visual separation without diagonal dividers */
+.soft-separator { border-top: 1px solid rgba(0,48,73,.08); }
 
-        .divider { line-height: 0; }
-        .divider svg { display: block; width: 100%; height: 44px; }
-        @media (min-width: 768px) { .divider svg { height: 68px; } }
-
-        html { scroll-padding-top: 150px; }
-        @media (min-width: 768px) { html { scroll-padding-top: 110px; } }
-        @media (prefers-reduced-motion: reduce) { .card { transition: none; } a.card:hover { transform: none; } }
-    </style>
-
-    <meta name="geo.region" content="IL">
-    <meta name="geo.placename" content="Israel">
-    <meta name="language" content="Hebrew">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    <link rel="alternate" type="application/json" title="agents.json" href="/agents.json">
-</head>
-
+@media (prefers-reduced-motion: reduce) {
+    .card { transition: none; }
+    a.card:hover { transform: none; }
+}
+</style></head>
 <body class="bg-cream text-stone-800">
-
 <!-- GLOBAL NAV -->
 <header class="bg-navy text-white sticky top-0 z-[60]">
-    <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-        <a href="/" class="flex items-center gap-2 text-xl md:text-2xl font-display font-bold text-white">
-            <img src="/static/rpg-game.png" alt="לוגו שער להרפתקה" class="w-8 h-8">
-            שער להרפתקה
-        </a>
-        <nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-5 md:gap-7 font-semibold text-sm md:text-base">
-            <a href="/" class="text-rose font-bold transition-colors">בית</a>
-            <a href="/search" class="hover:text-rose transition-colors">חיפוש</a>
-            <a href="/articles" class="hover:text-rose transition-colors">מאמרים</a>
-        </nav>
-    </div>
+<div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+<a class="flex items-center gap-2 text-xl md:text-2xl font-display font-bold text-white" href="/">
+<img alt="לוגו שער להרפתקה" class="w-8 h-8" src="/static/rpg-game.png"/>
+שער להרפתקה
+</a>
+<nav class="flex w-full md:w-auto flex-wrap justify-center md:justify-end items-center gap-5 md:gap-7 font-semibold text-sm md:text-base">
+<a class="text-rose font-bold transition-colors" href="/">בית</a>
+<a class="hover:text-rose transition-colors" href="/search">חיפוש</a>
+<a class="hover:text-rose transition-colors" href="/articles">מאמרים</a>
+</nav>
+</div>
 </header>
-
 <!-- STICKY SUB-NAV -->
-<header class="bg-cream/90 backdrop-blur-sm sticky top-[109px] md:top-[56px] z-50">
-    <nav class="container mx-auto px-6 py-3">
-        <div class="flex justify-center md:justify-between items-center">
-            <div class="hidden md:flex w-full justify-center gap-7">
-                <a href="#intro-what-is" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">מה זה?</a>
-                <a href="#getting-started" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">מה צריך?</a>
-                <a href="#systems" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">בחירת שיטה</a>
-                <a href="#find-group" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">איך מוצאים קבוצה?</a>
-                <a href="#community" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">הקהילה</a>
-                <a href="#resources" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">חנויות וחוגים</a>
-                <a href="#whatsapp-updates" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">עדכונים</a>
-                <a href="#contact" class="nav-link text-lg text-navy/70 font-semibold page-nav-link">צרו קשר</a>
-            </div>
-            <div class="md:hidden w-full">
-                <select id="mobile-nav" class="w-full bg-white p-2 rounded-md text-base text-navy focus:outline-none focus:ring-2 focus:ring-red">
-                    <option value="" disabled selected>נווטו בעמוד...</option>
-                    <option value="#intro-what-is">מה זה?</option>
-                    <option value="#getting-started">מה צריך?</option>
-                    <option value="#systems">בחירת שיטה</option>
-                    <option value="#find-group">איך מוצאים קבוצה?</option>
-                    <option value="#community">הקהילה</option>
-                    <option value="#resources">חנויות וחוגים</option>
-                    <option value="#whatsapp-updates">עדכונים</option>
-                    <option value="#contact">צרו קשר</option>
-                </select>
-            </div>
-        </div>
-    </nav>
+<header class="bg-[#fbf7ee]/95 backdrop-blur-sm sticky top-[109px] md:top-[56px] z-50 subnav">
+<nav class="container mx-auto px-6 py-3">
+<div class="flex justify-center md:justify-between items-center">
+<div class="hidden md:flex w-full justify-center gap-9"><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#intro-what-is">מה זה?</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#getting-started">מתחילים</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#systems">בחירת משחק</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#find-group">מציאת קבוצה</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#community">הקהילה</a></div>
+<div class="md:hidden w-full">
+<select class="w-full bg-white border border-navy/10 p-2.5 rounded-lg text-base text-navy focus:outline-none focus:ring-2 focus:ring-red/20" id="mobile-nav"><option disabled="" selected="" value="">נווטו בעמוד...</option><option value="#intro-what-is">מה זה?</option><option value="#getting-started">מתחילים</option><option value="#systems">בחירת משחק</option><option value="#find-group">מציאת קבוצה</option><option value="#community">הקהילה</option></select>
+</div>
+</div>
+</nav>
 </header>
-
 <!-- ================= HERO (cream) ================= -->
-<section id="intro" style="background:#fdf0d5">
-    <div class="container mx-auto px-4 md:px-8 pt-12 pb-6">
-        <div class="grid md:grid-cols-[3fr,2fr] gap-10 items-center">
-            <div class="text-center md:text-right">
-                <p class="text-sm font-display font-bold tracking-widest text-red mb-3">שער להרפתקה</p>
-                <h1 class="font-display text-4xl md:text-6xl font-extrabold mb-4 text-navy leading-tight">
-                    יוצאים <span class="text-red">להרפתקה</span> הראשונה שלכם
-                </h1>
-                <p class="max-w-2xl mx-auto md:mx-0 text-lg md:text-xl text-stone-600 mb-3">
-                    עולם משחקי התפקידים מחכה לכם. כאן תמצאו את הדרך הפשוטה, המסודרת והבטוחה להתחיל – צעד-אחר-צעד: להבין מה זה, לבחור משחק, ולמצוא איפה משחקים.
-                </p>
-                <p class="text-lg text-stone-500">
-                    האתר מיועד לשחקנים חדשים, להורים מבולבלים, ולמי ששמע על "משחקי תפקידים" או "מבוכים ודרקונים" ורוצה להבין סוף סוף להיכנס גם לתחביב.
-                </p>
-            </div>
-            <div class="hidden md:flex justify-center items-center">
-                <img src="/static/full-logo.png" alt="לוגו מלא - שער להרפתקה" class="w-full max-w-sm h-auto hover:scale-105 transition-transform duration-300">
-            </div>
-        </div>
+<section class="section-soft" id="intro">
+<div class="container mx-auto px-4 md:px-8 pt-14 md:pt-20 pb-16 md:pb-20">
+<div class="grid md:grid-cols-[3fr,2fr] gap-10 items-center">
+<div class="text-center md:text-right">
+<p class="text-sm font-display font-bold tracking-widest text-red mb-3">שער להרפתקה</p>
+<h1 class="font-display page-title mb-5 text-navy">
+יוצאים <span class="text-red">להרפתקה</span> הראשונה שלכם
+</h1>
+<p class="max-w-2xl mx-auto md:mx-0 text-lg md:text-xl text-stone-600 mb-3 leading-relaxed">
+עולם משחקי התפקידים מחכה לכם. כאן תמצאו את הדרך הפשוטה, המסודרת והבטוחה להתחיל – צעד-אחר-צעד: להבין מה זה, לבחור משחק, ולמצוא איפה משחקים.
+</p>
+<p class="max-w-2xl mx-auto md:mx-0 text-base md:text-lg text-stone-500 leading-relaxed">
+האתר מיועד לשחקנים חדשים, להורים מבולבלים, ולמי ששמע על "משחקי תפקידים" או "מבוכים ודרקונים" ורוצה להבין סוף סוף להיכנס גם לתחביב.
+</p>
+</div>
+<div class="hidden md:flex justify-center items-center">
+<img alt="לוגו מלא - שער להרפתקה" class="hero-logo w-full max-w-[280px] h-auto" src="/static/full-logo.png"/>
+</div>
+</div>
+<!-- steps: plain columns, no boxes -->
+<div class="grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto mt-14 text-center">
+<a class="group" href="#intro-what-is">
+<div class="text-4xl mb-3">🤔</div>
+<div class="font-display text-xs font-bold tracking-[0.18em] mb-1 text-red">צעד 01</div>
+<h3 class="font-display text-xl font-semibold text-navy group-hover:text-red transition-colors">מה זה בכלל?</h3>
+<p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">גלו מהם משחקי תפקידים ולמה זה התחביב החברתי הכי טוב.</p>
+</a>
+<a class="group" href="#systems">
+<div class="text-4xl mb-3">🎲</div>
+<div class="font-display text-xs font-bold tracking-[0.18em] mb-1 text-red">צעד 02</div>
+<h3 class="font-display text-xl font-semibold text-navy group-hover:text-red transition-colors">בוחרים משחק</h3>
+<p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">מבוכים ודרקונים, חרבות וכשפים או משהו אחר? נעשה סדר.</p>
+</a>
+<a class="group" href="#community">
+<div class="text-4xl mb-3">🤝</div>
+<div class="font-display text-xs font-bold tracking-[0.18em] mb-1 text-red">צעד 03</div>
+<h3 class="font-display text-xl font-semibold text-navy group-hover:text-red transition-colors">מצטרפים לקהילה</h3>
+<p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">חנויות, כנסים, קהילות אונליין וחוגים – הכל במקום אחד.</p>
+</a>
+</div>
+</div>
 
-        <!-- steps: plain columns, no boxes -->
-        <div class="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto mt-12 text-center">
-            <a href="#intro-what-is" class="group">
-                <div class="text-5xl mb-2">🤔</div>
-                <div class="font-display text-sm font-extrabold tracking-widest mb-1" style="color:#057ef0">צעד 01</div>
-                <h3 class="font-display text-xl font-bold text-navy group-hover:text-red transition-colors">מה זה בכלל?</h3>
-                <p class="text-stone-600 mt-1">גלו מהם משחקי תפקידים ולמה זה התחביב החברתי הכי טוב.</p>
-            </a>
-            <a href="#systems" class="group">
-                <div class="text-5xl mb-2">🎲</div>
-                <div class="font-display text-sm font-extrabold tracking-widest mb-1" style="color:#e59400">צעד 02</div>
-                <h3 class="font-display text-xl font-bold text-navy group-hover:text-red transition-colors">בוחרים משחק</h3>
-                <p class="text-stone-600 mt-1">מבוכים ודרקונים, חרבות וכשפים או משהו אחר? נעשה סדר.</p>
-            </a>
-            <a href="#community" class="group">
-                <div class="text-5xl mb-2">🤝</div>
-                <div class="font-display text-sm font-extrabold tracking-widest mb-1" style="color:#f26d40">צעד 03</div>
-                <h3 class="font-display text-xl font-bold text-navy group-hover:text-red transition-colors">מצטרפים לקהילה</h3>
-                <p class="text-stone-600 mt-1">חנויות, כנסים, קהילות אונליין וחוגים – הכל במקום אחד.</p>
-            </a>
-        </div>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,68 L1440,0 L1440,68 Z" fill="#003049"/></svg></div>
 </section>
-
 <!-- ================= WHAT IS RPG (navy) ================= -->
-<section id="intro-what-is" style="background:#003049">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-10 max-w-5xl">
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-center mb-6 text-cream">אז מה זה בעצם משחקי תפקידים?</h2>
-        <p class="text-lg text-center max-w-3xl mx-auto mb-4 text-cream/85">משחקי תפקידים הם פעילות חברתית שבה המשתתפים מגלמים דמויות בדיוניות בתוך עולם סיפור מסוים. כל שחקן בוחר דמות ומגיב לסיטואציות על פי אופייה, רצונותיה ויכולותיה. יש שיטה שמנחה את החוקים, ויש את "האדם האחראי" או המנחה שמוביל את העלילה.</p>
-        <p class="text-lg text-center max-w-3xl mx-auto mb-12 text-cream/85">המטרה? ליצור יחד חוויות משותפות, לספר סיפור בלתי נשכח, לפתור תעלומות, ולפעמים גם פשוט לצחוק וליהנות ביחד.</p>
+<section class="section-light" id="intro-what-is">
+<div class="container mx-auto px-4 md:px-8 section-pad max-w-5xl">
+<h2 class="font-display section-title text-center mb-6 text-navy">אז מה זה בעצם משחקי תפקידים?</h2>
+<p class="text-lg text-center section-lead leading-relaxed mb-4">משחקי תפקידים הם פעילות חברתית שבה המשתתפים מגלמים דמויות בדיוניות בתוך עולם סיפור מסוים. כל שחקן בוחר דמות ומגיב לסיטואציות על פי אופייה, רצונותיה ויכולותיה. יש שיטה שמנחה את החוקים, ויש את "האדם האחראי" או המנחה שמוביל את העלילה.</p>
+<p class="text-lg text-center section-lead leading-relaxed mb-14">המטרה? ליצור יחד חוויות משותפות, לספר סיפור בלתי נשכח, לפתור תעלומות, ולפעמים גם פשוט לצחוק וליהנות ביחד.</p>
+<div class="grid md:grid-cols-2 gap-10 md:gap-14 max-w-4xl mx-auto">
+<div class="feature-line blue-accent">
+<h3 class="font-display text-2xl font-semibold mb-3 flex items-center gap-3 text-navy"><span class="text-4xl">🎲</span>שולחניים (TTRPG)</h3>
+<p class="text-lg text-stone-600 leading-relaxed">חוויה של סיפור שיתופי סביב שולחן (או אונליין). בעזרת דמיון, סט חוקים, קוביות ומנחה, אתם והחברים שלכם יוצרים יחד סיפור הרפתקאות ייחודי. הדגש הוא על יצירתיות, פתרון בעיות ועבודת צוות.</p>
+</div>
+<div class="feature-line red-accent">
+<h3 class="font-display text-2xl font-semibold mb-3 flex items-center gap-3 text-navy"><span class="text-4xl">🎭</span>חיים (LARP)</h3>
+<p class="text-lg text-stone-600 leading-relaxed">כאן אתם לא רק מספרים את הסיפור - אתם חיים אותו. המשתתפים מגלמים פיזית את הדמויות, לובשים תלבושות ופועלים במרחב אמיתי. חוויה תיאטרלית וסוחפת המדגישה אלתור ואינטראקציה פיזית.</p>
+</div>
+</div>
+<div class="mt-16 text-center max-w-2xl mx-auto">
+<h3 class="font-display text-2xl font-semibold mb-3 text-navy">רוצים לראות איך נראה משחק?</h3>
+<p class="text-lg text-stone-600 mb-6">צפו בסרטון "מורה מבוכים" של דונקי שמסביר בצורה כיפית וברורה מה זה משחק תפקידים:</p>
+<a class="card video-card inline-block relative group overflow-hidden max-w-lg w-full rounded-2xl" href="https://www.youtube.com/watch?v=KJvCcxxfqmc" rel="noopener noreferrer" target="_blank">
+<img alt="מורה מבוכים - איך נראה משחק תפקידים?" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" src="https://img.youtube.com/vi/KJvCcxxfqmc/hqdefault.jpg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/20">
+<svg class="w-20 h-20 text-white opacity-80 group-hover:opacity-100" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" fill-rule="evenodd"></path></svg>
+</div>
+</a>
+</div>
+</div>
 
-        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-            <div>
-                <h3 class="font-display text-2xl md:text-3xl font-bold mb-3 flex items-center gap-3 text-white"><span class="text-4xl">🎲</span>שולחניים (TTRPG)</h3>
-                <p class="text-lg text-cream/80">חוויה של סיפור שיתופי סביב שולחן (או אונליין). בעזרת דמיון, סט חוקים, קוביות ומנחה, אתם והחברים שלכם יוצרים יחד סיפור הרפתקאות ייחודי. הדגש הוא על יצירתיות, פתרון בעיות ועבודת צוות.</p>
-            </div>
-            <div>
-                <h3 class="font-display text-2xl md:text-3xl font-bold mb-3 flex items-center gap-3 text-white"><span class="text-4xl">🎭</span>חיים (LARP)</h3>
-                <p class="text-lg text-cream/80">כאן אתם לא רק מספרים את הסיפור - אתם חיים אותו. המשתתפים מגלמים פיזית את הדמויות, לובשים תלבושות ופועלים במרחב אמיתי. חוויה תיאטרלית וסוחפת המדגישה אלתור ואינטראקציה פיזית.</p>
-            </div>
-        </div>
-
-        <div class="mt-14 text-center max-w-2xl mx-auto">
-            <h3 class="font-display text-2xl md:text-3xl font-bold mb-3 text-cream">רוצים לראות איך נראה משחק?</h3>
-            <p class="text-xl text-cream/80 mb-6">צפו בסרטון "מורה מבוכים" של דונקי שמסביר בצורה כיפית וברורה מה זה משחק תפקידים:</p>
-            <a href="https://www.youtube.com/watch?v=KJvCcxxfqmc" target="_blank" rel="noopener noreferrer" class="card inline-block relative group overflow-hidden max-w-lg w-full rounded-xl">
-                <img src="https://img.youtube.com/vi/KJvCcxxfqmc/hqdefault.jpg" alt="מורה מבוכים - איך נראה משחק תפקידים?" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/20">
-                    <svg class="w-20 h-20 text-white opacity-80 group-hover:opacity-100" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L1440,68 L0,68 Z" fill="#fdf0d5"/></svg></div>
 </section>
-
 <!-- ================= WHAT YOU NEED + SYSTEMS (cream) ================= -->
-<section id="getting-started" style="background:#fdf0d5">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-10">
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-center mb-2 text-navy">מה צריך כדי להתחיל?</h2>
-        <p class="text-xl text-center text-stone-600 max-w-2xl mx-auto mb-10">החדשות הטובות: לא צריך הרבה! אפשר להתחיל לשחק עם ציוד בסיסי שכבר יש לכם בבית.</p>
-        <div class="grid md:grid-cols-3 gap-8 md:gap-10 max-w-5xl mx-auto">
-            <div>
-                <div class="text-4xl mb-2">✏️</div>
-                <h3 class="font-display text-2xl font-bold mb-3" style="color:#0a6fd0">המינימום ההכרחי</h3>
-                <ul class="text-lg text-stone-700 space-y-2">
-                    <li>✔️ חברים (2-5 אנשים)</li>
-                    <li>✔️ דף, עיפרון ומחק</li>
-                    <li>✔️ סט קוביות (או אפליקציה)</li>
-                </ul>
-            </div>
-            <div>
-                <div class="text-4xl mb-2">📚</div>
-                <h3 class="font-display text-2xl font-bold mb-2" style="color:#a86a10">ערכת התחלה</h3>
-                <p class="text-lg text-stone-700">הדרך המומלצת ביותר. ערכות כמו של "מבוכים ודרקונים" או "חרבות וכשפים" כוללות כל מה שצריך למשחק הראשון: ספר חוקים מקוצר, הרפתקה מוכנה, דמויות וקוביות.</p>
-            </div>
-            <div>
-                <div class="text-4xl mb-2">🏰</div>
-                <h3 class="font-display text-2xl font-bold mb-2" style="color:#d1502a">למשקיענים (אופציונלי)</h3>
-                <p class="text-lg text-stone-700">עם הזמן, אפשר לשדרג את החוויה עם מיניאטורות, מפות קרב, מסתור למנחה וספרי הרחבה. אבל זה ממש לא חובה כדי ליהנות!</p>
-            </div>
-        </div>
-    </div>
+<section class="section-soft" id="getting-started">
+<div class="container mx-auto px-4 md:px-8 section-pad">
+<h2 class="font-display section-title text-center mb-3 text-navy">מה צריך כדי להתחיל?</h2>
+<p class="text-lg md:text-xl text-center section-lead mb-12 leading-relaxed">החדשות הטובות: לא צריך הרבה! אפשר להתחיל לשחק עם ציוד בסיסי שכבר יש לכם בבית.</p>
+<div class="grid md:grid-cols-3 gap-10 md:gap-14 max-w-5xl mx-auto">
+<div class="feature-line blue-accent">
+<div class="text-3xl mb-3">✏️</div>
+<h3 class="font-display text-xl md:text-2xl font-semibold mb-3 text-navy">המינימום ההכרחי</h3>
+<ul class="text-lg text-stone-600 space-y-2 leading-relaxed">
+<li>✔️ חברים (2-5 אנשים)</li>
+<li>✔️ דף, עיפרון ומחק</li>
+<li>✔️ סט קוביות (או אפליקציה)</li>
+</ul>
+</div>
+<div class="feature-line amber-accent">
+<div class="text-3xl mb-3">📚</div>
+<h3 class="font-display text-xl md:text-2xl font-semibold mb-3 text-navy">ערכת התחלה</h3>
+<p class="text-lg text-stone-600 leading-relaxed">הדרך המומלצת ביותר. ערכות כמו של "מבוכים ודרקונים" או "חרבות וכשפים" כוללות כל מה שצריך למשחק הראשון: ספר חוקים מקוצר, הרפתקה מוכנה, דמויות וקוביות.</p>
+</div>
+<div class="feature-line red-accent">
+<div class="text-3xl mb-3">🏰</div>
+<h3 class="font-display text-xl md:text-2xl font-semibold mb-3 text-navy">למשקיענים (אופציונלי)</h3>
+<p class="text-lg text-stone-600 leading-relaxed">עם הזמן, אפשר לשדרג את החוויה עם מיניאטורות, מפות קרב, מסתור למנחה וספרי הרחבה. אבל זה ממש לא חובה כדי ליהנות!</p>
+</div>
+</div>
+</div>
 
-    <div id="systems" class="container mx-auto px-4 md:px-8 pt-8 pb-12 scroll-mt-32">
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-center mb-2 text-navy">בחירת שיטת משחק</h2>
-        <p class="text-xl text-center text-stone-600 max-w-2xl mx-auto mb-6">כל הרפתקה צריכה חוקים. הנה ארבע מהשיטות הפופולריות ביותר בישראל, שמתאימות במיוחד למתחילים.</p>
-        <div class="text-center mb-10">
-            <a href="/quiz" class="inline-flex items-center gap-2 bg-red hover:bg-darkred text-white font-bold px-6 py-3 rounded-full transition-colors">🎲 לא בטוחים? ענו על השאלון ומצאו את המשחק שלכם</a>
-        </div>
-        <div id="systems-container" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
-        <h3 class="font-display text-2xl md:text-3xl font-bold text-center mt-12 mb-4 text-navy">השוואת רמת המורכבות</h3>
-        <div class="bg-white rounded-2xl p-4 md:p-6 max-w-3xl mx-auto">
-            <div class="chart-container"><canvas id="systemsChart"></canvas></div>
-        </div>
-        <p class="text-base text-center text-stone-500 mt-3">נמוך יותר = פשוט יותר. ההשוואה כללית בלבד.</p>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,68 L1440,0 L1440,68 Z" fill="#ce050f"/></svg></div>
-</section>
 
+</section><section class="section-light soft-separator"><div class="container mx-auto px-4 md:px-8 section-pad scroll-mt-32" id="systems">
+<h2 class="font-display section-title text-center mb-3 text-navy">בחירת שיטת משחק</h2>
+<p class="text-lg md:text-xl text-center section-lead mb-7 leading-relaxed">כל הרפתקה צריכה חוקים. הנה ארבע מהשיטות הפופולריות ביותר בישראל, שמתאימות במיוחד למתחילים.</p>
+<div class="text-center mb-10">
+<a class="inline-flex items-center gap-2 bg-red hover:bg-darkred text-white font-bold px-6 py-3 rounded-full transition-colors" href="/quiz">🎲 לא בטוחים? ענו על השאלון ומצאו את המשחק שלכם</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="systems-container"></div>
+<h3 class="font-display text-2xl font-semibold text-center mt-14 mb-5 text-navy">השוואת רמת המורכבות</h3>
+<div class="bg-cream/60 border border-navy/10 rounded-2xl p-4 md:p-6 max-w-3xl mx-auto">
+<div class="chart-container"><canvas id="systemsChart"></canvas></div>
+</div>
+<p class="text-base text-center text-stone-500 mt-3">נמוך יותר = פשוט יותר. ההשוואה כללית בלבד.</p>
+</div></section>
 <!-- ================= FIND A GROUP (red) ================= -->
-<section id="find-group" style="background:#ce050f">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-10 text-center">
-        <h2 class="font-display text-3xl md:text-5xl font-bold mb-2 text-white">איך מוצאים קבוצת משחק?</h2>
-        <p class="text-xl text-white/90 max-w-3xl mx-auto mb-10">מציאת קבוצה היא הצעד המרגש הבא! הנה שתי דרכים מומלצות:</p>
-        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto text-right">
-            <div>
-                <h3 class="font-display text-2xl font-bold mb-3 text-white flex items-center gap-2">👨‍👩‍👧‍👦 לשחקנים בוגרים</h3>
-                <p class="text-lg text-white/90 mb-5">הדרך הכי טובה היא להצטרף לאחת מקבוצות הקהילה הגדולות באונליין. שם תוכלו למצוא מודעות של מנחים ושחקנים, וגם לפרסם שאתם מחפשים קבוצה.</p>
-                <a href="#community" class="inline-block bg-white text-red px-6 py-3 rounded-full font-bold hover:bg-cream transition-colors text-base">מצאו קבוצות קהילה</a>
-            </div>
-            <div>
-                <h3 class="font-display text-2xl font-bold mb-3 text-white flex items-center gap-2">👧👦 לילדים ובני נוער</h3>
-                <p class="text-lg text-white/90 mb-5">משחקי תפקידים הם חוויה מדהימה לילדים! ישנם חוגים ופעילויות ייעודיות שבהם מנחים מנוסים מלמדים את המשחק ומפעילים קבוצות.</p>
-                <a href="#resources" class="inline-block bg-white text-red px-6 py-3 rounded-full font-bold hover:bg-cream transition-colors text-base">מצאו חוגים באזורכם</a>
-            </div>
-        </div>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L1440,68 L0,68 Z" fill="#857fff"/></svg></div>
-</section>
+<section class="section-soft soft-separator" id="find-group">
+<div class="container mx-auto px-4 md:px-8 section-pad text-center">
+<h2 class="font-display section-title mb-3 text-navy">איך מוצאים קבוצת משחק?</h2>
+<p class="text-lg md:text-xl text-stone-600 max-w-3xl mx-auto mb-12">מציאת קבוצה היא הצעד המרגש הבא! הנה שתי דרכים מומלצות:</p>
+<div class="grid md:grid-cols-2 gap-10 md:gap-16 max-w-4xl mx-auto text-right">
+<div class="feature-line red-accent">
+<h3 class="font-display text-2xl font-semibold mb-3 text-navy flex items-center gap-2">👨‍👩‍👧‍👦 לשחקנים בוגרים</h3>
+<p class="text-lg text-stone-600 mb-5 leading-relaxed">הדרך הכי טובה היא להצטרף לאחת מקבוצות הקהילה הגדולות באונליין. שם תוכלו למצוא מודעות של מנחים ושחקנים, וגם לפרסם שאתם מחפשים קבוצה.</p>
+<a class="inline-flex items-center font-bold text-red hover:text-darkred transition-colors text-base" href="#community">מצאו קבוצות קהילה</a>
+</div>
+<div class="feature-line blue-accent">
+<h3 class="font-display text-2xl font-semibold mb-3 text-navy flex items-center gap-2">👧👦 לילדים ובני נוער</h3>
+<p class="text-lg text-stone-600 mb-5 leading-relaxed">משחקי תפקידים הם חוויה מדהימה לילדים! ישנם חוגים ופעילויות ייעודיות שבהם מנחים מנוסים מלמדים את המשחק ומפעילים קבוצות.</p>
+<a class="inline-flex items-center font-bold text-red hover:text-darkred transition-colors text-base" href="#resources">מצאו חוגים באזורכם</a>
+</div>
+</div>
+</div>
 
+</section>
 <!-- ================= COMMUNITY (periwinkle) ================= -->
-<section id="community" style="background:#857fff">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-10">
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-center mb-2 text-white">הקהילה: ארגונים, כנסים וקבוצות</h2>
-        <p class="text-xl text-center text-white/90 max-w-2xl mx-auto mb-2">אתם לא לבד! קהילת משחקי התפקידים בישראל חיה, תוססת ומלאה באנשים שישמחו לעזור לכם להתחיל.</p>
-        <p class="text-center text-white/90 mb-8">לפורטל החיפוש המלא <a href="/search" class="text-white font-bold underline">לחצו כאן</a></p>
+<section class="section-light soft-separator" id="community">
+<div class="container mx-auto px-4 md:px-8 section-pad">
+<h2 class="font-display section-title text-center mb-3 text-navy">הקהילה: ארגונים, כנסים וקבוצות</h2>
+<p class="text-lg md:text-xl text-center section-lead mb-2 leading-relaxed">אתם לא לבד! קהילת משחקי התפקידים בישראל חיה, תוססת ומלאה באנשים שישמחו לעזור לכם להתחיל.</p>
+<p class="text-center text-stone-500 mb-8">לפורטל החיפוש המלא <a class="text-red font-bold hover:underline" href="/search">לחצו כאן</a></p>
+<div class="max-w-md mx-auto mb-5">
+<input class="directory-search w-full p-3 rounded-lg text-base" id="community-search" placeholder="חיפוש על פי שם או יישוב..." type="text"/>
+</div>
+<div class="flex justify-center flex-wrap gap-2 mb-8">
+<button class="filter-btn community-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="all">הכל</button>
+<button class="filter-btn community-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="organization">🏢 ארגון/עמותה</button>
+<button class="filter-btn community-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="event">📅 אירוע/כנס</button>
+<button class="filter-btn community-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="group">💬 קהילה/קבוצה</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="community-container"></div>
+<div class="hidden text-center text-stone-600 text-lg mt-8" id="community-no-results"><p>לא נמצאו תוצאות התואמות לחיפוש שלך.</p></div>
+<div class="text-center mt-6 flex justify-center gap-4">
+<button class="hidden px-5 py-2 rounded-full font-semibold bg-white border border-navy/10 text-navy hover:bg-cream transition-colors text-base" id="community-load-more-btn">טען עוד</button>
+<button class="hidden px-5 py-2 rounded-full font-semibold bg-white border border-navy/10 text-navy hover:bg-cream transition-colors text-base" id="community-collapse-btn">צמצם</button>
+</div>
+</div>
 
-        <div class="max-w-md mx-auto mb-5">
-            <input type="text" id="community-search" placeholder="חיפוש על פי שם או יישוב..." class="w-full p-3 rounded-lg bg-white text-base focus:outline-none focus:ring-2 focus:ring-white">
-        </div>
-        <div class="flex justify-center flex-wrap gap-2 mb-8">
-            <button class="filter-btn community-filter-btn active px-4 py-2 rounded-full font-semibold text-base" data-filter="all">הכל</button>
-            <button class="filter-btn community-filter-btn px-4 py-2 rounded-full font-semibold text-base" data-filter="organization">🏢 ארגון/עמותה</button>
-            <button class="filter-btn community-filter-btn px-4 py-2 rounded-full font-semibold text-base" data-filter="event">📅 אירוע/כנס</button>
-            <button class="filter-btn community-filter-btn px-4 py-2 rounded-full font-semibold text-base" data-filter="group">💬 קהילה/קבוצה</button>
-        </div>
-        <div id="community-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        <div id="community-no-results" class="hidden text-center text-white text-lg mt-8"><p>לא נמצאו תוצאות התואמות לחיפוש שלך.</p></div>
-        <div class="text-center mt-6 flex justify-center gap-4">
-            <button id="community-load-more-btn" class="hidden px-5 py-2 rounded-full font-semibold bg-white text-navy hover:bg-cream transition-colors text-base">טען עוד</button>
-            <button id="community-collapse-btn" class="hidden px-5 py-2 rounded-full font-semibold bg-white text-navy hover:bg-cream transition-colors text-base">צמצם</button>
-        </div>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,68 L1440,0 L1440,68 Z" fill="#057ef0"/></svg></div>
 </section>
-
 <!-- ================= RESOURCES (blue) ================= -->
-<section id="resources" style="background:#057ef0">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-10">
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-center mb-2 text-white">איפה קונים ומשחקים?</h2>
-        <p class="text-xl text-center text-white/90 max-w-2xl mx-auto mb-2">צריכים קוביות, ספרי חוקים או מקום לשחק בו? מהחנויות המקצועיות ועד חוגי ילדים, אלו המקומות שיספקו לכם את כל מה שצריך.</p>
-        <p class="text-center text-white/90 mb-8">לפורטל החיפוש המלא <a href="/search" class="text-white font-bold underline">לחצו כאן</a></p>
+<section class="section-soft soft-separator" id="resources">
+<div class="container mx-auto px-4 md:px-8 section-pad">
+<h2 class="font-display section-title text-center mb-3 text-navy">איפה קונים ומשחקים?</h2>
+<p class="text-lg md:text-xl text-center section-lead mb-2 leading-relaxed">צריכים קוביות, ספרי חוקים או מקום לשחק בו? מהחנויות המקצועיות ועד חוגי ילדים, אלו המקומות שיספקו לכם את כל מה שצריך.</p>
+<p class="text-center text-stone-500 mb-8">לפורטל החיפוש המלא <a class="text-red font-bold hover:underline" href="/search">לחצו כאן</a></p>
+<div class="max-w-md mx-auto mb-5">
+<input class="directory-search w-full p-3 rounded-lg text-base" id="resources-search" placeholder="חיפוש על פי שם או יישוב..." type="text"/>
+</div>
+<div class="flex justify-center flex-wrap gap-2 mb-8">
+<button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="all">הכל</button>
+<button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="store">🛍️ חנות/ציוד</button>
+<button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="venue">🏰 מתחם משחקים</button>
+<button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="activities">🎭 סדנאות והפעלות</button>
+<button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-sm md:text-base" data-filter="kids">🧒 חוגי ילדים</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="resources-container"></div>
+<div class="hidden text-center text-stone-600 text-lg mt-8" id="resources-no-results"><p>לא נמצאו תוצאות התואמות לחיפוש שלך.</p></div>
+<div class="text-center mt-6 flex justify-center gap-4">
+<button class="hidden px-5 py-2 rounded-full font-semibold bg-white border border-navy/10 text-navy hover:bg-[#f8f3e8] transition-colors text-base" id="resources-load-more-btn">טען עוד</button>
+<button class="hidden px-5 py-2 rounded-full font-semibold bg-white border border-navy/10 text-navy hover:bg-[#f8f3e8] transition-colors text-base" id="resources-collapse-btn">צמצם</button>
+</div>
+</div>
 
-        <div class="max-w-md mx-auto mb-5">
-            <input type="text" id="resources-search" placeholder="חיפוש על פי שם או יישוב..." class="w-full p-3 rounded-lg bg-white text-base focus:outline-none focus:ring-2 focus:ring-white">
-        </div>
-        <div class="flex justify-center flex-wrap gap-2 mb-8">
-            <button class="filter-btn resources-filter-btn active px-4 py-2 rounded-full font-semibold text-base" data-filter="all">הכל</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-base" data-filter="store">🛍️ חנות/ציוד</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-base" data-filter="venue">🏰 מתחם משחקים</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-base" data-filter="activities">🎭 סדנאות והפעלות</button>
-            <button class="filter-btn resources-filter-btn px-4 py-2 rounded-full font-semibold text-base" data-filter="kids">🧒 חוגי ילדים</button>
-        </div>
-        <div id="resources-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        <div id="resources-no-results" class="hidden text-center text-white text-lg mt-8"><p>לא נמצאו תוצאות התואמות לחיפוש שלך.</p></div>
-        <div class="text-center mt-6 flex justify-center gap-4">
-            <button id="resources-load-more-btn" class="hidden px-5 py-2 rounded-full font-semibold bg-white text-navy hover:bg-cream transition-colors text-base">טען עוד</button>
-            <button id="resources-collapse-btn" class="hidden px-5 py-2 rounded-full font-semibold bg-white text-navy hover:bg-cream transition-colors text-base">צמצם</button>
-        </div>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L1440,68 L0,68 Z" fill="#fdf0d5"/></svg></div>
 </section>
-
 <!-- ================= CLOSEST EVENT (cream) ================= -->
-<section id="closest-event" style="background:#fdf0d5">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-12">
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-center mb-8 text-navy">מתי הכנס הבא?</h2>
-        <div id="closest-event-container" class="max-w-md mx-auto"></div>
-        <p class="text-base text-center text-stone-500 mt-4">המידע אודות זמני הכנסים הוא הערכה בלבד. תמיד כדאי להתעדכן באתרים הרשמיים של המארגנים.</p>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,68 L1440,0 L1440,68 Z" fill="#003049"/></svg></div>
-</section>
+<section class="section-light soft-separator" id="closest-event">
+<div class="container mx-auto px-4 md:px-8 section-pad">
+<h2 class="font-display section-title text-center mb-8 text-navy">מתי הכנס הבא?</h2>
+<div class="max-w-md mx-auto" id="closest-event-container"></div>
+<p class="text-sm md:text-base text-center text-stone-500 mt-4">המידע אודות זמני הכנסים הוא הערכה בלבד. תמיד כדאי להתעדכן באתרים הרשמיים של המארגנים.</p>
+</div>
 
+</section>
 <!-- ================= WHATSAPP (navy) ================= -->
-<section id="whatsapp-updates" style="background:#003049">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-12 text-center max-w-3xl">
-        <img src="/static/msg-logo.png" alt="לוגו דואר עוף-חול" class="w-20 mx-auto mb-4">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-cream mb-4">דואר עוף-חול: נשארים מעודכנים</h2>
-        <p class="text-xl text-cream/85 mb-8 max-w-2xl mx-auto">רוצים לדעת ראשונים על כנסים, אירועים מיוחדים וחדשות חמות מהקהילה? הצטרפו לערוץ העדכונים השקט שלנו בוואטסאפ. בלי חפירות, רק מה שחשוב.</p>
-        <a href="https://msg.roleplay.top" target="_blank" class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-3 rounded-full font-bold text-lg hover:opacity-90 transition-opacity gap-2">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            להצטרפות לערוץ
-        </a>
-    </div>
-    <div class="divider"><svg viewBox="0 0 1440 68" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L1440,68 L0,68 Z" fill="#ffbb5c"/></svg></div>
-</section>
+<section class="bg-navy" id="whatsapp-updates">
+<div class="container mx-auto px-4 md:px-8 section-pad text-center max-w-3xl">
+<img alt="לוגו דואר עוף-חול" class="w-20 mx-auto mb-4" src="/static/msg-logo.png"/>
+<h2 class="font-display text-3xl md:text-4xl font-semibold text-cream mb-4">דואר עוף-חול: נשארים מעודכנים</h2>
+<p class="text-lg md:text-xl text-cream/80 mb-8 max-w-2xl mx-auto leading-relaxed">רוצים לדעת ראשונים על כנסים, אירועים מיוחדים וחדשות חמות מהקהילה? הצטרפו לערוץ העדכונים השקט שלנו בוואטסאפ. בלי חפירות, רק מה שחשוב.</p>
+<a class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-3 rounded-full font-bold text-lg hover:opacity-90 transition-opacity gap-2" href="https://msg.roleplay.top" target="_blank">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+להצטרפות לערוץ
+</a>
+</div>
 
+</section>
 <!-- ================= CONTACT (amber) ================= -->
-<section id="contact" style="background:#ffbb5c">
-    <div class="container mx-auto px-4 md:px-8 pt-6 pb-12 text-center max-w-2xl">
-        <h2 class="font-display text-3xl md:text-5xl font-bold mb-2 text-navy">צרו קשר</h2>
-        <p class="text-xl text-navy/80 max-w-2xl mx-auto mb-8">מצאתם טעות? רוצים להוסיף את העסק או הקהילה שלכם? יש לכם הצעה לשיפור? נשמח לשמוע!</p>
-        <p class="text-xl text-navy mb-6 font-semibold">ניתן לפנות אלינו בכל נושא דרך כתובת המייל:</p>
-        <a href="mailto:gate@roleplay.top" class="inline-block bg-navy text-white px-8 py-3 rounded-full font-bold text-xl hover:bg-[#062338] transition-colors">gate@roleplay.top</a>
-    </div>
+<section class="section-soft" id="contact">
+<div class="container mx-auto px-4 md:px-8 section-pad text-center max-w-2xl">
+<h2 class="font-display section-title mb-3 text-navy">צרו קשר</h2>
+<p class="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-8">מצאתם טעות? רוצים להוסיף את העסק או הקהילה שלכם? יש לכם הצעה לשיפור? נשמח לשמוע!</p>
+<p class="text-lg text-navy mb-6 font-semibold">ניתן לפנות אלינו בכל נושא דרך כתובת המייל:</p>
+<a class="inline-block bg-navy text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-[#062338] transition-colors" href="mailto:gate@roleplay.top">gate@roleplay.top</a>
+</div>
 </section>
-
-<footer class="text-center py-8 bg-navy text-cream/75">
-    <p class="font-display font-semibold text-cream mb-1">שער להרפתקה — שער הכניסה לתחום משחקי התפקידים</p>
-    <p class="text-sm">מנוהל ע"י <a href="https://roleplay.top/" class="text-rose hover:underline">גמ"ה - גלגול מיזמים התנדבותיים</a></p>
-    <p class="text-sm"><a href="https://lp.reuven.click" target="_blank" rel="noopener" class="text-rose hover:underline">ראובן מנדלוביץ׳</a></p>
+<footer class="text-center py-9 bg-navy text-cream/70">
+<p class="font-display font-semibold text-cream mb-1">שער להרפתקה — שער הכניסה לתחום משחקי התפקידים</p>
+<p class="text-sm">מנוהל ע"י <a class="text-rose hover:underline" href="https://roleplay.top/">גמ"ה - גלגול מיזמים התנדבותיים</a></p>
+<p class="text-sm"><a class="text-rose hover:underline" href="https://lp.reuven.click" rel="noopener" target="_blank">ראובן מנדלוביץ׳</a></p>
 </footer>
-
 <script src="/static/search-engine.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const systemsData = [
-            { name: "מבוכים ודרקונים (D&D 5e)", badge: "הנפוץ ביותר בעולם", description: "המשחק הפופולרי ביותר בעולם, המציע חווית פנטזיה קלאסית. הוא משלב בצורה מופלאה אלמנטים של פנטזיה, קבלת החלטות אסטרטגית ושיתוף פעולה חברתי עמוק.", why: "נקודת הכניסה הסטנדרטית לתחביב. קל למצוא קבוצה וחומרים למתחילים, כמו 'ערכת ההתחלה' המצוינת.", complexity: 10, color: 'rgba(206,5,15,0.7)', tint: '#fddedf', badgeBg: '#ce050f', badgeText: '#ffffff', link: "https://www.dndbeyond.com/" },
-            { name: "חרבות וכשפים", badge: "מומלץ למתחילים ולצעירים", description: "חזרה לשורשים של משחקי התפקידים, עם שיטה קלת-חוקים וגמישה המעודדת יצירתיות ואלתור מצד השחקנים והמנחה. הערכה למתחיל היא שער כניסה מושלם לתחביב.", why: "מעולה למתחילים ולילדים. ערכת המתחיל בעברית מלמדת את המשחק צעד-אחר-צעד, כולל הרפתקת סולו.", complexity: 3, color: 'rgba(255,187,92,0.7)', tint: '#fff3da', badgeBg: '#ffbb5c', badgeText: '#7a4a06', link: "https://swordsandwizardry.co.il/" },
-            { name: "פאת'פיינדר בעולמות פראיים", badge: "לחובבי האקשן", description: "שילוב מנצח של עולם הפנטזיה העשיר של 'פאת'פיינדר' עם מנוע החוקים המהיר והקולנועי של 'עולמות פראיים'. הרפתקאות מסמרות שיער ואקשן מותח עצבים.", why: "הטוב משני העולמות - עומק עלילתי עם חוקים קלילים. ספר הבסיס בעברית כולל את כל מה שצריך כדי להתחיל לשחק.", complexity: 7, color: 'rgba(5,126,240,0.7)', tint: '#e6f2fd', badgeBg: '#057ef0', badgeText: '#ffffff', link: "https://pundak.games/savage-pathfinder/" },
-            { name: "מנוע האפוקליפסה", badge: "לחובבי חופש ומקוריות", description: "מנוע משחק גמיש שעליו בנויות שיטות רבות. שם דגש על סיפור ויצירתיות על פני קרבות טקטיים. המשחקים הנפוצים בעברית הם 'פלאים: גיבורי המחר' ו'וואנור'.", why: "מנוע פשוט ללמידה המאפשר להתמקד בסיפור. מתאים למגוון רחב של ז'אנרים וסגנונות משחק.", complexity: 5, color: 'rgba(133,127,255,0.7)', tint: '#eeecff', badgeBg: '#857fff', badgeText: '#2f2a6e', link: "https://vanor.co.il/" }
-        ];
-
-        const systemsContainer = document.getElementById('systems-container');
-        systemsData.forEach(system => {
-            const card = document.createElement('div');
-            card.className = 'card flex flex-col overflow-hidden rounded-2xl';
-            card.style.background = system.tint;
-            card.innerHTML = `
-                <div class="p-6 cursor-pointer flex-grow" onclick="toggleDetails(this)">
-                    ${system.badge ? `<div class="mb-3"><span class="text-sm font-bold px-3 py-1 rounded-full" style="background:${system.badgeBg};color:${system.badgeText}">${system.badge}</span></div>` : ''}
-                    <h3 class="font-display text-2xl font-bold text-navy mb-2">
-                        <a href="${system.link}" target="_blank" rel="noopener noreferrer" class="hover:text-red">${system.name}</a>
-                    </h3>
-                    <p class="text-lg text-stone-700 mb-3">${system.description}</p>
-                    <div class="mb-1">
-                        <a href="${system.link}" target="_blank" rel="noopener noreferrer" class="text-red hover:text-darkred font-bold hover:underline text-base" onclick="event.stopPropagation()">למעבר לאתר המשחק &larr;</a>
-                    </div>
-                    <div class="flex items-center justify-end mt-4 text-base font-semibold text-navy">
-                        <span>למה זה טוב למתחילים?</span>
-                        <svg class="w-4 h-4 mr-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                </div>
-                <div class="details-content" style="background:rgba(255,255,255,0.55)">
-                    <div class="p-6"><p class="text-base text-stone-700">${system.why}</p></div>
-                </div>
-            `;
-            systemsContainer.appendChild(card);
-        });
-
-        window.toggleDetails = function(element) {
-            const content = element.nextElementSibling;
-            const svg = element.querySelector('svg');
-            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-                content.style.maxHeight = '0px';
-                svg.style.transform = 'rotate(0deg)';
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                svg.style.transform = 'rotate(180deg)';
-            }
-        }
-
-        function getTypeInfo(typeStr) {
-            switch (typeStr) {
-                case 'organization': return { label: '🏢 ארגון/עמותה',    bg: '#dbe3e9', text: '#003049' };
-                case 'event':        return { label: '📅 אירוע/כנס',       bg: '#fddedf', text: '#ce050f' };
-                case 'group':        return { label: '💬 קהילה/קבוצה',      bg: '#ecebff', text: '#5b52e0' };
-                case 'store':        return { label: '🛍️ חנות/ציוד',        bg: '#fff2da', text: '#a86a10' };
-                case 'venue':        return { label: '🏰 מתחם משחקים',       bg: '#fde3da', text: '#d1502a' };
-                case 'activities':   return { label: '🎭 סדנאות והפעלות',    bg: '#e2effc', text: '#0a6fd0' };
-                case 'kids':         return { label: '🧒 חוגי ילדים',        bg: '#fce4ea', text: '#c43d68' };
-                default:             return { label: 'כללי',                bg: '#eef0f2', text: '#57534e' };
-            }
-        }
-
-        const HEB_MONTHS = ['', 'ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
-
-        function createCard(item) {
-            const types = Array.isArray(item.type) ? item.type : [item.type];
-            const badgesHtml = types.map(t => {
-                const info = getTypeInfo(t);
-                return `<span class="text-xs md:text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap" style="background:${info.bg};color:${info.text}">${info.label}</span>`;
-            }).join('');
-            const monthHtml = (item.month >= 1 && item.month <= 12) ? `<p class="text-sm text-blue mb-2 font-semibold">🗓️ מתקיים ב${HEB_MONTHS[item.month]}</p>` : '';
-            return `
-                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card group block bg-white p-6 rounded-xl h-full flex flex-col">
-                  <div class="flex flex-wrap items-center gap-1.5 mb-3">${badgesHtml}</div>
-                  <h3 class="font-display text-xl font-bold text-navy mb-1 leading-tight group-hover:text-red transition-colors">${item.name ?? ''}</h3>
-                  ${item.location ? `<p class="text-sm text-stone-500 mb-2 font-semibold">📍 ${item.location}</p>` : ''}
-                  ${monthHtml}
-                  <p class="text-[15px] text-stone-600 leading-relaxed flex-grow">${item.description ?? ''}</p>
-                </a>
-            `;
-        }
-
-        function setupSection(containerId, data, regionsData, filterBtnClass, searchInputId, loadMoreBtnId, collapseBtnId, noResultsId) {
-            const container = document.getElementById(containerId);
-            const filterButtons = document.querySelectorAll(`.${filterBtnClass}`);
-            const searchInput = document.getElementById(searchInputId);
-            const loadMoreBtn = document.getElementById(loadMoreBtnId);
-            const collapseBtn = document.getElementById(collapseBtnId);
-            const noResultsEl = document.getElementById(noResultsId);
-            const searchEngine = new SearchEngine(data, regionsData);
-
-            let currentFilter = 'all';
-            let currentLimit = 6;
-            let currentQuery = '';
-
-            function render() {
-                const processedData = searchEngine.search(currentQuery, currentFilter);
-                if (processedData.length === 0) {
-                    noResultsEl.classList.remove('hidden');
-                    container.innerHTML = '';
-                    loadMoreBtn.classList.add('hidden');
-                    collapseBtn.classList.add('hidden');
-                } else {
-                    noResultsEl.classList.add('hidden');
-                    const visibleData = processedData.slice(0, currentLimit);
-                    container.innerHTML = visibleData.map(item => createCard(item)).join('');
-                    loadMoreBtn.classList.toggle('hidden', processedData.length <= currentLimit);
-                    collapseBtn.classList.toggle('hidden', !(processedData.length > 6 && currentLimit >= processedData.length));
-                }
-            }
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    currentFilter = button.dataset.filter;
-                    currentLimit = 6;
-                    render();
-                });
-            });
-            searchInput.addEventListener('input', (e) => { currentQuery = e.target.value; currentLimit = 6; render(); });
-            loadMoreBtn.addEventListener('click', () => { currentLimit += 6; render(); });
-            collapseBtn.addEventListener('click', () => { currentLimit = 6; render(); });
-            render();
-        }
-
-        function getClosestEvent(eventsData) {
-            const now = new Date();
-            const currentMonth = now.getMonth() + 1;
-            const currentYear = now.getFullYear();
-            const events = eventsData.filter(item => Array.isArray(item.type) ? item.type.includes('event') : item.type === 'event');
-            let futureEvents = events.filter(event => {
-                let eventYear = currentYear;
-                if (event.month < currentMonth) { eventYear++; }
-                return new Date(eventYear, event.month - 1, 1) >= now;
-            });
-            if (futureEvents.length > 0) {
-                futureEvents.sort((a, b) => {
-                    let aYear = a.month >= currentMonth ? currentYear : currentYear + 1;
-                    let bYear = b.month >= currentMonth ? currentYear : currentYear + 1;
-                    return new Date(aYear, a.month - 1, 1) - new Date(bYear, b.month - 1, 1);
-                });
-                return futureEvents[0];
-            }
-            if (events.length > 0) { events.sort((a,b) => a.month - b.month); return events[0]; }
-            return null;
-        }
-
-        function renderClosestEvent(eventsData) {
-            const closest = getClosestEvent(eventsData);
-            const container = document.getElementById('closest-event-container');
-            if (closest) {
-                const monthNames = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"];
-                container.innerHTML = `
-                    <a href="${closest.link}" target="_blank" rel="noopener noreferrer" class="card block p-6 rounded-xl text-center" style="background:#fde5db">
-                        <h3 class="font-display text-xl font-bold text-navy mb-2">${closest.name}</h3>
-                        <p class="text-lg text-stone-700 mb-2">מתקיים בדרך כלל בחודש: <span class="font-semibold" style="color:#d1502a">${monthNames[closest.month - 1]}</span></p>
-                        ${closest.location ? `<p class="text-base text-stone-700 mb-2">מיקום: ${closest.location}</p>` : ''}
-                        <p class="text-base text-stone-700 mb-4">${closest.description}</p>
-                        <p class="text-base font-bold text-red">לחצו לפרטים נוספים באתר הרשמי</p>
-                    </a>`;
-            } else {
-                container.innerHTML = `<p class="text-base text-center text-stone-600">אין כנסים קרובים זמינים כרגע.</p>`;
-            }
-        }
-
-        fetch('/data.json')
-            .then(response => response.json())
-            .then(data => {
-                const regionsData = data.regions;
-                setupSection('community-container', data.communityData, regionsData, 'community-filter-btn', 'community-search', 'community-load-more-btn', 'community-collapse-btn', 'community-no-results');
-                setupSection('resources-container', data.resourcesData, regionsData, 'resources-filter-btn', 'resources-search', 'resources-load-more-btn', 'resources-collapse-btn', 'resources-no-results');
-                renderClosestEvent(data.communityData);
-            })
-            .catch(error => {
-                console.error('Error loading data:', error);
-                const errorMessage = '<div class="col-span-full text-center text-white font-bold mt-4">שגיאה בטעינת הנתונים.</div>';
-                document.getElementById('community-container').innerHTML = errorMessage;
-                document.getElementById('resources-container').innerHTML = errorMessage;
-            });
-
-        const ctx = document.getElementById('systemsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: { labels: systemsData.map(s => s.name), datasets: [{ label: 'מורכבות חוקים', data: systemsData.map(s => s.complexity), backgroundColor: systemsData.map(s => s.color), borderColor: systemsData.map(s => s.color.replace('0.7', '1')), borderWidth: 1, borderRadius: 5 }] },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-                scales: { x: { beginAtZero: true, max: 10, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: "'Assistant', sans-serif" }}}, y: { grid: { display: false }, ticks: { font: { family: "'Assistant', sans-serif", size: 14 }, autoSkip: false }} },
-                plugins: { legend: { display: false }, tooltip: { rtl: true, bodyFont: { family: "'Assistant', sans-serif" }, titleFont: { family: "'Assistant', sans-serif" }} }
-            }
-        });
-
-        document.getElementById('mobile-nav').addEventListener('change', function() {
-            const targetElement = document.querySelector(this.value);
-            if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth' }); }
-        });
-
-        const pageNavLinks = document.querySelectorAll('.page-nav-link');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    pageNavLinks.forEach(link => link.classList.remove('active'));
-                    const activeLink = document.querySelector(`.page-nav-link[href="#${id}"]`);
-                    if (activeLink) { activeLink.classList.add('active'); }
-                }
-            });
-        }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
-        document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
-    });
+document.addEventListener('DOMContentLoaded', () => {
+const systemsData = [
+{ name: "מבוכים ודרקונים (D&D 5e)", badge: "הנפוץ ביותר בעולם", description: "המשחק הפופולרי ביותר בעולם, המציע חווית פנטזיה קלאסית. הוא משלב בצורה מופלאה אלמנטים של פנטזיה, קבלת החלטות אסטרטגית ושיתוף פעולה חברתי עמוק.", why: "נקודת הכניסה הסטנדרטית לתחביב. קל למצוא קבוצה וחומרים למתחילים, כמו 'ערכת ההתחלה' המצוינת.", complexity: 10, color: 'rgba(206,5,15,0.7)', tint: '#fddedf', badgeBg: '#ce050f', badgeText: '#ffffff', link: "https://www.dndbeyond.com/" },
+{ name: "חרבות וכשפים", badge: "מומלץ למתחילים ולצעירים", description: "חזרה לשורשים של משחקי התפקידים, עם שיטה קלת-חוקים וגמישה המעודדת יצירתיות ואלתור מצד השחקנים והמנחה. הערכה למתחיל היא שער כניסה מושלם לתחביב.", why: "מעולה למתחילים ולילדים. ערכת המתחיל בעברית מלמדת את המשחק צעד-אחר-צעד, כולל הרפתקת סולו.", complexity: 3, color: 'rgba(255,187,92,0.7)', tint: '#fff3da', badgeBg: '#ffbb5c', badgeText: '#7a4a06', link: "https://swordsandwizardry.co.il/" },
+{ name: "פאת'פיינדר בעולמות פראיים", badge: "לחובבי האקשן", description: "שילוב מנצח של עולם הפנטזיה העשיר של 'פאת'פיינדר' עם מנוע החוקים המהיר והקולנועי של 'עולמות פראיים'. הרפתקאות מסמרות שיער ואקשן מותח עצבים.", why: "הטוב משני העולמות - עומק עלילתי עם חוקים קלילים. ספר הבסיס בעברית כולל את כל מה שצריך כדי להתחיל לשחק.", complexity: 7, color: 'rgba(5,126,240,0.7)', tint: '#e6f2fd', badgeBg: '#057ef0', badgeText: '#ffffff', link: "https://pundak.games/savage-pathfinder/" },
+{ name: "מנוע האפוקליפסה", badge: "לחובבי חופש ומקוריות", description: "מנוע משחק גמיש שעליו בנויות שיטות רבות. שם דגש על סיפור ויצירתיות על פני קרבות טקטיים. המשחקים הנפוצים בעברית הם 'פלאים: גיבורי המחר' ו'וואנור'.", why: "מנוע פשוט ללמידה המאפשר להתמקד בסיפור. מתאים למגוון רחב של ז'אנרים וסגנונות משחק.", complexity: 5, color: 'rgba(133,127,255,0.7)', tint: '#eeecff', badgeBg: '#857fff', badgeText: '#2f2a6e', link: "https://vanor.co.il/" }
+];
+const systemsContainer = document.getElementById('systems-container');
+systemsData.forEach(system => {
+const card = document.createElement('div');
+card.className = 'card flex flex-col overflow-hidden rounded-2xl';
+card.style.background = system.tint;
+card.innerHTML = `
+<div class="p-6 cursor-pointer flex-grow" onclick="toggleDetails(this)">
+${system.badge ? `<div class="mb-3"><span class="text-sm font-bold px-3 py-1 rounded-full" style="background:${system.badgeBg};color:${system.badgeText}">${system.badge}</span></div>` : ''}
+<h3 class="font-display text-2xl font-bold text-navy mb-2">
+<a href="${system.link}" target="_blank" rel="noopener noreferrer" class="hover:text-red">${system.name}</a>
+</h3>
+<p class="text-lg text-stone-700 mb-3">${system.description}</p>
+<div class="mb-1">
+<a href="${system.link}" target="_blank" rel="noopener noreferrer" class="text-red hover:text-darkred font-bold hover:underline text-base" onclick="event.stopPropagation()">למעבר לאתר המשחק &larr;</a>
+</div>
+<div class="flex items-center justify-end mt-4 text-base font-semibold text-navy">
+<span>למה זה טוב למתחילים?</span>
+<svg class="w-4 h-4 mr-2 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+</div>
+</div>
+<div class="details-content" style="background:rgba(255,255,255,0.55)">
+<div class="p-6"><p class="text-base text-stone-700">${system.why}</p></div>
+</div>
+`;
+systemsContainer.appendChild(card);
+});
+window.toggleDetails = function(element) {
+const content = element.nextElementSibling;
+const svg = element.querySelector('svg');
+if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+content.style.maxHeight = '0px';
+svg.style.transform = 'rotate(0deg)';
+} else {
+content.style.maxHeight = content.scrollHeight + "px";
+svg.style.transform = 'rotate(180deg)';
+}
+}
+function getTypeInfo(typeStr) {
+switch (typeStr) {
+case 'organization': return { label: '🏢 ארגון/עמותה',    bg: '#dbe3e9', text: '#003049' };
+case 'event':        return { label: '📅 אירוע/כנס',       bg: '#fddedf', text: '#ce050f' };
+case 'group':        return { label: '💬 קהילה/קבוצה',      bg: '#ecebff', text: '#5b52e0' };
+case 'store':        return { label: '🛍️ חנות/ציוד',        bg: '#fff2da', text: '#a86a10' };
+case 'venue':        return { label: '🏰 מתחם משחקים',       bg: '#fde3da', text: '#d1502a' };
+case 'activities':   return { label: '🎭 סדנאות והפעלות',    bg: '#e2effc', text: '#0a6fd0' };
+case 'kids':         return { label: '🧒 חוגי ילדים',        bg: '#fce4ea', text: '#c43d68' };
+default:             return { label: 'כללי',                bg: '#eef0f2', text: '#57534e' };
+}
+}
+const HEB_MONTHS = ['', 'ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+function createCard(item) {
+const types = Array.isArray(item.type) ? item.type : [item.type];
+const badgesHtml = types.map(t => {
+const info = getTypeInfo(t);
+return `<span class="text-xs md:text-sm font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap" style="background:${info.bg};color:${info.text}">${info.label}</span>`;
+}).join('');
+const monthHtml = (item.month >= 1 && item.month <= 12) ? `<p class="text-sm text-blue mb-2 font-semibold">🗓️ מתקיים ב${HEB_MONTHS[item.month]}</p>` : '';
+return `
+<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card directory-card group block p-6 rounded-xl h-full flex flex-col">
+<div class="flex flex-wrap items-center gap-1.5 mb-3">${badgesHtml}</div>
+<h3 class="font-display text-xl font-bold text-navy mb-1 leading-tight group-hover:text-red transition-colors">${item.name ?? ''}</h3>
+${item.location ? `<p class="text-sm text-stone-500 mb-2 font-semibold">📍 ${item.location}</p>` : ''}
+${monthHtml}
+<p class="text-[15px] text-stone-600 leading-relaxed flex-grow">${item.description ?? ''}</p>
+</a>
+`;
+}
+function setupSection(containerId, data, regionsData, filterBtnClass, searchInputId, loadMoreBtnId, collapseBtnId, noResultsId) {
+const container = document.getElementById(containerId);
+const filterButtons = document.querySelectorAll(`.${filterBtnClass}`);
+const searchInput = document.getElementById(searchInputId);
+const loadMoreBtn = document.getElementById(loadMoreBtnId);
+const collapseBtn = document.getElementById(collapseBtnId);
+const noResultsEl = document.getElementById(noResultsId);
+const searchEngine = new SearchEngine(data, regionsData);
+let currentFilter = 'all';
+let currentLimit = 6;
+let currentQuery = '';
+function render() {
+const processedData = searchEngine.search(currentQuery, currentFilter);
+if (processedData.length === 0) {
+noResultsEl.classList.remove('hidden');
+container.innerHTML = '';
+loadMoreBtn.classList.add('hidden');
+collapseBtn.classList.add('hidden');
+} else {
+noResultsEl.classList.add('hidden');
+const visibleData = processedData.slice(0, currentLimit);
+container.innerHTML = visibleData.map(item => createCard(item)).join('');
+loadMoreBtn.classList.toggle('hidden', processedData.length <= currentLimit);
+collapseBtn.classList.toggle('hidden', !(processedData.length > 6 && currentLimit >= processedData.length));
+}
+}
+filterButtons.forEach(button => {
+button.addEventListener('click', () => {
+filterButtons.forEach(btn => btn.classList.remove('active'));
+button.classList.add('active');
+currentFilter = button.dataset.filter;
+currentLimit = 6;
+render();
+});
+});
+searchInput.addEventListener('input', (e) => { currentQuery = e.target.value; currentLimit = 6; render(); });
+loadMoreBtn.addEventListener('click', () => { currentLimit += 6; render(); });
+collapseBtn.addEventListener('click', () => { currentLimit = 6; render(); });
+render();
+}
+function getClosestEvent(eventsData) {
+const now = new Date();
+const currentMonth = now.getMonth() + 1;
+const currentYear = now.getFullYear();
+const events = eventsData.filter(item => Array.isArray(item.type) ? item.type.includes('event') : item.type === 'event');
+let futureEvents = events.filter(event => {
+let eventYear = currentYear;
+if (event.month < currentMonth) { eventYear++; }
+return new Date(eventYear, event.month - 1, 1) >= now;
+});
+if (futureEvents.length > 0) {
+futureEvents.sort((a, b) => {
+let aYear = a.month >= currentMonth ? currentYear : currentYear + 1;
+let bYear = b.month >= currentMonth ? currentYear : currentYear + 1;
+return new Date(aYear, a.month - 1, 1) - new Date(bYear, b.month - 1, 1);
+});
+return futureEvents[0];
+}
+if (events.length > 0) { events.sort((a,b) => a.month - b.month); return events[0]; }
+return null;
+}
+function renderClosestEvent(eventsData) {
+const closest = getClosestEvent(eventsData);
+const container = document.getElementById('closest-event-container');
+if (closest) {
+const monthNames = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"];
+container.innerHTML = `
+<a href="${closest.link}" target="_blank" rel="noopener noreferrer" class="card block p-6 rounded-xl text-center" style="background:#fde5db">
+<h3 class="font-display text-xl font-bold text-navy mb-2">${closest.name}</h3>
+<p class="text-lg text-stone-700 mb-2">מתקיים בדרך כלל בחודש: <span class="font-semibold" style="color:#d1502a">${monthNames[closest.month - 1]}</span></p>
+${closest.location ? `<p class="text-base text-stone-700 mb-2">מיקום: ${closest.location}</p>` : ''}
+<p class="text-base text-stone-700 mb-4">${closest.description}</p>
+<p class="text-base font-bold text-red">לחצו לפרטים נוספים באתר הרשמי</p>
+</a>`;
+} else {
+container.innerHTML = `<p class="text-base text-center text-stone-600">אין כנסים קרובים זמינים כרגע.</p>`;
+}
+}
+fetch('/data.json')
+.then(response => response.json())
+.then(data => {
+const regionsData = data.regions;
+setupSection('community-container', data.communityData, regionsData, 'community-filter-btn', 'community-search', 'community-load-more-btn', 'community-collapse-btn', 'community-no-results');
+setupSection('resources-container', data.resourcesData, regionsData, 'resources-filter-btn', 'resources-search', 'resources-load-more-btn', 'resources-collapse-btn', 'resources-no-results');
+renderClosestEvent(data.communityData);
+})
+.catch(error => {
+console.error('Error loading data:', error);
+const errorMessage = '<div class="col-span-full text-center text-white font-bold mt-4">שגיאה בטעינת הנתונים.</div>';
+document.getElementById('community-container').innerHTML = errorMessage;
+document.getElementById('resources-container').innerHTML = errorMessage;
+});
+const ctx = document.getElementById('systemsChart').getContext('2d');
+new Chart(ctx, {
+type: 'bar',
+data: { labels: systemsData.map(s => s.name), datasets: [{ label: 'מורכבות חוקים', data: systemsData.map(s => s.complexity), backgroundColor: systemsData.map(s => s.color), borderColor: systemsData.map(s => s.color.replace('0.7', '1')), borderWidth: 1, borderRadius: 5 }] },
+options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+scales: { x: { beginAtZero: true, max: 10, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: "'Assistant', sans-serif" }}}, y: { grid: { display: false }, ticks: { font: { family: "'Assistant', sans-serif", size: 14 }, autoSkip: false }} },
+plugins: { legend: { display: false }, tooltip: { rtl: true, bodyFont: { family: "'Assistant', sans-serif" }, titleFont: { family: "'Assistant', sans-serif" }} }
+}
+});
+document.getElementById('mobile-nav').addEventListener('change', function() {
+const targetElement = document.querySelector(this.value);
+if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth' }); }
+});
+const pageNavLinks = document.querySelectorAll('.page-nav-link');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const id = entry.target.getAttribute('id');
+pageNavLinks.forEach(link => link.classList.remove('active'));
+const activeLink = document.querySelector(`.page-nav-link[href="#${id}"]`);
+if (activeLink) { activeLink.classList.add('active'); }
+}
+});
+}, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
+});
 </script>
 </body>
 </html>
