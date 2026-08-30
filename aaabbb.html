@@ -1,3 +1,86 @@
+Pasted markdown(3).md
+File
+תוכל לעצב לי עכשיו גם את דף החיפוש?
+
+כן. אם הייתי מחליף, הייתי בוחר Heebo.
+
+לדעתי הוא מתאים ל״שער להרפתקה״ יותר מ־Assistant כי הוא:
+
+נקי ומודרני יותר
+מחזיק כותרות גדולות הרבה יותר טוב
+נראה טוב גם במשקלים 700 ו־800
+עדיין ידידותי ולא מרגיש תאגידי מדי
+עובד מעולה בעברית בממשקי Web
+נותן לאתר תחושה קצת יותר מקצועית ופחות של ״אתר תוכן ממשלתי״
+
+הייתי מדרג כך:
+
+פונט	התאמה בעיניי	אופי
+Heebo	9.5/10	מודרני, נקי, UI איכותי
+Assistant	8.5/10	נעים, קריא, מעט רך
+Rubik	8/10	יותר אופי ופנטזיה, אבל כבד יותר
+Noto Sans Hebrew	7.5/10	מאוד מקצועי, קצת גנרי
+Alef	7/10	עברי ונעים, פחות מתאים לממשק מודרני
+מה הייתי עושה בפועל
+
+דווקא פונט אחד לכל האתר, ולא פונט לכותרות ופונט לגוף.
+
+Heebo לכל האתר.
+
+משקלים:
+
+H1: 800
+H2: 800
+H3: 700
+ניווט: 600
+טקסט רגיל: 400
+טקסט מודגש: 600
+
+אני חושב שזה יהיה השדרוג הכי טבעי מהמצב הנוכחי.
+
+Assistant נראה טוב עכשיו אחרי שסידרנו את ההיררכיה, אבל Heebo כנראה ייתן לזה עוד חצי דרגה של ליטוש בלי לשנות את האופי של האתר.
+
+Rubik, לעומת זאת, לא הייתי מחזיר. הוא נותן יותר אופי, אבל גם מחזיר קצת מהכבדות שניסינו להיפטר ממנה.
+
+אם אתה רוצה, אני יכול להכין את שני הדפים בדיוק כמו שהם עכשיו, ורק להעביר אותם ל־Heebo, כדי שתוכל להשוות אחד מול אחד.
+
+בו ננסה
+
+בוצע. השארתי את העיצוב וההיררכיה בדיוק כפי שסידרנו, ורק החלפתי את כל המערכת הטיפוגרפית ל-Heebo, כולל הכותרות, הטקסט, הניווט וגם הפונט בתוך הגרף בדף הבית.
+
+בדקתי שאין יותר מופעים של Assistant ושה-JavaScript עדיין תקין.
+
+דף הבית עם Heebo
+
+דף החיפוש עם Heebo
+
+בעיניי שווה להשוות עכשיו ממש אחד מול אחד מול גרסת Assistant. Heebo אמור להרגיש מעט יותר חד, מודרני ומלוטש.
+
+gate-home-redesign-heebo.html
+HTML
+gate-search-redesign-heebo.html
+HTML
+למה לא כל האתר באותו הפונט HEEBOO?
+
+צודק. מצאתי את הבעיה: Heebo הוגדר על גוף האתר והכותרות, אבל רכיבים כמו input, button, select ואלמנטים מסוימים שנוצרים דינמית לא בהכרח ירשו אותו באופן עקבי מהדפדפן.
+
+תיקנתי עכשיו את שני הדפים כך ש-Heebo הוא הפונט היחיד בכל האתר, כולל:
+
+כותרות וטקסט רגיל
+Navbar
+כפתורים ופילטרים
+שדות חיפוש
+Dropdowns
+כרטיסים דינמיים
+Footer
+הגרף
+
+אין יותר Assistant או Rubik בקבצים, ובדקתי שוב גם את ה-JavaScript.
+
+דף הבית - כולו Heebo
+
+דף החיפוש - כולו Heebo
+
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he">
@@ -26,7 +109,7 @@
 <link href="https://cdn.jsdelivr.net" rel="dns-prefetch"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&amp;family=Assistant:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="/static/rpg-game.png" rel="icon" type="image/x-icon"/>
 <script>
 tailwind.config = {
@@ -37,13 +120,15 @@ navy:'#003049', midblue:'#336683', sky:'#669bbc',
 cream:'#fdf0d5', rose:'#df817a', slate:'#7f908f',
 blue:'#057ef0', periwinkle:'#857fff', amber:'#ffbb5c', coral:'#f26d40'
 },
-fontFamily: { display:['Rubik','sans-serif'], body:['Assistant','sans-serif'] }
+fontFamily: { display:['Heebo','sans-serif'], body:['Heebo','sans-serif'] }
 }}
 };
 </script>
 <style>
-body { font-family: 'Assistant', sans-serif; scroll-behavior: smooth; }
-h1, h2, h3, .font-display { font-family: 'Rubik', sans-serif; }
+html { font-family: 'Heebo', sans-serif; }
+body { font-family: inherit; scroll-behavior: smooth; }
+button, input, select, textarea, option { font: inherit; }
+h1, h2, h3, h4, h5, h6, p, a, span, div, li, label, button, input, select, textarea, option, .font-display { font-family: 'Heebo', sans-serif; }
 .card { transition: transform 0.18s ease; }
 a.card:hover { transform: translateY(-3px); }
 /* Filter chips — translucent white so they sit on any coloured band */
@@ -91,9 +176,51 @@ body { background: var(--cream); color: var(--ink); }
     .section-pad { padding-top: 6rem; padding-bottom: 6rem; }
 }
 
-/* Calmer type hierarchy */
-.page-title { font-size: clamp(2.55rem, 5vw, 3.55rem); line-height: 1.08; font-weight: 700; }
-.section-title { font-size: clamp(2rem, 3.6vw, 2.65rem); line-height: 1.15; font-weight: 700; }
+/* Heebo heading system: strong hierarchy without needing a second typeface */
+.page-title {
+    font-size: clamp(2.55rem, 5vw, 3.6rem);
+    line-height: 1.04;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+}
+.section-title {
+    font-size: clamp(2rem, 3.6vw, 2.7rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 3.15rem;
+    height: 4px;
+    margin-top: .8rem;
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+    border-radius: 999px;
+    background: var(--red);
+}
+.section-title.text-center::after { margin-inline: auto; }
+.subsection-title {
+    line-height: 1.22;
+    font-weight: 700;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+}
+.eyebrow {
+    font-size: .8rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+.cta-title {
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+}
 .section-lead { max-width: 44rem; margin-inline: auto; color: var(--muted); }
 
 /* Cards should support content, not frame every paragraph */
@@ -129,7 +256,12 @@ a.card:hover { transform: translateY(-2px); }
 .directory-search:focus { outline: none; border-color: rgba(206,5,15,.55); box-shadow: 0 0 0 3px rgba(206,5,15,.08); }
 
 /* Navigation */
-.subnav { border-bottom: 1px solid rgba(0,48,73,.08); }
+.subnav {
+    border-bottom: 1px solid rgba(0,48,73,.08);
+    top: var(--global-nav-height, 56px);
+}
+#global-nav { position: sticky; top: 0; }
+html { scroll-padding-top: calc(var(--global-nav-height, 56px) + var(--subnav-height, 58px) + 12px); }
 .nav-link { transition: color .18s ease; }
 .nav-link:hover, .nav-link.active { color: var(--red); }
 .nav-link.active { font-weight: 700; }
@@ -147,7 +279,7 @@ a.card:hover { transform: translateY(-2px); }
 </style></head>
 <body class="bg-cream text-stone-800">
 <!-- GLOBAL NAV -->
-<header class="bg-navy text-white sticky top-0 z-[60]">
+<header id="global-nav" class="bg-navy text-white sticky top-0 z-[60]">
 <div class="container mx-auto px-4 md:px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
 <a class="flex items-center gap-2 text-xl md:text-2xl font-display font-bold text-white" href="/">
 <img alt="לוגו שער להרפתקה" class="w-8 h-8" src="/static/rpg-game.png"/>
@@ -161,7 +293,7 @@ a.card:hover { transform: translateY(-2px); }
 </div>
 </header>
 <!-- STICKY SUB-NAV -->
-<header class="bg-[#fbf7ee]/95 backdrop-blur-sm sticky top-[109px] md:top-[56px] z-50 subnav">
+<header id="page-subnav" class="bg-[#fbf7ee]/95 backdrop-blur-sm sticky z-50 subnav">
 <nav class="container mx-auto px-6 py-3">
 <div class="flex justify-center md:justify-between items-center">
 <div class="hidden md:flex w-full justify-center gap-9"><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#intro-what-is">מה זה?</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#getting-started">מתחילים</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#systems">בחירת משחק</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#find-group">מציאת קבוצה</a><a class="nav-link text-base text-navy/70 font-semibold page-nav-link" href="#community">הקהילה</a></div>
@@ -176,7 +308,6 @@ a.card:hover { transform: translateY(-2px); }
 <div class="container mx-auto px-4 md:px-8 pt-14 md:pt-20 pb-16 md:pb-20">
 <div class="grid md:grid-cols-[3fr,2fr] gap-10 items-center">
 <div class="text-center md:text-right">
-<p class="text-sm font-display font-bold tracking-widest text-red mb-3">שער להרפתקה</p>
 <h1 class="font-display page-title mb-5 text-navy">
 יוצאים <span class="text-red">להרפתקה</span> הראשונה שלכם
 </h1>
@@ -195,20 +326,20 @@ a.card:hover { transform: translateY(-2px); }
 <div class="grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto mt-14 text-center">
 <a class="group" href="#intro-what-is">
 <div class="text-4xl mb-3">🤔</div>
-<div class="font-display text-xs font-bold tracking-[0.18em] mb-1 text-red">צעד 01</div>
-<h3 class="font-display text-xl font-semibold text-navy group-hover:text-red transition-colors">מה זה בכלל?</h3>
+<div class="font-display eyebrow mb-1 text-red">צעד 01</div>
+<h3 class="font-display subsection-title text-xl font-semibold text-navy group-hover:text-red transition-colors">מה זה בכלל?</h3>
 <p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">גלו מהם משחקי תפקידים ולמה זה התחביב החברתי הכי טוב.</p>
 </a>
 <a class="group" href="#systems">
 <div class="text-4xl mb-3">🎲</div>
-<div class="font-display text-xs font-bold tracking-[0.18em] mb-1 text-red">צעד 02</div>
-<h3 class="font-display text-xl font-semibold text-navy group-hover:text-red transition-colors">בוחרים משחק</h3>
+<div class="font-display eyebrow mb-1 text-red">צעד 02</div>
+<h3 class="font-display subsection-title text-xl font-semibold text-navy group-hover:text-red transition-colors">בוחרים משחק</h3>
 <p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">מבוכים ודרקונים, חרבות וכשפים או משהו אחר? נעשה סדר.</p>
 </a>
 <a class="group" href="#community">
 <div class="text-4xl mb-3">🤝</div>
-<div class="font-display text-xs font-bold tracking-[0.18em] mb-1 text-red">צעד 03</div>
-<h3 class="font-display text-xl font-semibold text-navy group-hover:text-red transition-colors">מצטרפים לקהילה</h3>
+<div class="font-display eyebrow mb-1 text-red">צעד 03</div>
+<h3 class="font-display subsection-title text-xl font-semibold text-navy group-hover:text-red transition-colors">מצטרפים לקהילה</h3>
 <p class="text-stone-600 mt-1 max-w-xs mx-auto leading-relaxed">חנויות, כנסים, קהילות אונליין וחוגים – הכל במקום אחד.</p>
 </a>
 </div>
@@ -223,16 +354,16 @@ a.card:hover { transform: translateY(-2px); }
 <p class="text-lg text-center section-lead leading-relaxed mb-14">המטרה? ליצור יחד חוויות משותפות, לספר סיפור בלתי נשכח, לפתור תעלומות, ולפעמים גם פשוט לצחוק וליהנות ביחד.</p>
 <div class="grid md:grid-cols-2 gap-10 md:gap-14 max-w-4xl mx-auto">
 <div class="feature-line blue-accent">
-<h3 class="font-display text-2xl font-semibold mb-3 flex items-center gap-3 text-navy"><span class="text-4xl">🎲</span>שולחניים (TTRPG)</h3>
+<h3 class="font-display subsection-title text-2xl font-semibold mb-3 flex items-center gap-3 text-navy"><span class="text-4xl">🎲</span>שולחניים (TTRPG)</h3>
 <p class="text-lg text-stone-600 leading-relaxed">חוויה של סיפור שיתופי סביב שולחן (או אונליין). בעזרת דמיון, סט חוקים, קוביות ומנחה, אתם והחברים שלכם יוצרים יחד סיפור הרפתקאות ייחודי. הדגש הוא על יצירתיות, פתרון בעיות ועבודת צוות.</p>
 </div>
 <div class="feature-line red-accent">
-<h3 class="font-display text-2xl font-semibold mb-3 flex items-center gap-3 text-navy"><span class="text-4xl">🎭</span>חיים (LARP)</h3>
+<h3 class="font-display subsection-title text-2xl font-semibold mb-3 flex items-center gap-3 text-navy"><span class="text-4xl">🎭</span>חיים (LARP)</h3>
 <p class="text-lg text-stone-600 leading-relaxed">כאן אתם לא רק מספרים את הסיפור - אתם חיים אותו. המשתתפים מגלמים פיזית את הדמויות, לובשים תלבושות ופועלים במרחב אמיתי. חוויה תיאטרלית וסוחפת המדגישה אלתור ואינטראקציה פיזית.</p>
 </div>
 </div>
 <div class="mt-16 text-center max-w-2xl mx-auto">
-<h3 class="font-display text-2xl font-semibold mb-3 text-navy">רוצים לראות איך נראה משחק?</h3>
+<h3 class="font-display subsection-title text-2xl font-semibold mb-3 text-navy">רוצים לראות איך נראה משחק?</h3>
 <p class="text-lg text-stone-600 mb-6">צפו בסרטון "מורה מבוכים" של דונקי שמסביר בצורה כיפית וברורה מה זה משחק תפקידים:</p>
 <a class="card video-card inline-block relative group overflow-hidden max-w-lg w-full rounded-2xl" href="https://www.youtube.com/watch?v=KJvCcxxfqmc" rel="noopener noreferrer" target="_blank">
 <img alt="מורה מבוכים - איך נראה משחק תפקידים?" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" src="https://img.youtube.com/vi/KJvCcxxfqmc/hqdefault.jpg"/>
@@ -252,7 +383,7 @@ a.card:hover { transform: translateY(-2px); }
 <div class="grid md:grid-cols-3 gap-10 md:gap-14 max-w-5xl mx-auto">
 <div class="feature-line blue-accent">
 <div class="text-3xl mb-3">✏️</div>
-<h3 class="font-display text-xl md:text-2xl font-semibold mb-3 text-navy">המינימום ההכרחי</h3>
+<h3 class="font-display subsection-title text-xl md:text-2xl font-semibold mb-3 text-navy">המינימום ההכרחי</h3>
 <ul class="text-lg text-stone-600 space-y-2 leading-relaxed">
 <li>✔️ חברים (2-5 אנשים)</li>
 <li>✔️ דף, עיפרון ומחק</li>
@@ -261,12 +392,12 @@ a.card:hover { transform: translateY(-2px); }
 </div>
 <div class="feature-line amber-accent">
 <div class="text-3xl mb-3">📚</div>
-<h3 class="font-display text-xl md:text-2xl font-semibold mb-3 text-navy">ערכת התחלה</h3>
+<h3 class="font-display subsection-title text-xl md:text-2xl font-semibold mb-3 text-navy">ערכת התחלה</h3>
 <p class="text-lg text-stone-600 leading-relaxed">הדרך המומלצת ביותר. ערכות כמו של "מבוכים ודרקונים" או "חרבות וכשפים" כוללות כל מה שצריך למשחק הראשון: ספר חוקים מקוצר, הרפתקה מוכנה, דמויות וקוביות.</p>
 </div>
 <div class="feature-line red-accent">
 <div class="text-3xl mb-3">🏰</div>
-<h3 class="font-display text-xl md:text-2xl font-semibold mb-3 text-navy">למשקיענים (אופציונלי)</h3>
+<h3 class="font-display subsection-title text-xl md:text-2xl font-semibold mb-3 text-navy">למשקיענים (אופציונלי)</h3>
 <p class="text-lg text-stone-600 leading-relaxed">עם הזמן, אפשר לשדרג את החוויה עם מיניאטורות, מפות קרב, מסתור למנחה וספרי הרחבה. אבל זה ממש לא חובה כדי ליהנות!</p>
 </div>
 </div>
@@ -280,7 +411,7 @@ a.card:hover { transform: translateY(-2px); }
 <a class="inline-flex items-center gap-2 bg-red hover:bg-darkred text-white font-bold px-6 py-3 rounded-full transition-colors" href="/quiz">🎲 לא בטוחים? ענו על השאלון ומצאו את המשחק שלכם</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="systems-container"></div>
-<h3 class="font-display text-2xl font-semibold text-center mt-14 mb-5 text-navy">השוואת רמת המורכבות</h3>
+<h3 class="font-display subsection-title text-2xl font-semibold text-center mt-14 mb-5 text-navy">השוואת רמת המורכבות</h3>
 <div class="bg-cream/60 border border-navy/10 rounded-2xl p-4 md:p-6 max-w-3xl mx-auto">
 <div class="chart-container"><canvas id="systemsChart"></canvas></div>
 </div>
@@ -293,12 +424,12 @@ a.card:hover { transform: translateY(-2px); }
 <p class="text-lg md:text-xl text-stone-600 max-w-3xl mx-auto mb-12">מציאת קבוצה היא הצעד המרגש הבא! הנה שתי דרכים מומלצות:</p>
 <div class="grid md:grid-cols-2 gap-10 md:gap-16 max-w-4xl mx-auto text-right">
 <div class="feature-line red-accent">
-<h3 class="font-display text-2xl font-semibold mb-3 text-navy flex items-center gap-2">👨‍👩‍👧‍👦 לשחקנים בוגרים</h3>
+<h3 class="font-display subsection-title text-2xl font-semibold mb-3 text-navy flex items-center gap-2">👨‍👩‍👧‍👦 לשחקנים בוגרים</h3>
 <p class="text-lg text-stone-600 mb-5 leading-relaxed">הדרך הכי טובה היא להצטרף לאחת מקבוצות הקהילה הגדולות באונליין. שם תוכלו למצוא מודעות של מנחים ושחקנים, וגם לפרסם שאתם מחפשים קבוצה.</p>
 <a class="inline-flex items-center font-bold text-red hover:text-darkred transition-colors text-base" href="#community">מצאו קבוצות קהילה</a>
 </div>
 <div class="feature-line blue-accent">
-<h3 class="font-display text-2xl font-semibold mb-3 text-navy flex items-center gap-2">👧👦 לילדים ובני נוער</h3>
+<h3 class="font-display subsection-title text-2xl font-semibold mb-3 text-navy flex items-center gap-2">👧👦 לילדים ובני נוער</h3>
 <p class="text-lg text-stone-600 mb-5 leading-relaxed">משחקי תפקידים הם חוויה מדהימה לילדים! ישנם חוגים ופעילויות ייעודיות שבהם מנחים מנוסים מלמדים את המשחק ומפעילים קבוצות.</p>
 <a class="inline-flex items-center font-bold text-red hover:text-darkred transition-colors text-base" href="#resources">מצאו חוגים באזורכם</a>
 </div>
@@ -368,7 +499,7 @@ a.card:hover { transform: translateY(-2px); }
 <section class="bg-navy" id="whatsapp-updates">
 <div class="container mx-auto px-4 md:px-8 section-pad text-center max-w-3xl">
 <img alt="לוגו דואר עוף-חול" class="w-20 mx-auto mb-4" src="/static/msg-logo.png"/>
-<h2 class="font-display text-3xl md:text-4xl font-semibold text-cream mb-4">דואר עוף-חול: נשארים מעודכנים</h2>
+<h2 class="font-display cta-title text-3xl md:text-4xl text-cream mb-4">דואר עוף-חול: נשארים מעודכנים</h2>
 <p class="text-lg md:text-xl text-cream/80 mb-8 max-w-2xl mx-auto leading-relaxed">רוצים לדעת ראשונים על כנסים, אירועים מיוחדים וחדשות חמות מהקהילה? הצטרפו לערוץ העדכונים השקט שלנו בוואטסאפ. בלי חפירות, רק מה שחשוב.</p>
 <a class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-3 rounded-full font-bold text-lg hover:opacity-90 transition-opacity gap-2" href="https://msg.roleplay.top" target="_blank">
 <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
@@ -393,6 +524,24 @@ a.card:hover { transform: translateY(-2px); }
 </footer>
 <script src="/static/search-engine.js"></script>
 <script>
+(function () {
+    function updateStickyNavigationOffsets() {
+        const globalNav = document.getElementById('global-nav');
+        const subnav = document.getElementById('page-subnav');
+        if (globalNav) {
+            document.documentElement.style.setProperty('--global-nav-height', `${globalNav.offsetHeight}px`);
+        }
+        if (subnav) {
+            document.documentElement.style.setProperty('--subnav-height', `${subnav.offsetHeight}px`);
+        }
+    }
+
+    window.addEventListener('load', updateStickyNavigationOffsets);
+    window.addEventListener('resize', updateStickyNavigationOffsets);
+    document.addEventListener('DOMContentLoaded', updateStickyNavigationOffsets);
+})();
+</script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
 const systemsData = [
 { name: "מבוכים ודרקונים (D&D 5e)", badge: "הנפוץ ביותר בעולם", description: "המשחק הפופולרי ביותר בעולם, המציע חווית פנטזיה קלאסית. הוא משלב בצורה מופלאה אלמנטים של פנטזיה, קבלת החלטות אסטרטגית ושיתוף פעולה חברתי עמוק.", why: "נקודת הכניסה הסטנדרטית לתחביב. קל למצוא קבוצה וחומרים למתחילים, כמו 'ערכת ההתחלה' המצוינת.", complexity: 10, color: 'rgba(206,5,15,0.7)', tint: '#fddedf', badgeBg: '#ce050f', badgeText: '#ffffff', link: "https://www.dndbeyond.com/" },
@@ -408,7 +557,7 @@ card.style.background = system.tint;
 card.innerHTML = `
 <div class="p-6 cursor-pointer flex-grow" onclick="toggleDetails(this)">
 ${system.badge ? `<div class="mb-3"><span class="text-sm font-bold px-3 py-1 rounded-full" style="background:${system.badgeBg};color:${system.badgeText}">${system.badge}</span></div>` : ''}
-<h3 class="font-display text-2xl font-bold text-navy mb-2">
+<h3 class="font-display subsection-title text-2xl font-bold text-navy mb-2">
 <a href="${system.link}" target="_blank" rel="noopener noreferrer" class="hover:text-red">${system.name}</a>
 </h3>
 <p class="text-lg text-stone-700 mb-3">${system.description}</p>
@@ -460,7 +609,7 @@ const monthHtml = (item.month >= 1 && item.month <= 12) ? `<p class="text-sm tex
 return `
 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card directory-card group block p-6 rounded-xl h-full flex flex-col">
 <div class="flex flex-wrap items-center gap-1.5 mb-3">${badgesHtml}</div>
-<h3 class="font-display text-xl font-bold text-navy mb-1 leading-tight group-hover:text-red transition-colors">${item.name ?? ''}</h3>
+<h3 class="font-display subsection-title text-xl font-bold text-navy mb-1 leading-tight group-hover:text-red transition-colors">${item.name ?? ''}</h3>
 ${item.location ? `<p class="text-sm text-stone-500 mb-2 font-semibold">📍 ${item.location}</p>` : ''}
 ${monthHtml}
 <p class="text-[15px] text-stone-600 leading-relaxed flex-grow">${item.description ?? ''}</p>
@@ -535,7 +684,7 @@ if (closest) {
 const monthNames = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"];
 container.innerHTML = `
 <a href="${closest.link}" target="_blank" rel="noopener noreferrer" class="card block p-6 rounded-xl text-center" style="background:#fde5db">
-<h3 class="font-display text-xl font-bold text-navy mb-2">${closest.name}</h3>
+<h3 class="font-display subsection-title text-xl font-bold text-navy mb-2">${closest.name}</h3>
 <p class="text-lg text-stone-700 mb-2">מתקיים בדרך כלל בחודש: <span class="font-semibold" style="color:#d1502a">${monthNames[closest.month - 1]}</span></p>
 ${closest.location ? `<p class="text-base text-stone-700 mb-2">מיקום: ${closest.location}</p>` : ''}
 <p class="text-base text-stone-700 mb-4">${closest.description}</p>
@@ -564,8 +713,8 @@ new Chart(ctx, {
 type: 'bar',
 data: { labels: systemsData.map(s => s.name), datasets: [{ label: 'מורכבות חוקים', data: systemsData.map(s => s.complexity), backgroundColor: systemsData.map(s => s.color), borderColor: systemsData.map(s => s.color.replace('0.7', '1')), borderWidth: 1, borderRadius: 5 }] },
 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-scales: { x: { beginAtZero: true, max: 10, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: "'Assistant', sans-serif" }}}, y: { grid: { display: false }, ticks: { font: { family: "'Assistant', sans-serif", size: 14 }, autoSkip: false }} },
-plugins: { legend: { display: false }, tooltip: { rtl: true, bodyFont: { family: "'Assistant', sans-serif" }, titleFont: { family: "'Assistant', sans-serif" }} }
+scales: { x: { beginAtZero: true, max: 10, grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: "'Heebo', sans-serif" }}}, y: { grid: { display: false }, ticks: { font: { family: "'Heebo', sans-serif", size: 14 }, autoSkip: false }} },
+plugins: { legend: { display: false }, tooltip: { rtl: true, bodyFont: { family: "'Heebo', sans-serif" }, titleFont: { family: "'Heebo', sans-serif" }} }
 }
 });
 document.getElementById('mobile-nav').addEventListener('change', function() {
@@ -588,3 +737,7 @@ document.querySelectorAll('section[id]').forEach(section => observer.observe(sec
 </script>
 </body>
 </html>
+gate-home-redesign-heebo-all-heebo.html
+HTML
+gate-search-redesign-heebo-all-heebo.html
+HTML
