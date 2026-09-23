@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -225,7 +224,14 @@ p:last-child{margin-bottom:0}
 .hero h1{font-size:clamp(4rem,9.2vw,7.4rem);margin-bottom:clamp(1rem,2.6vh,1.6rem)}
 .hero h1 span{display:block}
 .hero .lede{margin-bottom:.9rem}
-.hero .audience{max-width:54ch;font-size:1rem;margin-bottom:clamp(1.4rem,3.4vh,2.2rem)}
+.choose{margin-top:clamp(1.3rem,3.4vh,2.2rem)}
+.choose-q{font-family:var(--display);font-weight:700;font-size:clamp(2rem,3vw,2.7rem);line-height:1;margin:0 0 .7rem}
+.choices{list-style:none;margin:0;padding:0;max-width:32rem;border-top:1px solid rgba(246,198,187,.35)}
+.choice{display:flex;align-items:center;gap:.8rem;padding:.6rem .15rem;text-decoration:none;font-weight:600;font-size:1.1rem;border-bottom:1px solid rgba(246,198,187,.35);transition:background-color .2s,padding .25s var(--ease)}
+.choice svg{width:16px;height:18px;flex:none;color:var(--rose)}
+.choice svg path{fill:none;stroke:currentColor;stroke-width:1.6;transition:fill .2s}
+.choice:hover,.choice:focus-visible{background:rgba(247,240,230,.07);padding-right:.6rem}
+.choice:hover svg path,.choice:focus-visible svg path{fill:currentColor}
 .gate-slot{min-height:18rem}
 .path{grid-column:1/-1;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(246,198,187,.4)}
 .path li+li{border-right:1px solid rgba(246,198,187,.4)}
@@ -255,7 +261,7 @@ p:last-child{margin-bottom:0}
 .stairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.75rem,1.5vw,1.25rem);align-items:end;margin-top:clamp(1.5rem,4vh,2.75rem)}
 .step{background:var(--red-deep);padding:clamp(1.25rem,2.2vw,1.9rem);display:flex;flex-direction:column}
 .step:nth-child(1){min-height:clamp(15rem,34vh,19rem)}
-.step:nth-child(2){min-height:clamp(18rem,42vh,23.5rem)}
+.step:nth-child(2){min-height:clamp(18rem,44vh,24.5rem)}
 .step:nth-child(3){min-height:clamp(21rem,50vh,28rem);background:transparent;box-shadow:inset 0 0 0 1.5px rgba(246,198,187,.55)}
 .step .level{font-weight:700;font-size:.95rem;color:var(--rose);margin-bottom:.6rem}
 .step h3{margin-bottom:.8rem}
@@ -265,34 +271,94 @@ p:last-child{margin-bottom:0}
 .checks svg{width:20px;height:20px;flex:none;margin-top:.22rem;color:var(--rose)}
 
 /* ---------- SYSTEMS ---------- */
-.sys-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.5rem clamp(2rem,5vw,4rem);align-items:end;margin-bottom:clamp(1.25rem,3.5vh,2.25rem)}
+.sys-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.5rem clamp(2rem,5vw,4rem);align-items:end;margin-bottom:clamp(1rem,3vh,1.75rem)}
 .sys-head h2.display{margin-bottom:0}
-.sys-head .lede{max-width:56ch;justify-self:end}
-.systems{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:stretch}
-.sys-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(187,208,255,.35)}
+.sys-head > div{justify-self:end;max-width:58ch}
+.sys-head .lede{font-size:clamp(1.02rem,1.25vw,1.15rem)}
+.sys-note{margin:.5rem 0 0;font-size:.9rem;line-height:1.5}
+.sys-note a{font-weight:700;color:var(--bone)}
+.systems{display:flex;flex-direction:column}
+.sys-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(187,208,255,.35)}
+.sys-list li{display:flex}
+.sys-list li+li .sys-tab{box-shadow:inset -1px 0 0 rgba(187,208,255,.25)}
 .sys-tab{
-  width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:.4rem 1rem;
+  width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.3rem .8rem;
   text-align:right;font:inherit;color:inherit;background:transparent;border:0;cursor:pointer;
-  padding:1rem .9rem;border-bottom:1px solid rgba(187,208,255,.35);transition:background-color .2s;
+  padding:.9rem 1rem;transition:background-color .2s;position:relative;
 }
 .sys-tab:hover{background:rgba(187,208,255,.08)}
-.sys-tab[aria-selected="true"]{background:var(--bone);color:var(--blue-deep)}
-.sys-name{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,2.6vw,2.4rem);line-height:.95}
-.sys-badge{grid-column:1;font-size:.9rem;font-weight:600;opacity:.85}
-.gauge{grid-row:1/span 2;grid-column:2;display:flex;flex-direction:column;align-items:flex-start;gap:.3rem}
-.gauge-bars{display:flex;gap:3px}
-.gauge-bars i{display:block;width:7px;height:20px;background:currentColor;opacity:.22;transform:skewX(-14deg)}
-.gauge-bars i.on{opacity:1}
-.gauge-num{font-size:.8rem;font-weight:600;opacity:.85}
-.sys-panel{position:relative;padding:clamp(1.4rem,2.6vw,2.2rem);background:var(--blue-deep);display:flex;flex-direction:column;gap:1rem;min-height:100%}
+.sys-tab[aria-selected="true"]{background:var(--blue-deep);box-shadow:inset 0 3px 0 var(--bone)}
+.sys-name{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,2.1vw,2.1rem);line-height:.95}
+.sys-badge{grid-column:1;font-size:.86rem;font-weight:600;opacity:.85}
+.gauge{grid-row:1/span 2;grid-column:2;display:flex;align-items:center;gap:.5rem}
+.gauge-num{font-size:.8rem;font-weight:600;opacity:.85;line-height:1.3;text-align:center}
+.gauge-num b{display:block;font-family:var(--display);font-size:1.6rem;line-height:.9}
+
+/* potions: liquid height is the rules complexity */
+.vial{display:block;overflow:visible}
+.vial .glass{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.vial .lip{stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.vial .shine{fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;opacity:.45}
+.vial .liquid{fill:var(--rose);transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);transition:transform 1.3s var(--ease)}
+.sys-tab[aria-selected="true"] .vial .liquid{fill:var(--red)}
+.vial .bubble{fill:var(--blue-deep);opacity:0}
+.filled .vial .liquid{transform:scaleY(1)}
+.gauge .vial{width:32px;height:50px}
+.sys-panel-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem 1.5rem;align-items:start}
+.sys-panel-head > div{display:flex;flex-direction:column;align-items:flex-start;gap:.8rem}
+.sys-panel .vial{width:clamp(64px,6vw,84px);height:auto;color:var(--ice)}
+.sys-panel .vial .liquid{fill:var(--red)}
+.sys-panel .vial .bubble{fill:var(--rose)}
+.sys-panel.brew .vial .bubble{animation:bubble 2.2s ease-in 3}
+.sys-panel.brew .vial .bubble:nth-of-type(2){animation-delay:.7s}
+.sys-panel.brew .vial .bubble:nth-of-type(3){animation-delay:1.4s}
+@keyframes bubble{0%{opacity:0;transform:translateY(0)}15%{opacity:.9}100%{opacity:0;transform:translateY(-34px)}}
+.sys-logo{display:block;height:44px;max-width:200px;background:currentColor;-webkit-mask:var(--m) right center/contain no-repeat;mask:var(--m) right center/contain no-repeat}
+
+/* the d20 */
+.roll{display:flex;align-items:center;gap:.9rem;margin-top:.9rem}
+.d20{flex:none;width:60px;height:60px;padding:0;border:0;background:transparent;color:var(--rose);cursor:pointer;border-radius:8px}
+.d20 svg{display:block;width:100%;height:100%;overflow:visible}
+.d20 .edges{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.d20 .face{fill:var(--red);stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.d20 text{font-family:var(--display);font-weight:700;font-size:31px;fill:var(--bone)}
+.d20:hover{color:var(--bone)}
+.d20.spin svg{animation:roll .95s var(--ease)}
+.d20.crit .face{fill:var(--bone)}
+.d20.crit text{fill:var(--red-deep)}
+@keyframes roll{0%{transform:rotate(0) scale(1)}35%{transform:rotate(320deg) scale(.82)}100%{transform:rotate(720deg) scale(1)}}
+.roll-text{margin:0;font-size:.98rem;line-height:1.45;color:var(--rose)}
+.roll-text b{color:var(--bone);font-size:1.15rem}
+
+/* art slots: shown only once a file is configured, always tinted to the world's palette */
+.art{position:absolute;pointer-events:none;background:currentColor;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.dragon{z-index:0;right:0;top:clamp(4.5rem,10vh,6.5rem);width:clamp(220px,27vw,420px);color:var(--red-deep);will-change:transform}
+.astronaut{z-index:1;left:calc(var(--rail) + 11vw);top:20%;width:clamp(150px,15vw,230px);color:var(--ice);will-change:transform}
+.tether{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.tether path{fill:none;stroke:var(--ice);stroke-width:1.4;opacity:.7;stroke-dasharray:1 0}
+.duo{position:relative;margin:0;aspect-ratio:1;overflow:hidden;background:var(--ice);isolation:isolate}
+.duo img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply}
+.duo::after{content:"";position:absolute;inset:0;background:var(--blue-deep);mix-blend-mode:lighten}
+.form.has-photo{display:grid;grid-template-columns:minmax(0,1fr) clamp(7.5rem,11vw,10rem);gap:.5rem 1.4rem;align-items:start}
+.form.has-photo .duo{grid-column:2;grid-row:1/span 2}
+.sys-panel{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(1.5rem,3.5vw,3.5rem);padding:clamp(1.3rem,2.4vw,2rem) clamp(1.3rem,2.6vw,2.2rem);background:var(--blue-deep)}
 .sys-panel[hidden]{display:none}
-.sys-badge-lg{align-self:flex-start;font-size:.9rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:var(--ice);color:var(--blue-deep)}
-.sys-panel h3{font-size:clamp(2.4rem,3.8vw,3.4rem)}
-.sys-panel .why{border-top:1px solid rgba(187,208,255,.35);padding-top:1rem}
-.sys-panel .why strong{display:block;margin-bottom:.3rem;color:var(--ice)}
-.sys-panel .actions{margin-top:auto}
-.sys-foot{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;margin-top:1.25rem}
-.sys-foot p{margin:0;font-size:.92rem;max-width:62ch}
+.sys-badge-lg{align-self:flex-start;font-size:.86rem;font-weight:700;padding:.15rem .7rem;border-radius:999px;background:var(--ice);color:var(--blue-deep)}
+.statblock{display:flex;flex-direction:column;gap:.8rem;min-width:0}
+.sb-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:start}
+.sb-head > div{display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;min-width:0}
+.sb-head h3{font-size:clamp(2.2rem,3.4vw,3.1rem)}
+.sb-type{margin:0;font-size:.98rem;color:var(--ice)}
+.taper{display:block;width:100%;height:5px;fill:#E0485A}
+.sb-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 1.6rem;margin:0}
+.sb-stats > div{min-width:0}
+.sb-stats dt{font-weight:700;font-size:.86rem;color:var(--ice)}
+.sb-stats dd{margin:0;font-size:.97rem;line-height:1.45;display:flex;gap:.3em;align-items:baseline}
+.sb-stats .est{color:var(--rose);font-weight:700;flex:none}
+.sys-side{display:flex;flex-direction:column;gap:1rem;min-width:0}
+.sys-side .why{border-top:1px solid rgba(187,208,255,.35);padding-top:1rem}
+.sys-side .why strong{display:block;margin-bottom:.3rem;color:var(--ice)}
+.sys-side .actions{margin-top:auto}
 
 /* ---------- FIND GROUP ---------- */
 .find{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:clamp(1.5rem,4vh,3rem);border-top:1px solid rgba(246,198,187,.45)}
@@ -341,6 +407,34 @@ p:last-child{margin-bottom:0}
 .dir-foot{display:flex;gap:.75rem;align-items:center;margin-top:1rem;min-height:3rem}
 .dir-count{font-size:.9rem;margin-inline-start:auto}
 .empty{padding:1.5rem 0;font-weight:600;max-width:60ch}
+
+/* ---------- REALM MAP (hexcrawl of the regions) ---------- */
+.res-layout{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(2rem,4vw,4rem);align-items:center}
+.res-main{min-width:0}
+#resources::before{display:none}
+#resources .entries{grid-template-columns:repeat(2,minmax(0,1fr))}
+#resources .entries li:nth-child(n){border-right:0}
+#resources .entries li:nth-child(2n){border-right:1px solid rgba(247,240,230,.28)}
+.realm summary{display:none}
+.realm-map{display:block;height:min(calc(100svh - var(--topbar) - clamp(2rem,6vh,4rem) - clamp(2.5rem,7vh,4.5rem)),760px);width:auto;max-width:100%;overflow:visible}
+.realm-map .paper{fill:none;stroke:rgba(246,198,187,.16);stroke-width:1}
+.realm-map .sea,.realm-map .north{font-family:var(--display);font-weight:700;fill:var(--rose);opacity:.6}
+.realm-map .sea{font-size:22px;letter-spacing:.12em}
+.realm-map .north{font-size:20px}
+.realm-map .north-arrow{fill:var(--rose);opacity:.6}
+.hex{cursor:pointer;outline:none}
+.hex .shape{fill:var(--red-deep);stroke:rgba(246,198,187,.8);stroke-width:1.5;transition:fill .2s,stroke-width .2s}
+.hex:hover .shape{fill:#7A0E1D}
+.hex:focus-visible .shape{stroke:var(--bone);stroke-width:3.5}
+.hex .cnt{font-family:var(--display);font-weight:700;font-size:30px;fill:var(--bone)}
+.hex .lbl{font-family:var(--body);font-weight:700;font-size:12.5px;fill:var(--rose)}
+.hex.zero .shape{fill:transparent;stroke-dasharray:5 4;stroke:rgba(246,198,187,.6)}
+.hex.zero .cnt{fill:var(--rose);opacity:.75}
+.hex[aria-pressed="true"] .shape{fill:var(--bone);stroke:var(--bone)}
+.hex[aria-pressed="true"] .cnt,.hex[aria-pressed="true"] .lbl{fill:var(--red-deep);opacity:1}
+.region-status{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem 1rem;margin:0 0 .8rem;font-weight:600}
+.region-status button{font:inherit;font-weight:700;color:var(--bone);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:.22em}
+.empty a{color:var(--bone)}
 
 /* ---------- NEXT CON ---------- */
 .con{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(1.5rem,5vw,5rem);align-items:end}
@@ -392,7 +486,23 @@ p:last-child{margin-bottom:0}
   .path{grid-template-columns:1fr}
   .path li+li{border-right:0;border-top:1px solid rgba(246,198,187,.4)}
   .path a,.path li:first-child a{padding:1rem 0}
-  .what-grid,.systems,.con,.phoenix .inner{grid-template-columns:1fr}
+  .what-grid,.con,.phoenix .inner{grid-template-columns:1fr}
+  .sys-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sys-list li:nth-child(3) .sys-tab{box-shadow:none}
+  .sys-list li:nth-child(n+3){border-top:1px solid rgba(187,208,255,.25)}
+  .sys-tab[aria-selected="true"]{box-shadow:inset 0 3px 0 var(--bone)}
+  .sys-panel{grid-template-columns:1fr}
+  .sb-stats{grid-template-columns:1fr 1fr}
+  .sys-head > div{justify-self:start}
+  .res-layout{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .res-main{display:contents}
+  .res-main .dir-head{order:0}
+  .realm{order:1;margin-bottom:1.2rem}
+  .res-main .directory{order:2}
+  .realm summary{display:inline-flex;list-style:none}
+  .realm summary::-webkit-details-marker{display:none}
+  .realm[open] summary{background:var(--bone);color:var(--red-deep)}
+  .realm-map{height:auto;width:min(100%,330px);margin:1rem auto 0}
   .stairs{grid-template-columns:1fr}
   .step:nth-child(n){min-height:0}
   .find{grid-template-columns:1fr}
@@ -405,15 +515,23 @@ p:last-child{margin-bottom:0}
   .phoenix-mark{width:min(46%,170px);order:-1;justify-self:start}
   .footer{grid-template-columns:1fr}
   .fantasy:not(.hero)::before{width:80vw;left:-22vw}
+  .dragon{width:46vw;top:auto;bottom:6%;opacity:.8}
+  .astronaut{left:auto;right:auto;inset-inline-end:var(--pad-x);top:calc(var(--topbar) + 1.2rem);width:92px}
+  .tether{display:none}
 }
 @media (max-width:640px){
-  .entries{grid-template-columns:1fr}
-  .entries li:nth-child(n){border-right:0}
+  .entries,#resources .entries{grid-template-columns:1fr}
+  .entries li:nth-child(n),#resources .entries li:nth-child(n){border-right:0}
   .entry{padding:1rem 0}
-  .sys-tab{padding:.9rem .6rem}
-  .gauge-bars i{width:5px;height:16px}
+  .sys-tab{padding:.8rem .6rem;grid-template-columns:1fr}
+  .sys-tab .gauge{grid-row:auto;grid-column:1}
+  .sb-stats{grid-template-columns:1fr}
+  .gauge .vial{width:22px;height:36px}
+  .form.has-photo{grid-template-columns:1fr}
+  .form.has-photo .duo{grid-column:1;grid-row:auto;order:-1;aspect-ratio:16/9}
 }
 @media (prefers-reduced-motion:reduce){
+  .vial .liquid{transform:scaleY(1)}
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
@@ -470,10 +588,13 @@ p:last-child{margin-bottom:0}
     <div class="hero-copy">
       <h1 id="hero-title" class="display"><span>יוצאים להרפתקה</span><span>הראשונה שלכם</span></h1>
       <p class="lede">עולם משחקי התפקידים מחכה לכם. כאן תמצאו את הדרך הפשוטה, המסודרת והבטוחה להתחיל, צעד אחר צעד: להבין מה זה, לבחור משחק, ולמצוא איפה משחקים.</p>
-      <p class="audience muted">האתר מיועד לשחקנים חדשים, להורים מבולבלים, ולמי ששמע על "משחקי תפקידים" או "מבוכים ודרקונים" ורוצה להבין סוף סוף איך נכנסים לתחביב.</p>
-      <div class="actions">
-        <a class="btn btn-solid" href="#intro-what-is">מתחילים מהצעד הראשון</a>
-        <a class="btn btn-ghost" href="/quiz">איזה משחק מתאים לי?</a>
+      <div class="choose">
+        <p class="choose-q" id="choose-q">אתם עומדים מול השער. מה אתם עושים?</p>
+        <ul class="choices" aria-labelledby="choose-q">
+          <li><a class="choice" href="#intro-what-is"><svg viewBox="0 0 16 18" aria-hidden="true"><path d="M8 1L15 5V13L8 17L1 13V5Z"/></svg>שמעתי על זה, ואני רוצה לנסות לשחק</a></li>
+          <li><a class="choice" href="#resources" data-target="#resources" data-preset="kids"><svg viewBox="0 0 16 18" aria-hidden="true"><path d="M8 1L15 5V13L8 17L1 13V5Z"/></svg>אני הורה, ומחפש חוג לילד שלי</a></li>
+          <li><a class="choice" href="#community" data-target="#community" data-preset="group"><svg viewBox="0 0 16 18" aria-hidden="true"><path d="M8 1L15 5V13L8 17L1 13V5Z"/></svg>כבר שיחקתי, ואני מחפש קבוצה</a></li>
+        </ul>
       </div>
     </div>
     <div class="gate-slot" aria-hidden="true"></div>
@@ -502,10 +623,12 @@ p:last-child{margin-bottom:0}
       </div>
       <div class="forms">
         <article class="form">
+          <figure class="duo" data-art="photo-ttrpg" data-alt="שחקנים סביב שולחן עם קוביות ודפי דמות" hidden></figure>
           <h3><span class="display">משחקי תפקידים שולחניים</span><span class="tag" lang="en">TTRPG</span></h3>
           <p>חוויה של סיפור שיתופי סביב שולחן (או אונליין). בעזרת דמיון, סט חוקים, קוביות ומנחה, אתם והחברים שלכם יוצרים יחד סיפור הרפתקאות ייחודי. הדגש הוא על יצירתיות, פתרון בעיות ועבודת צוות.</p>
         </article>
         <article class="form">
+          <figure class="duo" data-art="photo-larp" data-alt="משתתפים בתלבושות במשחק תפקידים חי" hidden></figure>
           <h3><span class="display">משחקי תפקידים חיים</span><span class="tag" lang="en">LARP</span></h3>
           <p>כאן אתם לא רק מספרים את הסיפור, אתם חיים אותו. המשתתפים מגלמים פיזית את הדמויות, לובשים תלבושות ופועלים במרחב אמיתי. חוויה תיאטרלית וסוחפת המדגישה אלתור ואינטראקציה פיזית.</p>
         </article>
@@ -529,6 +652,17 @@ p:last-child{margin-bottom:0}
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 10.5l4 4 9-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>דף, עיפרון ומחק</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 10.5l4 4 9-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>סט קוביות (או אפליקציה)</li>
         </ul>
+        <div class="roll">
+          <button class="d20" type="button" aria-describedby="roll-out">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path class="edges" d="M50 3L90.7 26.5V73.5L50 97L9.3 73.5V26.5Z M50 3L50 19 M9.3 26.5L50 19L90.7 26.5 M90.7 26.5L79 69L90.7 73.5 M79 69L50 97L21 69 M9.3 73.5L21 69L9.3 26.5"/>
+              <path class="face" d="M50 19L79 69H21Z"/>
+              <text x="50" y="54" text-anchor="middle" dominant-baseline="middle">20</text>
+            </svg>
+            <span class="sr-only">הטלת קוביית עשרים</span>
+          </button>
+          <p class="roll-text" id="roll-out" aria-live="polite">אין קוביות בבית? הטילו כאן.</p>
+        </div>
       </article>
       <article class="step">
         <p class="level">הדרך המומלצת ביותר</p>
@@ -548,20 +682,20 @@ p:last-child{margin-bottom:0}
   <div class="inner">
     <div class="sys-head">
       <h2 id="sys-title" class="display">בחירת שיטת משחק</h2>
-      <p class="lede">כל הרפתקה צריכה חוקים. שיטת המשחק היא מערכת הכללים והעולם שבהם תפעלו. הנה ארבע מהשיטות הפופולריות ביותר בישראל, שמתאימות במיוחד למתחילים.</p>
+      <div>
+        <p class="lede">כל הרפתקה צריכה חוקים. שיטת המשחק היא מערכת הכללים והעולם שבהם תפעלו. הנה ארבע מהשיטות הפופולריות ביותר בישראל, שמתאימות במיוחד למתחילים.</p>
+        <p class="sys-note muted">גובה השיקוי בכל בקבוקון מראה את מורכבות החוקים, מ-1 עד 10. <a href="/quiz">לא בטוחים? ענו על השאלון ומצאו את המשחק שלכם</a></p>
+      </div>
     </div>
     <div class="systems">
-      <div><ul class="sys-list" role="tablist" aria-label="שיטות משחק" aria-orientation="vertical" id="sys-list"></ul></div>
+      <ul class="sys-list" role="tablist" aria-label="שיטות משחק" id="sys-list"></ul>
       <div id="sys-panels"></div>
-    </div>
-    <div class="sys-foot">
-      <p class="muted">המדד מציג השוואה כללית של רמת מורכבות החוקים בין השיטות, בסולם של 1 עד 10. נמוך יותר פירושו פשוט יותר.</p>
-      <a class="btn btn-ghost" href="/quiz">לא בטוחים? ענו על השאלון ומצאו את המשחק שלכם</a>
     </div>
   </div>
 </section>
 
 <section class="world fantasy" id="find-group" data-world="fantasy" data-label="איך מוצאים קבוצה?" aria-labelledby="find-title">
+  <div class="art dragon" data-art="dragon" aria-hidden="true" hidden></div>
   <div class="inner">
     <h2 id="find-title" class="display">איך מוצאים קבוצת משחק?</h2>
     <p class="lede">מציאת קבוצה היא הצעד המרגש הבא! הנה כמה דרכים מומלצות.</p>
@@ -615,7 +749,8 @@ p:last-child{margin-bottom:0}
 </section>
 
 <section class="world fantasy" id="resources" data-world="fantasy" data-label="חנויות וחוגים" aria-labelledby="res-title">
-  <div class="inner">
+  <div class="inner res-layout">
+   <div class="res-main">
     <div class="dir-head">
       <div>
         <h2 id="res-title" class="display">איפה קונים ומשחקים?</h2>
@@ -623,7 +758,7 @@ p:last-child{margin-bottom:0}
       </div>
       <a class="portal-link" href="/search">לפורטל החיפוש המלא</a>
     </div>
-    <div class="directory" data-source="resourcesData">
+    <div class="directory" data-source="resourcesData" data-page="4" data-map="realm">
       <div class="controls">
         <div class="chips" role="group" aria-label="סינון לפי סוג">
           <button class="chip" type="button" data-filter="all" aria-pressed="true">הכל</button>
@@ -638,6 +773,7 @@ p:last-child{margin-bottom:0}
           <input type="search" placeholder="שם, עיר או אזור, למשל: השרון" autocomplete="off">
         </label>
       </div>
+      <p class="region-status" hidden><span></span><button type="button" class="region-clear">להצגת כל הארץ</button></p>
       <ul class="entries" aria-live="polite"></ul>
       <p class="empty" hidden>לא נמצאו תוצאות התואמות לחיפוש שלך. נסו לחפש לפי אזור (למשל "גוש דן") במקום לפי יישוב.</p>
       <div class="dir-foot">
@@ -646,6 +782,11 @@ p:last-child{margin-bottom:0}
         <span class="dir-count muted"></span>
       </div>
     </div>
+   </div>
+   <details class="realm" id="realm" open>
+     <summary class="btn btn-ghost">בחירת אזור במפה</summary>
+     <svg class="realm-map" role="group" aria-label="מפת האזורים. בחירת אזור מסננת את הרשימה"></svg>
+   </details>
   </div>
 </section>
 
@@ -681,6 +822,8 @@ p:last-child{margin-bottom:0}
 </section>
 
 <section class="world scifi contact" id="contact" data-world="scifi" data-label="צרו קשר" aria-labelledby="contact-title">
+  <svg class="tether" aria-hidden="true" hidden><path/></svg>
+  <div class="art astronaut" data-art="astronaut" aria-hidden="true" hidden></div>
   <div class="inner">
     <div class="top">
       <h2 id="contact-title" class="display">צרו קשר</h2>
@@ -706,6 +849,25 @@ p:last-child{margin-bottom:0}
 
 <script src="/static/search-engine.js"></script>
 <script>
+/* ============================================================
+   איורים, לוגואים ותמונות
+   כל עוד הערך ריק, המקום לא מוצג בכלל. כדי להפעיל:
+   מעלים קובץ לריפו וכותבים כאן את הנתיב שלו.
+   דרקון, אסטרונאוט ולוגואים: PNG או SVG עם רקע שקוף, בכל צבע.
+   הדף צובע אותם בעצמו לפי העולם, כך שרק הצללית משנה.
+   הדרקון צריך לפנות שמאלה (לכיוון התעופה).
+   תמונות: JPG רגיל, הדף הופך אותן לדו-גוני כחול.
+   ============================================================ */
+const ART = {
+  dragon:      '',   // למשל '/static/art/dragon.png'
+  astronaut:   '',   // למשל '/static/art/astronaut.png'
+  'logo-dnd':  '',   // מבוכים ודרקונים
+  'logo-sw':   '',   // חרבות וכשפים
+  'logo-spf':  '',   // פאת'פיינדר בעולמות פראיים
+  'logo-pbta': '',   // מנוע האפוקליפסה
+  'photo-ttrpg': '', // משחק שולחני
+  'photo-larp':  ''  // לארפ
+};
 (() => {
   document.documentElement.classList.add('js');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -810,37 +972,65 @@ p:last-child{margin-bottom:0}
   document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { a.closest('details').open = false; }));
 
   /* ---------------- systems ---------------- */
+  /* נתוני גוש הנתונים של כל שיטה. est: true מסמן נתון משוער (מוצג עם ≈) עד שיוחלף בנתון מאומת. */
   const systems = [
     { id:'dnd', name:'מבוכים ודרקונים', latin:'D&D 5e', badge:'הנפוץ ביותר בעולם', complexity:10, link:'https://www.dndbeyond.com/',
+      type:'פנטזיה אפית עם מקצועות, רמות וקרבות טקטיים',
+      stats:[ ['בעברית','אין תרגום רשמי. יש תרגומי חובבים ברשת'], ['גיל מומלץ','12 ומעלה (ערכת ההתחלה)'], ['משתתפים','2 עד 6, כולל המנחה'], ['מפגש טיפוסי','3 עד 4 שעות', true], ['קוביות','סט מלא: ק4, ק6, ק8, ק10, ק12, ק20'] ],
       description:'המשחק הפופולרי ביותר בעולם, המציע חווית פנטזיה קלאסית. הוא משלב בצורה מופלאה אלמנטים של פנטזיה, קבלת החלטות אסטרטגית ושיתוף פעולה חברתי עמוק.',
       why:"נקודת הכניסה הסטנדרטית לתחביב. קל למצוא קבוצה וחומרים למתחילים, כמו 'ערכת ההתחלה' המצוינת." },
     { id:'sw', name:'חרבות וכשפים', badge:'מומלץ למתחילים ולצעירים', complexity:3, link:'https://swordsandwizardry.co.il/',
+      type:'פנטזיה קלאסית, חזרה לשורשים של התחביב',
+      stats:[ ['בעברית','ערכה למתחיל: חוברת לשחקן, חוברת למנחה והרפתקת יחיד'], ['גיל מומלץ','8 ומעלה'], ['משתתפים','2 עד 7'], ['מפגש טיפוסי','שעה וחצי עד שעתיים וחצי', true], ['קוביות','סט של 7 קוביות, כלול בערכה'] ],
       description:'חזרה לשורשים של משחקי התפקידים, עם שיטה קלת-חוקים וגמישה המעודדת יצירתיות ואלתור מצד השחקנים והמנחה. הערכה למתחיל היא שער כניסה מושלם לתחביב.',
       why:'מעולה למתחילים ולילדים. ערכת המתחיל בעברית מלמדת את המשחק צעד-אחר-צעד, כולל הרפתקת סולו.' },
     { id:'spf', name:"פאת'פיינדר בעולמות פראיים", badge:'לחובבי האקשן', complexity:7, link:'https://pundak.games/savage-pathfinder/',
+      type:'פנטזיה הרפתקנית, אקשן מהיר וקולנועי',
+      stats:[ ['בעברית','ספר בסיס, ערכת מנחה, אוגדן מפלצות והרפתקאות'], ['גיל מומלץ','12 ומעלה', true], ['משתתפים','3 עד 6, כולל המנחה', true], ['מפגש טיפוסי','3 עד 4 שעות', true], ['קוביות','ק4 עד ק12, חפיסת קלפים וסמני פז'] ],
       description:"שילוב מנצח של עולם הפנטזיה העשיר של 'פאת'פיינדר' עם מנוע החוקים המהיר והקולנועי של 'עולמות פראיים'. הרפתקאות מסמרות שיער ואקשן מותח עצבים.",
       why:'הטוב משני העולמות: עומק עלילתי עם חוקים קלילים. ספר הבסיס בעברית כולל את כל מה שצריך כדי להתחיל לשחק.' },
     { id:'pbta', name:'מנוע האפוקליפסה', badge:'לחובבי חופש ומקוריות', complexity:5, link:'https://vanor.co.il/',
+      type:'מנוע סיפורי: מהלכים במקום חוקים מפורטים',
+      stats:[ ['בעברית',"וואנור (פנטזיה) ופלאים: גיבורי המחר (גיבורי־על מתבגרים)"], ['גיל מומלץ','נוער ומבוגרים', true], ['משתתפים','3 עד 5, כולל המנחה', true], ['מפגש טיפוסי','2 עד 4 שעות', true], ['קוביות','שתי קוביות ק6 בלבד'] ],
       description:"מנוע משחק גמיש שעליו בנויות שיטות רבות. שם דגש על סיפור ויצירתיות על פני קרבות טקטיים. המשחקים הנפוצים בעברית הם 'פלאים: גיבורי המחר' ו'וואנור'.",
       why:"מנוע פשוט ללמידה המאפשר להתמקד בסיפור. מתאים למגוון רחב של ז'אנרים וסגנונות משחק." }
   ];
-  const sysName = s => esc(s.name) + (s.latin ? ` (<bdi dir="ltr">${esc(s.latin)}</bdi>)` : '');
-  const gauge = n => `<span class="gauge"><span class="gauge-bars" aria-hidden="true">${Array.from({length:10},(_,i)=>`<i class="${i<n?'on':''}"></i>`).join('')}</span><span class="gauge-num">מורכבות ${n}/10</span></span>`;
+  const sysName = s => esc(s.name) + (s.latin ? ` <span style="white-space:nowrap">(<bdi dir="ltr">${esc(s.latin)}</bdi>)</span>` : '');
+  const FLASK = 'M10 5H18V18.7A12 12 0 1 1 10 18.7Z';
+  const vial = (n, id, bubbles) => {
+    const h = n / 10 * 36;
+    return `<svg class="vial" viewBox="0 0 28 44" aria-hidden="true"><defs><clipPath id="vc-${id}"><path d="${FLASK}"/></clipPath></defs><g clip-path="url(#vc-${id})"><rect class="liquid" x="0" y="${(42.4 - h).toFixed(2)}" width="28" height="${(h + 1).toFixed(2)}"/>${bubbles ? '<circle class="bubble" cx="11" cy="38" r="1.6"/><circle class="bubble" cx="16" cy="39" r="1.1"/><circle class="bubble" cx="14" cy="37" r="1.3"/>' : ''}</g><path class="glass" d="${FLASK}"/><path class="lip" d="M8.4 4H19.6"/><path class="shine" d="M6 28a8 8 0 0 1 4-7"/></svg>`;
+  };
+  const gauge = (n, id) => `<span class="gauge">${vial(n, 'tab-' + id)}<span class="gauge-num"><b>${n}</b>מתוך 10</span><span class="sr-only">מורכבות חוקים ${n} מתוך 10</span></span>`;
   const list = document.getElementById('sys-list'), panels = document.getElementById('sys-panels');
-  list.innerHTML = systems.map((s,i) => `<li role="presentation"><button class="sys-tab" type="button" role="tab" id="tab-${s.id}" aria-controls="panel-${s.id}" aria-selected="${i===0}" tabindex="${i===0?0:-1}"><span class="sys-name">${sysName(s)}</span><span class="sys-badge">${esc(s.badge)}</span>${gauge(s.complexity)}</button></li>`).join('');
-  panels.innerHTML = systems.map((s,i) => `<div class="sys-panel" role="tabpanel" id="panel-${s.id}" aria-labelledby="tab-${s.id}" ${i===0?'':'hidden'} tabindex="0"><span class="sys-badge-lg">${esc(s.badge)}</span><h3 class="display">${sysName(s)}</h3><p>${esc(s.description)}</p><div class="why"><strong>למה זה טוב למתחילים?</strong><p>${esc(s.why)}</p></div><div class="actions"><a class="btn btn-solid" href="${s.link}" target="_blank" rel="noopener noreferrer">למעבר לאתר המשחק</a></div></div>`).join('');
+  list.innerHTML = systems.map((s,i) => `<li role="presentation"><button class="sys-tab" type="button" role="tab" id="tab-${s.id}" aria-controls="panel-${s.id}" aria-selected="${i===0}" tabindex="${i===0?0:-1}"><span class="sys-name">${sysName(s)}</span><span class="sys-badge">${esc(s.badge)}</span>${gauge(s.complexity, s.id)}</button></li>`).join('');
+  const taper = '<svg class="taper" viewBox="0 0 400 5" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,2.5 400,0 400,5"/></svg>';
+  const statRows = st => st.map(([k, v, est]) => `<div><dt>${esc(k)}</dt><dd>${est ? '<span class="est" title="נתון משוער" aria-hidden="true">≈</span>' : ''}<span>${esc(v)}${est ? '<span class="sr-only"> (משוער)</span>' : ''}</span></dd></div>`).join('');
+  panels.innerHTML = systems.map((s,i) => `<div class="sys-panel" role="tabpanel" id="panel-${s.id}" aria-labelledby="tab-${s.id}" ${i===0?'':'hidden'} tabindex="0">
+    <div class="statblock">
+      <div class="sb-head"><div><span class="sys-badge-lg">${esc(s.badge)}</span><span class="sys-logo" data-art="logo-${s.id}" role="img" aria-label="הלוגו של ${esc(s.name)}" hidden></span><h3 class="display">${sysName(s)}</h3><p class="sb-type">${esc(s.type)}</p></div>${vial(s.complexity, 'panel-' + s.id, true)}</div>
+      ${taper}
+      <dl class="sb-stats">${statRows(s.stats)}</dl>
+      ${taper}
+    </div>
+    <div class="sys-side">
+      <p>${esc(s.description)}</p>
+      <div class="why"><strong>למה זה טוב למתחילים?</strong><p>${esc(s.why)}</p></div>
+      <div class="actions"><a class="btn btn-solid" href="${s.link}" target="_blank" rel="noopener noreferrer">למעבר לאתר המשחק</a></div>
+    </div>
+  </div>`).join('');
   const tabs = [...list.querySelectorAll('.sys-tab')];
   function selectTab(t, focus){
-    tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; const pnl = document.getElementById(x.getAttribute('aria-controls')); pnl.hidden = !on; pnl.classList.remove('brew'); if (on) { void pnl.offsetWidth; pnl.classList.add('brew'); } });
     if (focus) t.focus();
   }
   const panelFor = t => document.getElementById(t.getAttribute('aria-controls'));
   tabs.forEach((t,i) => {
-    t.addEventListener('click', () => { selectTab(t); if (window.innerWidth < 900) panelFor(t).scrollIntoView({ block:'nearest', behavior: reduced.matches ? 'auto' : 'smooth' }); });
+    t.addEventListener('click', () => { selectTab(t); if (window.innerWidth < 640) panelFor(t).scrollIntoView({ block:'nearest', behavior: reduced.matches ? 'auto' : 'smooth' }); });
     t.addEventListener('keydown', e => {
       let j = null;
-      if (e.key === 'ArrowDown') j = (i + 1) % tabs.length;
-      if (e.key === 'ArrowUp') j = (i - 1 + tabs.length) % tabs.length;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') j = (i + 1) % tabs.length;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') j = (i - 1 + tabs.length) % tabs.length;
       if (e.key === 'Home') j = 0;
       if (e.key === 'End') j = tabs.length - 1;
       if (j !== null){ e.preventDefault(); selectTab(tabs[j], true); }
@@ -859,38 +1049,218 @@ p:last-child{margin-bottom:0}
     if (it.month >= 1 && it.month <= 12) meta.push(`<span>${cal}מתקיים ב${MONTHS[it.month-1]}</span>`);
     return `<li><a class="entry" href="${esc(it.link)}" target="_blank" rel="noopener noreferrer"><span class="entry-name">${esc(it.name)}</span><span class="entry-meta">${meta.join('')}</span><p class="entry-desc">${esc(it.description)}</p></a></li>`;
   };
-  const pageSize = () => window.innerWidth < 640 ? 4 : 6;
+  const normHeb = t => String(t || '').toLowerCase().replace(/[\u200E\u200F\u202A-\u202E]/g, '').replace(/[-–—־]/g, ' ').replace(/["“”׳״'`.,;:!?()[\]{}<>\\/|]/g, ' ').replace(/\s+/g, ' ').trim();
+
+  /* ---- region matching: turns a free-text location into region ids ---- */
+  const LOC_ALIAS = { 'תל אביב':[6], 'מרכז':[6,7], 'המרכז':[6,7], 'הצפון':[1,2,3,4], 'צפון':[1,2,3,4], 'גליל':[1,2,3], 'הגליל':[1,2,3], 'הנגב':[10,11,12], 'נגב':[10,11,12], 'ירשולים':[9], 'זכרון יעקב':[4], 'מנשה':[4], 'קיבוץ משמרות':[4], 'הסביבה':[] };
+  function regionIndex(regions){
+    const R = regions.map(r => ({ id: r.id, name: normHeb(r.name), set: (r.settlements || []).map(normHeb) }));
+    const cache = new Map();
+    return raw => {
+      if (!raw) return [];
+      if (cache.has(raw)) return cache.get(raw);
+      const out = new Set();
+      String(raw).split(/,|\s+ו(?=[א-ת])/).map(normHeb).filter(Boolean).forEach(p => {
+        const alias = Object.keys(LOC_ALIAS).find(k => p === k || p.startsWith(k + ' '));
+        if (alias) { LOC_ALIAS[alias].forEach(id => out.add(id)); return; }
+        R.forEach(r => {
+          const hit = (p.length >= 3 && r.name.includes(p)) || (r.name.length >= 3 && p.includes(r.name)) ||
+            r.set.some(s => s === p || s.startsWith(p + ' ') || p.startsWith(s + ' ') || (p.length >= 4 && s.endsWith(' ' + p)));
+          if (hit) out.add(r.id);
+        });
+      });
+      const res = [...out]; cache.set(raw, res); return res;
+    };
+  }
+
+  /* ---- the realm map ---- */
+  const HEX = { 2:[1,0], 1:[2,0], 4:[.5,1], 3:[1.5,1], 5:[0,2], 6:[.5,3], 7:[1.5,3], 8:[0,4], 9:[1,4], 10:[.5,5], 11:[1.5,5], 12:[1,6], 13:[1.5,7] };
+  const SHORT = { 1:['גליל עליון','וגולן'], 2:['גליל','מערבי'], 3:['העמקים'], 4:['חיפה','והכרמל'], 5:['השרון'], 6:['גוש דן'], 7:['מרכז','מזרחי'], 8:['השפלה','ודרום החוף'], 9:['ירושלים'], 10:['עוטף','עזה'], 11:['באר שבע'], 12:['הר','הנגב'], 13:['אילת','והערבה'] };
+  const HR = 56, HW = Math.sqrt(3) * HR, PADX = 44, PADY = 18;
+  const hexAt = (x, row) => [PADX + (x + .5) * HW, PADY + HR + row * 1.5 * HR];
+  const hexPts = (cx, cy, r = HR) => [-90,-30,30,90,150,210].map(a => { const t = a * Math.PI / 180; return `${(cx + r * Math.cos(t)).toFixed(1)},${(cy + r * Math.sin(t)).toFixed(1)}`; }).join(' ');
+  function buildMap(svg, regions, onPick){
+    const W = PADX + 3 * HW + 16, H = PADY * 2 + HR * 12.5;
+    svg.setAttribute('viewBox', `0 0 ${W.toFixed(0)} ${H.toFixed(0)}`);
+    let paper = '';
+    for (let row = -1; row <= 8; row++) for (let k = -2; k <= 4; k++) {
+      const x = k + (row % 2 ? .5 : 0); const [cx, cy] = hexAt(x, row);
+      paper += `<polygon class="paper" points="${hexPts(cx, cy)}"/>`;
+    }
+    const [nx, ny] = hexAt(0, 0);
+    let land = '';
+    regions.forEach(r => {
+      const pos = HEX[r.id]; if (!pos) return;
+      const [cx, cy] = hexAt(pos[0], pos[1]);
+      const lines = SHORT[r.id] || [r.name];
+      const ly = lines.length > 1 ? [cy + 13, cy + 28] : [cy + 18];
+      land += `<g class="hex" role="button" tabindex="0" aria-pressed="false" data-region="${r.id}"><polygon class="shape" points="${hexPts(cx, cy, HR - 2)}"/><text class="cnt" x="${cx}" y="${cy - 8}" text-anchor="middle"></text>${lines.map((l, i) => `<text class="lbl" x="${cx}" y="${ly[i]}" text-anchor="middle">${esc(l)}</text>`).join('')}</g>`;
+    });
+    const [sx, sy] = [20, hexAt(0, 3.5)[1]];
+    const defs = `<defs><radialGradient id="paperfade-g" cx="50%" cy="50%" r="60%"><stop offset="55%" stop-color="#fff"/><stop offset="100%" stop-color="#000"/></radialGradient><mask id="paperfade" maskUnits="userSpaceOnUse" x="${-HW * 2}" y="${-HR * 2}" width="${W + HW * 4}" height="${H + HR * 4}"><rect x="${-HW * 2}" y="${-HR * 2}" width="${W + HW * 4}" height="${H + HR * 4}" fill="url(#paperfade-g)"/></mask></defs>`;
+    svg.innerHTML = `${defs}<g aria-hidden="true"><g mask="url(#paperfade)">${paper}</g><text class="sea" x="${sx}" y="${sy}" text-anchor="middle" transform="rotate(-90 ${sx} ${sy})">הים התיכון</text><polygon class="north-arrow" points="${nx},${ny - 30} ${nx - 9},${ny - 8} ${nx + 9},${ny - 8}"/><text class="north" x="${nx}" y="${ny + 16}" text-anchor="middle">צפון</text></g>${land}`;
+    const hexes = [...svg.querySelectorAll('.hex')];
+    hexes.forEach(h => {
+      const go = () => onPick(+h.dataset.region);
+      h.addEventListener('click', go);
+      h.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+    return {
+      update(counts, selected){
+        hexes.forEach(h => {
+          const id = +h.dataset.region, n = counts.get(id) || 0, r = regions.find(x => x.id === id);
+          h.querySelector('.cnt').textContent = n;
+          h.classList.toggle('zero', n === 0);
+          h.setAttribute('aria-pressed', selected === id);
+          h.setAttribute('aria-label', `${r.name}: ${n > 1 ? n + ' מקומות' : n === 1 ? 'מקום אחד' : 'אין עדיין מקומות'}`);
+        });
+      }
+    };
+  }
 
   function setupDirectory(root, data, regions){
-    const ul = root.querySelector('.entries'), empty = root.querySelector('.empty');
+    const ps = () => window.innerWidth < 640 ? 4 : (+root.dataset.page || 6);
+    const ul = root.querySelector('.entries'), empty = root.querySelector('.empty'), emptyText = empty.innerHTML;
     const more = root.querySelector('.more'), less = root.querySelector('.less'), count = root.querySelector('.dir-count');
     const input = root.querySelector('input'), chips = [...root.querySelectorAll('.chip')];
+    const status = root.querySelector('.region-status');
     const engine = (typeof SearchEngine === 'function') ? new SearchEngine(data, regions) : null;
-    let filter = 'all', query = '', limit = pageSize();
+    const regionsOf = regionIndex(regions || []);
+    let filter = 'all', query = '', region = null, limit = ps(), map = null;
+    const byType = () => engine ? engine.search('', filter) : data.filter(it => filter === 'all' || [].concat(it.type).includes(filter));
     const run = () => {
-      if (engine) return engine.search(query, filter);
-      const q = query.trim();
-      return data.filter(it => (filter === 'all' || [].concat(it.type).includes(filter)) && (!q || [it.name, it.description, it.location].join(' ').includes(q)));
+      let res;
+      if (engine) res = engine.search(query, filter);
+      else { const q = query.trim(); res = data.filter(it => (filter === 'all' || [].concat(it.type).includes(filter)) && (!q || [it.name, it.description, it.location].join(' ').includes(q))); }
+      return region ? res.filter(it => regionsOf(it.location).includes(region)) : res;
     };
     function render(){
       const res = run();
+      const rName = region ? (regions.find(r => r.id === region) || {}).name : '';
       empty.hidden = res.length > 0;
+      empty.innerHTML = (region && !query) ? `עוד אין לנו מקומות מהסוג הזה באזור ${esc(rName)}. מכירים אחד? ספרו לנו ב-<a href="mailto:gate@roleplay.top">gate@roleplay.top</a>.` : emptyText;
       ul.innerHTML = res.slice(0, limit).map(entryHTML).join('');
       more.hidden = res.length <= limit;
-      less.hidden = !(limit > pageSize() && limit >= res.length);
+      less.hidden = !(limit > ps() && limit >= res.length);
       count.textContent = res.length ? `מוצגים ${Math.min(limit, res.length)} מתוך ${res.length}` : '';
+      if (status){ status.hidden = !region; status.querySelector('span').innerHTML = region ? `מקומות באזור <strong>${esc(rName)}</strong>` : ''; }
+      if (map){
+        const counts = new Map();
+        byType().forEach(it => regionsOf(it.location).forEach(id => counts.set(id, (counts.get(id) || 0) + 1)));
+        map.update(counts, region);
+      }
     }
-    root.setFilter = f => { filter = f; limit = pageSize(); chips.forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === f)); render(); };
+    root.setFilter = f => { filter = f; limit = ps(); chips.forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === f)); render(); };
+    root.setRegion = id => { region = (region === id) ? null : id; limit = ps(); render(); };
     chips.forEach(c => c.addEventListener('click', () => root.setFilter(c.dataset.filter)));
-    input.addEventListener('input', e => { query = e.target.value; limit = pageSize(); render(); });
-    more.addEventListener('click', () => { limit += pageSize(); render(); });
-    less.addEventListener('click', () => { limit = pageSize(); render(); root.closest('.world').scrollIntoView({ block:'start' }); });
+    input.addEventListener('input', e => { query = e.target.value; limit = ps(); render(); });
+    more.addEventListener('click', () => { limit += ps(); render(); });
+    less.addEventListener('click', () => { limit = ps(); render(); root.closest('.world').scrollIntoView({ block:'start' }); });
+    if (status) status.querySelector('.region-clear').addEventListener('click', () => { region = null; render(); });
+    if (root.dataset.map){
+      const det = document.getElementById(root.dataset.map), svg = det.querySelector('svg');
+      const wide = window.matchMedia('(min-width: 900px)');
+      const sync = () => { det.open = wide.matches; };
+      wide.addEventListener('change', sync); sync();
+      map = buildMap(svg, regions || [], id => {
+        root.setRegion(id);
+        if (!wide.matches){ det.open = false; root.scrollIntoView({ block:'start', behavior: reduced.matches ? 'auto' : 'smooth' }); }
+      });
+    }
     render();
   }
   document.querySelectorAll('[data-preset]').forEach(a => a.addEventListener('click', () => {
     const d = document.querySelector(a.dataset.target + ' .directory');
     if (d && d.setFilter) d.setFilter(a.dataset.preset);
   }));
+
+  /* potions fill once, the first time the systems world is reached */
+  const sysWorld = document.getElementById('systems');
+  const fillIO = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ sysWorld.classList.add('filled'); document.querySelector('.sys-panel:not([hidden])')?.classList.add('brew'); fillIO.disconnect(); }
+  }), { threshold: .35 });
+  fillIO.observe(sysWorld);
+
+  /* ---------------- d20 ---------------- */
+  const die = document.querySelector('.d20'), dieText = die.querySelector('text'), dieOut = document.getElementById('roll-out');
+  const d20 = () => { const a = new Uint32Array(1); crypto.getRandomValues(a); return a[0] % 20 + 1; };
+  const verdict = n => n === 20 ? `<b>20 טבעי!</b> הצלחה מסחררת. ככה נולדות אגדות.`
+    : n === 1 ? `<b>יצא 1.</b> כישלון מפואר, וגם זה חלק מהכיף.`
+    : `<b>יצא ${n}.</b> ${n >= 15 ? 'תוצאה מצוינת.' : n >= 8 ? 'לא רע בכלל.' : 'המנחה מחייך. זה לא סימן טוב.'} הטילו שוב?`;
+  let rolling = false;
+  die.addEventListener('click', () => {
+    if (rolling) return;
+    const final = d20();
+    const land = () => { dieText.textContent = final; die.classList.toggle('crit', final === 20); dieOut.innerHTML = verdict(final); rolling = false; };
+    if (reduced.matches) return land();
+    rolling = true; die.classList.remove('crit', 'spin'); void die.offsetWidth; die.classList.add('spin');
+    const flick = setInterval(() => { dieText.textContent = d20(); }, 70);
+    setTimeout(() => { clearInterval(flick); die.classList.remove('spin'); land(); }, 950);
+  });
+
+  /* ---------------- art slots ---------------- */
+  function loadArt(el){
+    const src = ART[el.dataset.art];
+    if (!src) return;
+    const img = new Image();
+    img.onload = () => {
+      if (el.tagName === 'FIGURE'){
+        img.alt = el.dataset.alt || ''; img.decoding = 'async';
+        el.appendChild(img); el.closest('.form')?.classList.add('has-photo');
+      } else {
+        el.style.setProperty('--m', `url("${src}")`);
+        el.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
+      }
+      el.hidden = false;
+      el.dispatchEvent(new Event('artready'));
+    };
+    img.src = src;
+  }
+  document.querySelectorAll('[data-art]').forEach(loadArt);
+
+  /* the dragon crosses its world as it scrolls past, right to left like the text */
+  const dragon = document.querySelector('.dragon'), dragonWorld = document.getElementById('find-group');
+  function flyDragon(){
+    if (dragon.hidden) return;
+    const r = dragonWorld.getBoundingClientRect(), vh = window.innerHeight;
+    if (r.bottom < 0 || r.top > vh) return;
+    const p = reduced.matches ? .5 : Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+    const dw = dragon.offsetWidth, W = r.width;
+    const x = dw * .9 - p * (W + dw * 1.3);
+    const y = Math.sin(p * Math.PI * 2) * 26;
+    const rot = Math.cos(p * Math.PI * 2) * 5;
+    dragon.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) rotate(${rot.toFixed(2)}deg)`;
+  }
+  window.addEventListener('scroll', () => requestAnimationFrame(flyDragon), { passive: true });
+  window.addEventListener('resize', flyDragon);
+  dragon.addEventListener('artready', flyDragon);
+
+  /* the astronaut drifts, tethered to the email address */
+  const astro = document.querySelector('.astronaut'), contact = document.getElementById('contact');
+  const tether = contact.querySelector('.tether'), tetherPath = tether.querySelector('path'), mail = contact.querySelector('.mail');
+  let astroOn = false, astroRAF = 0;
+  function drawTether(){
+    const c = contact.getBoundingClientRect(), a = astro.getBoundingClientRect(), m = mail.getBoundingClientRect();
+    const x1 = m.left - c.left, y1 = m.bottom - c.top, x2 = a.left + a.width / 2 - c.left, y2 = a.top + a.height * .55 - c.top;
+    const sag = Math.max(40, Math.abs(x1 - x2) * .22);
+    tetherPath.setAttribute('d', `M${x1} ${y1}Q${(x1 + x2) / 2} ${Math.max(y1, y2) + sag} ${x2} ${y2}`);
+  }
+  function drift(t){
+    astro.style.transform = `translate3d(0, ${(Math.sin(t / 2600) * 12).toFixed(1)}px, 0) rotate(${(Math.sin(t / 3400) * 7 - 4).toFixed(2)}deg)`;
+    drawTether();
+    if (astroOn) astroRAF = requestAnimationFrame(drift);
+  }
+  astro.addEventListener('artready', () => {
+    tether.removeAttribute('hidden');
+    tether.setAttribute('viewBox', `0 0 ${contact.offsetWidth} ${contact.offsetHeight}`);
+    drawTether();
+    new IntersectionObserver(es => es.forEach(e => {
+      astroOn = e.isIntersecting && !reduced.matches;
+      cancelAnimationFrame(astroRAF);
+      if (astroOn) astroRAF = requestAnimationFrame(drift);
+    })).observe(contact);
+    window.addEventListener('resize', () => { tether.setAttribute('viewBox', `0 0 ${contact.offsetWidth} ${contact.offsetHeight}`); drawTether(); });
+  });
 
   /* ---------------- next convention ---------------- */
   function renderCons(all){
