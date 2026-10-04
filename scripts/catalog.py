@@ -250,7 +250,8 @@ def build_item(root, it, items, data):
            if it.get("image") else "")
     fmt = "".join(f"<span>{FORMATS.get(f, f)}</span>" for f in it.get("formats") or [])
     checked = date_he(it.get("price_checked"))
-    price_line = (f'<p>המחיר נבדק ב-{checked} ועשוי להשתנות. המחיר הקובע הוא בחנות.</p>' if checked and it.get("price")
+    price_line = ('<p>המשחק חינמי, וההורדה ישירה.</p>' if free
+                  else f'<p>המחיר נבדק ב-{checked} ועשוי להשתנות. המחיר הקובע הוא בחנות.</p>' if checked and it.get("price")
                   else '<p>המחיר מופיע בחנות, ויכול להשתנות לפי פורמט.</p>')
     also = ""
     if it.get("also"):
@@ -288,7 +289,7 @@ def build_item(root, it, items, data):
         <div class="formats">{fmt}</div>
         {price_line}
         {also}
-        <div class="actions"><a class="btn btn-solid" href="{esc(buy_url)}" target="_blank" rel="{rel(buy_url)}">{"להורדה" if free else "לרכישה"} באתר החנות</a><span class="fine">החנות: {esc(it.get("store"))}</span></div>
+        <div class="actions"><a class="btn btn-solid" href="{esc(buy_url)}" target="_blank" rel="{rel(buy_url)}">{"להורדה חינם" if free else "לרכישה באתר החנות"}</a><span class="fine">{"ההורדה דרך" if free else "החנות"}: {esc(it.get("store"))}</span></div>
       </div>
       {note}
       {desc_html}

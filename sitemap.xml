@@ -610,4 +610,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.20</priority>
   </url>
+  <url>
+    <loc>https://gate.roleplay.top/catalog/item/independent-sochnim</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://gate.roleplay.top/catalog/item/independent-honey-heist</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
 </urlset>
