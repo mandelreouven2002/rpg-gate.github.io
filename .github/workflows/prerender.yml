@@ -1,0 +1,31 @@
+name: Prerender home page
+
+# Rebuilds the static lists, stat blocks and structured data in index.html
+# whenever data.json changes, and once a month so "the next convention" stays current.
+on:
+  push:
+    branches: [main]
+    paths: [data.json, index.html, search.html, articles/index.html, next-con.html, catalog/catalog.json, scripts/catalog.py, "static/articles/files/**", "articles/files/**", scripts/prerender.py]
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prerender:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install markdown
+      - run: python3 scripts/prerender.py
+      - name: Commit if changed
+        run: |
+          git config user.name "gate-prerender"
+          git config user.email "roleplay.top@outlook.co.il"
+          git add index.html search.html next-con.html quiz.html articles/ catalog/ sitemap.xml llms.txt llms-full.txt
+          git diff --cached --quiet || (git commit -m "prerender: refresh home page from data.json" && git push)

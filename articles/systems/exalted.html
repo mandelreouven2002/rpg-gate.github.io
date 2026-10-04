@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QF7TK0YDQP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QF7TK0YDQP');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>נשגבים (Exalted): מדריך לשיטה | שער להרפתקה</title>
+<meta name="description" content="ברוב משחקי התפקידים, אתם מתחילים כהרפתקנים פשוטים – איכרים עם חרב חלודה או שוליות קוסם, שמנסים לשרוד קרב מול קבוצת גובלינים. &quot;נשגבים&quot; הופכת את התפיסה הזו…">
+<meta name="theme-color" content="#9B1528">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://gate.roleplay.top/articles/systems/exalted">
+<link rel="alternate" hreflang="he" href="https://gate.roleplay.top/articles/systems/exalted">
+<link rel="alternate" hreflang="x-default" href="https://gate.roleplay.top/articles/systems/exalted">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="שער להרפתקה">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="נשגבים (Exalted): פנטזיה מיתית, עוצמה אלוהית והשלכות הרות גורל">
+<meta property="og:description" content="ברוב משחקי התפקידים, אתם מתחילים כהרפתקנים פשוטים – איכרים עם חרב חלודה או שוליות קוסם, שמנסים לשרוד קרב מול קבוצת גובלינים. &quot;נשגבים&quot; הופכת את התפיסה הזו…">
+<meta property="og:url" content="https://gate.roleplay.top/articles/systems/exalted">
+<meta property="og:image" content="https://gate.roleplay.top/static/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="שער להרפתקה: קשת אדומה שנפתחת אל נוף לילי עם ירח ומגדל">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="נשגבים (Exalted): פנטזיה מיתית, עוצמה אלוהית והשלכות הרות גורל">
+<meta name="twitter:description" content="ברוב משחקי התפקידים, אתם מתחילים כהרפתקנים פשוטים – איכרים עם חרב חלודה או שוליות קוסם, שמנסים לשרוד קרב מול קבוצת גובלינים. &quot;נשגבים&quot; הופכת את התפיסה הזו…">
+<meta name="twitter:image" content="https://gate.roleplay.top/static/og-image.png">
+<meta name="twitter:image:alt" content="שער להרפתקה: קשת אדומה שנפתחת אל נוף לילי עם ירח ומגדל">
+<link rel="icon" href="../../static/rpg-game.png" type="image/png">
+<link rel="apple-touch-icon" href="../../static/rpg-game.png">
+<link rel="alternate" type="text/markdown" title="Markdown" href="../files/exalted.md">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=Noto+Sans+Hebrew:wght@400;500;600;700&display=swap">
+<style>
+/* ==========================================================================
+   שער להרפתקה: עמודים פנימיים
+   The home page is the gate. Every page behind it is the map: parchment,
+   a hex grid, and one sheet of content laid on top of it.
+   ========================================================================== */
+:root{
+  --paper:#F5EFE5;
+  --paper-hi:#FFFCF7;
+  --paper-lo:#E6DAC4;
+  --ink:#2A1A10;
+  --ink-2:#5B4531;
+  --line:rgba(90,58,28,.24);
+  --red:#9B1528;
+  --red-deep:#620B18;
+  --blue:#0E2680;
+  --ink-blue:#1A2C6E;
+  --gold:#B8862B;
+  --gold-bright:#E9B44C;
+  --bone:#F7F0E6;
+  --display:'Karantina','Noto Sans Hebrew','Arial Hebrew','Segoe UI',sans-serif;
+  --body:'Noto Sans Hebrew','Arial Hebrew','Segoe UI',Tahoma,sans-serif;
+  --pad-x:clamp(1rem,4vw,3rem);
+  --topbar:4rem;
+  --ease:cubic-bezier(.16,1,.3,1);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topbar) + 1rem);background:var(--paper);color:var(--ink);scrollbar-color:var(--gold) var(--paper-lo);scrollbar-width:thin}
+body{
+  margin:0;min-height:100vh;display:flex;flex-direction:column;
+  font-family:var(--body);font-size:1.0625rem;line-height:1.7;color:var(--ink);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;caret-color:var(--red);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(ellipse 120% 90% at 50% 45%,transparent 60%,rgba(110,70,25,.2) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='93.53' height='162'%3E%3Cpath d='M46.77 0L93.53 27L93.53 81L46.77 108L0 81L0 27ZM46.77 108V162' fill='none' stroke='%235A3A1C' stroke-opacity='.17' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-attachment:fixed,scroll;
+}
+/* paper grain over everything, under the content */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;mix-blend-mode:multiply;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .32 0 0 0 0 .18 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* a compass rose in the corner of the map */
+body::after{
+  content:"";position:absolute;z-index:0;pointer-events:none;width:clamp(120px,14vw,190px);aspect-ratio:1;left:clamp(.5rem,2vw,2rem);top:calc(var(--topbar) + clamp(1rem,3vh,2rem));opacity:.4;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-60 -60 120 120'%3E%3Cg fill='none' stroke='%235A3A1C' stroke-width='1'%3E%3Ccircle r='40'/%3E%3Ccircle r='34' stroke-dasharray='2 4'/%3E%3Cpath d='M0-56L7-7L56 0L7 7L0 56L-7 7L-56 0L-7-7Z'/%3E%3Cpath d='M-28-28L-4 0L-28 28M28-28L4 0L28 28' stroke-opacity='.6'/%3E%3C/g%3E%3Cpath d='M0-56L7-7L0 0L-7-7Z' fill='%239B1528'/%3E%3Ctext y='-44' x='0' text-anchor='middle' font-family='sans-serif' font-size='9' font-weight='700' fill='%235A3A1C' transform='translate(0 -18)'%3E%D7%A6%3C/text%3E%3C/svg%3E") no-repeat center/contain;
+}
+::selection{background:var(--red);color:var(--bone)}
+img{max-width:100%;height:auto}
+[hidden]{display:none!important}
+a{color:var(--red);text-underline-offset:.22em;text-decoration-thickness:1px}
+a:hover{color:var(--red-deep)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;top:.5rem;right:.5rem;z-index:100;background:var(--bone);color:var(--red-deep);padding:.5rem 1rem;font-weight:700;transform:translateY(-200%)}
+.skip:focus{transform:none}
+.display{font-family:var(--display);font-weight:700;line-height:.9;letter-spacing:.005em}
+
+/* ---------- top bar: the same red as the gate ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:var(--red);color:var(--bone);padding-top:env(safe-area-inset-top,0px);box-shadow:0 6px 18px -12px rgba(40,10,0,.6)}
+.topbar-inner{height:var(--topbar);max-width:1240px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-inline:var(--pad-x)}
+.brand{display:flex;align-items:center;gap:.6rem;color:inherit;text-decoration:none;font-family:var(--display);font-weight:700;font-size:2rem;line-height:1}
+.brand:hover{color:inherit}
+.brand svg{width:18px;height:26px;flex:none}
+.topnav{display:flex;align-items:center;gap:clamp(.75rem,2vw,1.75rem)}
+.topnav a{color:var(--bone);text-decoration:none;font-weight:600;font-size:.98rem;padding:.35rem 0;border-bottom:1px solid transparent}
+.topnav a:hover{color:var(--bone);border-bottom-color:currentColor}
+.topnav a[aria-current="page"]{border-bottom-color:var(--gold-bright)}
+/* rule: on red or blue, the primary action is gold; on parchment it is red */
+.menu{position:relative;display:none}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:.4rem .9rem;border:1px solid rgba(247,240,230,.55);border-radius:999px}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--bone);color:var(--red-deep)}
+.menu ol{position:absolute;left:0;top:calc(100% + .6rem);margin:0;padding:.5rem;list-style:none;min-width:13rem;background:var(--paper-hi);border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px -16px rgba(60,35,10,.6)}
+.menu li a{display:block;padding:.55rem .8rem;color:var(--ink);text-decoration:none;border-radius:8px}
+.menu li a:hover{background:rgba(155,21,40,.08)}
+@media (max-width:1120px){.topnav{display:none}.menu{display:block}}
+@media (max-width:860px){:root{--topbar:3.6rem}}
+
+/* ---------- the one sheet of content ---------- */
+main{position:relative;z-index:1;flex:1;padding:clamp(1.5rem,5vh,3.5rem) var(--pad-x) clamp(2.5rem,7vh,4.5rem)}
+.sheet{
+  position:relative;max-width:860px;margin-inline:auto;
+  background:var(--paper-hi);
+  padding:clamp(1.5rem,5vw,3.75rem) clamp(1.25rem,5vw,4rem);
+  border-radius:10px;
+  border:1px solid rgba(90,58,28,.1);
+  box-shadow:0 1px 2px rgba(60,35,10,.08),0 24px 56px -30px rgba(60,35,10,.4);
+}
+.sheet.wide{max-width:1240px}
+
+/* ---------- typography inside the sheet ---------- */
+.crumbs{display:flex;flex-wrap:wrap;gap:.3rem .5rem;margin:0 0 1.4rem;font-size:.9rem;color:var(--ink-2)}
+.crumbs a{color:var(--ink-2);text-decoration:none}
+.crumbs a:hover{color:var(--red);text-decoration:underline}
+.crumbs span[aria-hidden]{opacity:.6}
+.tag{display:inline-block;font-size:.85rem;font-weight:700;padding:.12rem .7rem;border-radius:999px;background:rgba(155,21,40,.1);color:var(--red-deep);margin-bottom:.8rem}
+.sheet h1{font-family:var(--display);font-weight:700;line-height:.95;font-size:clamp(2.8rem,6.5vw,4.4rem);color:var(--red-deep);margin:0 0 1rem;text-wrap:balance}
+.sheet h2{font-family:var(--display);font-weight:700;line-height:1.02;font-size:clamp(1.9rem,3.6vw,2.5rem);color:var(--ink-blue);margin:2.4rem 0 .8rem;text-wrap:balance}
+.sheet h3{font-weight:700;font-size:1.2rem;line-height:1.4;margin:1.8rem 0 .5rem;color:var(--ink)}
+.sheet p{margin:0 0 1.15em;font-size:1.1rem;line-height:1.85;max-width:68ch}
+.sheet .lede{font-size:clamp(1.12rem,1.5vw,1.28rem);color:var(--ink-2)}
+.sheet ul:not([class]),.sheet ol:not([class]){margin:0 0 1.3em;padding-right:1.4rem;max-width:66ch}
+.sheet :is(ul,ol):not([class]) > li{margin-bottom:.5rem;line-height:1.75;font-size:1.08rem}
+.sheet ul:not([class]) > li::marker{color:var(--gold)}
+.sheet ol:not([class]) > li::marker{color:var(--red);font-weight:700}
+.sheet strong{color:var(--ink)}
+.sheet hr{border:0;height:1px;background:var(--line);margin:2.5rem 0}
+.sheet blockquote{margin:1.5rem 0;padding:1rem 1.2rem;background:rgba(233,180,76,.14);border-radius:8px;color:var(--ink-2)}
+.sheet table{width:100%;border-collapse:collapse;margin:1.2rem 0 1.6rem;font-size:1rem}
+.sheet th,.sheet td{text-align:right;padding:.55rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+.sheet th{color:var(--ink-blue)}
+.sheet code{font-size:.92em;background:rgba(90,58,28,.08);padding:.05rem .35rem;border-radius:4px}
+.note{background:rgba(233,180,76,.16);border:1px solid rgba(184,134,43,.35);border-radius:10px;padding:.8rem 1rem;margin:0 0 1.6rem;font-size:.97rem;color:var(--ink-2)}
+.note p{margin:0;font-size:inherit;line-height:1.6}
+.table-wrap{overflow-x:auto}
+
+/* the red box at the end of every article: back to the gate */
+.gate-box{margin-top:3rem;background:var(--red);color:var(--bone);border-radius:12px;padding:clamp(1.3rem,3vw,2rem);box-shadow:0 18px 40px -24px rgba(98,11,24,.8)}
+.gate-box h2,.gate-box h3{font-weight:700;font-size:clamp(1.25rem,2vw,1.5rem);line-height:1.35;color:var(--bone);margin:0 0 .6rem}
+.gate-box p,.gate-box li{color:var(--bone);font-size:1.02rem;max-width:none}
+.gate-box ul{padding-right:1.2rem;margin-bottom:1rem}
+.sheet .gate-box ul > li::marker{color:var(--gold-bright)}
+.gate-box a{color:var(--bone)}
+.gate-box a.btn-gold{color:var(--ink)}
+
+/* ---------- actions ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:2.9rem;padding:.65rem 1.5rem;font:inherit;font-weight:700;font-size:1rem;line-height:1.2;text-decoration:none;cursor:pointer;border:0;border-radius:8px;transition:background-color .2s,color .2s,transform .2s var(--ease)}
+.btn:active{transform:translateY(1px)}
+.btn-solid{background:var(--red);color:var(--bone)}
+.btn-solid:hover{background:var(--red-deep);color:var(--bone)}
+.btn-gold{background:var(--gold-bright);color:var(--ink)}
+.btn-gold:hover{background:#F5CB6E;color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ghost:hover{background:rgba(42,26,16,.07);color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem 1rem;align-items:center}
+
+/* ---------- lists of links (article index, system cards) ---------- */
+.cards{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;max-width:none}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.cards li{margin:0}
+.card{display:flex;flex-direction:column;gap:.35rem;height:100%;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:10px;background:#FBF6EE;color:var(--ink);text-decoration:none;transition:border-color .2s,background-color .2s,transform .2s var(--ease)}
+.card:hover{border-color:var(--red);background:#FFFFFF;color:var(--ink);transform:translateY(-2px)}
+.card .tag{align-self:flex-start;margin:0 0 .2rem}
+.card-title{font-weight:700;font-size:1.15rem;line-height:1.4;color:var(--red-deep)}
+.sheet .card-text{font-size:.98rem;line-height:1.6;color:var(--ink-2);margin:0;flex:1;max-width:none}
+.card-more{font-weight:700;color:var(--red);font-size:.95rem}
+.section-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem}
+
+
+/* the original shield-and-sword icon */
+.brand-logo{width:38px;height:38px;flex:none;object-fit:contain}
+.foot-id{display:flex;align-items:center;gap:.9rem;line-height:1.7}
+.foot-id p{line-height:1.7}
+.foot-logo{flex:none;width:3.4em;height:3.4em;object-fit:contain}
+
+/* ---------- footer: red, like the top bar, so the parchment sits between two bands ---------- */
+.site-foot{position:relative;z-index:1;background:var(--red);color:var(--bone);padding:1.6rem var(--pad-x) calc(1.6rem + env(safe-area-inset-bottom,0px));margin-top:auto}
+.footer{max-width:1240px;margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem 3rem;align-items:center;font-size:.95rem;color:var(--rose,#F6C6BB)}
+.footer p{margin:0;color:#F6C6BB}
+.footer strong{color:var(--bone)}
+.footer a{color:var(--bone)}
+.footer a:hover{color:var(--gold-bright)}
+.footer nav{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem}
+.footer nav a{font-weight:600;color:var(--bone)}
+.site-foot :focus-visible{outline-color:var(--gold-bright)}
+@media (max-width:760px){.footer{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+@media print{
+  body{background:#fff}body::before,body::after,.topbar,.site-foot,.gate-box{display:none}
+  .sheet{box-shadow:none;padding:0;max-width:none}
+}
+
+
+/* the updates sign-up, a small call to action at the end of the menu */
+.topnav a,.brand{white-space:nowrap}
+.topnav a.nav-cta{padding:.3rem .85rem;border:1.5px solid var(--gold,#E9B44C);border-radius:999px}
+.topnav a.nav-cta:hover{background:rgba(233,180,76,.15);border-bottom-color:var(--gold,#E9B44C)}
+.topnav a.nav-cta[aria-current="page"]{background:var(--gold,#E9B44C);color:#2B0710}
+
+/* footer links: two short rows, each flowing naturally from the right */
+footer.footer nav{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem}
+footer.footer .foot-row{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:.4rem 1.4rem}
+</style>
+<style>
+.sheet .table-wrap{overflow-x:auto;margin:1.2rem 0 1.6rem}
+.sheet .table-wrap table{margin:0}
+.more-systems{margin-top:2.5rem}
+.more-systems h2{margin-top:0}
+.sheet .more-list{list-style:none;margin:0;padding:0;max-width:none;columns:2;column-gap:2rem}
+.sheet .more-list li{break-inside:avoid;margin:0;padding:.45rem 0;border-bottom:1px solid var(--line);font-size:1rem;line-height:1.45}
+.sheet .more-list a{text-decoration:none;font-weight:600}
+.sheet .more-list a:hover{text-decoration:underline}
+@media (max-width:620px){.sheet .more-list{columns:1}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://gate.roleplay.top/articles/systems/exalted#article",
+   "headline": "נשגבים (Exalted): פנטזיה מיתית, עוצמה אלוהית והשלכות הרות גורל",
+   "description": "ברוב משחקי התפקידים, אתם מתחילים כהרפתקנים פשוטים – איכרים עם חרב חלודה או שוליות קוסם, שמנסים לשרוד קרב מול קבוצת גובלינים. \"נשגבים\" הופכת את התפיסה הזו…",
+   "inLanguage": "he-IL",
+   "url": "https://gate.roleplay.top/articles/systems/exalted",
+   "mainEntityOfPage": "https://gate.roleplay.top/articles/systems/exalted",
+   "image": "https://gate.roleplay.top/static/og-image.png",
+   "about": {
+    "@type": "Game",
+    "name": "נשגבים (Exalted): פנטזיה מיתית, עוצמה אלוהית והשלכות הרות גורל"
+   },
+   "isPartOf": {
+    "@id": "https://gate.roleplay.top/#website"
+   },
+   "author": {
+    "@id": "https://gate.roleplay.top/#organization"
+   },
+   "publisher": {
+    "@id": "https://gate.roleplay.top/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "בית",
+     "item": "https://gate.roleplay.top/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "מאמרים",
+     "item": "https://gate.roleplay.top/articles/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "נשגבים",
+     "item": "https://gate.roleplay.top/articles/systems/exalted"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../" aria-label="שער להרפתקה, דף הבית">
+      <img class="brand-logo" src="../../static/rpg-game.png" alt="" width="36" height="36">
+      שער להרפתקה
+    </a>
+    <nav class="topnav" aria-label="ניווט ראשי">
+      <a href="../../">בית</a>
+      <a href="../../search">חיפוש</a>
+      <a href="../../articles/" aria-current="page">מאמרים</a>
+      <a href="../../catalog/">קטלוג</a>
+      <a href="../../quiz">שאלון התאמה</a>
+      <a href="../../next-con">מתי הכנס הבא?</a>
+      <a class="nav-cta" href="../../updates">הרשמה לעדכונים</a>
+    </nav>
+    <details class="menu">
+      <summary>תפריט</summary>
+      <ol>
+        <li><a href="../../">בית</a></li>
+        <li><a href="../../search">חיפוש</a></li>
+        <li><a href="../../articles/" aria-current="page">מאמרים</a></li>
+        <li><a href="../../catalog/">קטלוג</a></li>
+        <li><a href="../../quiz">שאלון התאמה</a></li>
+        <li><a href="../../next-con">מתי הכנס הבא?</a></li>
+        <li><a href="../../updates">הרשמה לעדכונים</a></li>
+      </ol>
+    </details>
+  </div>
+</header>
+<main id="content">
+<article class="sheet">
+  <nav class="crumbs" aria-label="מיקום באתר"><a href="../../">בית</a><span aria-hidden="true">/</span><a href="../">מאמרים</a><span aria-hidden="true">/</span><span aria-current="page">נשגבים</span></nav>
+  <header>
+    <span class="tag">שיטת משחק</span>
+    <h1>נשגבים (Exalted): פנטזיה מיתית, עוצמה אלוהית והשלכות הרות גורל</h1>
+    <div class="note"><p>המאמרים על השיטות נכתבו על ידי בינה מלאכותית.</p></div>
+  </header>
+  <h2>תעודת זהות</h2>
+<ul>
+<li><strong>שם:</strong> נשגבים (Exalted)</li>
+<li><strong>יוצרים / חברה:</strong> פותח במקור על ידי חברת "הזאב הלבן" (White Wolf) וכיום מנוהל על ידי "נתיב השוהם" (Onyx Path Publishing).</li>
+<li><strong>שנת יציאה:</strong> מהדורה ראשונה ב-2001. המהדורה השלישית (והעדכנית ביותר) יצאה ב-2016.</li>
+<li><strong>ז׳אנר:</strong> פנטזיה מיתית ואפית. שילוב ייחודי בין מיתולוגיות עתיקות (יוונית, בבלית, סינית), ספרות פנטזיה גבוהה, סרטי אמנויות לחימה (Wuxia) ואנימה.</li>
+<li><strong>סגנון משחק:</strong> קולנועי, פילוסופי ועתיר עוצמה. הדמויות מתחילות כחצאי-אלים המשנים את פני העולם, אך נאלצות להתמודד עם המשקל המוסרי של כוחן.</li>
+<li><strong>רמת מורכבות:</strong> גבוהה מאוד עד קיצונית. זוהי שיטה כבדה, עמוסה בחוקים פרטניים, עצי-יכולות מורכבים וקרבות טקטיים שדורשים היכרות מעמיקה עם המערכת.</li>
+<li><strong>מה צריך כדי להתחיל:</strong> ספר החוקים הבסיסי, דפי דמות, וכמות גדולה מאוד של קוביות בעלות עשר פאות (ק10). בקבוצות מסוימות, שחקן עשוי להזדקק ל-20 או אפילו 30 קוביות כאלו לגלגול בודד.</li>
+</ul>
+<h2>על השיטה בקצרה</h2>
+<p>ברוב משחקי התפקידים, אתם מתחילים כהרפתקנים פשוטים – איכרים עם חרב חלודה או שוליות קוסם, שמנסים לשרוד קרב מול קבוצת גובלינים. "נשגבים" הופכת את התפיסה הזו על ראשה. כבר מהרגע הראשון של המשחק, הדמות שלכם היא אחת מהישויות החזקות ביותר בבריאה. אתם נבחרי האלים: גיבורים המסוגלים לזנק מעל חומות של ערים, להביס צבאות שלמים בהינף חרב, ולשכנע אלים ומלכים למסור לידיכם את ממלכותיהם.</p>
+<p>המשחק אינו שואל "האם תוכלו להביס את הדרקון?" אלא שואל: "אחרי שהבסתם את הדרקון וכבשתם את האימפריה – איזה מין עולם תיצרו?". זוהי שיטה העוסקת בכוח והשלכותיו. העולם של "נשגבים" הוא עולם שבור ועתיק, המלא בשרידים של עידן ראשון ומפואר שחרב בגלל גאוותם (היבריס) של אלו ששלטו בו. כעת, כוחכם העצום חזר לעולם, ועליכם לנווט בסבך פוליטי, קסום ומוסרי, בידיעה שאתם מסוגלים לתקן את הבריאה כולה – או להביא לחורבנה הסופי.</p>
+<h2>היסטוריה</h2>
+<p>כדי להבין את "נשגבים", צריך לחזור אל תחילת שנות האלפיים. חברת "הזאב הלבן" שלטה אז בתעשייה בזכות עולם אימתני ואפל שנקרא "עולם האפלה" (World of Darkness), שכלל משחקים כמו "ערפד: הנשף" ו"איש-זאב: האפוקליפסה". המשחקים הללו היו קודרים, טרגיים והתמקדו במפלצות מודרניות.</p>
+<p>אולם, בשנת 2001 החברה החליטה לשבור כיוון לחלוטין. היא רצתה ליצור עולם פנטזיה גבוה וצבעוני שיהווה, כביכול, את ההיסטוריה הפרה-היסטורית והמיתית של "עולם האפלה". התוצאה הייתה "נשגבים". במהרה, המשחק צבר פופולריות עצומה והתנתק לחלוטין מהקשר לערפדים מודרניים, והפך ליקום בפני עצמו. השחקנים התאהבו בעולם העשיר (שנקרא בפשטות "הבריאה" - Creation), המעוצב כארץ שטוחה ועצומה המוקפת באלמנטים בראשיתיים של פרא טהור.</p>
+<p>המהדורה השנייה (2006) הרחיבה את העולם וסיפקה חוקים מורכבים יותר, אך סבלה מבעיות איזון מתמטיות קשות. לקראת העשור השני של המאה ה-21, הפרויקט עבר לחברת Onyx Path, אשר השיקה קמפיין מימון המונים למהדורה השלישית. הקמפיין שבר שיאים באותה תקופה, אך הפיתוח ארך שנים ארוכות בשל הניסיון לבנות מנוע חוקים שיתמוך בעוצמה הבלתי נתפסת של הדמויות, מבלי לקרוס תחת כובד המתמטיקה. המהדורה השלישית שיצאה לבסוף ב-2016 היא יצירת מופת של בניית עולם, לצד מערכת חוקים תובענית ומורכבת ביותר.</p>
+<h2>איך השיטה עובדת</h2>
+<p>"נשגבים" משתמשת בווריאציה מתקדמת ועמוסה של מערכת "מספר הסיפור" (Storyteller System), המבוססת על מאגרי קוביות גדולים.</p>
+<h3>מנגנון הליבה: מאגר קוביות ק10 והצלחות</h3>
+<p>כאשר דמות מנסה לבצע פעולה, השחקן מחבר את הערך של התכונה הרלוונטית (למשל, "זריזות") עם המיומנות הרלוונטית (למשל, "קפא"פ" - קרב פנים אל פנים). הסכום הזה קובע כמה קוביות בנות עשר פאות (ק10) השחקן יגלגל.</p>
+<p>לא מחברים את התוצאות יחד. במקום זאת, סופרים <strong>הצלחות</strong>. כל קובייה שמראה תוצאה של 7, 8 או 9 נחשבת להצלחה אחת. קובייה שמראה את התוצאה 10 נחשבת ל<strong>שתי הצלחות</strong>. השחקן משווה את מספר ההצלחות ל"דירוג הקושי" של הפעולה שהציב מנחה המשחק. הצלחה עודפת מעבר לדירוג הקושי משפרת את התוצאה ומוסיפה נזק או השפעות עלילתיות. מכיוון שהדמויות חזקות מאוד, לא נדיר לגלגל מאגר של 15 או 20 קוביות בבת אחת ולגרוף כמויות אדירות של הצלחות.</p>
+<h3>יצירת דמות: קאסטות ומוטיבציה</h3>
+<p>השחקנים מגלמים לרוב את "נשגבי השמש" (Solar Exalted) – הגיבורים העוצמתיים ביותר בבריאה, שנבחרו על ידי השמש הבלתי-מנוצחת עצמו כדי להוביל את העולם. יצירת הדמות מחולקת ל"כתות" או "קאסטות" (Castes), המגדירות את תפקיד הגיבור:</p>
+<ul>
+<li><strong>שחר (Dawn):</strong> אדוני המלחמה והקרב. אלופי צבאות בלתי מנוצחים.</li>
+<li><strong>זניט (Zenith):</strong> כוהנים-מלכים, מנהיגים רוחניים ונואמים שיכולים לכופף המונים לדבריהם.</li>
+<li><strong>דמדומים (Twilight):</strong> מלומדים, מכשפים, רופאים ומהנדסים, החוקרים את סודות היקום ואת קסמי העבר.</li>
+<li><strong>לילה (Night):</strong> מתנקשים, מרגלים וגנבים בעלי יכולות התגנבות על-טבעיות.</li>
+<li><strong>ליקוי חמה (Eclipse):</strong> דיפלומטים, סוחרים ואמני משא ומתן, המסוגלים לחתום חוזים המגובים בכוח השמיים ואפילו ללמוד קסמים של יצורים אחרים.</li>
+</ul>
+<p>מעבר לסטטיסטיקה, כל דמות בוחרת "מוטיבציות" עמוקות וקשרים אישיים (Intimacies). אלו אמונות או אנשים שהדמות מוכנה למות למענם. הקשרים הללו אינם רק רקע עלילתי – הם בעלי משקל מכני קריטי, כפי שנסביר במערכת החברתית.</p>
+<h3>מה עושים בפועל במשחק: קרב אפי ושוחק</h3>
+<p>מערכת הקרב במהדורה השלישית היא חידוש מבריק ומורכב במיוחד. היא נועדה לדמות קרבות של אמנויות לחימה וסרטי פעולה, שבהם יריבים מסתובבים זה סביב זה, מנחיתים מכות מהירות כדי לצבור יתרון, ורק לבסוף משספים למכת מוות.
+הקרב מחולק לשני סוגי התקפות:</p>
+<ol>
+<li><strong>התקפות שוחקות (Withering Attacks):</strong> התקפות אלו אינן פוצעות את היריב באמת. במקום זאת, הן "גונבות" ממנו נקודות יוזמה (Initiative) ומעבירות אותן לתוקף. זה מדמה את אובדן שיווי המשקל, העייפות, והשגת היתרון הטקטי בקרב.</li>
+<li><strong>התקפות מכריעות (Decisive Attacks):</strong> כאשר השחקן מרגיש שצבר מספיק יוזמה, הוא יכול "לפרוק" אותה להתקפה מכריעה. בהתקפה זו הוא מגלגל קוביות נזק השוות למספר נקודות היוזמה שצבר, וזהו הנזק הפיזי והאמיתי שייגרם ליריב. לאחר התקפה כזו, היוזמה של השחקן צונחת חזרה, והקרב מתחיל מחדש.</li>
+</ol>
+<p>המערכת הזו יוצרת קצב (Pacing) נהדר של עליות ומורדות, שבו שני חצאי-אלים מחליפים עשרות מהלומות בקרב חרבות על גבי גשר בוער, עד שאחד מהם מבחין בפרצה בהגנה של השני וחותך אותו לשניים.</p>
+<h3>מנוע הפעלולים (Stunts)</h3>
+<p>זהו אולי המאפיין המזוהה והאהוב ביותר בשיטה. המשחק לא מסתפק בגלגול קוביות יבש. אם שחקן אומר "אני מכה בו בחרב", הוא מגלגל כרגיל. אבל, אם הוא מתאר תיאור עשיר, דרמטי ומלא אקשן – המערכת מתגמלת אותו חזרה.</p>
+<ul>
+<li><strong>פעלול דרגה 1:</strong> תיאור בסיסי (למשל: "אני בועט בשולחן לעברו, קופץ מעליו ומנחית עליו את הפטיש"). מעניק קוביות נוספות למאגר ומחזיר מעט אנרגיה קסומה.</li>
+<li><strong>פעלול דרגה 2:</strong> שימוש יצירתי בסביבה תוך תיאור מרשים מאוד. מעניק יותר קוביות, ולפעמים הצלחה אוטומטית, לצד החזרת אנרגיה רבה יותר.</li>
+<li><strong>פעלול דרגה 3:</strong> נדיר מאוד. זהו תיאור עוצר נשימה שגורם לכל יושבי השולחן להריע או שמשלב אלמנטים מרכזיים מהעלילה הפילוסופית של הדמות. מעניק בונוסים עצומים.</li>
+</ul>
+<p>המנגנון הזה "מאלץ" שחקנים להיות יצירתיים, פיוטיים וסינמטיים, כי המשחק עצמו מחזיר להם משאבים קריטיים על מאמץ נרטיבי.</p>
+<h3>תעצומות (Charms) והמהות (Essence)</h3>
+<p>כל דמות משתמשת במשאב קסום הנקרא "מהות" (Essence) כדי להפעיל יכולות קסומות הנקראות "תעצומות" (Charms). בניגוד למערכות לחשים רגילות שבהן קוסם יורה כדור אש, תעצומות ב"נשגבים" הן לרוב העצמה של יכולות קיימות לדרגת אל.
+למשל, במקום פשוט לדעת להתחמק, נשגב שמש יכול להפעיל תעצומה של "התחמקות מושלמת" (Perfect Dodge) שתחמוק גם מהר שמאיים ליפול עליו. נשגב המתמחה בבירוקרטיה יכול להפעיל תעצומה שתשתק כלכלה של אימפריה שלמה על ידי יצירת כאוס במסמכים שלה.</p>
+<p>ספר החוקים מכיל מאות תעצומות המחולקות לעצים מסועפים, וללמוד אותן דורש זמן והשקעה. השחקנים יכולים לחבר מספר תעצומות יחד ליצירת פסיעות (Combos) קטלניות בקרב או בדיפלומטיה.</p>
+<h3>הקרב החברתי: משקלן של אמונות</h3>
+<p>בעוד שבמשחקים אחרים מספיק לגלגל גבוה במיומנות "שכנוע" כדי לשנות דעתו של מלך, "נשגבים" מציגה מערכת חברתית עמוקה הנשענת על "קשרים וזיקות" (Intimacies). כדי לשכנע דמות לעשות משהו מהותי, חובה למנף את הדברים שהיא מאמינה בהם או אוהבת אותם. אי אפשר לשכנע גנרל חסר רחמים לוותר על התקפה רק בעזרת מילים יפות – אך אם השחקן מגלה שהגנרל אוהב את בתו בסתר (קשר מסוג אהבה), הוא יכול להשתמש בקשר הזה כדי לבסס את הטיעון שלו. זה הופך כל שיחה להליך בלשי של חשיפת חולשות ומינוף אמונות.</p>
+<h3>הקללה הגדולה ושבירת הגבול (Limit Break)</h3>
+<p>העוצמה של הנשגבים אינה מגיעה ללא מחיר. לפני אלפי שנים, כשהנשגבים הביסו את הטיטאנים שיצרו את העולם (הקדמונים), הטיטאנים הגוססים הטילו על גיבורי השמש קללה. הקללה הזו אינה גלויה, אך היא שוחקת אט אט את שפיותם של הנשגבים.
+כאשר הדמות שלכם חווה תסכול, סובלת, או פועלת בניגוד לאמונותיה העמוקות, היא צוברת נקודות "גבול" (Limit). כשהמד הזה מתמלא, הדמות חווה "שבירת גבול" – התפרצות של חוסר שליטה אלוהי ופראי. השחקן, במודע, נאלץ לשחק פגם אישיותי בצורה קיצונית: למשל, פלדין שאחוז בזעם קדוש טהור מדי ומתחיל להוציא להורג עוברי אורח על פשעים זעירים, או גיבור מופנם ששוקע לדיכאון משתק בעוד צבאות האויב מתקרבים. הקללה הזו היא הטרגדיה היוונית בלב המשחק; היא המזכירה לשחקנים שכוח מוחלט משחית בהכרח.</p>
+<h3>תפקיד המנחה</h3>
+<p>מנחה המשחק (המוגדר כאן כ"מספר הסיפור" - Storyteller) עומד בפני אתגר עצום. עליו לאזן בין תחושת העוצמה של השחקנים, שמועכים אויבים רגילים ללא מאמץ, לבין יצירת איומים ראויים ברמתם – אלים זועמים, שדי תופת, או קבוצות של נשגבים מתחרים (כמו "דמי הדרקון" ששולטים כיום באימפריה, או "נשגבי השאול" המשרתים את שרי המוות). על המנחה לנהל מערכה בקנה מידה של יבשות ולהגיב לשינויים מרחיקי לכת שהשחקנים יוזמים, לעיתים ברמת פגישה בודדת.</p>
+<h2>מה השיטה מעודדת</h2>
+<p>"נשגבים" מעודדת שאיפות גרנדיוזיות ופעולה בקנה מידה גלובלי. היא לא נועדה לשחקנים שרוצים לנקות חדרים של גובלינים בזה אחר זה. היא מיועדת לשחקנים שרוצים להכריז: "אני מקים דת חדשה במזרח, שוכר צבא של רוחות רפאים ומתכנן לכבוש את אי הברקת כדי לבנות עליו אוטופיה צפה". המערכת מתגמלת (דרך פעלולים) תיאורים נועזים, דרמטיים ומלאי פאתוס, תוך שהיא מאלצת את השחקנים, דרך הקללה הגדולה, להתעמת עם שאלות של מוסר, יהירות ואחריות.</p>
+<h2>יתרונות וחסרונות</h2>
+<h3>יתרונות</h3>
+<ul>
+<li><strong>עולם מערכה יחיד במינו:</strong> העושר העלילתי של הבריאה הוא יוצא דופן. המיזוג בין תרבויות המזרח, הומרוס, ופנטזיה אפית מייצר רקע תרבותי וגיאוגרפי ששום שיטה אחרת לא מתקרבת אליו.</li>
+<li><strong>פנטזיית עוצמה מוחלטת:</strong> לשחק חצי-אל מהרגע הראשון זה דבר משחרר ומרגש. השחקן מרגיש שכל פעולה שלו משנה את מהלך ההיסטוריה.</li>
+<li><strong>מנוע הפעלולים (Stunts):</strong> המכניקה שמתגמלת תיאורים קולנועיים משנה לחלוטין את הדינמיקה סביב השולחן ומונעת מהקרב להפוך לרצף משעמם של מספרים.</li>
+</ul>
+<h3>חסרונות</h3>
+<ul>
+<li><strong>סרבול ומורכבות קיצונית (Crunch):</strong> המערכת כבדה מאוד. ניהול של קרב בין דמויות רבות עם מאות תעצומות שונות, זיכרון ההשפעות של כל תעצומה ומעקב אחר היוזמה המשתנה, עלולים להוביל להאטה משמעותית במשחק (Analysis Paralysis).</li>
+<li><strong>עקומת למידה תלולה:</strong> לשחקן חדש לוקח זמן רב מאוד רק כדי לבנות דמות, להבין כיצד פועלות התעצומות שלו ולתכנן את מסלול ההתקדמות שלה.</li>
+<li><strong>אתגר בלתי נתפס למנחה:</strong> להכין משחק של נשגבים דורש שליטה באלפי חוקים קטנים ויכולת אדירה לאלתר, מכיוון שהשחקנים חזקים מספיק כדי לרסק כל עלילה מתוכננת מראש בשנייה אחת.</li>
+</ul>
+<h2>השפעת השיטה</h2>
+<p>כש"נשגבים" יצאה לאור, היא היוותה מעין רעידת אדמה סגנונית. בעוד שמשחקי הפנטזיה באותה תקופה נטו או לפנטזיה טולקינאית שמרנית או לפנטזיה קודרת ומדממת (Grimdark), "נשגבים" הציעה אסקפיזם צבעוני, מהיר, המושפע מאוד מתרבות המנגה והאנימה שהחלה לחדור למערב באותן שנים.</p>
+<p>השפעתה הגדולה ביותר על עיצוב המשחקים המודרני הייתה בהוכחה שאפשר לבנות מערכת שלמה שמתגמלת מבחינה מתמטית התנהגות עלילתית ודרמטית (דרך הפעלולים). שיטות רבות שלקחו את הרעיון שבו ככל שתתאר טוב יותר כך תצליח יותר, חייבות את ההשראה המקורית שלהן למנוע של משחק זה. עד היום, למרות מורכבותה, יש לה קהילת מעריצים מסורה ואדוקה ברחבי העולם ובקהילות מקומיות של חובבי פנטזיה כבדה וסרטי פעולה, אשר רואים בה את פסגת היצירה של קמפיינים המוניים ואפיים.</p>
+<p>לאחרונה, בניסיון להנגיש את העולם המופלא הזה לקהל רחב יותר, יצאה מהדורה מקוצרת וקלילה יותר הנקראת "נשגבים: תמצית" (Exalted Essence), שמפשטת את החוקים המכניים אך משמרת את החוויה האלוהית.</p>
+<h2>למי השיטה מתאימה</h2>
+<ul>
+<li><strong>מתאימה ל:</strong> קבוצות ושחקנים ותיקים שאינם חוששים מקריאה מרובה של חוקים ומתמטיקה מורכבת (Crunchy systems). חובבי בניית דמויות אופטימליות, מציאת שילובים מנצחים באילנות של יכולות קסומות. שחקנים המאוהבים באנימה, סרטי קונג פו מיתיים ופילוסופיה של כוח ואחריות. וכמובן, למי שאוהב לזרוק חופן עצום של עשרים קוביות ולראות אותן מתגלגלות על השולחן בבת אחת.</li>
+<li><strong>פחות מתאימה ל:</strong> שחקנים מתחילים מאוד, או כאלו המחפשים משחק קליל של "נפגשים, יורדים למבוך, צוחקים וחוזרים הביתה". לאנשים שמעדיפים חוקים מינימליים שלא מפריעים לזרימת הסיפור. לקבוצות שמחפשות סיפור מסע איטי שבו הדמויות צומחות מאפס וההישרדות היומיומית היא המוקד העיקרי. פה אינכם שורדים את העולם – אתם מעצבים אותו.</li>
+</ul>
+<h2>סיכום</h2>
+<p>"נשגבים" היא יצירה כבירה, יפהפייה, מסובכת ומרהיבה. כמו הגיבורים שאותם משחקים, גם המערכת עצמה סובלת לעיתים מעודף שאפתנות ומגודל בלתי נתפס שעלול לקרוס תחת משקלו. יחד עם זאת, כאשר הכל מתחבר נכון סביב השולחן – כאשר שחקן מנצל את האמונות העמוקות של יריבו, מפעיל תעצומות שהופכות אותו לקרן אור מסנוורת, ומתאר כיצד הוא חוצה הר לשניים בעזרת חרב ענקית העשויה מזהב קסום – החוויה היא פשוט חסרת תחליף.</p>
+<p>זוהי שיטה שלא מבקשת מכם רק לדמיין; היא דורשת מכם לחלום בגדול. אם מיציתם את העולמות הקטנים, את ספירת מנות הקרב ואת ההתגנבות מאחורי סלעים, ואתם מוכנים לאמץ את ייעודכם כגיבורים של עידן מיתולוגי חדש, אזי שערי הבריאה של "נשגבים" פתוחים בפניכם, ומחכים לראות אם תשכילו לרומם את העולם, או שמא שוב תשרפו אותו עד אפר.</p>
+  <section class="more-systems" aria-labelledby="more-title">
+    <h2 id="more-title">שיטות נוספות</h2>
+    <ul class="more-list"><li><a href="dungeons_and_dragons">מבוכים ודרקונים 5: הבסיס למשחקי תפקידים</a></li><li><a href="swords-wizardry">חרבות וכשפים (Swords &amp; Wizardry)</a></li><li><a href="Savage-Pathfinder">פאת&#x27;פיינדר בעולמות פראיים (Pathfinder for Savage Worlds): פנטזיה אפית בקצב מסחרר</a></li><li><a href="Apocalypse-World">עולם האפוקליפסה (Apocalypse World): המנוע שחולל רעידת מהפכה משחקי התפקידים</a></li><li><a href="pathfinder2">פאת&#x27;פיינדר 2 (Pathfinder 2e): חופש בחירה ועומק טקטי בעולם פנטזיה</a></li><li><a href="Savage-Worlds">עולמות פראיים (Savage Worlds): המנוע הקולנועי לכל הרפתקה שתוכלו לדמיין</a></li><li><a href="Blades-in-the-Dark">להבים באפלה (Blades in the Dark): פשע, צללים ותכנון מבריק בעיר מתועשת</a></li><li><a href="call-of-cthulhu">קריאתו של קת&#x27;ולהו (Call of Cthulhu): אימה קוסמית, חקירה ושבריריות השפיות</a></li><li><a href="dungeon-world">עולם המבוך (Dungeon World): פנטזיה קלאסית במנוע נרטיבי מודרני</a></li><li><a href="tiny-wizards">קוסמים קטנים: קסם, חברות, והצעד הראשון של הילדים לעולם משחקי התפקידים</a></li><li><a href="malastra">מלסטרה (Malastra): עולם חרב למחצה ופנטזיה אפלה כחול-לבן</a></li><li><a href="masks">פלאים: גיבורי המחר (Masks: A New Generation): זהות, התבגרות וגיבורי-על צעירים</a></li><li><a href="lasers-feelings">לייזרים ורגשות (Lasers &amp; Feelings): מינימליזם גאוני והרפתקאות חלל בעמוד אחד</a></li><li><a href="shadowrun">מרוצללים (Shadowrun): כשסייברפאנק אכזרי פוגש קסם עתיק</a></li><li><a href="warhammer">פטיש קרב - וורהאמר (Warhammer Fantasy Roleplay): בוץ, דם והישרדות בעולם של אפלה קודרת</a></li></ul>
+  </section>
+  <aside class="gate-box" aria-label="על שער להרפתקה">
+    <h3>לא בטוחים שזו השיטה בשבילכם?</h3>
+    <p>ענו על שש שאלות קצרות וקבלו המלצה אישית, או חפשו קבוצה וחוג באזור שלכם.</p>
+    <div class="actions"><a class="btn btn-gold" href="../../quiz">לשאלון ההתאמה</a><a href="../../search">לפורטל החיפוש</a></div>
+  </aside>
+</article>
+</main>
+<div class="site-foot">
+  <footer class="footer">
+    <div class="foot-id"><img class="foot-logo" src="../../static/rpg-game.png" alt="" width="52" height="52"><div>
+      <p><strong>שער להרפתקה</strong>, הבית של משחקי התפקידים בישראל.</p>
+      <p>מנוהל על ידי <a href="https://roleplay.top/">גמ"ה - גלגול מיזמים התנדבותיים</a>. <a href="https://lp.reuven.click">ראובן מנדלוביץ׳</a></p>
+    </div></div>
+    <nav aria-label="קישורים נוספים">
+      <span class="foot-row">
+        <a href="../../">בית</a>
+        <a href="../../search">חיפוש</a>
+        <a href="../../articles/">מאמרים</a>
+        <a href="../../catalog/">קטלוג</a>
+        <a href="../../quiz">שאלון התאמה</a>
+      </span>
+      <span class="foot-row">
+        <a href="../../next-con">מתי הכנס הבא?</a>
+        <a href="../../updates">הרשמה לעדכונים</a>
+        <a href="../../donate">תרומה</a>
+        <a href="../../privacy">תצהיר ופרטיות</a>
+      </span>
+    </nav>
+  </footer>
+</div>
+<script>document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { a.closest('details').open = false; }));</script>
+<script>/* opened from disk: extensionless links need .html */if(location.protocol==='file:'||/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname))document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');if(/^([a-z]+:|#|\/\/)/i.test(h))return;var i=h.search(/[#?]/),p=i<0?h:h.slice(0,i),r=i<0?'':h.slice(i);if(p===''||p==='.'||p==='./')p='index.html';else if(p.slice(-1)==='/')p+='index.html';else if(!/\.[a-z0-9]+$/i.test(p.split('/').pop()))p+='.html';a.setAttribute('href',p+r);},true);</script>
+</body>
+</html>

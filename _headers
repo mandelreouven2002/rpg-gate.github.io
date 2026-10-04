@@ -1,0 +1,6 @@
+# Used only by Cloudflare Pages (test and preview copies of the site).
+# Keeps those copies out of search engines, so they never compete with gate.roleplay.top.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

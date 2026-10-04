@@ -1,14 +1,15 @@
 {
   "version": "1.0",
   "name": "שער להרפתקה",
-  "description": "רוצים להתחיל לשחק מבוכים ודרקונים? אתר שער להרפתקה הוא המדריך המקיף למשחקי תפקידים בישראל. האתר מיועד לשחקנים חדשים, להורים מבולבלים, ולמי ששמע על \"משחקי תפקידים\" ורוצה סוף סוף להיכנס לתחביב. מצאו חוגים, קבוצות משחק, כנסים (אייקון, דרקוניקון), חנויות ומדריכים למתחילים (D&D, פאת'פיינדר, לארפ).",
-  "contact": "gate@roleplay.top",
+  "description": "הבית של משחקי התפקידים בישראל: קהילות, כנסים, חנויות, חוגים, מדריכי שיטות ומאמרים, במקום אחד.",
+  "contact": "roleplay.top@outlook.co.il",
   "organization": "גמ\"ה - גלגול מיזמים התנדבותיים",
   "maintainer": "ראובן מנדלוביץ׳ (https://lp.reuven.click)",
   "knowledge_files": {
     "llms_txt": "https://gate.roleplay.top/llms.txt",
     "sitemap": "https://gate.roleplay.top/sitemap.xml",
-    "directory_data": "https://gate.roleplay.top/data.json"
+    "directory_data": "https://gate.roleplay.top/data.json",
+    "llms_full_txt": "https://gate.roleplay.top/llms-full.txt"
   },
   "actions": [
     {
@@ -34,6 +35,36 @@
           "description": "שם קובץ המאמר (לדוגמה: what-is-rpg או tabletop-rpg)."
         }
       }
+    },
+    {
+      "name": "read_system_guide",
+      "description": "קריאת מדריך מלא לשיטת משחק תפקידים כעמוד HTML. יש להחליף את {filename} בשם הקובץ (למשל swords-wizardry).",
+      "url": "https://gate.roleplay.top/articles/systems/{filename}",
+      "method": "GET"
+    },
+    {
+      "name": "next_convention",
+      "description": "לוח כנסי משחקי התפקידים בישראל לפי חודש, והכנס הקרוב ביותר.",
+      "url": "https://gate.roleplay.top/next-con",
+      "method": "GET"
+    },
+    {
+      "name": "read_full_site_text",
+      "description": "כל תוכן האתר כטקסט אחד: המאמרים, מדריכי השיטות ומאגר הקהילה. מתאים לשאלות רחבות.",
+      "url": "https://gate.roleplay.top/llms-full.txt",
+      "method": "GET"
+    },
+    {
+      "name": "search_catalog",
+      "description": "קטלוג משחקי התפקידים בעברית כ-JSON: שם, שיטה, הוצאה, מחיר (₪), פורמטים וקישור לרכישה בחנות. מתאים לשאלות כמו 'כמה עולה' ו'איפה קונים'.",
+      "url": "https://gate.roleplay.top/catalog/catalog.json",
+      "method": "GET"
+    },
+    {
+      "name": "read_catalog_item",
+      "description": "עמוד מוצר בקטלוג. יש להחליף את {id} במזהה מהקטלוג (למשל pundak-001).",
+      "url": "https://gate.roleplay.top/catalog/item/{id}",
+      "method": "GET"
     }
   ]
 }
